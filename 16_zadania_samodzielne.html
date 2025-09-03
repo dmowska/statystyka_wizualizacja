@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>22&nbsp; Zadania – Statystyka i wizualizacja danych</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./15_Raport_przyklad.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3708d7fbbef66c9ac9ec4ecfd1afb0ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Brak wyników",
+    "search-matching-documents-text": "dopasowane dokumenty",
+    "search-copy-link-title": "Kopiuj link do wyszukiwania",
+    "search-hide-matches-text": "Ukryj dodatkowe dopasowania",
+    "search-more-match-text": "więcej dopasowań w tym dokumencie",
+    "search-more-matches-text": "więcej dopasowań w tym dokumencie",
+    "search-clear-button-title": "Wyczyść",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Anuluj",
+    "search-submit-button-title": "Zatwierdź",
+    "search-label": "Szukaj"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16_zadania_samodzielne.html">ZADANIA</a></li><li class="breadcrumb-item"><a href="./16_zadania_samodzielne.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Statystyka i wizualizacja danych</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Szukaj"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">O skrypcie</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">WPROWADZENIE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1a_wprowadzenie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Wprowadzenie</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1b_wprowadzenie_do_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wprowadzenie do pracy w R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">PRZETWARZANIE DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2a_przetwarzanie_danych.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Przetwarzanie danych w R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2b_przetwarzanie_danych_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Przetwarzanie danych - dplyr</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">STATYSTYKI OPISOWE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_statystyki_opisowe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statystyki opisowe</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">WIZUALIZACJA DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wykresy w R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4a_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy wykresów</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4b_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Formatowanie wykresów</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">ROZKŁADY DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_rozklady.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rozkłady danych</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">WNIOSKOWANIE STATYSTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wnioskowanie statystyczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6a_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estymacja punktowa i przedziałowa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6b_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Testowanie hipotez statystycznych</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">TESTY STATYTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_testy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_testy_parametryczne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Testy parametryczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_testy_nieparametryczne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Testy nieparametryczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_testy_wiele_grup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">ANALIZA KORELACJI I REGRESJI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_analiza_korelacji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Analiza korelacji</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_analiza_regresji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Analiza regresji</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">RAPORTY STATYSTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_Raport_statystyczny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Tworzenie raportów</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZADANIA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Spis treści</h2>
+   
+  <ul>
+  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie"><span class="header-section-number">22.1</span> Wprowadzenie</a></li>
+  <li><a href="#przetwarzanie-danych---pakiet-dplyr" id="toc-przetwarzanie-danych---pakiet-dplyr" class="nav-link" data-scroll-target="#przetwarzanie-danych---pakiet-dplyr"><span class="header-section-number">22.2</span> Przetwarzanie danych - pakiet dplyr</a></li>
+  <li><a href="#statystyki-opisowe" id="toc-statystyki-opisowe" class="nav-link" data-scroll-target="#statystyki-opisowe"><span class="header-section-number">22.3</span> Statystyki opisowe</a></li>
+  <li><a href="#wizualizacja-danych---typy-wykresów" id="toc-wizualizacja-danych---typy-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---typy-wykresów"><span class="header-section-number">22.4</span> Wizualizacja danych - typy wykresów</a></li>
+  <li><a href="#wizualizacja-danych---formatowanie-wykresów" id="toc-wizualizacja-danych---formatowanie-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---formatowanie-wykresów"><span class="header-section-number">22.5</span> Wizualizacja danych - formatowanie wykresów</a></li>
+  <li><a href="#rozkład-danych" id="toc-rozkład-danych" class="nav-link" data-scroll-target="#rozkład-danych"><span class="header-section-number">22.6</span> Rozkład danych</a></li>
+  <li><a href="#wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" id="toc-wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" class="nav-link" data-scroll-target="#wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacje punktowe i przedziałowe</a></li>
+  <li><a href="#testy-parametryczne" id="toc-testy-parametryczne" class="nav-link" data-scroll-target="#testy-parametryczne"><span class="header-section-number">22.8</span> Testy parametryczne</a></li>
+  <li><a href="#testy-nieparametryczne" id="toc-testy-nieparametryczne" class="nav-link" data-scroll-target="#testy-nieparametryczne"><span class="header-section-number">22.9</span> Testy nieparametryczne</a>
+  <ul class="collapse">
+  <li><a href="#zadanie-1" id="toc-zadanie-1" class="nav-link" data-scroll-target="#zadanie-1">Zadanie 1</a></li>
+  <li><a href="#zadanie-2" id="toc-zadanie-2" class="nav-link" data-scroll-target="#zadanie-2">Zadanie 2</a></li>
+  </ul></li>
+  <li><a href="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup" id="toc-testy-parametryczne-i-nieparametryczne-dla-wielu-grup" class="nav-link" data-scroll-target="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup"><span class="header-section-number">22.10</span> Testy parametryczne i nieparametryczne dla wielu grup</a>
+  <ul class="collapse">
+  <li><a href="#zadanie-1-1" id="toc-zadanie-1-1" class="nav-link" data-scroll-target="#zadanie-1-1">Zadanie 1</a></li>
+  <li><a href="#zadanie-2-1" id="toc-zadanie-2-1" class="nav-link" data-scroll-target="#zadanie-2-1">Zadanie 2</a></li>
+  </ul></li>
+  <li><a href="#testowanie-istotności-proporcji" id="toc-testowanie-istotności-proporcji" class="nav-link" data-scroll-target="#testowanie-istotności-proporcji"><span class="header-section-number">22.11</span> Testowanie istotności proporcji</a>
+  <ul class="collapse">
+  <li><a href="#zadanie-1-2" id="toc-zadanie-1-2" class="nav-link" data-scroll-target="#zadanie-1-2">Zadanie 1</a></li>
+  <li><a href="#zadanie-2-2" id="toc-zadanie-2-2" class="nav-link" data-scroll-target="#zadanie-2-2">Zadanie 2</a></li>
+  </ul></li>
+  <li><a href="#analiza-korelacji" id="toc-analiza-korelacji" class="nav-link" data-scroll-target="#analiza-korelacji"><span class="header-section-number">22.12</span> Analiza korelacji</a></li>
+  <li><a href="#analiza-regresji" id="toc-analiza-regresji" class="nav-link" data-scroll-target="#analiza-regresji"><span class="header-section-number">22.13</span> Analiza regresji</a></li>
+  <li><a href="#podsumowanie-ćwiczeń" id="toc-podsumowanie-ćwiczeń" class="nav-link" data-scroll-target="#podsumowanie-ćwiczeń"><span class="header-section-number">22.14</span> Podsumowanie ćwiczeń</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./16_zadania_samodzielne.html">ZADANIA</a></li><li class="breadcrumb-item"><a href="./16_zadania_samodzielne.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="wprowadzenie" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="wprowadzenie"><span class="header-section-number">22.1</span> Wprowadzenie</h2>
+<ol type="1">
+<li><p>Stwórz nowy dokument Quarto. (File - New File - Quarto document)</p></li>
+<li><p>Nazwij dokument <em>dane_gapminder</em>.</p></li>
+<li><p>W dokumencie dodać tytuł, autora.</p></li>
+<li><p>Opisz w dokumencie dane <code>gapminder</code>. Dodaj odpowiednie bloki kodu potrzebne do wyświetlenia informacji:</p>
+<ul>
+<li>Wczytanie danych <code>gapminder</code> z pakietu <code>gapminder</code></li>
+<li>Wyświetl nazwy kolumn w zbiorze danych <code>gapminder</code></li>
+<li>Ile wierszy oraz ile kolumn znajduje się w zbiorze danych gapminder?</li>
+<li>Jakiej klasy są zmienne gdpPercap, lifeExp oraz pop?</li>
+<li>Które zmienne są zmiennymi czynnikowymi (factor)?</li>
+<li>Dla jakich lat dostępne są dane?</li>
+<li>Wyświetl unikalne wartości zmiennej continent.</li>
+<li>Wyświetl podsumowanie podstawowych statystyk opisowych.</li>
+<li>Podaj nazwy trzech najludniejszych krajów w roku 1952 oraz w 2007 roku.</li>
+<li>Który kraj miał najkrótszą, a który najdłuższa oczekiwaną długość życia? W którym roku?</li>
+<li>Dla ilu krajów są dostępne dane dla 2007 roku?</li>
+<li>Ile było państw w 2007 roku z liczbą ludności przekraczającą 100 milionów mieszkańców? Na ilu kontynentach były położone te pańtwa?</li>
+</ul></li>
+</ol>
+</section>
+<section id="przetwarzanie-danych---pakiet-dplyr" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="przetwarzanie-danych---pakiet-dplyr"><span class="header-section-number">22.2</span> Przetwarzanie danych - pakiet dplyr</h2>
+<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
+<ul>
+<li>Ile zmiennych i obserwacji znajduje się w zbiorze <code>pomiary_pol</code>?</li>
+<li>Ile unikalnych prowincji znajduje się w tym zbiorze? Jakie mają one nazwy?</li>
+<li>Ile unikalnych województw znajduje się w tym zbiorze?</li>
+<li>Stwórz obiekt <code>pomiary_pol2</code>, który nie zawiera kolumn z pomiarami dla kwietnia i września.</li>
+<li>W którym województwie zanotowano drugą najwyższą i drugą najniższą średnią temperaturę roczną (<em>annual_tavg</em>)?</li>
+<li>Stwórz obiekt <code>pomiary_wlkp</code>, który zawiera tylko pomiary temperatury minimalnej oraz maksymalnej dla kwietnia (tmin_4, tmax_4) wyłącznie dla województwa wielkopolskiego.</li>
+<li>Stwórz obiekt <code>pomiary_wyzyny</code>, który zawiera pomiary dla prowincji wyżynnych.</li>
+<li>Do zbioru <code>pomiary_pol</code> dodaj nową kolumnę <em>tmax_diff</em>, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu.</li>
+<li>Stwórz obiekt <code>pomiary_pol_long</code>, składający się z trzech kolumn <em>pomiar_id</em>, <em>name</em>, <em>value</em>. W kolumnie <em>name</em> powinny znajdować się wartości <em>tmin_4</em> i <em>tmax_4</em>, a w kolumnie <em>value</em> odpowiadające im wartości.</li>
+<li>Stwórz obiekt <code>pomiary_pol_wide</code>, zamieniający obiekt <code>pomiary_pol_long</code> na postać szeroką.</li>
+<li>Dla ilu pomiarów w województwie małopolskim średnia temperatura roczna (annaul_tavg) jest większa od 7.5C?</li>
+<li>Ile prowincji znajduje się w obrębie województwa mazowieckiego?</li>
+</ul>
+</section>
+<section id="statystyki-opisowe" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="statystyki-opisowe"><span class="header-section-number">22.3</span> Statystyki opisowe</h2>
+<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<ul>
+<li>Jaka jest średnia wartość średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze?</li>
+<li>Jaka jest mediana rocznej sumy opadów (<em>annual_precip</em>)?</li>
+<li>Jaka jest różnica między wartością średnią a medianą rocznej sumy opadów (<em>annual_precip</em>)?</li>
+<li>Jaka jest najniższa i najwyższa zarejestrowana wartość średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze?</li>
+<li>Powyżej jakiej wartości średniej temperatury rocznej (<em>annual_tavg</em>) znajduje się 25% obserwacji?</li>
+<li>Jaki jest zakres danych dla temperatury minimalnej w kwietniu (<em>tmin_4</em>)?</li>
+<li>Jakie jest średnia i odchylenie standardowe temperatury minimalnej we wrześniu (<em>tmin_9</em>)?</li>
+<li>Wylicz średnią i odchylenie standardowe <em>tmin_9</em> dla kolejnych prowincji.</li>
+<li>Ile pomiarów wykonano w każdej z prowincji?</li>
+<li>Do zbioru <code>pomiary_pol</code> dodaj nową kolumnę <em>tmax_diff</em>, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu. Oblicz największą oraz najmniejsza różnicę.</li>
+<li>Ile wynosi 95 percentyl dla rocznej sumy opadów (annual_precip) w województwie wielkopolskim?</li>
+</ul>
+</section>
+<section id="wizualizacja-danych---typy-wykresów" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="wizualizacja-danych---typy-wykresów"><span class="header-section-number">22.4</span> Wizualizacja danych - typy wykresów</h2>
+<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<ul>
+<li>Stwórz histogram pokazujący rozkład średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze.</li>
+<li>Stwórz wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną w kwietniu. W jaki sposób można go zinterpretować?</li>
+<li>Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej temperatury rocznej (<em>annual_tavg</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.</li>
+<li>Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej rocznej sumy opadów (<em>annual_precip</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.</li>
+<li>Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w każdej prowincji.</li>
+<li>Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w województwach.</li>
+<li>Wykorzystaj opcję multiwykresów do pokazania relacji pomiędzy temperaturą minimalną a maksymalną we wrześniu w podziale na poszczególne prowincje.</li>
+<li>Postaraj się ulepszyć stworzone wykresy poprzez dodanie tytułu, zmianę podpisu osi, edycję kolorów, itd.</li>
+<li>Zapisz stworzone wykresy do plików w formacie .png. Jak nazwiesz te pliki?</li>
+</ul>
+</section>
+<section id="wizualizacja-danych---formatowanie-wykresów" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="wizualizacja-danych---formatowanie-wykresów"><span class="header-section-number">22.5</span> Wizualizacja danych - formatowanie wykresów</h2>
+<p>Sformatuj wykresy przygotowane w ramach zadań “Wizualizacja danych - typy wykresów”.</p>
+<ul>
+<li>dodaj etykiety osi oraz tytuł wykresu</li>
+<li>zmień sposób wyświetlania linii oraz punktów.</li>
+<li>zastosuj różne skale kolorystyczne.</li>
+<li>odpowiednio sformatuj legendę wykresów.</li>
+<li>dodaj motyw wyświetlania (theme).</li>
+</ul>
+</section>
+<section id="rozkład-danych" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="rozkład-danych"><span class="header-section-number">22.6</span> Rozkład danych</h2>
+<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<ul>
+<li>Jak można opisać rozkład zmiennej <em>annual_tavg</em>?</li>
+<li>Jak można opisać rozkład zmiennej <em>annual_precip</em>?</li>
+<li>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_tavg</em></li>
+<li>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_precip</em></li>
+<li>Jakie mogą być konsekwencje różnic w rozkładach zmiennych <em>annual_tavg</em> i <em>annual_precip</em> do celów analizy danych?</li>
+<li>Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj multiwykres pokazujący histogramy zmiennej <em>annual_tavg</em> dla wybranych województw. Oblicz wartość średniej, mediany, skośności oraz kurtozy zmiennej <em>annual_tavg</em> dla każdego z wybranych województw. Które z województw mają rozkład zbliżony do rozkładu symetrycznego?</li>
+<li>Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj dla każdego województwa test Shapiro-Wilka. Które z województw mają rozkład zmiennej annual_tavg zbliżony do rozkładu normalnego?</li>
+</ul>
+</section>
+<section id="wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacje punktowe i przedziałowe</h2>
+<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<ul>
+<li><p>Odchylenie standardowe temperatury maksymalnej we wrześniu (tmax_9) nie jest znane. Wyznacz 95% przedział ufności dla średniej temperatury maksymalnej we wrześniu.</p></li>
+<li><p>Średnia temperatura roczna dla Polski wynosi 8.1 stopnia Celsjusza oraz ma odchylenie standardowe równe 0.9 stopnia Celsjusza. Pewnego roku średnia temperatura wyniosła 10.1 stopnia Celsjusza. Chcemy się dowiedzieć, czy ta wartość jest nietypowo wysoka. Jak powinniśmy określić hipotezę zerową i alternatywną?</p>
+<ul>
+<li>Zwizualizuj rozkład średniej temperatury rocznej dla Polski wraz z tym dodatkowym pomiarem.</li>
+<li>Jakie jest prawdopodobieństwo, że nowa wartość jest nietypowo wysoka? Jaką hipotezę przyjmujemy/odrzucamy?</li>
+</ul></li>
+</ul>
+</section>
+<section id="testy-parametryczne" class="level2" data-number="22.8">
+<h2 data-number="22.8" class="anchored" data-anchor-id="testy-parametryczne"><span class="header-section-number">22.8</span> Testy parametryczne</h2>
+<p>Rozwiąż poniższe zadania. Każdorazowo:</p>
+<ul>
+<li>Sformułuj hipotezę zerową oraz hipotezę alternatywną.</li>
+<li>Wykonaj odpowiedni test statystyczny.</li>
+<li>Zinterpretuj wyniki testu.</li>
+</ul>
+<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<ul>
+<li><p>Czy średnia temperatura roczna (<em>annual_tavg</em>) na Wyżynach Polskich różni się od Masywu Czeskiego?</p>
+<ul>
+<li>Stwórz wykres porównujący tą zmienną dla tych prowincji.</li>
+<li>Określ czy różnica pomiędzy średnimi jest istotna statystycznie.</li>
+</ul></li>
+<li><p>Sprawdź, używając testów statystycznych, czy wariancja średniej temperatury rocznej (<em>annual_tavg</em>) na Wyżynach Polskich różni się od Masywu Czeskiego?</p></li>
+<li><p>Porównaj maksymalną temperaturę dla kwietnia oraz września.</p>
+<ul>
+<li>Przygotuj wykres porównujący te zmienne.</li>
+<li>Określ czy różnica pomiędzy tymi pomiarami jest istotna statystycznie.</li>
+</ul></li>
+</ul>
+</section>
+<section id="testy-nieparametryczne" class="level2" data-number="22.9">
+<h2 data-number="22.9" class="anchored" data-anchor-id="testy-nieparametryczne"><span class="header-section-number">22.9</span> Testy nieparametryczne</h2>
+<p>Rozwiąż poniższe zadania. Każdorazowo:</p>
+<ul>
+<li>Sformułuj hipotezę zerową oraz hipotezę alternatywną.</li>
+<li>Wykonaj odpowiedni test statystyczny.</li>
+<li>Zinterpretuj wyniki testu.</li>
+</ul>
+<section id="zadanie-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-1">Zadanie 1</h3>
+<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
+<ul>
+<li><p>Czy istnieje istotna statystycznie różnica pomiędzy średnią temperaturą roczną (<em>annual_tavg</em>) dla Karpat Wschodnich i Karpat Zachodnich? Stwórz wizualizację, a następnie wykonaj test statystyczny.</p></li>
+<li><p>Czy istnieje istotna statystycznie różnica pomiędzy sumą roczną opadów (<em>annual_precip</em>) dla województw podlaskiego i kujawsko-pomorskiego? Stwórz wizualizację, a następnie wykonaj test statystyczny.</p></li>
+</ul>
+</section>
+<section id="zadanie-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-2">Zadanie 2</h3>
+<p>Wczytaj dane z pliku <code>tetno.csv</code></p>
+<ul>
+<li>Przeprowadzono badanie tętna u 20 osób przed i po krótkim (trwającym 3 min) wysiłku fizycznym. Otrzymane dane z uwzględnieniem płci zestawiono w tabeli. Czy otrzymane wyniki przeczą hipotezie, że wysiłek wpływa na przyspieszenie tętna? (przykład pochodzi z książki Andrzeja Stanisza „Przystępny kurs statystyki w oparciu o program STATISTICA PL na przykładach z medycyny”)</li>
+</ul>
+</section>
+</section>
+<section id="testy-parametryczne-i-nieparametryczne-dla-wielu-grup" class="level2" data-number="22.10">
+<h2 data-number="22.10" class="anchored" data-anchor-id="testy-parametryczne-i-nieparametryczne-dla-wielu-grup"><span class="header-section-number">22.10</span> Testy parametryczne i nieparametryczne dla wielu grup</h2>
+<section id="zadanie-1-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-1-1">Zadanie 1</h3>
+<p>W miejscowości A wykonywano pomiary temperatury powietrza przez cztery kolejne miesiące. Rozkład temperatury w kolejnych miesiącach był symetryczny i wykazywał się podobną zmiennością.</p>
+<p>Jakiego testu użył(a)byś, aby odpowiedzieć na pytanie: “Czy średnia temperatura powietrza różni się isotnie statystycznie pomiędzy miesiącami, w których wykonano pomiary?”.</p>
+<p>W odpowiedzi proszę podać: (1) nazwę testu statystycznego, (2) nazwę funkcji R służącej do wykonania testu, (3) Co w wyniku testu wskazuje, że wynik jest istotny statystycznie? (4) Co oznacza istotny statystycznie wynik?</p>
+</section>
+<section id="zadanie-2-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-2-1">Zadanie 2</h3>
+<p>Wczytaj dane <code>mieszkania</code> z pakietu <code>Przewodnik</code>. Dane te przedstawiają informacje o cenie mieszkań, liczbie pokoi oraz powierzchni mieszkań w 3 dzielnicach Wrocławia.</p>
+<ul>
+<li><p>Stwórz wykres porównujący ceny mieszkań w 3 dzielnicach Wrocławia.</p></li>
+<li><p>Oblicz minimalną, maksymalną, średnią oraz odchylenie standardowe dla cen mieszkań w podziale na dzielnice.</p></li>
+<li><p>Zastosuj test Shapiro-Wilka do określenia, czy ceny mieszkań w każdej z dzielnic Wrocławia są zbliżone do rozkładu normalnego. Zinterpretuj wyniki testu.</p></li>
+<li><p>Wykorzystaj analizę wariancji do określenia czy ceny mieszkań różnią się istotnie statystycznie między dzielnicami Wrocławia.</p>
+<ul>
+<li>Sformułuj hipotezę zerową oraz altenatywną.</li>
+<li>Zinterpretuj wynik.</li>
+</ul></li>
+<li><p>Pomiędzy którymi dzielnicami występują różnice.</p></li>
+</ul>
+</section>
+</section>
+<section id="testowanie-istotności-proporcji" class="level2" data-number="22.11">
+<h2 data-number="22.11" class="anchored" data-anchor-id="testowanie-istotności-proporcji"><span class="header-section-number">22.11</span> Testowanie istotności proporcji</h2>
+<section id="zadanie-1-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-1-2">Zadanie 1</h3>
+<p>Wczytaj dane z pliku <code>plony.csv</code></p>
+<ul>
+<li>Zastosuj test niezależności chi-2 do określenia czy istnieje relacja między klasą jakości gleb a wielkością plonu?</li>
+</ul>
+</section>
+<section id="zadanie-2-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-2-2">Zadanie 2</h3>
+<p>Wśród mieszkańców dzielnicy wykonano badanie dotyczące poczucia bezpieczeństwa na pobliskim skrzyżowaniu. 412 osób określiło je jako niebezpieczne, a 213 jako bezpieczne. Następnie zainstalowano system monitoringu w pobliżu skrzyżowania i powtórzono badanie. Tym razem 400 osób określiło skrzyżowanie jako niebezpieczne (2 osoby z nich wcześniej uważały je za bezpieczne), a 225 jako bezpieczne. Czy system monitoringu wpłynął w istotny sposób na odczucia mieszkańców?</p>
+</section>
+</section>
+<section id="analiza-korelacji" class="level2" data-number="22.12">
+<h2 data-number="22.12" class="anchored" data-anchor-id="analiza-korelacji"><span class="header-section-number">22.12</span> Analiza korelacji</h2>
+<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
+<ul>
+<li><p>Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną a maksymalną we wrześniu. Co może oznaczać ten wynik?</p>
+<ul>
+<li>Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu</li>
+<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
+<li>Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?</li>
+</ul></li>
+<li><p>Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną w kwietniu a temperaturą minimalną we wrześniu. Co może oznaczać ten wynik?</p>
+<ul>
+<li>Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu</li>
+<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
+<li>Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?</li>
+</ul></li>
+</ul>
+</section>
+<section id="analiza-regresji" class="level2" data-number="22.13">
+<h2 data-number="22.13" class="anchored" data-anchor-id="analiza-regresji"><span class="header-section-number">22.13</span> Analiza regresji</h2>
+<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code> oraz wybierz dane dla województwa zachodniopomorskiego.</p>
+<p>Dla wybranych danych:</p>
+<ul>
+<li><p>zwizualizuj relację między roczną sumą opadów (<em>annual_precip</em>) a temperaturą maksymalną w kwietniu (<em>tmax_4</em>).</p></li>
+<li><p>zbuduj model regresji liniowej zależności rocznej sumy opadów (<em>annual_precip</em>) od temperatury maksymalnej w kwietniu (<em>tmax_4</em>) i nazwij go model1.</p></li>
+<li><p>opisz wyniki modelu, w tym wartości współczynników, poziomy istotności, jakość modelu.</p></li>
+<li><p>wyznacz współczynniki modelu i zapisz równanie modelu regresji liniowej.</p></li>
+<li><p>zwizualizuj model regresji liniowej.</p></li>
+<li><p>wykonaj predykcję rocznej sumy opadów dla temperatury maksymalnej w kwietniu równej 11,1 stopnia Celsjusza.</p></li>
+<li><p>przeanalizuj reszty z modelu</p>
+<ul>
+<li>jakie są statystyki reszt,</li>
+<li>wykonaj histogram reszt - jaki jest rozkład reszt z modelu?</li>
+</ul></li>
+<li><p>wykonaj wykres rozrzutu pokazujący zależność między wartościami obserwowanymi (oś x), a wartościami obliczonymi z modelu (oś y).</p></li>
+<li><p>zbuduj model zależności rocznej sumy opadów (<em>annual_precip</em>) od temperatury maksymalnej w kwietniu (<em>tmax_4</em>) oraz temperatury minimalnej w kwietniu (<em>tmin_4</em>) i nazwij go model2.</p></li>
+<li><p>Porównaj oba modele (model1 oraz model2) za pomocą kryterium informacyjnego AIC. Określ, który model jest lepszy.</p></li>
+<li><p>Który z modeli w większym stopniu wyjaśnia roczną sumą opadów?</p></li>
+</ul>
+</section>
+<section id="podsumowanie-ćwiczeń" class="level2" data-number="22.14">
+<h2 data-number="22.14" class="anchored" data-anchor-id="podsumowanie-ćwiczeń"><span class="header-section-number">22.14</span> Podsumowanie ćwiczeń</h2>
+<p>Wczytaj dane <code>airquality</code> z pakietu datasets.</p>
+<ol type="1">
+<li>Przedstaw podstawowe informacje o zbiorze danych <code>airquality</code>. Wykorzystaj w tym celu narzędzie pomocy w R oraz podstawowe funkcje.</li>
+</ol>
+<ul>
+<li>Ile zmiennych oraz rekordów znajduje się w zbiorze danych?</li>
+<li>Jakie są nazwy zmiennych w zbiorze danych.</li>
+</ul>
+<ol start="2" type="1">
+<li>Scharakteryzuj statystycznie dane.</li>
+</ol>
+<ul>
+<li>Oblicz podstawowe statystyki dla zmiennych w zbiorze danych.</li>
+<li>Przedstaw podstawowe statystyki dla zmiennych w podziale na poszczególne miesiące.</li>
+<li>Wykonaj wykres pudełkowy pokazujący jak wartości zmiennych Temp oraz Ozone różnią się między miesiącami.</li>
+</ul>
+<ol start="3" type="1">
+<li>Scharakteryzuj rozkład zmiennych.</li>
+</ol>
+<ul>
+<li><p>Jaki jest rozkład zmiennych Temp, oraz Ozone.</p>
+<ul>
+<li>Przedstaw wyniki na wykresach oraz</li>
+<li>Oblicz odpowiednie statystyki charakteryzujące rozkład zmiennych.</li>
+<li>Wykonaj test Shapiro-Wilka dla określenia czy rozkład zmiennej Temp jest zbliżony do rozkładu normalnego.</li>
+</ul></li>
+</ul>
+<ol start="4" type="1">
+<li><p>Ile było dni, w których stężenie Ozonu było powyżej 30 ppb oraz temperatura wynosiła powyżej 90F?</p></li>
+<li><p>W ilu dniach nie zmierzono stężenia Ozonu?</p></li>
+<li><p>W którym dniu odnotowano najniższą wartość stężenia Ozonu? Podaj dzień oraz miesiąc.</p></li>
+<li><p>Wskaż miesiące, w których średnie stężenie Ozonu było niższe od średniej dla całego okresu pomiarowego.</p></li>
+<li><p>Czy istnieje zależność między zmiennymi Ozone oraz Temp?</p>
+<ul>
+<li>Proszę wykonać odpowiedni test oraz zinterpretować jego wyniki.</li>
+<li>Proszę zwizualizować relację między zmiennymi Ozone oraz Temp.</li>
+</ul></li>
+</ol>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Skopiowano!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Skopiowano!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./15_Raport_przyklad.html" class="pagination-link" aria-label="Analiza statystyczna długości trwania życia na świecie w 2007 roku.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
