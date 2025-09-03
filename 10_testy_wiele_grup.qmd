@@ -1,0 +1,147 @@
+# Testy dla wielu grup 
+
+## Testowanie istotność różnic średnich wielu prób
+
+- Parametryczne
+
+    + Jednoczynnikowa analiza wariancji (ANOVA)
+    + Test Tukey'a (HSD)
+
+- Nieparametryczne
+
+    + Test Kruskala-Wallisa
+    + Test Friedmana
+
+## Analiza wariancji 
+
+- Celem analizy wariancji (ANOVA) jest zazwyczaj testowanie istotności różnic pomiędzy średnimi w wielu grupach.
+- Służą do oceny czy średnie wartości cechy Y (cecha ilościowa) różnią się istotnie pomiędzy grupami wyznaczonymi przez zmienną X.
+- W analizie jednoczynnikowej badamy zależność pomiędzy cechą Y a jedną zmienną jakościową.
+- Hipoteza zerowa - średnie w grupach są jednakowe: $H_0: \mu_1 = \mu_2 = ... \mu_k$
+- Hipoteza alternatywna: $H_A$: co najmniej dwie średnie różnią się między sobą.
+- Analiza wariancji nie pozwala stwierdzić pomiędzy którymi grupami występują różnice.
+- Aby określić między którymi grupami występują różnice trzeba wykonać porównania wielokrotne (“post-hoc”)
+
+### Podstawowe założenia
+
+- Zmienna w każdej z analizowanych grup ma rozkład zbliżony do rozkładu normalnego.
+- Wariancje w grupach są do siebie podobne.
+- Próby zostały losowo wybrane z populacji.
+
+**Przykład: Czy średnia roczna temperatura powietrza różni się istotnie między prowincjami? **
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol$prow_id = as.factor(pomiary_pol$prow_id)
+summary(pomiary_pol)
+```
+
+```{r}
+pomiary_anova = aov(annual_tavg ~ prow_id, data = pomiary_pol)
+pomiary_anova
+```
+
+```{r}
+summary(pomiary_anova)
+```
+
+## Test Tukey'a
+
+- Wynikiem testu Tukeya są różnice między średnimi oraz 95% przedział ufności dla tych różnic dla każdej pary porównań.
+- Wynik jest pokazywany w postaci numerycznej i graficznej.
+- Szukamy takich par, dla których przedział ufności średnich nie przecina 0, wskazując na statystycznie istotne różnice między grupami.
+
+Graficzna reprezentacja wyniku – przedziały ufności dla różnic w średnich rocznych temperatur między prowincjami. 
+
+```{r}
+posthoc = TukeyHSD(pomiary_anova, which = "prow_id",
+                   conf.level = 0.95)
+posthoc
+```
+
+```{r}
+par(mar = c(4, 4, 4, 0.1)) # zmiana marginesów
+plot(posthoc, las = 1, cex.axis=0.7)
+```
+
+**Wnioski z analizy danych:**
+
+Wnioskiem z przeprowadzenia testu post-hoc jest stwierdzenie, że istnieją istotne statystycznie różnice w średniej rocznej temperaturze powietrza między prowincjami: 
+
+- Karpaty Wschodnie z Podkarpaciem Wschodnim (1) a pozostałymi (z wyjątkiem 5: Niż Wschodniobałtycko-Białoruski)
+- Karpaty Zachodnie z Podkarpaciem Zachodnim i Północnym (2), a Niż Środkowoeuropejski (4), Niż Wschodniobałtycko-Białoruski (5), Wyżyny Polskie (6)
+- Masyw Czeski (3), a Niż Środkowoeuropejski (4) oraz Niż Wschodniobałtycko-Białoruski (5)
+- Niż Środkowoeuropejski (4), a Niż Wschodniobałtycko-Białoruski (5) oraz Wyżyny Polskie (6)
+- Niż Wschodniobałtycko-Białoruski (5), a Wyżyny Polskie (6)
+
+Zestawienie prowincji i ich id
+
+```{r}
+pomiary_pol %>% 
+  select(prow_id, prowincja) %>% 
+  arrange(prow_id) %>% 
+  na.omit() %>% 
+  unique()
+```
+
+## Test Kruskala-Wallisa
+
+- Nieparametryczną alternatywą dla jednoczynnikowej analizy wariancji stanowi **test Kruskala-Wallisa**. 
+- Za pomocą tego testu sprawdzamy, czy *n* niezależnych próbek pochodzi z tej samej populacji, bądź z populacji z taką samą medianą. 
+- Statystycznie istotny wynik tego testu informuje, że co najmniej jedna z par grup jest różna od siebie
+- Poszczególne próbki nie muszą mieć takiej samej liczebności. 
+- Test ten jest rozszerzeniem testu Two sample Wilcoxon dla 3 i więcej grup.
+- Testem post-hoc dla testu Kruskala-Wallisa jest test Dunna (library(dunn.test); ?dunn.test)
+
+```{r}
+library(gapminder)
+gapminder2007 = subset(gapminder, year == 2007)
+summary(gapminder2007)
+```
+
+**Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy kontynentami?**
+
+```{r}
+library(ggplot2)
+ggplot(gapminder2007, aes(continent, lifeExp)) + geom_boxplot()
+```
+
+
+```{r}
+kruskal.test(lifeExp ~ continent, data = gapminder2007)
+```
+```{r}
+library(dunn.test)
+dunn.test(gapminder2007$lifeExp, gapminder2007$continent, kw=FALSE, method="bonferroni")
+```
+Jeśli wartość P.adj jest mniejsza od założonego progu (zazwyczaj 0,05) to hipotezę zerową o braku różnic między grupami można odrzucić na rzecz hipotezy alternatywnej (grupy różnią się).
+
+> Pytanie: Pomiędzy, którymi grupami istnieją statystycznie istotne różnice?
+
+## Test Friedmana
+
+Test wykonywany dla pomiarów powtarzanych (liczba powtórzeń większa od dwóch)
+
+```{r}
+summary(gapminder)
+```
+
+**Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy pomiędzy kolejnymi pomiarami (kolejnymi latami)?**
+
+```{r}
+ggplot(gapminder, aes(year, lifeExp, group = country)) + 
+  geom_point(color = "red") +
+  geom_line()
+```
+
+
+```{r}
+friedman.test(lifeExp ~ year | country, data = gapminder)
+```
+

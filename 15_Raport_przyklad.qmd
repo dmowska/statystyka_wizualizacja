@@ -1,0 +1,201 @@
+---
+title: "Analiza statystyczna długości trwania życia na świecie w 2007 roku."
+author: "Anna Dmowska"
+format:
+  html:
+    code-fold: true
+crossref:
+  fig-title: Rycina     # (default is "Figure")
+  tbl-title: Tabela     # (default is "Figure")
+  fig-prefix: Ryc.   # (default is "Figure")
+  tbl-prefix: Tabela   # (default is "Table")
+  ref-hyperlink: false # (default is true)
+---
+
+## Wprowadzenie
+
+Oczekiwana dalsza długość trwania życia (ang. *life expectancy*) jest jedną z miar stosowaną m.in w badaniach demograficznych. Określa ona średnią liczbę lat życia jaka pozostała osobnikowi w danym wieku. Oczekiwana dalsza długość trwania życia w momencie narodzin (ang. *life expectancy at birth*) odnosi się do średniej liczby lat, jaką spodziewa się, że przeżyje noworodek przy założeniu, że w przyszłości poziom umieralności będzie stale na tym samym poziomie. W przypadku oczekiwanej dalszej długość trwania życia w momencie narodzin (ang. *life expectancy at birth*) miara ta jest także miarą średniej długości trwania życia w danej populacji.
+
+Oczekiwana dalsza długość trwania życia w momencie narodzin zależy od wielu czynników, m.in czynniki środowikowe, dostęp do opieki medycznej, poziom dochodów. Wartość ta zmienia się na przestrzeni lat, jak również regionalnie.
+
+Celem niniejszej analizy jest scharakteryzowanie oczekiwanej dalszej długości trwania życia w momencie narodzin (ang. *life expectancy at birth*) w 142 krajach na podstawie danych z 2007 roku. W pierwszym etapie przeprowadzono analizę dla wszystkich krajów, a następnie w podziale na kontynenty.
+
+## Dane
+
+Analizę przeprowadzono w oparciu o dane pochodzące z pakietu `gapminder`. Dane te dostarczają informacji o oczekiwanej dalszej długości trwania życia w momenci narodzin (ang. *lifeExp*), produkcie krajowym brutto (ang. *gdpPercap*), liczbie ludności (ang. *pop*) w 142 krajach w latach 1952-2007. Dane pochodzą z projektu GAPMINDER (http://www.gapminder.org/data/).
+
+## Metody
+
+Analiza statystyczna danych została wykonana w środowisku R. Podczas analizy i wizualizacji wyników wykorzystano funkcje zawarte w pakietach podstawowych oraz użyto następujące pakiety:
+
+-   pakiet `gapminder` - dostarcza danych do analizy.
+-   pakiet `ggplot2` - pozwala na wizualizację wyników.
+-   pakiet `e1071` - zawiera funkcje do obliczania skośności oraz kurtozy
+-   pakiet `dplyr` - dostarcza funkcji do obliczenia statystyk w grupach.
+
+## Charakterystyka oczekiwanej dalszej długości trwania życia w momencie narodzin.
+
+W roku 2007 oczekiwana dalsza długość trwania życia w momencie narodzin (w dalszej częsci będzie stosowany skrót ODDTZn) mieściła się w przedziale 39,61 - 82,60 lat. Średnia wartość ODDTZn w 2007 roku wynosiła 67 lat +/- 12,07 lat (wartość odchylenia standardowego). Krajem o najkrótszej oczekiwanej dalszej długości trwania życia było Suazi (Afryka). Najdłużej żyją mieszkańcy Japoni. Analizując wartości kwartyli możemy zauważyć, że w 3/4 krajów ludzie żyją powyżej 57 lat, a w 1/4 krajów powyżej 76,41 lat. Wartość mediany wskazuje, że w połowie krajów na świecie oczekiwana dalsza długość trwania życia w momencie narodzin przekracza 71,94 lat.
+
+```{r}
+#| label: pakiety
+#| message: false 
+#| warning: false 
+#| echo: false
+library(gapminder)
+library(ggplot2)
+library(dplyr)
+library(e1071)
+library(kableExtra) #pakiet stosowany do formatowania tabel 
+library(flextable)
+library(tidyverse)
+```
+
+```{r}
+#| label: obliczanie-statystyk
+#| message: false 
+#| warning: false 
+#wczytanie i selekcja danych
+data("gapminder", package = "gapminder")
+dane2007 <-  gapminder[gapminder$year==2007,]
+
+#wprowadzenie polskich nazw kontynentów 
+dane2007$continent <- plyr::revalue(dane2007$continent, c("Africa" = "Afryka", "Americas" = "Ameryki", "Asia" = "Azja", "Europe" = "Europa", "Oceania"= "Austalia i Oceania"))
+
+#statystyki podstawowe 
+smr <- summary(dane2007$lifeExp)
+
+dane2007_ord <-  arrange(dane2007, lifeExp)
+
+#kraje o najniższych wartościach
+najkrocej <- head(dane2007_ord,20)
+
+#kraje o najwyższych wartościach
+najdluzej <- tail(dane2007_ord,20)
+
+#kwantyle 
+kwantyle <- quantile(dane2007$lifeExp, probs=seq(0,1,0.1))
+
+#miary zmienności 
+sd <- sd(dane2007$lifeExp)
+iqr <- IQR(dane2007$lifeExp)
+
+
+#skośność i kurtoza 
+sk <- skewness(dane2007$lifeExp)
+kurt <- kurtosis(dane2007$lifeExp)
+
+```
+
+```{r}
+# dodac label fig- aby odwolac sie w tekscie do ryciny
+#| label: fig-histogram
+#| fig-cap: "Rozkład wartości oczekiwanej dalszej długości trwania życia na świecie w 2007 roku"
+#| out-width: '500px'
+#| message: false 
+#| warning: false
+ggplot(dane2007, aes(x=lifeExp)) + 
+  geom_histogram(binwidth=2) + 
+  labs(x = "Oczekiwana dalsza długość trwania życia w latach", y = "Liczność") + 
+  theme_bw()
+```
+
+Rozkład wartości w poszczególnych grupach wiekowych został także przedstawiony na histogramie (@fig-histogram). Histogram wyraźnie pokazuje 2 grupy krajów - te, w których oczekiwana długość trwania życia jest poniżej 70 lat i te, w których przekracza 70 lat.
+
+Wyliczone wartości współczynnika skośności (-0.67) oraz kurtozy (-0.87) wskazują na rozkład asymetryczny lewostronnie i bardziej spłaszczony niż rozkład normalny.
+
+## Charakterystyka oczekiwanej dalszej długości trwania życia w momencie narodzin w podziale na kontynenty
+
+W następnym etapie wartości oczekiwanej dalszej długości trwania życia w momencie narodzin zostały przeanalizowane w podziale na kontynenty. @tbl-stat-kontynenty przedstawia zestawienie podstawowych statystyk opisowych (średniej, mediany, wartości minimalnej oraz maksymalej) dla poszczególnych kontynentów. Należy zwrócić uwagę, że Oceania w analizowanym zbiorze danych reprezentowana jest przez 2 państwa, a Ameryka Północna, Środkowa i Południowa rozpatrywana jest współnie (w analizowanym zbiorze danych określona jest jako "Americas").
+
+```{r}
+#| label: statystyki-kontynenty
+#| message: false 
+#| warning: false
+#ANALIZA W PODZIALE NA KONTYNENTY
+by_kontynent <- group_by(dane2007, continent)
+stat_lifeExp_by_kontynent <- summarise(by_kontynent, 
+                                       średnia = mean(lifeExp), 
+                                       mediana = median(lifeExp),
+                                       min = min(lifeExp), 
+                                       max = max(lifeExp),
+                                       zakres=max(lifeExp)-min(lifeExp), 
+                                       IQR = IQR(lifeExp))
+colnames(stat_lifeExp_by_kontynent) <- c("Kontynent", "Średnia", "Mediana", "Minimum", "Maksimum", "Zakres", "IQR")
+```
+
+```{r}
+# dodac label tbl- aby odwolac sie w tekscie do tabeli
+#| label: tbl-stat-kontynenty
+#| tbl-cap: "Statystyki opisowe dla ODDTZn w 2007 roku według kontynentów."
+#| message: false 
+#| warning: false
+
+stat_lifeExp_by_kontynent %>% 
+  mutate_if(is.numeric, round, 2) %>%
+  flextable() %>% 
+  theme_vanilla() 
+  
+#t <- kbl(stat_lifeExp_by_kontynent, digits = 2, caption = "Statystyki opisowe dla ODDTZn w 2007 roku według kontynentów.")
+#kable_classic(t, full_width = F, html_font = "Cambria")
+```
+
+Porównanie oczekiwanej dalszej długości trwania życia w krajach w podziale na kontynenty pokazuje także wykres na rycinie @fig-stat-kontynenty, @fig-boxplot-kontynenty, @fig-histogramy-kontynenty. @fig-stat-kontynenty przedstawia rozkład wartości średnich (czerwony punkt) oraz zakres wartości. @fig-boxplot-kontynenty pozwala na porównie zakresów 5 statystyk podstawowych: kwartyla 1, mediany, kwartyla 3 oraz wartości minimalnej oraz maksymalnej, a zakres pudełka pokazuje rozstęp międzykwartylowy (IQR).
+
+```{r}
+#| label: fig-stat-kontynenty
+#| fig-cap: 'Oczekiwanej dalszej długości trwania życia w roku 2007 w podziale na kontynenty. Kolorem czerwonym zaznaczono rozrzut wartości minimalnych, maksymalnych oraz średnią. Kolorem niebieskim zaznaczono rozstęp międzykwartylowy'
+#| out-width: '500px'
+#| message: false 
+#| warning: false
+dane2007 %>% 
+  ggplot(aes(x = continent, y = lifeExp)) +
+  stat_summary(fun = mean, geom = "pointrange", fun.min = min, fun.max = max, color = "red") + 
+  geom_jitter(col = "grey") + 
+  labs(x = "kontynent", y = "Oczekiwana dalsza długość trwania życia w latach") + 
+  theme_bw()
+```
+
+```{r}
+#| label: fig-boxplot-kontynenty
+#| fig-cap: 'Porównanie oczekiwanej dalszej długości trwania życia w roku 2007 w podziale na kontynenty.'
+#| out-width: '500px'
+#| message: false 
+#| warning: false
+ggplot(dane2007, aes(x = continent, y=lifeExp)) + 
+  geom_boxplot() + 
+  labs(x = "kontynent", y = "Oczekiwana dalsza długość trwania życia w latach") + 
+  theme_bw()
+```
+
+```{r}
+#| label: fig-histogramy-kontynenty
+#| fig-cap: 'Rozkład wartości oczekiwanej dalszej długości trwania życia w roku 2007 w podziale na kontynenty. Każdy panel przedstawia osobny kontynent'
+#| out-width: '500px'
+#| message: false 
+#| warning: false
+ggplot(dane2007, aes(x = lifeExp)) + 
+  geom_histogram() + 
+  labs(x = "Oczekiwana dalsza długość trwania życia w latach", y = "Liczność") + 
+  facet_wrap(~continent, ncol = 3) + 
+  theme_bw()
+```
+
+Analizując statystyki opisowe oraz wykresy zaznacza się wyraźna różnica między krajami Afryki, a pozostałymi obszarami. Różnica ta szczególnie widoczna jest na przedstawionych wykresach (@fig-stat-kontynenty, @fig-boxplot-kontynenty ). Zakres wartości dla krajów afrykańskich określony przez pierwszy i trzeci kwartyl (górna i dolna podstawa pudełka na wykresie pudełkowym) nie pokrywa się z pozostałymi kontynentami. Widoczne to jest także na histogramie na ryc. 4 (kolor czerwony (Afryka) w niewielkim stopniu zachodzi na zakres wartości przypisanych do Ameryk i Azji).
+
+Najdłuższa oczekiwana długość trwania życia jest w Oceani. Należy jednak zwrócić uwage, że są to tylko 2 kraje (Australia oraz Nowa Zelandia). W krajach Europy oczekiwana długość trwania życia mieści się w zakresie 71,77 - 81,75 (średnio 77,64). W krajach azjatyckich oczekiwana długość trwania życia mieści się w przedziale od 59 lat do 82,6 lat. Jedynie w Afganistanie oczekiwana długość trwania życia wynosi 43 lata. W krajach Ameryk Północnej i Południowej ludzie przeciętnie żyją 73,6 lat (najkrócej - 60 lat na Haiti, najdłużej 80,65 w Kanadzie). Kontynent afrykański cechuje się bardzo zróżnicowanym zakresem wartości oczekiwanej długości trwania życia (39,6-76,44, średnio 54,8). W połowie krajów oczekiwana długość trwania życia mieści się w zakresie 47,83 do 59,44. Jedynie w 1/4 krajów Afryki ludzie żyją powyżej 59,44 lat.
+
+Największy zakres wartości (wyrażony rostępem czyli różnicą miedzy wartością maksymalną oraz minimalną) cechuje Azję (38,75 lat) oraz Afrykę (36,82). Jednakże w przypadku Azji tak duża różnica spowodowana jest wystąpieniem jednej wartości odstającej (Afganistan z wartością 43 lata). Rozpatrując rozstęp kwartylowy największe wartości odnotowuje się dla Afryki (11,6 lat).
+
+## Podsumowanie
+
+Przeprowadzona analiza oczekiwanej dalszej długości trwania życia dla danych z 2007 roku ukazała istnienie wielu regionalnych różnic. Do krajów o najkrótszej oczekiwanej dalszej długości trwania życia należą kraje afrykańskie. W dwudziestce krajów o najkrótszej oczekiwanej długości trwania życia z poza Afryki znajduje się tylko jedno państwo - Afganistan (43 lata). Do krajów o najdłuższej oczekiwanej dalsze długości trwania życia należą Japonia oraz Honkgong (powyżej 82 lat). W czółówce są także Islandia, Szwajcaria, Australia (powyżej 81 lat). W pierwszej dwudziestce znajduje się 13 krajów europejskich, 4 kraje azjatyckie, 2 z Oceani oraz 1 kraj z Ameryk (Kanada). Polska klasyfikuje się na 41 miejscu (wartość 75,56 lat).
+
+```{r}
+#| label: polska
+#| message: false 
+#| warning: false
+#Oczekiwana długość trwania życia w Polsce 
+pl <- dane2007[dane2007$country=='Poland', "lifeExp"]
+pln <- dane2007[dane2007$lifeExp>75.563,]
+```

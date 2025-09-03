@@ -1,0 +1,17 @@
+# Wnioskowanie statystyczne
+
+W statystyce celem wielu analiz jest ***uzyskanie wiedzy o populacji (czyli wnioskowanie) na podstawie próby***. Aby taka analiza była możliwa, próba musi odzwierciedlać podstawowe własności populacji. Tak będzie, gdy **próba będzie losowa** (tj. każdy element populacji ma jednakową szansę bycia wylosowanym).
+
+**Jak przebiega wnioskowanie statystyczne?**
+
+-   pomiar pojedyńczej cechy liczbowej (np. wzrost, waga, powierzchnia);
+-   z populacji wybierana jest próba (losowa lub reprezentatywna);
+-   wykonywana jest estymacja (określanie/szacowanie) nieznanej średniej wartości dla populacji na podstawie wartości próby.
+
+Istnieją dwie metody wnioskowania statystycznego:
+
+-   estymacja
+-   testowanie hipotez statystycznych.
+
+Metody statystyczne służące do wnioskowania o populacji zazwyczaj wymagają określenia założeń dotyczących rozkładu danych.
+

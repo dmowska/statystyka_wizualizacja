@@ -1,0 +1,492 @@
+---
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - ggplot2
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+
+
+```
+
+# Analiza regresji
+
+Główną ideą regresji jest wyjaśnianie, przewidywanie, prognozowanie danych dla pewnej zmiennej (określanej jako zmienna zależna, objaśniana, wyjaśniana) na podstawie innych zmiennych (zmienne niezależne, predyktory, zmienne objaśniające, zmienne wyjaśniające).
+
+Budowa liniowego modelu zależności między dwoma zmiennymi składa się z trzech etapów:
+
+1.  Określenie czy między zmiennymi istnieje zależność.
+
+    -   wykonanie wykresu rozrzutu
+    -   współczynnik korelacji
+
+2.  Budowa modelu.
+
+3.  Analiza wyników modelu (w tym ocena dopasowania modelu).
+
+Po zbudowaniu modelu oraz ocenie dopasowania modelu można go wykorzystać do wykonania **predykcji**.
+
+## Podstawowe pojęcia
+
+-   **Analiza regresji** tworzy funkcję matematyczną opisującą zależność pomiędzy badanymi zmiennymi: zmienną zależną, którą chcemy przewidywać na podstawie zmiennych niezależnych.
+
+-   **Zmienna zależna** (inaczej *zmiena objaśniana, zmienna wyjaśniana, zmienna przewidywana*) - zmienna, której wartość chcemy przewidywać na podstawie modelu. W modelu może być tylko jedna zmienna zależna.
+
+-   **Zmienne niezależne** (inaczej *predyktory, zmienne objaśniające, zmienne wyjaśniające*) - zmienne używane w modelu do oszacowania wartości zmiennej zależnej. W modelu może być wiele zmiennych niezależnych.
+
+-   **Model regresyjny** - model, który będzie z założonym błędem statystycznym przewidywał wartość, poziom danej cechy.
+
+    -   W praktyce zawsze występuje pewna wielkość błędu oszacowania. Ideą regresji jest zminimalizowanie tego błędu oszacowania do tego stopnia, aby model był przydatny w swoich prognozach
+    -   Model regresyjny możemy zawsze zbudować, jednakże tylko te modele będą "wartościowe", w których błąd oszacowania będzie relatywnie niski.
+
+-   **Model regresji liniowej** to model, który zakłada liniową zależność między zmienną zależną a zmienną niezależną. Pozwala on na przewidywanie wartości zmiennej zależnej na podstawie wartości zmiennej niezależnej.
+
+-   **Metoda najmniejszych kwadratów błędów** - metoda, która ma na celu dopasowanie do zebranych danych, takiej lini (dla regresji liniowej), która jest do nich najlepiej dopasowana - tzn. dla której suma kwadratów błędów będzie najniższa.
+
+## Regresja liniowa
+
+-   Najprostszym wariantem regresji jest regresja liniowa.
+-   W regresji liniowej zakłada się, że zależność pomiędzy zmienną objaśnianą ($y$), a objaśniająca ($x$) jest zależnością liniową.
+-   W regresji liniowej zakłada się, że wzrostowi jednej zmiennej (zmienna objaśniająca) towarzyszy wzrost lub spadek drugiej zmiennej.
+
+Regresja liniowa opisywana jest wzorem:
+
+$$y_i = \alpha + \beta x_i + \varepsilon_i$$
+
+-   $y$ - zmienna zależna (zmienna wyjaśniana, przewidywana)
+-   $\alpha$ - wyraz wolny
+-   $\beta$ - współczynnik kierunkowy dla zmiennej $x$ (mówiący o nachyleniu prostej regresji)
+-   $x$ - zmienna niezależna (predyktor, zmienna wyjaśniająca)
+-   $\varepsilon$ - błąd losowy
+
+Równanie to opisuje oczekiwaną średnią wartość zmiennej $y$ jako liniowej kombinacji zmiennej (lub zmiennych) $x$.
+
+## Metoda najmniejszych kwadratów
+
+-   Wyznaczenie modelu regresji liniowej (linii regresji) sprowadza się do obliczenia współczynników linii prostej (współczynników regresji: $\beta$ oraz $\alpha$ (wyraz wolny)). W tym celu wykorzystuje się **metodę najmniejszych kwadratów błędu** (nazywaną też metodą najmniejszych kwadratów).
+
+-   Metoda najmniejszych kwadratów jest jedną z najważniejszych i najstarszych metod obliczeniowych w statystyce.
+
+-   Metoda ta ma na celu dopasowanie do zebranych danych, takiej linii prostej (model liniowy), która jest do nich najlepiej dopasowana - tzn. dla której suma kwadratów błędów będzie najniższa.
+
+    -   Metoda dopasowuje taką linię do zebranych danych, aby ogólny błąd oszacowania (dla wszystkich danych) był jak najmniejszy.
+
+-   Metoda najmniejszych kwadratów nie jest odporna na wartości odstające w zbiorze danych. Powodem tego jest fakt, że wartość odstająca "pociąga" za sobą linię regresji. Gdyby nie było wartości odstającej linia byłaby inna, zdecydowanie lepiej dopasowana do wszystkich innych obserwacji, a tak wartość odstająca zmienia kierunek linii i powoduje, że model traci swoją "moc przewidywania" dla pozostałych obserwacji.
+
+![](figures/12_metoda_kwadraty.png){width="550"}
+
+**Interaktywna wizualizacja regresji liniowej**
+
+-   [https://observablehq.com/\@yizhe-ang/interactive-visualization-of-linear-regression](https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression)
+
+## Predykcja
+
+-   Znając wzór modelu regresji (znając współczynniki modelu) możemy oszacować wartości zmiennej zależnej (zmiennej objaśnianej, $y$) na podstawie wartości predyktora (zmienna objaśniająca, $x$) podstawiając odpowiednią wartość $x$ do uzyskanego wzoru. Dlatego też mówimy, że analiza regresji służy do przewidywania wartości jednej zmiennej na podstawie innych.
+
+## Analiza regresji liniowej w R
+
+### Formuły w R
+
+W R równanie modelu regresji opisywane jest za pomoca tzw. **FORMUŁY**
+
+-   Formuła to symboliczny opis zależności między zmiennymi
+
+-   Wykorzystywana jest przez różne funkcje w R (np. `lm()`, `aggregate()`) oraz wykresy.
+
+-   Ogólna postać to: ***LewaStrona \~ PrawaStrona***
+
+    -   lewa strona formuły najczęściej składa się z jednej zmiennej, prawa strona formuły może składać się z jednej lub kilku zmiennych.
+
+-   w równaniach regresji formuła ma postać: zmiennaObjaśniana \~ zmiennaObjaśniajaca
+
+Jeśli zmiennych objaśniających jest więcej to rozdziela się je znakiem +
+
+zmiennaObjaśniana \~ zm1 + zm2 ... + zmN
+
+**Przykład**
+
+```{r eval = FALSE}
+y ~ x #czytamy y zależy od x 
+```
+
+**Kilka uwag o konstruowaniu formuł w R:**
+
+-   nazwy zmiennych pojawiające się w formułach powinny być widoczne w środowisku R lub być nazwami kolumn ramki danych
+
+-   znak - (minus) przed zmienną oznacza usunięcie zmiennej z formuły
+
+-   $-1$ oznacza usunięcie z formuły wyrazu wolnego, to samo otrzymamy dodając do formuły "+0"
+
+-   $+1$ - oznacza dodanie do formuły wyrazu wolnego
+
+-   w formułach można wykorzystywać funkcje matematyczne i inne funkcje programu R
+
+```{r eval = FALSE}
+y ~ log(x)
+log(y) ~ x
+```
+
+-   Jeśli w formule chcemy użyć znaku $+$ jako arytmetycznego działania musimy użyć funkcji `I()`. Argumenty tej funkcji traktowane są jako działania artymetyczne a nie elementy formuły.
+
+```{r, eval = FALSE}
+
+y ~ a + b # y zależy od a oraz od b 
+y ~ I(a + b) # y zależy od wyniku dodawania wartości a do b 
+```
+
+-   '.' (krokpa) oznacza że badamy zależnośc y od wszystkich innych zmiennych
+
+```{r, eval = FALSE}
+y ~. # y od wszyatkich pozostałych zmiennych 
+y ~. -1  # y od wszyatkich pozostałych zmiennych bez wyrazu wolnego 
+```
+
+-   zastosowanie formuł, gdy zmienne są kolumnami ramki danych
+
+```{r, eval = FALSE}
+#obliczenie średniej wartości zmiennej x względem grup g dla danych zawartych w ramce danych df
+aggregate(x~g, data = df, FUN = mean)
+
+#skonstruowanie modelu liniowego zależności zmiennej y od wszystkich pozostałych zmiennych w ramce danych df
+lm(y ~ ., data = df)
+```
+
+### Funkcja `lm()`
+
+W R do budowy modelu liniowego służy funkcja `lm()`
+
+```{r, eval = FALSE}
+lm(formula, data, subset, weights, na.action,
+   method = "qr", model = TRUE, x = FALSE, y = FALSE, qr = TRUE,
+   singular.ok = TRUE, contrasts = NULL, offset, ...)
+```
+
+Wpisz `?lm` aby sprawdzić co oznaczają poszczególne elementy funkcji `lm()`
+
+## Przykład: Zależność między sumą opadów a maksymalną temperaturą powietrza we wrześniu.
+
+```{r}
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_wlkp = subset(pomiary_pol, wojewodztwo == "wielkopolskie")
+head(pomiary_wlkp)
+```
+
+### Określenie zależności między sumą opadów, a maksymalną temperaturą powietrza we wrześniu
+
+Uwaga! Zmienną zależną zawsze zaznaczamy na osi $y$, a zmienną niezależną na osi $x$.
+
+```{r}
+library(ggplot2)
+ggplot(pomiary_wlkp, aes(x = tmax_9, y = annual_precip)) + 
+  geom_point() + 
+  labs(x = "Temperatura września [C]", y = "Suma opadów [mm]") + 
+  theme_bw()
+```
+
+```{r}
+cor(x = pomiary_wlkp$tmax_9, y = pomiary_wlkp$annual_precip, use = "complete.obs", method = "pearson")
+```
+
+> Jaka jest zależność między sumą opadów, a temperaturą maksymalną we wrześniu?
+
+## Budowa modelu
+
+W R do budowy modelu liniowego służy funkcja `lm()`. Do obowiązkowych argumentów funkcji należą:
+
+-   *formula* - opisuje równanie modelu liniowego
+-   *data* - wskazuje zbiór danych, zawierający dane wejściowe -zmienne objaśniające.
+
+Funkcja `lm()` dopasowuje model liniowy, wyznacza oceny współczynników $\beta$ oraz wylicza wartości reszt. Wynikiem działania funkcji jest obiekt klasy *lm*, który będzie przechowywał informacje o dopasowanym modelu.
+
+**Model zależności między sumą opadów, a maksymalną temperaturą powietrza we wrześniu**
+
+```{r}
+lm1 = lm(annual_precip ~ tmax_9, data = pomiary_wlkp)
+```
+
+### Wyniki modelu
+
+Funkcja `lm()` dopasowuje model liniowy, wyznacza oceny współczynników $\beta$ oraz wylicza wartości reszt. Wynikiem działania funkcji jest obiekt klasy *lm*, który będzie przechowywał informacje o dopasowanym modelu. Do ważniejszych informacji należą:
+
+-   *coefficients* - wartości dopasowanych współczynników modelu
+-   *residuals* - wektor reszt (różnica dla wartości obserwowanej i oszacowanej przez model)
+-   *fitted.values* - wektor ocen modelu\
+-   *call* - formuła użyta do budowy modelu
+-   *model* - ramka danych użyta do budowy modelu
+
+```{r}
+#| eval: false
+str(model_lm) 
+```
+
+#### Współczynniki modelu
+
+```{r}
+lm1
+```
+
+```{r}
+lm1$coefficients
+```
+
+W wyniku modelu otrzymamy wartości dwóch współczynników regresji:
+
+-   współczynnika mówiącego o nachyleniu prostej regresji (tzw. współczynnik kierunkowy $\beta$ - określa o ile jednostek przeciętnie wzrośnie (lub zmaleje gdy współczynnik ten ma wartość ujemną) wartość zmiennej zależnej (objaśnianej, przewidywanej), gdy wartość zmiennej niezależnej (objaśniającej, predyktorów) wzrośnie o jedną jednostkę.
+
+-   wyraz wolny - Intercept ($\alpha$)
+
+Podstawiając współczynniki do równania regresji liniowej
+
+$$y_i = \alpha + \beta x_i + \varepsilon_i$$ otrzymamy
+
+$$y_i = 1357.90 + (-43.75)x_i + \varepsilon_i$$ 
+
+
+### Podsumowanie wyników z modelu
+
+```{r}
+summary(lm1)
+```
+
+Podsumowanie wyników modelu regresji składa się z kilku elementów:
+
+-   formuły użytej do budowy modelu (*Call*)
+
+-   statystyk reszt (*Residuals*) - reszty wyznacza się jako różnicę wartości obserwowanej oraz wartości oszacowanej z modelu.
+
+-   współczynników modelu (*Coefficients*)
+
+-   wyników mających na celu ocenę jakości uzyskanego modelu (*Residual standard error, Multiple R-square, Adjusted R-squared*)
+
+-   **formuła użyta do budowy modelu (*Call*)**
+
+```{r}
+lm1$call
+```
+
+-   **statystyki reszt (*Residuals*)**
+
+Do oceny poprawności dopasowania modelu wykorzystuje się reszty (tzw.*residua*). Reszty wyznacza się jako różnicę wartości obserwowanej $y$ a wartości oszacowanej z modelu $\hat{y}$ .
+
+$reszta = y - \hat{y}$
+
+-   $reszty > 0$ -\> $y > \hat{y}$ - wartość obserwowana ($y$) jest większa od wartości wyliczonej z modelu \hat{y}
+
+-   $reszty < 0$ -\> $y < \hat{y}$ - wartość obserwowana ($y$) jest mniejsza od wartości wyliczonej z modelu \hat{y}
+
+-   Statystyki reszt: Min - minimum, 1Q - pierwszy kwartyl, Median - mediana, 3Q - trzeci kwartyl, Max - maksimum.
+
+    -   Duże odchylenia mediany od 0 mogą świadczyć o zależności nieliniowej.
+    -   Średnia wartość błędu powinna być równa 0 - oznacza to, że błędy dodatnie i ujemne się równoważą
+
+Interpetacja wyników:
+
+-   50% odchyleń mieści się w zakresie -10.28 do 9.170 mm
+
+-   mediana ma wartość -2.32, jest to niewielkie odchylenie biorąc pod uwagę zakres zmiennej *annual_precip* (509.5-631.2mm)
+
+-   **Współczynniki**
+
+```{r}
+smr = summary(lm1)
+smr$coefficients
+```
+
+Tabela współczynniki zawiera następujące informacje dla każdego współczynnika:
+
+-   *Estimate* - oceny wartości współczynników równania regresji\
+-   *Std.Error* - błąd standardowy współczynnika (wartość 1 odchylenia standardowego; dla rozkładu normalnego w przedziale $średnia \pm 1$ odchylenie standardowe mieści się 66% wartości danych)
+-   *t-value* – wartość statystyki t
+-   *p-value* – poziom istotności dla współczynnika
+
+Interpretacja:
+
+-   Błąd standardowy współczynnika wskazuje, że z 66% prawdopodobieństwem możemy stwierdzić, że wartość współczynnika wyrazu wolnego wynosi $1357.90 \pm 41.90$ (tj. 1 błąd standardowy ) a współczynnika kierunkowego $-43.75 \pm 2.24$
+
+-   Oba współczynniki są bardzo wysoce istotne statystycznie. Innymi słowy prawdopodobieństwo, że wartość współczynnika jest przypadkowa wynosi 9.413732e-41 dla współczynnika kierunkowego oraz 1.038079e-64 dla współczynnika wyrazu wolnego, a zatem jest znikomo mała.
+
+-   **Residual standard error (błąd standardowy reszt; standardowy błąd oceny)**
+
+-   Wartość 1 odchylenia standardowego; dla rozkładu normalnego w przedziale $średnia \pm 1$ odchylenie standardowe mieści się 66% wartości danych.\
+
+-   Pokazuje o ile przeciętnie wartości empiryczne odchylają się od wartości teoretycznych (wynikających ze zbudowanego modelu)
+
+```         
+Residual standard error: 13.45 on 132 degrees of freedom
+```
+
+Z 66% prawdopodobieństwem możemy stwierdzić, że wartość rzeczywista nie będzie się różnić od prognozowanej o więcej niż $\pm 13.45 mm$
+
+-   **Multiple R-Squared, Adjusted R-Squared**
+
+-   Przy ocenie dopasowania modelu należy zwrócić uwagę na wartość R2 przedstawiającą procent wariancji wyjaśnionej przez model, tzn. ***jaki procent zmienności zmiennej zależnej (objaśnianej) jest uwarunkowany zmiennością zmiennej niezależnej (objaśniającej)***.
+
+-   Im wyższa wartość współczynnika R2 (maksymalnie to 1) tym lepsze dopasowanie modelu do danych.
+
+-   Niestety również im więcej zmiennych w modelu tym wyższa jest wartość współczynnika R2. Aby uwzględnić liczbę zmiennych w modelu stosuje się modyfikację współczynnika R2, tzw. Zmodyfikowany R2 (ang. Adjusted R2)
+
+Zatem: 74.29% zmienności zmiennej *annual_precip* (sumy opadów) jest wyjaśniona przez zmienność zmiennej *tmax_9* (maksymalna temperatura powietrza we wrześniu).
+
+```         
+Multiple R-squared:  0.7429,    Adjusted R-squared:  0.7409 
+```
+
+### p-value {.unnumbered}
+
+– wartość poziomu istotności całego modelu Model jest wysoko istotny
+
+```         
+F-statistic: 381.4 on 1 and 132 DF,  p-value: < 2.2e-16
+```
+
+### Informacje zawarte w obiekcie klasy lm
+
+Stworzenie ramki danych zawierającej wyniki modelu
+
+```{r}
+#ramka danych zawierająca dane użyte do budowy modelu
+model_df <- lm1$model
+```
+
+```{r}
+#reszty - różnica między warrtością obserwowaną Y a wartością oszacowaną z modelu Ŷ. 
+model_df$reszty <- lm1$residuals
+```
+
+```{r}
+#wartości oszacowane przez model
+model_df$fitted <-  lm1$fitted.values
+```
+
+```{r}
+head(model_df)
+```
+
+## Wizualizacja wyników modelu
+
+```{r}
+library(broom); library(ggplot2)
+lm1_df = augment(lm1, se_fit = TRUE)
+ggplot(lm1_df, aes(tmax_9, annual_precip)) + 
+    geom_ribbon(aes(ymin = .fitted - 1.96 * .se.fit, 
+                    ymax = .fitted + 1.96 * .se.fit), alpha = 0.2) +
+    geom_line(aes(tmax_9, .fitted)) + geom_point() + theme_bw()
+```
+
+Wykorzystując informacje zawarte w obiekcie lm można wykonać wykres rozrzutu wartości obserwowanych, względem wartości obliczonych z modelu lub też przeanalizować rozkład reszt.
+
+-   Histogram reszt z modelu
+
+```{r}
+library(ggplot2)
+ggplot(model_df, aes(x = reszty)) + 
+  geom_histogram() +
+  theme_bw()
+```
+
+-   Wykres rozrzutu: wartości dopasowane vs. wartości obserwowane
+
+```{r}
+ggplot(model_df, aes(x = fitted, y = annual_precip)) + 
+  geom_point() + 
+  labs(x = "wartości dopasowane", y = "wartości obserwowane") + 
+  xlim(500, 650) + ylim(500, 650) + 
+  coord_fixed(ratio=1) + 
+  theme_bw()
+```
+
+## Predykcja
+
+Mając dopasowany model liniowy możemy zastosować go do predykcji wartości $y$ dla zadanych wartości $x$. W poniższym przykładzie zastosujemy model liniowy do predykcji wartości sum opadów w województwie wielkopolskim na podstawie wartości maksymalnej temperatury powietrza.
+
+Obiekt `model_lm` zawiera liniowy model zależności pomiędzy sum opadów, a maksymalną temperaturą powietrza. Równanie regresji ma postać:
+
+$$y_i = 1357.90 + (-43.75)x_i + \varepsilon_i$$
+
+Jeśli np. wartość $x_i$ wynosi 10, to używając powyższego równania możemy obliczyć $y_i$:
+
+$$y_i = 1357.90 - 43.75 \times 10 + \varepsilon_i = 920.4$$ Biorąc pod uwagę błąd losowy ($\varepsilon_i$) wartość $y$ dla obiektu $i$ wynosi 920.4.
+
+Innymi słowy: Model regresji liniowej dla maksymalnej wartości temperatury powietrza (tmax_9) równej 9C, przewiduje wartość sumy opadów równą 920.4 mm.
+
+Powyżsżą wartość możemy także obliczyć jako
+
+```{r}
+lm1$coefficients[[1]] + lm1$coefficients[[2]] * 10
+```
+
+Do wykonania predykcji w R służy funkcja `predict()`. W funkcji tej musimy podać 2 argumenty: 1) obiekt modelu; 2) zbiór danych zawierający zmienne zależne (objaśniające). Nazwy kolumn muszą być zgodne z nazwami zmiennych zależnych użytych do budowy modelu.
+
+Predykcja może także zostać wykonana dla wybranych wartości.
+
+```{r}
+#new to data.frame zawierajaca zmienne niezależne (objasniajace)
+new <- data.frame(tmax_9 = c(10))
+p <- predict(lm1, new)
+p
+```
+
+```{r}
+predict(lm1, newdata = data.frame(tmax_9 = seq(15, 25, 1)))
+```
+
+> Używając modelu lm1 wykonaj predykcję dla wartości tmax_9 równej 12, 15, 25 i 30 C.
+
+```{webr}
+#| exercise: ex_1
+
+# wczytanie danych
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_wlkp = subset(pomiary_pol, wojewodztwo == "wielkopolskie")
+
+#budowa modelu
+lm1 = lm(annual_precip ~ tmax_9, data = pomiary_wlkp)
+
+#predykcja
+
+```
+
+
+
+## Regresja wielokrotna
+
+W modelu regresji możemy mieć tylko jedną zmienną zależną i wiele zmiennych niezależnych.
+
+```{r}
+lm2 = lm(annual_precip ~ tmax_9 + tmin_9, data = pomiary_wlkp)
+summary(lm2)
+```
+
+> Używając wyników modelu lm2: 1) Sformułuj równanie regresji liniowej wielokrotnej; 2) W jakim stopniu model wyjaśnia zmienną zależną (annual_precip)? 3) Wykonaj predykcję dla wartości tmax_9 równych 10C i 20C oraz wartości tmin_9 równych 5C i 12C.
+
+```{webr}
+#| exercise: ex_2
+# wczytanie danych
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_wlkp = subset(pomiary_pol, wojewodztwo == "wielkopolskie")
+
+#budowa modelu
+lm2 = lm(annual_precip ~ tmax_9 + tmin_9, data = pomiary_wlkp)
+
+#predykcja
+
+```
+
+## Porównanie modeli
+
+Kryterium informacyjne AIC pozwala porównać modele liniowe (im niższa wartość, tym lepiej).
+
+```{r}
+AIC(lm1, lm2)
+```
+
+
+

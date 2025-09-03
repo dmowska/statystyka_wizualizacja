@@ -1,0 +1,669 @@
+---
+format: live-html
+webr:
+  packages:
+    - dplyr
+    - gapminder
+    - tidyr
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+#|  - ex_4
+#|  - ex_5
+#|  - ex_6
+#|  - ex_7
+#|  - ex_8
+#|  - ex_9
+#|  - ex_10
+#|  - ex_11
+#|  - ex_12
+#|  - ex_13
+#|  - ex_14
+#|  - ex_15
+#|  - ex_16
+#|  - ex_17
+#|  - ex_18
+
+library(gapminder)
+library(tidyverse)
+
+data('gapminder', package = 'gapminder')
+dane2007 <- filter(gapminder, year==2007)
+```
+
+# Statystyki opisowe
+
+Statystyki opisowe wykorzystuje się do przedstawienia ogólnej charakterystyki danych.
+
+Statystyki opisowe dzielimy na:
+
+1.  **Miary położenia** - określają przeciętny poziom oraz rozmieszczenie wartości zmiennej:
+
+    -   *Miary przeciętne* - np. *średnia arytemtyczna* - charakteryzują średni lub typowy poziom wartości zmiennej; mówią zatem o *przeciętnym* poziomie rozważanej zmiennej;
+    -   *Wartość modalna* - wartość najczęściej występująca w zbiorze danych;
+    -   *Kwantyle* - dzielą zbiorowość na określone części, np. 4, 10, 100 części.
+
+2.  **Miary rozrzutu** - określają granice zmienności danej zmiennej:
+
+    -   *rozstęp;*
+    -   *rozstęp kwartylowy;*
+    -   *odchylenie standardowe.*
+
+3.  **Miary asymetrii i koncentracji**.
+
+    -   *skośność;*
+    -   *kurtoza.*
+
+![](figures/3_stat_opis.png){width="500"}
+
+```{r}
+#| message: false
+#| warning: false
+library(gapminder)
+library(dplyr)
+```
+
+```{r}
+data('gapminder', package ='gapminder')
+dane2007 <- filter(gapminder, year==2007)
+```
+
+## Podstawowe statystyki
+
+Zestaw podstawowych statystyk opisowych obliczany jest za pomocą funkcji `summary()`. Funkcja ta oblicza wartość minimalną, wartość maksymalną, pierwszy i trzeci kwartyl, medianę oraz średnią.
+
+```{r}
+summary(dane2007)
+```
+
+## Statystyki opisowe: Miary położenia
+
+### Średnia arytmetyczna
+
+-   Obliczana jest jako iloraz sumy liczb i ilości tych liczb.
+-   Jest najczęściej używaną miarą charakteryzującą rozkład cechy
+-   Wady: czuła na wartości odstające
+
+```{r}
+srednia_lifeExp <- mean(dane2007$lifeExp)
+srednia_lifeExp 
+```
+
+> Obliczyć średnią wartość dla PKB (gdpPercap) w 2007 roku.
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+mean(dane2007$gdpPercap)     
+```
+:::
+::::
+
+> Ile wynosiła średnia oczekiwana długość trwania życia w Azji w roku 2002?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+asia2002 <- filter(gapminder, continent == 'Asia' & year == 2002) 
+mean(asia2002$lifeExp)
+```
+:::
+::::
+
+### Średnia ważona
+
+```{r}
+srednia_w_lifeExp <- weighted.mean(dane2007$lifeExp, dane2007$pop)
+```
+
+### Średnia harmoniczna
+
+```{r}
+harmonic_mean = function(x){
+  1 / mean(1 / x)
+}
+```
+
+```{r}
+rzeka = c(6, 3.2) #km/h
+harmonic_mean(rzeka)
+```
+
+### Średnia geometryczna
+
+```{r}
+geometric_mean = function(x){
+  n = length(x)
+  prod(x) ^ (1 / n)
+}
+```
+
+```{r}
+zmiana <- c(1.026392, 1.011959)
+geometric_mean(zmiana)
+```
+
+### Kwantyle
+
+Kwantyle to wartości cechy, które dzielą analizowany zbiór danych na określone części pod względem liczby jednostek. Części te pozostają w stosunku do siebie w określonych proporcjach:
+
+-   Kwartyle - podział na 4 części:
+    -   Kwartyl pierwszy (Q1)
+    -   Mediana - kwartyl drugi
+    -   Kwartyl trzeci (Q3)
+-   Decyle - podzial na 10 części
+-   Percentyle - podział na 100 częsci
+
+Funkcja `quantile()` oblicza dowolną wartość kwantyli. Argument *probs* pozwala na zdefyniowanie dowolnych wartości, które mają zostać wyliczone. Argument ten przyjmuje wartości z przedziału od 0 do 1.
+
+![](figures/3_stat_kwartyle.png){width="500"}
+
+#### Kwartyle
+
+Funkcja `quantile()` domyślnie zwraca wartośći kwartyli.
+
+```{r}
+kwartyle <- quantile(dane2007$lifeExp)
+kwartyle
+```
+
+Kwartyle są także obliczane przez funkcję `summary()`, która dodatkowo zwraca także wartości minimalną, maksymalną oraz średnią.
+
+#### Decyle
+
+W poniższym przykładzie *seq(0,1,0.1)* zwraca sekwencję wartości od 0 do 1 z krokiem co 0.1. Odpowiada to podziałowi danych na 10 równych części.
+
+```{r}
+decyle <- quantile(dane2007$lifeExp, probs = seq(0, 1, 0.1))
+decyle
+```
+
+#### Percentyle
+
+W poniższym przykładzie zbiór zostanie podzielony na 100 równych części.
+
+```{r}
+percentyle <- quantile(dane2007$lifeExp, probs = seq(0, 1, 0.01))
+head(percentyle, 10)
+```
+
+#### Dowolne wartości kwantyli
+
+W poniższym przykładzie zostanie wyliczony 5 oraz 95 percentyl.
+
+```{r}
+q <- quantile(dane2007$lifeExp, probs = c(0.05, 0.95))
+q
+```
+
+> Obliczyć decyle dla gdpPercap dla danych z 2007 roku.
+
+```{webr}
+#| exercise: ex_3
+
+```
+
+:::: {.solution exercise="ex_3"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+quantile(dane2007$gdpPercap, probs = seq(0, 1, 0.1))
+```
+:::
+::::
+
+> Obliczyć pierwszy i trzeci kwartyl dla oczekiwanej długości trwania życia w Afryce w 2002 roku.
+
+```{webr}
+#| exercise: ex_4
+
+```
+
+:::: {.solution exercise="ex_4"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+africa2002 <- filter(gapminder, continent == 'Africa' & year == 2002)
+quantile(africa2002$lifeExp, probs = c(0.25, 0.75))
+```
+:::
+::::
+
+#### Mediana
+
+Mediana to wartość, która dzieli zbiór danych na 2 równe części. Mediana obliczana jest przez funkcję `median()`.
+
+```{r}
+median_lifeExp <- median(dane2007$lifeExp)
+median_lifeExp 
+```
+
+> Obliczyć medianę dla gdpPercap dla danych z 2007 roku.
+
+```{webr}
+#| exercise: ex_5
+
+```
+
+:::: {.solution exercise="ex_5"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+median(dane2007$gdpPercap)    
+```
+:::
+::::
+
+> Ile wynosiła mediana oczekiwanej długości trwania życia w Afryce w 1952 roku?
+
+```{webr}
+#| exercise: ex_6
+
+```
+
+:::: {.solution exercise="ex_6"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+africa1952 <- filter(gapminder, continent == 'Africa' & year == 1952)
+median(africa1952$lifeExp) 
+```
+:::
+::::
+
+**Mediana a średnia arytmetyczna**
+
+-   dla rozkładu symetrycznego mediana oraz średnia będą równe.
+-   mediana jest lepszą miarą w przypadku rozkładów skośnych.
+-   średnia jest bardziej czuła na wartości odstające.
+-   średnia jest bardziej przydatna dla małych zbiorów danych.
+
+Podsumowanie: Warto podawać obie wartości.
+
+### Wartość modalna
+
+-   wartość cechy, która w zbiorze danych występuje najczęściej. W R nie ma wbudowanej funkcji do obliczania tej statystyki.
+
+## Statystyki opisowe: Miary rozrzutu
+
+### Minimum i maksimum
+
+```{r}
+min_lifeExp <- min(dane2007$lifeExp)
+min_lifeExp
+
+max_lifeExp <- max(dane2007$lifeExp)
+max_lifeExp
+```
+
+```{r}
+range(dane2007$lifeExp)
+```
+
+> Ile wynosiła najmniejsza i największa oczekiwana długość trwania życia w Afryce w roku 1952?
+
+```{webr}
+#| exercise: ex_7
+
+```
+
+:::: {.solution exercise="ex_7"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+africa1952 <- filter(gapminder, continent == 'Africa' & year == 1952)
+range(africa1952$lifeExp)
+```
+:::
+::::
+
+> Oblicz zakres oczekiwanej długości trwania życia w Polsce w latach 1952-2007?
+
+```{webr}
+#| exercise: ex_8
+
+```
+
+:::: {.solution exercise="ex_8"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+# Rozwiazanie 1
+pl <- filter(gapminder, country == 'Poland')
+range(pl$lifeExp)
+
+# Rozwiazanie 2 
+min(pl$lifeExp)
+max(pl$lifeExp)
+```
+:::
+::::
+
+> W jakim zakresie zmieniała się oczekiwana długość trwania życia w 2002 roku w krajach azjatyckich z PKB (gpdPercap) przekraczającym 25000?
+
+```{webr}
+#| exercise: ex_9
+
+```
+
+:::: {.solution exercise="ex_9"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+asia2002 <- filter(gapminder, year == 2002 & continent == 'Asia' & gdpPercap > 25000)
+range(asia2002$lifeExp)
+```
+:::
+::::
+
+### Rozstęp
+
+-   najprostsza miara zmienności
+-   różnica między wartości maksymalną oraz wartością minimalną
+-   wrażliwy na wartości odstające
+
+```{r}
+range_lifeExp <- max(dane2007$lifeExp) - min(dane2007$lifeExp)
+```
+
+Uwaga! W R funkcja `range()` zwraca wektor składający się z dwóch wartości - minimalnej oraz maksymalnej, a nie rostęp (różnicę między tymi wartościami).
+
+> Obliczyć rozstęp dla gdpPercap dla danych z 2007 roku.
+
+```{webr}
+#| exercise: ex_10
+
+```
+
+:::: {.solution exercise="ex_10"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ max(dane2007$gdpPercap) - min(dane2007$gdpPercap)
+```
+:::
+::::
+
+### Rozstęp kwartylowy
+
+-   różnica między kwartylem trzecim i kwartylem pierwszym
+
+```{r}
+IQR_lifeExp <- IQR(dane2007$lifeExp)
+```
+
+> Obliczyć rozstęp kwartylowy dla gdpPercap dla danych z 2007 roku.
+
+```{webr}
+#| exercise: ex_11
+
+```
+
+:::: {.solution exercise="ex_11"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+IQR(dane2007$gdpPercap)   
+```
+:::
+::::
+
+> Obliczyć rozstęp kwartylowy dla oczekiwanej długości trwania życia w Afryce
+
+```{webr}
+#| exercise: ex_12
+
+```
+
+:::: {.solution exercise="ex_12"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+africa <- filter(gapminder, continent == 'Africa')  
+IQR(africa$lifeExp)
+```
+:::
+::::
+
+### Wariancja
+
+-   wariancja oraz odchylenie standardowe mierzą jak daleko dane rozchodzą się od średniej.
+
+```{r}
+var_lifeExp <- var(dane2007$lifeExp)
+```
+
+### Odchylenie standardowe
+
+-   obliczane jako pierwiastek z wariancji
+
+-   obok średniej jest jednym z najczęściej stosowanych parametrów statystycznych:
+
+    -   jest obliczane ze wszystkich obserwacji w zbiorze danych
+    -   im zbiór danych jest bardziej zróżnicowany tym większe odchylenie standardowe.
+
+-   małe odchylenie standardowe - wartości są blisko średniej
+
+-   duże odchylenie standardowe - wartości są daleko od średniej.
+
+```{r}
+sd_lifeExp <- sd(dane2007$lifeExp)
+sd_lifeExp 
+```
+
+> Jakie była wartość odchylenia standardowego dla gdpPercap w 2007 roku?
+
+```{webr}
+#| exercise: ex_13
+
+```
+
+:::: {.solution exercise="ex_13"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+sd(dane2007$gdpPercap)
+```
+:::
+::::
+
+## Opisywanie danych nominalnych
+
+### Częstość
+
+```{r}
+table(dane2007$continent)
+```
+
+```{r}
+table(dane2007$continent) / length(dane2007$continent) * 100
+```
+
+> Ile krajów było w 1952 roku na poszczególnych kontynentach?
+
+```{webr}
+#| exercise: ex_14
+
+```
+
+:::: {.solution exercise="ex_14"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+dane1952 <- filter(gapminder, year == 1952)
+table(dane1952$continent)
+```
+:::
+::::
+
+## Statystykiw grupach
+
+Pakiet `dplyr` pozwala także na obliczenie statystyk według grup, np. średnia długość trwania życia na poszczególnych kontynentach.
+
+-   Średnia oczekiwana długość życia w 2007 roku według kontynentów.
+
+Obliczenie statystyk w grupach wymaga najpierw pogrupowania danych (funkcja `group_by()`).
+
+```{r}
+gapminder2007 <- filter(gapminder, year == 2007)
+by_continent <- group_by(gapminder2007, continent)
+smr_by_continent <- summarize(by_continent,
+                              mean_le = mean(lifeExp))
+
+smr_by_continent
+```
+
+Powyższy kod można zapisać także z wykorzystaniem operatora łączącego %\>%
+
+```{r}
+mean_by_continent <- gapminder %>% 
+  filter(year == 2007) %>% 
+  group_by(continent) %>% 
+  summarize(mean_le = mean(lifeExp))
+
+mean_by_continent
+```
+
+> Oblicz średnią oczekiwaną długość trwania życia w poszczególnych latach. Posortuj wyniki od największej do najmniejszej wartości.
+
+```{webr}
+#| exercise: ex_15
+
+```
+
+:::: {.solution exercise="ex_15"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ex15 <- gapminder %>% 
+  group_by(year) %>% 
+  summarize(mean_le = mean(lifeExp)) %>% 
+  arrange(desc(mean_le))
+ex15
+```
+:::
+::::
+
+> Jak zmieniało się w poszczególnych latach średnie PKB w Afryce?
+
+```{webr}
+#| exercise: ex_16
+
+```
+
+:::: {.solution exercise="ex_16"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ex16  <- gapminder %>% 
+  filter(continent == 'Africa')  %>% 
+  group_by(year) %>% 
+  summarize(mean_gpd = mean(gdpPercap))  
+ex16
+```
+:::
+::::
+
+-   **Średnia oczekiwana długość życia w podziale na kontynenty oraz lata.**
+
+```{r}
+by_continent_year <- group_by(gapminder, continent, year)
+smr_by_continent_year <- summarize(by_continent_year,
+                              mean_le = mean(lifeExp))
+
+smr_by_continent_year
+```
+
+> Oblicz średnią wartość gdpPercap w 2007 roku w podziale na kontynenty.
+
+```{webr}
+#| exercise: ex_17
+
+```
+
+:::: {.solution exercise="ex_17"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ex17 <- gapminder %>% 
+  filter(year == 2007) %>% 
+  group_by(continent) %>% 
+  summarize(mean_gpd = mean(gdpPercap))  
+  
+ex17
+```
+:::
+::::
+
+> Oblicz średnią wartość gdpPercap w podziale na poszczególne kontynenty oraz lata. Przedstaw wynik w "układzie szerokim" - każdy wiersz to określony kontynent, a każda kolumna to określony rok.
+
+```{webr}
+#| exercise: ex_18
+
+```
+
+:::: {.solution exercise="ex_18"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ex18 <- gapminder %>% 
+ group_by(continent, year) %>% 
+ summarize(mean_gdp = mean(gdpPercap)) %>% 
+ pivot_wider(names_from = year, values_from = mean_gdp)
+ex18
+```
+:::
+::::
+
+## Braki danych
+
+W R braki danych zazwyczaj kodowane są jako NA - Not Available.
+
+```{r}
+NA + 1 
+2*NA 
+x = c(1,2,NA)
+mean(x)
+mean(x, na.rm = TRUE)
+```
+
+## Ćwiczenie
+
+Wykorzystując zbiór danych gapminder sformułuj dwa pytania i odpowiedz na nie.

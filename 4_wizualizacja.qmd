@@ -1,0 +1,74 @@
+# Wykresy w R
+
+Wizualizacja danych w R: 
+
+-   podstawowa grafika np. `plot(x, y)`, `hist(x)`
+-   pakiet `ggplot2`
+
+## Co to jest ggplot2?
+
+-   Pakiet R stworzony przez Hadley Wickham
+-   jest implementacją założeń zawartych w książce “Grammar of Graphics” Lelanda Wilkinsona
+-   oferuje potężny język graficzny do tworzenia eleganckich i złożonych wykresów.
+-   wymagane dane wejściowe to zazwyczaj data.frame
+-   istnieją dwie komendy pozwalające na tworzenie wykresów - `qplot` oraz `ggplot`
+-   pełna dokumentacja znajduje się na stronie - <https://ggplot2.tidyverse.org/> oraz <https://ggplot2-book.org/>
+
+## Co to jest The Grammar Of Graphics ?
+
+Podstawowa idea: niezależnie określić elementy wykresu i połączyć je w celu stworzenia prawie każdego wykresu jaki chcemy.
+
+Elementy wykresu obejmują:
+
+-   dane (ang. *data*)
+-   estetycze mapowanie (ang. *aesthetic mapping*)
+-   obiekty geometryczne (ang. *gemetric object*)
+-   skale
+-   układ współrzędnych
+-   faceting
+
+## Elementy wykresów w ggplot2
+
+Wykres tworzony za pomocą pakietu ggplot składa się z trzech podstawowych składowoych:
+
+-   **data** - zdefniowanie zbioru danych, który będzie wyświetlany
+-   **aesthetics (aes)** - element, który widzimy (kolor, kształt)
+-   **geom** - symbol wyświetlany na wykresie (np. geom_histogram, geom_boxplot, geom_point)
+-   **facet** - tworzenie wykresów dla podzbiorów danych
+
+### Estetyczne mapowanie (ang. Aesthetic Mapping)
+
+-   Określane używając funkcji aes()
+
+-   W ggplot aesthetic oznacza “coś co widzimy”. Np:
+
+    -   pozycja na osi x oraz y
+    -   kolor
+    -   wypełnienie (wewnętrzny kolor obiektu)
+    -   kształt (dla obiektów punktowych)
+    -   typ linii
+    -   rozmiar
+
+Każdy typ geometrii (punkty, linie itp.) akcpeptuje tylko wybrane elementy (patrz pomoc dla określonych obiektów przestrzennych, np. `?ggplot2::geom_point`)
+
+### Obiekty geometryczne - (ang. Geometic Objects (geom))
+
+Obiekt geometryczny (geom) to symbol jaki wyświetlamy na wykresie: Np:
+
+-   punkty (geom_points)
+-   linie (geom_line)
+-   określony typ wykresu: geom_boxplot, geom_histogram
+
+Każdy wykres musi mieć określony przynajmniej jeden obiekt geometryczny. Nie ma jednak górnej granicy. Używając znak + można dodawać dowolną ilość obiektów.
+
+Dostępne typy obiektów: `help.search(“geom_”, package = “ggplot2”)`
+
+```{r}
+library(ggplot2)
+df = data.frame(zmiennaA = c(1:10), 
+                zmiennaB = c(3:12),
+                grp = c(rep(c("A", "B"), 5)))
+
+ggplot(df, aes(x = zmiennaA, y = zmiennaB, color = grp)) + 
+  geom_point(size=2, shape=15)
+```

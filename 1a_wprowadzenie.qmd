@@ -1,0 +1,138 @@
+# Wprowadzenie
+
+## R i R Studio
+
+### R 
+-   R jest językiem programowania oraz środowiskiem obliczeniowym pozwalającym na analizę statystyczną danych oraz wizualizację danych.
+-   Najnowsza wersja R jest dostępna na <https://cran.r-project.org/>
+
+### R Studio
+- R Studio to zintegrowane środowisko programistyczne (IDE) dla języków R i Python. Zawiera konsolę, edytor podświetlania składni, który obsługuje bezpośrednie wykonywanie kodu oraz narzędzia do wyświetlania, historii, debugowania. 
+
+- RStudio jest dostępne w wersjach open source i komercyjnych i działa na komputerach stacjonarnych (Windows, Mac i Linux). 
+
+- Najnowsza wersja R Studio dostępna jest na stronie <https://posit.co/products/open-source/rstudio/>
+
+### Pakiety
+
+- Pakiety R to zbiory funkcji, dokumentacji i danych rozszerzających podstawową funkcjonalność R
+
+- Podstawowe pakiety są instalowane wraz z R i są dostępne od razu po uruchomieniu R. Zapewniają one niezbędną składnię i polecenia do programowania, obliczeń, tworzenia grafiki, podstawowej arytmetyki i podstawowych funkcji statystycznych. 
+- Dodatkowe pakiety dodają możliwość implementacji różnych technik statystycznych i metod przetwarzania i wizualizacji danych. 
+- Głownym źródłem pakietów jest CRAN (ang. *Comprehensive R Archive Network*) - <https://cran.r-project.org/>. Na lipiec 2024 CRAN dostarcza ponad 21000 pakietów dotyczących różnych dziedzin (<https://cran.r-project.org/web/views/>)
+- Pakiety udostępniane są także na GitHub. 
+
+**Przykłady pakietów:**
+
+- `ggplot2` - pakiet dostarczający funkcji do wizualizacji danych
+- `dplyr` - pakiet dostarczający funkcji do przetwarzania danych
+- `tidyverse` - zbiór pakietów do przetwarzania i analizy danych (<https://www.tidyverse.org/>)
+- `sf` - pakiet pozwalający na pracę z danymi przestrzennymi w R
+- `terra` - pakiet pozwalający na pracę z danymi przestrzennymi w R
+
+
+Instalacja pakietów
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+Wczytywanie pakietów 
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+```
+
+
+##  R Markdown i Quarto
+
+R dostarcza także narzędzi do tworzenia raportów, które łączyć będą w jednym pliku kod, tekst oraz ryciny. Takie raporty można tworzyć z pomocą R Markdown oraz Quarto. 
+
+### R Markdown
+
+-   WWW: <https://rmarkdown.rstudio.com/>
+-   prosty język znaczników do formatowania tekstu
+-   daje możliwość powtarzalności (ang. reproductivity) wyników.
+-   może zawierać tekst, ryciny oraz fragmenty kodu.
+-   pozwala na wyeksportowanie dokumentu do formatów html, MS Word, PDF.
+
+Aby otworzyć pusty dokument R Markdown w R Studio należy wskazać: *File - New File - R Markdown*
+
+### Quarto 
+
+- WWW: <https://quarto.org/>
+- wielojęzyczna wersja R Markdown nowej generacji firmy Posit, zawierająca wiele nowych funkcji i możliwości.
+
+więcej informacji: 
+
+- pierwszy dokument z Quarto: <https://quarto.org/docs/get-started/hello/rstudio.html>
+
+- podstawowa składnia markdown:  <https://quarto.org/docs/authoring/markdown-basics.html>
+
+
+### Formatowanie tabel
+
+- Formatowanie tabel w dokumencie HTML: 
+
+    + Pakiet `kableExtra` dostarcza dodatkowych opcji formatowania tabel.
+    + WWW: <https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html>
+    
+- Formatowanie tabel w dokumencie HTML, MS Word lub PDF: 
+
+    + pakiet `flextable` dostarcza funkcji do formatowania tabel niezależnie od formy wynikowego pliku (HTML, MS Word, PDF).
+    + WWW: <https://cran.r-project.org/web/packages/flextable/index.html>
+    + Vignietes: <https://ardata-fr.github.io/flextable-book/>
+
+## Dane
+
+### Gapminder
+
+Dane z pakietu `gapminder` składają się z 1704 obserwacji oraz 6 zmiennych:
+
+-   **country** - zmienna czynnikowa składająca się z 142 poziomów
+-   **continent** - zmienna czynnikowa składająca się z 5 poziomów
+-   **year** - dane dla lat 1952 - 2007, co 5 lat.
+-   **lifeExp** (ang. *life expectancy at birth*) - oczekiwana długość trwania życia
+-   **pop** - ogólna liczba ludności\
+-   **gdpPercap** - PKB na osobę
+
+```{r}
+#| label: wczytanie-danych
+#| include: false
+data('gapminder', package = 'gapminder')
+```
+
+```{r}
+?gapminder
+```
+
+```{r}
+str(gapminder)
+```
+
+### Dane meteorologiczne
+
+Dane w pliku *pomiary_pol.csv* składają się z 1500 obserwacji oraz 11 zmiennych:
+
+-   **pomiar_id** - id posterunku pomiarowego
+-   **tmin_4** - minimalna temperatura powietrza w kwietniu
+-   **tmax_4** - maksymalna temperatura powietrza w kwietniu
+-   **tmin_9** - minimalna temperatura powietrza we wrześniu
+-   **tmax_9** - maksymalna temperatura powietrza we wrześniu
+-   **annual_tavg** - średnia roczna temperatura powietrza
+-   **annual_precip** - roczna suma opadów (mm)
+-   **prow_id** - id prowincji (od 1 do 7)
+-   **woj_id** - id województwa
+-   **prowincja** - zmienna tekstowa - nazwa jednego z 7 regionów
+-   **województwo** - zmienna tekstowa - nazwa województwa
+
+```{r}
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+```
+
+```{r}
+str(pomiary_pol)
+```

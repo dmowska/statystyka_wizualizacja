@@ -1,0 +1,93 @@
+# Wprowadzenie do pracy w R
+
+## Katalog roboczy
+
+***Zawsze rozpocznij pracę od ustawienia ścieżki do folder roboczego.***
+
+```{r}
+#| eval: false
+#ustawienie ścieżki do katalogu roboczego
+setwd("statystyka_wizualizacja/cwiczenie_1")
+```
+
+```{r}
+#| eval: false
+#sprawdzanie ścieżki do katalogu 
+getwd()
+```
+
+## Otwieranie i zapisywanie plików tekstowych
+
+```{r}
+#| eval: false
+#Otwieranie danych z pliku csv
+dane <- read.csv('dane/dane.csv')
+
+#otwieranie danych z pliku txt - wymaga określenia separatora
+dane2 <- read.table('dane/dane.txt', sep = " ")
+```
+
+Dane w pliku dostępnym tylko w R
+
+```{r}
+#| eval: false
+austrialia <- readRDS("dane/dane.rds")
+```
+
+Otwieranie środowiska pracy (przydatne, gdy chcemy wczytać kilka obiektów do R)
+
+```{r}
+#| eval: false
+load("dane/cw1.rda")
+```
+
+## Dane zawarte w pakietach
+
+```{r}
+#| eval: false
+data("gapminder", package = "gapminder")
+```
+
+## Zapisywanie wyników pracy
+
+### Zapisywanie pojedyńczego obiektu (np. ramki danych)
+
+Plik tekstowy może być otworzony w dowolnym oprogramowaniu
+
+```{r}
+#| eval: false
+write.csv(australia, "out/australia.csv")
+```
+
+### Zapisywanie wyników pracy w formacie dostępnym tylko w R
+
+Pojedyńczy obiekt
+
+```{r}
+#| eval: false
+saveRDS(dane, "out/dane.rds")
+```
+
+Zapisywanie wybranych obiektów ze środowiska pracy R
+
+```{r}
+#| eval: false
+save(dane, australia, file = "out/cw1a.rda")
+```
+
+Zapisywanie wszystkich obiektów znajdujących się w środowisku pracy R
+
+```{r}
+#| eval: false
+save.image("out/cw1b.RData")
+```
+
+## Pomoc
+
+```{r}
+#| eval: false
+?nazwaFunkcji
+help(nazwaFunkcji)
+example(nazwaFunkcji)
+args(nazwaFunkcji)
+```

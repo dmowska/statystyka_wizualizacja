@@ -1,0 +1,36 @@
+# Testy statystyczne
+
+## Testy parametryczne vs nieparametryczne
+
+Hipoteza jest to dowolna wypowiedź o rozkładzie zmiennej losowej:
+
+-   Parametryczna
+
+-   Nieparametryczna
+
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Testy parametryczne                                                         | Testy nieparametryczne                                                                                 |
++=============================================================================+========================================================================================================+
+| większa liczba założeń do spełnienia:                                       | mniejsza liczba założeń do spełnienia:                                                                 |
+|                                                                             |                                                                                                        |
+| -   zmienne muszą być mierzone na skali ilościowej                          | -   mogą być stosowane do danych nieilościowych                                                        |
+|                                                                             |                                                                                                        |
+| -   zmienne mają rozkład normalny                                           | -   nie wymagają spełnienia założenia o normalności rozkłądu                                           |
+|                                                                             |                                                                                                        |
+| -   równość wariancji                                                       |                                                                                                        |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| wymagają większej próby                                                     | stosowane dla prób o małej liczebności (do 100 obserwacji)                                             |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| większa moc testów                                                          | mniejsza moc testów                                                                                    |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| dokładniejszy pomiar                                                        | mniej dokładny pomiar                                                                                  |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| łatwiejsza interpretowalność uzyskanych wyników                             | trudniejsza interpretowalność uzyskiwanych wyników                                                     |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| testy t-Studenta, analiza wariancji, korelacja r-Pearsona, analiza regresji | test U Manna-Whitneya, test Kruskala-Wallisa, test niezależności chi-kwadrat, Korelacja tau-b Kendalla |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+## Testy istotności różnic średniej
+
+![](figures/8_testy_srednich.png){width="466"}
+

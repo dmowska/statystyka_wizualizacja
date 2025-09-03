@@ -1,0 +1,277 @@
+---
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - ggplot2
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+
+library(tidyverse)
+library(ggplot2)
+
+```
+
+# Testy parametryczne
+
+## Testy t-Studenta
+
+-   Służą do wnioskowania o wartości średniej w populacji, z której pobraliśmy próbę losową.
+
+-   Służą do porównania ze sobą dwóch grup
+
+-   Można wyróżnić trzy rodzaje testów t-Studenta:
+
+    -   dla prób niezależnych
+    -   dla prób zależnych
+    -   dla jednej próby
+
+-   Założenia testów t-Studenta
+
+    -   Rozkład danych obserwacji jest zbliżony do rozkładu normalnego
+    -   Badane grupy mają zbliżoną liczebność
+    -   Wartości w badanych grupach wykazują podobną wariancję (homogeniczność wariancji)
+    -   Zmienne powinny być ilościowe
+
+-   Hipoteza statystyczna
+
+    -   Hipoteza zerowa: $H_0 : \mu_1 = \mu_2$
+
+    -   Hipotezy alternatywne:
+
+        -   test jednostronny: $H_A : \mu_1 > \mu_2$
+        -   test dwustronny: $H_A : \mu_1 \neq \mu_2$
+
+### Test t-Studenta dla prób niezależnych
+
+-   Dotyczy porównania ze sobą dwóch różnych grup obserwacji
+-   Próby muszą być od siebie niezależne (wyniki pomiaru jednej grupy nie zależą od wyników pomiaru drugiej grupy)
+
+**Przykład: Czy istnieją istotne różnice w średniej temperaturze (annual_tavg) między Niżem Wschodniobałtycko-Białoruskim, a Wyżynami Polskimi?**
+
+```{r}
+library(dplyr)
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, 
+                      prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+
+head(pomiary_pol2)
+```
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+```
+
+Testowanie istotności różnic przy założeniu hipotezy dwustronnej tj. $\mu_{Niż} \neq \mu_{Wyżyny}$
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+
+**Intepretacja wyników**
+
+-   Poziom prawdopodobieństwa p (p-wartość) - jest to wyliczany w pakietach komputerowych najmniejszy poziom istotności, przy której wyliczona wartość testującej statystyki doprowadza do odrzucenia hipotezy zerowej.
+
+-   ***Jeśli p-wartość jest poniżej założonego poziomu istotności (np. 0.05) tzn. że hipotezę zerową możemy odrzucić na rzecz hipotezy alternatywnej.***
+
+W powyższym przykładzie:
+
+-   Hipoteza zerowa: prawdziwa różnica w średnich jest równa 0
+
+-   Hipoteza alternatywna: Prawdziwa róznica w średnich nie jest równa 0.
+
+-   P-wartość \< 2.2e-16
+
+    -   P-wartość jest mniejsza od 0.05 a zatem możemy odrzucić hipotezę zerową (różnica w średnich równa 0) na rzecz hipotezy alternatywnej (różnica w średnich różna od 0)
+
+-   ***Pytanie: Czy średnia temperatura powietrza na Niżu i na Wyżynach różni się istotnie?***
+
+-   ***Odpowiedź: Średnia temperatura na Niżu i na Wyżynach różni się istotnie.***
+
+**Przykład: Czy średnia temperatura (annual_tavg) Niżu Wschodniobałtycko-Białoruskiego jest istotnie wyższa od tempratury na Wyżynach Polskich?**
+
+Testowanie istotności różnic przy założeniu hipotezy jednostronnej tj. $\mu_{Niż} > \mu_{Wyżyny}$
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "greater")
+```
+
+> Jaka jest interpretacja powyższego wyniku testu?
+
+**Przykład: Czy średnia temperatura (annual_tavg) Niżu Wschodniobałtycko-Białoruskiego jest istotnie niższa od tempratury na Wyżynach Polskich?**
+
+Testowanie istotności różnic przy założeniu hipotezy jednostronnej tj. $\mu_{Niż} < \mu_{Wyżyny}$
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "less")
+```
+
+> Jaka jest interpretacja powyższego wyniku testu?
+
+> Wczytaj dane z pliku data/pomiary_pol.csv. Sprawdź czy średnia temperatura roczna (annual_tavg) na Wyżynach Polskich różni się od Masywu Czeskiego? Stwórz wykres porównujący tą zmienną dla tych prowincji. Określ czy różnica pomiędzy średnimi jest istotna statystycznie.
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, prowincja %in% c("Masyw Czeski", "Wyżyny Polskie"))
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+  
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+:::
+::::
+
+> Wczytaj dane z pliku data/pomiary_pol.csv. Sprawdź czy średnia temperatura roczna (annual_tavg) Masywu Czeskiego jest większa od temperatury na Wyżynach Polskich?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, prowincja %in% c("Masyw Czeski", "Wyżyny Polskie"))
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+  
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "greater")
+```
+:::
+::::
+
+### Test t-Studenta dla prób zależnych
+
+-   Dotyczy porównania ze sobą tej samej grupy obserwacji
+-   Próby są zależne, czyli wynik pomiary w drugim badaniu zależy od pierwszego (dotyczy tej samej obserwacji)
+-   Służy określeniu wielkości zmian pomiędzy pomiarami
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+head(pomiary_pol)
+```
+
+**Przykład: Czy maksymalna temperatura kwietnia (tmax_4) oraz września (tmax_9) różni się istotnie?**
+
+```{r}
+#| message: false
+#| warning: false
+
+#Wykonanie wykresu pudelkowego wymaga zamiany danych na format dlugi
+pomiary_pol_l <- pomiary_pol %>% 
+  select(pomiar_id, tmax_4, tmax_9) %>% 
+  pivot_longer(contains("tmax"))
+
+ggplot(pomiary_pol_l, aes(name, value)) + 
+  geom_boxplot() + 
+  labs(y = "Temperatura powietrza [C]") + 
+  theme_bw()
+```
+
+Test t-Studenta dla prób zależnych, jeśli dane są w formacie szerokim.
+
+```{r}
+t.test(pomiary_pol$tmax_4, pomiary_pol$tmax_9, paired = TRUE, alternative = "greater")
+```
+
+> Jaka jest interpretacja powyższego wyniku?
+
+> Wczytaj dane z pliku data/pomiary_pol.csv. Wykonaj test dla określenia czy maksymalna temperatura powietrza w kwietniu (tmax_4) jest niższa od maksymalnej temperatury września (tmax_9). Sformułuj hipotezę zerową oraz hipotezę alternatywną oraz zinterpretuj wynik testu.
+
+```{webr}
+#| exercise: ex_3
+
+```
+
+:::: {.solution exercise="ex_3"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+t.test(pomiary_pol$tmax_4, pomiary_pol$tmax_9, paired = TRUE, alternative = "less")
+```
+:::
+::::
+
+## Testowanie istotności różnic wariancji
+
+-   Pozwala na porównywanie wariancji w dwóch grupach pomiarów
+-   Zakłada rozkład normalny w obu grupach
+-   Test ten może być jednostronny lub dwustronny
+-   Dla wielu wariancji używany jest **test Levene'a**
+
+```{r}
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol2 = subset(pomiary_pol, 
+                     prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+```
+
+```{r}
+var.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+
+**Interpretacja:**
+
+-   Wartość p-value dla testu F p = 0.3405 jest większa od założonego poziomu istotności (0.05). Nie ma istotnych różnic między wariancją dla obu grup (Niżu oraz Wyżyn).
+
+### Test Levene’a
+
+-   Porównywane grupy w testach parametrycznych powinny mieć podobne wariancje
+-   Do weryfikacji czy zachowana jest homogoniczność wariancji w grupach stosuje się, między innymi, test Levene"a
+-   $H_0$ - wariancje są takie same
+-   $H_A$ - wariancje się różnią
+
+```{r}
+pomiary_pol = read.csv("data/pomiary_pol.csv")
+pomiary_pol2 = subset(pomiary_pol, 
+                     prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+```
+
+```{r}
+#| message: false
+library(car)
+leveneTest(annual_tavg ~ prowincja, data = pomiary_pol2)
+```

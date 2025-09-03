@@ -1,0 +1,36 @@
+# O skrypcie {.unnumbered}
+
+## Struktura skryptu
+
+Skrypt zawiera materiały do ćwiczeń z przedmiotu ***"Statystyka i wiuzalizacja danych"*** prowadzonym na II roku Geoinformacji na Wydziale Nauk Geograficznych i Geologicznych UAM.
+
+Skrypt składa się z kilku części dotyczących:
+
+-   przetwarzania danych w R
+-   statystyk opisowych
+-   wizualizacji danych w R
+-   rozkładu danych
+-   wnioskowania statystycznego
+-   testów statystycznych
+-   analizy korelacji i regresji
+-   tworzenia raportów statystycznych
+
+## Dane wykorzystywane w skrypcie
+
+Dane wykorzystywane w skrypcie można pobrać [TUTAJ](http://dmowska-dydaktyka.web.amu.edu.pl/data/uploads/statystyka/dane.zip)
+
+## Zadania samodzielne
+
+> W ten sposób w poszczególnych rozdziałach zaznaczone są w tekście zadania do wykonania odnoszące się do omówionego powyżej fragmentu materiału.
+
+Poniżej zadania samodzielnego znajduje się interaktywny edytor pozwalający na wprowadzenie i uruchomienie kodu. 
+
+Ostatni rozdział (**rozdział 22** w części **ZADANIA**) zawiera zestawienie zadań do samodzielnego rozwiązania. Zadania te będą rozwiązywane na kolejnych ćwiczeniach.
+
+## Wykorzystanie skryptu na ćwiczeniach
+
+1.  Przed zajęciami należy zapoznać się z materiałem zamieszczonym w rozdziale zadanym na kolejne ćwiczenia.
+
+    -   W trakcie czytania rozdziału warto we własnym zakresie rozwiązać zadania zawarte w tym rozdziale
+
+2.  Na ćwiczeniach samodzielnie rozwiązywane będą zadania z rozdziału 22 odnoszące się do zadanej części materiału.

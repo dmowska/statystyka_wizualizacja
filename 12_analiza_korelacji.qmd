@@ -1,0 +1,399 @@
+---
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - ggplot2
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| message: false
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+
+library(gapminder)
+library(tidyverse)
+library(ggplot2)
+library(PerformanceAnalytics)
+library(GGally)
+library(psych)
+library(car)
+library(RColorBrewer)
+library(corrplot)
+library(Hmisc)
+
+data('gapminder', package = 'gapminder')
+```
+
+# Analiza korelacji
+
+## Wprowadzenie
+
+### Podstawowe pojęcia
+
+-   Analiza korelacji służy do "wychwycenia" czy zachodzi związek pomiędzy dwiema (lub więcej) zmiennymi.
+
+-   Miarą korelacji jest **współczynnik korelacji**
+
+-   Współczynnik korelacji dostarcza informacji o tym jaka jest **siła związku** (*wartość współczynnika*) oraz jaki jest **kierunek związku** (*znak*).
+
+-   Dla każdego współczynnika korelacji należy także obliczyć jego *istotność statystyczną*, stosujac jeden z testów istotności przeznaczonych dla współczynników korelacji.
+
+    -   Hipoteza zerowa: ρ x,y=0
+    -   Hipoteza alternatywna: ρ x,y≠0 lub ρ x,y\<0 lub ρ x,y\>0
+
+-   Zależność między zmiennymi może mieć charakter **liniowy** lub **krzywoliniowy**.
+
+### Korelacja a przyczynowość
+
+-   Korelacja nie wskazuje na istnienie związku przyczynowo-skutkowego pomiędzy zmiennymi.
+
+-   Innymi słowy: Istnienie korelacji liczbowej nie potwierdza, że jedno zjawisko powoduje drugie.
+
+    -   A może powodować B
+    -   B może powodować A
+    -   A lub B może być wywołane przez C
+    -   Zależność między A i B może być przypadkowa.
+
+-   <http://www.tylervigen.com/spurious-correlations>
+
+### Kilka ważnych informacji
+
+-   **Najważniejsza jest isotność korelacji**. Niepotrzebna nam korelacja nawet bardzo wysoka, jeśli nie jest istotna statystycznie.
+-   Wartość współczynnika nawet bliska 0 nie zawsze oznacza brak zależności. Może oznaczać jedynie brak zależności liniowej.
+-   Wielkość współczynnika podlega wpływom wartości skrajnych i odstających.
+
+### Korelacja liniowa
+
+-   Miarą korelacji liniowej jest **współczynnik korelacji Pearsona**.
+
+-   Współczynniki korelacji przyjmują wartości z przedziału od -1,00 do +1,00.
+
+    -   **Wartość -1,00** - reprezentuje doskonałą korelację **ujemną** (współzależność pomiędzy zmiennymi kształtująca się w taki sposób, że gdy wartości jednej zmiennej wykazują tendencję rosnącą, wówczas wartości drugiej zmiennej wykazują tendencję malejącą)
+
+    -   **wartość +1,00** - reprezentuje doskonałą korelacją **dodatnią** (współzależność pomiędzy zmiennymi przedstawia się w taki sposób, że gdy wartości jednej zmiennej wykazują tendencję wzrastającą, wówczas wartości drugiej zmiennej także wykazują tendencję wzrastającą).
+
+    -   **Wartość 0.00** wyraża **brak korelacji**.
+
+![](figures/11_corr.png){width="539"}
+
+### Jak silna jest korelacja?
+
+Do opisu i interpretacji istotnej korelacji pomocne może być przyjęcie pewnej skali określającą siłę związku. Nie ma jednej przyjętej skali. Poniżej przedstawiam jedną z nich:
+
+-   0 - brak korelacji
+-   0,1 do 0,3 - słaba korelacja
+-   0,3 do 0,5 - przeciętna korelacja
+-   0,5 do 0,7 - korelacja wysoka
+-   0,7 do 0,9 - korelacja bardzo wysoka
+-   0,9 do 1 - korelacja prawie pełna
+
+## Demonstracja dla współczynnika korelacji liniowej
+
+```{r}
+#| warnings: false
+#| message: false
+#| eval: FALSE
+install.packages("TeachingDemos")
+library("TeachingDemos")
+put.points.demo(x = NULL, y = NULL, lsline = TRUE)
+
+#Używając opcji Add Point dodaj punkty w oknie wykresu
+#Zwróć uwagę jak zmienia się wartość współczynnika korelacji (r). 
+```
+
+Zgadnij wartość współczynnika korelacji - <https://gallery.shinyapps.io/correlation_game/>
+
+## Testy korelacji
+
+-   test korelacji liniowej Pearsona
+
+    -   stosowany gdy zmienne mają zależnośc liniową
+    -   zmienne mają rozkład normalny
+
+-   test korelacji rang Spearman
+
+    -   stosowany gdy naruszone jest założenie o normalności rozkładu (np. gdy istnieją wartości odstające)
+
+## Korelacja liniowa
+
+```{r}
+set.seed(25)
+x = rnorm(1000)
+y = x + rnorm(1000)
+df = data.frame(x, y)
+```
+
+```{r}
+#| warnings: false
+#| message: false
+
+library(ggplot2)
+ggplot(df, aes(x, y)) + geom_point() + stat_smooth(method = lm)
+```
+
+### Zbadanie normalności rozkładu
+
+```{r}
+ggplot(df) + 
+  geom_histogram(aes(x = x), col = "darkblue", fill = "darkblue") + 
+  geom_histogram(aes(x = y), col = "lightblue", fill = "lightblue", alpha = 0.7) + 
+theme_bw()
+```
+
+```{r}
+shapiro.test(x)
+```
+
+```{r}
+shapiro.test(y)
+```
+
+Zmienna x oraz y mają rozkład normalny.
+
+### Współczynnik korelacji
+
+```{r}
+cor(df$x, df$y,
+    use = "complete.obs",
+    method = "pearson")
+```
+
+```{r}
+cor(df$x, df$y,
+    use = "complete.obs",
+    method = "spearman")
+```
+
+> Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?
+
+### Testy korelacji
+
+```{r}
+cor.test(df$x, df$y,
+    use = "complete.obs",
+    method = "pearson")
+```
+
+Wynik testu korelacji wskazuje na istnieie istotnej korelacji między zmienną x oraz y.
+
+## Analiza korelacji - przykład
+
+```{r}
+#| warnings: false
+#| message: false
+
+library(gapminder)
+gapminder2007 = subset(gapminder, year == 2007)
+gapminder2007_s = gapminder2007[c(4, 5, 6)]
+```
+
+**Czy pomiędzy zmiennymi w zbiorze gapminder2007_s można dostrzec zależności liniowe?**
+
+```{r}
+library(ggplot2)
+ggplot(gapminder2007_s, aes(lifeExp, gdpPercap)) + geom_point()
+```
+
+### Współczynnik korelacji
+
+```{r}
+cor(gapminder2007_s$lifeExp, gapminder2007_s$gdpPercap,
+    use = "complete.obs",
+    method = "pearson")
+```
+
+```{r}
+cor(gapminder2007_s$lifeExp, gapminder2007_s$gdpPercap, 
+    use = "complete.obs",
+    method = "spearman")
+```
+
+> Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?
+
+### Testy korelacji
+
+```{r}
+cor.test(gapminder2007_s$lifeExp, gapminder2007_s$gdpPercap, 
+         use = "complete.obs",
+         method = "pearson")
+```
+
+```{r}
+cor.test(gapminder2007_s$lifeExp, gapminder2007_s$gdpPercap,
+         use = "complete.obs",
+         method = "spearman")
+```
+
+> Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?
+
+> Używając danych z pakietu gapminder dla roku 1987 zwizualizuj relację pomiędzy populacją a oczekiwaną długością życia. Wylicz korelację i wykonaj odpowiedni test. Co oznacza jego wynik?
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+W przykładzie należy obliczyć współczynnik korelacji Spearmana. Wynik wskazuje na brak kolelacji między zmiennymi. Współczynnik korelacji nie jest istotny statystycznie.
+
+``` r
+gapminder87 <- filter(gapminder, year == 1987)
+ggplot(gapminder87, aes(pop, lifeExp)) + geom_point()
+cor.test(gapminder87$lifeExp, gapminder87$pop,
+         use = "complete.obs",
+         method = "spearman")
+```
+:::
+::::
+
+## Określanie korelacji dla wielu zmiennych
+
+### Macierz wykresów korelacji
+
+```{r}
+pairs(~lifeExp+gdpPercap+pop, data=gapminder2007_s, main="Simple Scatterplot Matrix")
+```
+
+### Macierz współczynników korelacji
+
+Funkcja `cor()` pozwala na obliczenie macierzy współczynników korelacji. Podaje ona wartość współczynnika, ale nie wskazuje, czy wynik jest istotny statystycznie.
+
+Funkcja `rcorr()` z pakietu `Hmisc` wyświetla zarówno macierz współczynników korelacji, jak i wartość p wskazującą czy wynik jest istotny statystycznie.
+
+```{r}
+cor_spearman = cor(gapminder2007_s, 
+                   use = "complete.obs",
+                   method = "spearman")
+round(cor_spearman , 4)
+```
+
+W poniższym przykładzie pierwsza macierz zawiera współczynnik korelacji, druga liczbę obiektów a trzecia wartość poziomu istotności p. Wartość jest istotna statystycznie jeśli p jest mniejsze od założonego poziomu isotntości (np. 0,05)
+
+```{r}
+#| warnings: false
+#| message: false
+library(Hmisc)
+kor <- rcorr(as.matrix(gapminder2007_s), type = "spearman")
+kor
+```
+
+## Wizualizacja korelacji
+
+-   Funkcja `corrplot()` z pakietu `corrplot`
+
+```{r}
+#| warnings: false
+#| message: false
+
+library("corrplot")
+kor <- rcorr(as.matrix(gapminder2007_s), type = "spearman")
+corrplot(kor$r)
+```
+
+```{r}
+corrplot(kor$r, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
+```
+
+```{r}
+corrplot.mixed(kor$r, order="hclust", tl.col="black")
+```
+
+```{r}
+#| warnings: false
+#| message: false
+library(RColorBrewer)
+corrplot(kor$r, type="upper", order="hclust", col=brewer.pal(n=8, name="RdYlBu"))
+```
+
+-   Funckja `scatterplotMatrix()` z pakietu `car`
+
+```{r}
+#| warnings: false
+#| message: false
+library(car)
+scatterplotMatrix(~lifeExp+gdpPercap+pop, data=gapminder2007_s)
+```
+
+-   Funkcja `chart.Correlation()` z pakietu `PerformanceAnalytics`
+
+```{r}
+#| warnings: false
+#| message: false
+library(PerformanceAnalytics)
+chart.Correlation(gapminder2007_s, histogram=TRUE, pch=19, method = "spearman")
+```
+
+-   Funkcja `pairs.panels()` z pakietu `psych`
+
+Współczynnik korelacji ("pearson", "spearman") definiowany jest poprzez argument method.
+
+```{r}
+#| warnings: false
+#| message: false
+library(psych)
+pairs.panels(gapminder2007_s, scale=TRUE, method="spearman")
+```
+
+-   Funkcja `ggcorr()` i `ggpairs()` z pakietu `GGally`
+
+Argument *method* składa się z dwóch elementów: pierwszy określa sposób działania przy braku danych ("everything", "all.obs", "complete.obs", "na.or.complete" or "pairwise.complete.obs"), drugi - współczynnik korelacji ("pearson", "kendall" or "spearman"). Domyślan opcja to `c("pairwise", "pearson")`.
+
+```{r}
+#| warnings: false
+#| message: false
+library(GGally)
+ggcorr(gapminder2007_s, method = c("pairwise", "spearman"), nbreaks=8, palette='RdGy', label=TRUE, label_size=5, label_color='white')
+```
+
+Współczynnik korelacji liniowej Pearsona
+
+```{r}
+#| warnings: false
+#| message: false
+library(GGally)
+ggpairs(gapminder2007_s) 
+```
+
+Współczynnik korelacji rang Spearmana
+
+```{r}
+#| warnings: false
+#| message: false
+library(GGally)
+ggpairs(gapminder2007_s, 
+        upper = list(continuous = wrap(ggally_cor, method = "spearman")))
+```
+
+> Używając danych `gapminder` z pakietu gapminder wyselekcjonuj dane dla roku 1987 oraz zachowaj tylko kolumny lifeExp, gdpPercap, pop.  Zwizualizuj w postaci macierzy wykresów rozrzutu relację pomiędzy tymi trzema zmiennymi. Wylicz korelację. Co oznacza wynik?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+Uwaga! W rozwiązaniu wykorzystano funkcję ggpairs z biblioteki GGally. Biblioteka `PerformanceAnalytics` nie może zostać wykorzystana w interaktywnym edytorze.
+
+``` r
+gapminder87 <- gapminder %>% 
+filter(year == 1987) %>% 
+select(lifeExp, gdpPercap, pop)
+
+library(GGally)
+ggpairs(gapminder87, 
+        upper = list(continuous = wrap(ggally_cor, method = "spearman")))
+```
+:::
+::::

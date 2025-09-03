@@ -1,0 +1,90 @@
+# Tworzenie raportów
+
+## Analiza statystyczna
+
+Podstawowym elementem każdej analizy statystycznej jest wykonanie **charakterystyki statystycznej danych**. Charakterystyka statystyczna danych powinna obejmować zarówno ***obliczenie statystyk opisowych*** jak i ***wizualizację wyników***.
+
+Wyniki powinne być przedstawione w postaci tabel, wykresów oraz map.
+
+## Raport statystyczny
+
+Każdy raport statystyczny zawiera:
+
+-   tekst
+-   ryciny
+-   kod
+-   inne elementy
+
+## Kompozycja raportu
+
+Każdy raport przedstawiający opracowanie statystyczne wyników powinien składać się z kilku części:
+
+1.  Wprowadzenie
+
+    -   stanowi wprowadzenie do problematyki
+    -   powinien być zakończony postawieniem celu badań
+
+2.  Dane
+
+    -   informacje o wykorzystanym zbiorze danych (co mierzono? kiedy? gdzie? po co? jak?)
+    -   źródło danych
+
+3.  Metody
+
+    -   opis wykorzystanych metod do eksploracji danych
+    -   opis wykorzystanych metod do analizy danych
+    -   określenie wykorzystanego oprogramowania
+
+4.  Wyniki
+
+    -   Co odkryliśmy w wyniku analizy danych?
+    -   Wyniki eksploracji danych
+    -   Wyniki zastosowanych testów
+    -   Ta część zawiera zestawienia tabelaryczne, wykresy.
+    -   Ta część **nie zawiera** analizy i interpretacji wyników.
+
+5.  Wnioski i podsumowanie
+
+    -   Określenie wyników analiz
+    -   Podsumowanie analizy
+    -   Odniesienie się do postawionego celu
+    -   Stwierdzenie braków czy problemów w analizie
+
+6.  Literatura
+
+## Ryciny
+
+Ryciny zawarte w raportach muszą być wykonane z pełną dbałością o czytelność.
+
+-   wykresy muszą być czytelne oraz informacyjne
+-   osie na wykresach muszą być podpisane
+-   ryciny muszą być podpisane.
+-   każda rycina zamieszczona w raporcie musi być opisana w tekście.
+
+## Kod
+
+-   Kod załączony do raportu powinien być przejrzysty i dobrze skomentowany.
+-   W tekście umieszczamy tabele, wykresy ale nie pokazujemy kodu, który je wykonał.
+-   Kod może zostać zamieszczony w formie skryptu jako Załącznik do raportu.
+
+## Kilka technicznych uwag
+
+-   W bloku kodu należy dodać *label: fig-nazwaryciny* oraz *fig-cap: "Podpis ryciny"*, a następnie w tekście należy odwołać się do ryciny `@fig-nazwaryciny`. Zapewni to automatyczne numerowanie rycin.
+
+-   W bloku kodu należy dodać *label: tbl-nazwatabelo* oraz *tbl-cap: "Podpis tabeli"*, a następnie w tekście należy odwołać się do tabeli `@tbl-nazwatabeli`. Zapewni to automatyczne numerowanie tabel.
+
+-   Nagłówek dokumentu:
+
+```         
+title: "Tytuł raportu"
+author: "Autor"
+format:
+  html:
+    code-fold: true # ta opcja spowoduje, że kod będzie domyślnie ukryty z możliwością odkrycia bloku kodu. 
+crossref: #parametry pozwalające na odwoływanie się do rycin w języku polskim 
+  fig-title: Rycina     # (domyślnie jest "Figure")
+  tbl-title: Tabela     # (domyślnie jest  "Figure")
+  fig-prefix: Ryc.   # (domyślnie jest "Figure")
+  tbl-prefix: Tabela   # (domyślnie jest "Table")
+  ref-hyperlink: false # (domyślnie jest  true)
+```

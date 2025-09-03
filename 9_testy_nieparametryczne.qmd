@@ -1,0 +1,153 @@
+---
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - ggplot2
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+
+library(tidyverse)
+library(ggplot2)
+library(gapminder)
+
+data('gapminder', package = 'gapminder')
+
+```
+
+# Testy nieparametryczne
+
+-   Nie wymagają spełnienia założenia o normalności rozkładu (w przeciwieństwie do metod parametrycznych, które zakładają, że dane są ilościowe, populacja posiada rozkład normalny, a próba ma odpowiednią wielkość)
+-   Wnioski wysunięte na podstawie testów nieparametrycznych nie mają tak dużej mocy jak testu parametryczne (zazwyczaj)
+-   Wymagają spełnienia mniejszej liczby założeń, są bardziej elastyczne oraz można je stosować również do danych nieilościowych
+-   Są oparte o analizę rang (czyli o kolejność a nie aktualne wartości)
+-   Dane w porównywanych grupach są porządkowane (rosnąco lub malejąco) i na tej podstawie są wykonywane obliczenia
+-   Metody nieparametryczne są najbardziej odpowiednie w przypadku prób o małych liczebnościach (patrz Centralne Twierdzenie Graniczne), zazwyczaj jako górną granicę stosowania testów nieparametycznych przyjmuje się n=100
+
+```{r}
+#| message: false
+#| warning: false
+library(gapminder)
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+data('gapminder', package = 'gapminder')
+```
+
+## Test U Manna-Whitneya
+
+-   Nieparametryczna alternatywa testu t-Studenta dla prób niezależnych
+-   Stosowany, gdy rozkład w populacji odbiega od normalnego lub gdy skala jest porządkowa, ale nie jest przedziałowa
+-   Moc testu jest znaczaco większa od testu t-Studenta, gdy rozkład odbiega wyraźnie od normalnego
+
+```{r}
+gapminder2007 = subset(gapminder, year == 2007)
+head(gapminder2007)
+```
+
+**Przykład: Czy pomiędzy Amerykami a Azją jest istotna statystycznie różnica w wartościach PKB na osobę?**
+
+```{r}
+gapminder2007_sel = filter(gapminder2007, 
+                           continent %in% c("Asia", "Americas"))
+```
+
+```{r}
+wilcox.test(gdpPercap ~ continent, data = gapminder2007_sel)
+```
+
+Wynik testu wskazuje na brak istotnych statystycznie różnic w PKB między Azją a Amerykami w 2007 roku.
+
+> Porównaj wartości oczekiwanej długości życia pomiędzy Afryką a Azją w 2007 roku. Stwórz wizualizację, a następnie wykonaj test statystyczny. Jaki dał on wynik?
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+Wynik testu wskazuje na  istnieie istotnych statystycznie różnic w  długości trwania życia między Azją a Afrryką w 2007 roku.
+
+``` r
+gapminder2007_sel = filter(gapminder, year == 2007 & continent %in% c("Africa", "Asia"))
+ggplot(gapminder2007_sel, aes(x = continent, y = lifeExp)) + geom_boxplot() + theme_bw()
+wilcox.test(lifeExp ~ continent, data = gapminder2007_sel)
+
+```
+:::
+::::
+
+## Test Wilcoxona
+
+-   Nieparametryczna alternatywa testu t-Studenta dla prób zależnych
+-   Test wykorzystywany jest do oceny zmian
+-   Test Wilcoxona zakłada, że losowa próba z populacji ma symetryczny rozkład (niekoniecznie normalny)
+
+**Przykład: Czy pomiędzy rokiem 1987 a 2007 nastąpiła istotnie statystyczna zmiana w wartościach oczekiwanej długości życia?**
+
+```{r}
+gapminder8707 <- gapminder %>% 
+  filter(year %in% c(1987, 2007)) %>% 
+  select(country, year, lifeExp) %>% 
+  pivot_wider(values_from = lifeExp, 
+              names_from = year) %>% 
+  setNames(c("kraj", "rok1987", "rok2007"))
+
+head(gapminder8707)
+```
+
+```{r}
+wilcox.test(gapminder8707$rok1987,
+            gapminder8707$rok2007,
+            paired = TRUE)
+```
+
+Interpretacja: Wartość p-value wynosi 1.337e-13 i jest mniejsza od założonego progu. Istnieją zatem istotne statystycznie różnice w długości trwania życia między rokiem 1987 a 2007.
+
+> Porównaj PKB na osobę pomiędzy krajami z Europy pomiędzy rokiem 1977 a 1987. Czy pomiędzy tymi latami można zauważyć różnicę w PKB? Stwórz wizualizację, a następnie wykonaj test statystyczny. Jaki dał on wynik?
+
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+Wartość p-value wynosi 9.313e-09 i jest mniejsza od założonego progu. Istnieją zatem istotne statystycznie różnice w PKB krajów Europy między rokiem 1977 a 1987.
+
+``` r
+gapminder7787 <- gapminder %>% 
+  filter(year %in% c(1977, 1987) & continent == 'Europe') %>% 
+  select(country, year, gdpPercap) 
+
+# wizualizacja 
+ggplot(gapminder7787, aes(x = factor(year), y = gdpPercap)) + geom_boxplot()
+
+# format danych użyty w teście
+gapminder7787wide <-  gapminder7787 %>%
+  pivot_wider(values_from = gdpPercap, 
+              names_from = year) %>% 
+  setNames(c("kraj", "rok1977", "rok1987"))
+
+#test
+wilcox.test(gapminder7787wide$rok1977,
+            gapminder7787wide$rok1987,
+            paired = TRUE)
+```
+:::
+::::
