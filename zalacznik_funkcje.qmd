@@ -1,0 +1,345 @@
+# Załącznik: zestawienie funkcji {.unnumbered}
+
+Zestawienie wszystkich funkcji R używanych w rozdziałach 1–19, uporządkowane według rozdziałów. Służy do szybkiego odnalezienia właściwego polecenia — gdy wiesz, **co** chcesz zrobić, ale nie pamiętasz, **jak** się ta funkcja nazywa.
+
+Opisy są celowo krótkie. Szczegóły (wszystkie argumenty, wartości domyślne, przykłady) znajdziesz zawsze na stronie pomocy: `?nazwaFunkcji`.
+
+Funkcje wymagające wczytania pakietu oznaczono w nawiasie, np. *(dplyr)*. Pozostałe są dostępne od razu po uruchomieniu R.
+
+------------------------------------------------------------------------
+
+## Rozdział 1 — Wprowadzenie
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `install.packages("nazwa")` | instalacja pakietu (jednorazowo) |
+| `library(nazwa)` | wczytanie pakietu (w każdej sesji) |
+| `data("zbior", package = "pakiet")` | wczytanie zbioru danych dołączonego do pakietu |
+| `read.csv("sciezka")` | wczytanie danych z pliku csv |
+| `str(obiekt)` | struktura obiektu: typy zmiennych i liczba obserwacji |
+| `colSums(is.na(df))` | liczba braków danych w każdej kolumnie |
+
+## Rozdział 2 — Wprowadzenie do pracy w R
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `getwd()` | sprawdzenie katalogu roboczego |
+| `setwd("sciezka")` | zmiana katalogu roboczego (w projekcie niepotrzebna) |
+| `list.files()` | lista plików w katalogu roboczym |
+| `read.csv("plik.csv")` | wczytanie pliku csv (separator przecinek) |
+| `read.csv2("plik.csv")` | wczytanie pliku csv w formacie polskim (średnik, przecinek dziesiętny) |
+| `read.table("plik.txt", sep = " ")` | wczytanie pliku tekstowego z dowolnym separatorem |
+| `readRDS("plik.rds")` | wczytanie pojedynczego obiektu zapisanego w formacie R |
+| `load("plik.rda")` | wczytanie zapisanego środowiska pracy |
+| `write.csv(obiekt, "plik.csv")` | zapis ramki danych do pliku tekstowego |
+| `saveRDS(obiekt, "plik.rds")` | zapis pojedynczego obiektu w formacie R |
+| `save(a, b, file = "plik.rda")` | zapis wybranych obiektów |
+| `save.image("plik.RData")` | zapis całego środowiska pracy |
+| `?nazwa`, `help(nazwa)` | strona pomocy funkcji |
+| `example(nazwa)` | uruchomienie przykładów z pomocy |
+| `args(nazwa)` | lista argumentów funkcji |
+
+## Rozdział 3 — Przetwarzanie danych w R
+
+**Poznawanie zbioru danych**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `str(df)` | struktura: typy zmiennych, liczba obserwacji |
+| `head(df, n)` / `tail(df, n)` | pierwsze / ostatnie wiersze (domyślnie 6) |
+| `nrow(df)` / `ncol(df)` | liczba wierszy / kolumn |
+| `names(df)`, `colnames(df)`, `rownames(df)` | nazwy zmiennych, kolumn, wierszy |
+| `summary(df)` | podstawowe statystyki wszystkich zmiennych |
+| `unique(x)` | unikalne wartości zmiennej |
+| `class(x)` | typ (klasa) zmiennej |
+| `table(x)` | liczebność poszczególnych kategorii |
+
+**Wybór danych i porządkowanie**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `df[wiersz, kolumna]` | indeksowanie ramki danych |
+| `df$zmienna` | wybór jednej zmiennej |
+| `subset(df, warunek, select = c(...))` | wybór wierszy i kolumn w jednym wywołaniu |
+| `order(x)` | kolejność sortowania (używana w indeksowaniu) |
+
+## Rozdział 4 — Przetwarzanie danych: dplyr
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `select(df, kol1, kol2)` *(dplyr)* | wybór kolumn; `-kol` usuwa kolumnę |
+| `filter(df, warunek)` *(dplyr)* | wybór wierszy spełniających warunek |
+| `arrange(df, kol)` *(dplyr)* | sortowanie rosnąco; `desc(kol)` — malejąco |
+| `mutate(df, nowa = wyrazenie)` *(dplyr)* | utworzenie nowej zmiennej |
+| `rename(df, nowa = stara)` *(dplyr)* | zmiana nazwy kolumny |
+| `rename_with(df, toupper)` *(dplyr)* | zmiana nazw wszystkich kolumn funkcją |
+| `summarize(df, nazwa = funkcja(x))` *(dplyr)* | obliczenie statystyk podsumowujących |
+| `group_by(df, kol)` *(dplyr)* | podział danych na grupy przed obliczeniami |
+| `summarize(df, ..., .by = kol)` *(dplyr)* | grupowanie tylko na potrzeby tego wywołania |
+| `pull(df, kol)` *(dplyr)* | wyciągnięcie jednej kolumny jako wektora |
+| `inner_join()`, `left_join()`, `right_join()`, `full_join()` *(dplyr)* | łączenie dwóch tabel po wspólnej kolumnie |
+| `pivot_wider(df, names_from =, values_from =)` *(tidyr)* | zamiana układu długiego na szeroki |
+| `pivot_longer(df, cols =)` *(tidyr)* | zamiana układu szerokiego na długi |
+| `x \|> f()` | operator potokowy (natywny); przekazuje wynik do kolejnej funkcji |
+
+## Rozdział 5 — Statystyki opisowe
+
+**Miary położenia i rozrzutu**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `mean(x)` | średnia arytmetyczna |
+| `weighted.mean(x, w)` | średnia ważona |
+| `median(x)` | mediana |
+| `quantile(x, probs = ...)` | kwantyle (kwartyle, decyle, percentyle) |
+| `IQR(x)` | rozstęp kwartylowy |
+| `min(x)`, `max(x)`, `range(x)` | wartość najmniejsza, największa, obie naraz |
+| `sd(x)` | odchylenie standardowe |
+| `var(x)` | wariancja |
+| `sum(x)`, `length(x)` | suma, liczba elementów |
+| `table(x)` | liczebność kategorii |
+| `which.max(x)` | położenie wartości największej (np. do wyznaczenia dominanty) |
+
+**Braki danych**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `mean(x, na.rm = TRUE)` | obliczenie statystyki z pominięciem braków |
+| `is.na(x)` | sprawdzenie, które wartości są brakami |
+| `sum(is.na(x))` | liczba braków w zmiennej |
+| `colSums(is.na(df))` | liczba braków w każdej kolumnie |
+| `na.omit(df)` | usunięcie wierszy zawierających braki |
+
+## Rozdział 6 — Wykresy w R
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `ggplot(data = df, aes(...))` *(ggplot2)* | utworzenie wykresu: dane i mapowanie zmiennych |
+| `aes(x =, y =, color =, fill =, shape =, size =)` *(ggplot2)* | przypisanie zmiennych do elementów wykresu |
+| `+ geom_*()` *(ggplot2)* | dodanie obiektu geometrycznego (co rysujemy) |
+
+## Rozdział 7 — Typy wykresów
+
+**Podstawowe typy**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `geom_histogram(bins =, binwidth =)` | histogram — rozkład zmiennej ilościowej |
+| `geom_density()` | wykres gęstości — wygładzony rozkład |
+| `geom_bar()` | wykres słupkowy — liczebność kategorii |
+| `geom_col()` | wykres słupkowy — wysokość słupka z danych |
+| `geom_line()` | wykres liniowy — zmiana w czasie |
+| `geom_point()` | wykres rozrzutu — zależność dwóch zmiennych |
+| `geom_boxplot()` | wykres pudełkowy — rozkład w grupach |
+| `geom_violin()` | wykres skrzypcowy — kształt rozkładu w grupach |
+| `geom_jitter()` | punkty z losowym rozrzutem (nakładane na pudełka) |
+| `facet_wrap(~ zmienna)` | multiwykres — ten sam wykres osobno dla każdej grupy |
+
+**Statystyki na wykresie**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `stat_summary(fun =, geom =)` | wyliczenie i narysowanie statystyki (np. średniej) |
+| `stat_summary(fun.min =, fun.max =)` | zakres (wąsy, wstęga) wokół wartości środkowej |
+
+**Pozostałe typy (przydatne w raportach i projektach)**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `geom_tile()` | heatmapa |
+| `geom_area()` | wykres liniowy z wypełnionym obszarem |
+| `geom_bar(position = "fill")` | wykres udziałów (struktura w grupach) |
+| `geom_bar(position = "stack")` | wykres słupkowy skumulowany |
+| `coord_polar()` | wykres kołowy (z wykresu słupkowego) |
+| `stat_ecdf()` | dystrybuanta empiryczna |
+| `geom_density_ridges()` *(ggridges)* | wykres grzbietowy |
+| `geom_treemap()` *(treemapify)* | tree map |
+| `cut_number(x, n)` | podział zmiennej ilościowej na n równolicznych grup |
+| `fct_reorder()`, `fct_rev()`, `fct_infreq()` *(forcats)* | zmiana kolejności kategorii na wykresie |
+
+**Zapis wykresu**
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `ggsave("out/wykres.png", plot = p, dpi = 300)` | zapis wykresu do pliku |
+
+## Rozdział 8 — Formatowanie wykresów
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `labs(x =, y =, title =, color =, fill =)` | podpisy osi, tytuł, tytuł legendy |
+| `ggtitle("tytuł")` | sam tytuł wykresu |
+| `lims(x = c(a, b))` | ograniczenie zakresu osi |
+| `scale_x_continuous(name =, breaks =)` | nazwa osi i rozmieszczenie podziałek |
+| `scale_x_discrete(labels = c(...))` | zmiana etykiet kategorii na osi |
+| `scale_x_log10()` | skala logarytmiczna |
+| `coord_flip()` | zamiana osi miejscami |
+| `scale_color_manual(values = c(...))` | samodzielne przypisanie kolorów |
+| `scale_fill_manual(values = c(...))` | to samo dla wypełnienia |
+| `scale_color_brewer(palette =)` *(RColorBrewer)* | gotowa paleta kolorów |
+| `scale_colour_gradient(low =, high =)` | skala ciągła między dwoma kolorami |
+| `scale_color_continuous_sequential(palette =)` *(colorspace)* | gotowa skala ciągła |
+| `scale_color_discrete_qualitative(palette =)` *(colorspace)* | gotowa skala dla kategorii |
+| `display.brewer.all()` *(RColorBrewer)* | podgląd wszystkich dostępnych palet |
+| `geom_text(aes(label =))` | podpisy przy punktach |
+| `geom_text_repel()` *(ggrepel)* | podpisy nienachodzące na siebie |
+| `theme_bw()`, `theme_minimal()`, `theme_classic()` | gotowe motywy wyglądu |
+| `theme(legend.position =, text = element_text(size =))` | ręczna zmiana elementów wyglądu |
+
+## Rozdział 9 — Rozkłady danych
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `dnorm(x, mean, sd)` | gęstość rozkładu normalnego |
+| `pnorm(q, mean, sd)` | dystrybuanta: prawdopodobieństwo wartości mniejszej od q |
+| `qnorm(p, mean, sd)` | kwantyl: wartość, poniżej której leży p obserwacji |
+| `rnorm(n, mean, sd)` | losowanie n wartości z rozkładu normalnego |
+| `rt(n, df)`, `dt(x, df)` | analogiczne funkcje dla rozkładu t-Studenta |
+| `set.seed(liczba)` | ustalenie ziarna losowania (powtarzalność wyników) |
+| `shapiro.test(x)` | test Shapiro-Wilka — sprawdzenie normalności rozkładu |
+| `skewness(x)` *(e1071)* | skośność |
+| `kurtosis(x)` *(e1071)* | kurtoza (nadmiarowa) |
+| `stat_qq()` + `stat_qq_line()` | wykres kwantylowy z linią odniesienia |
+| `curve(wyrazenie, xlim =)` | wykres funkcji matematycznej (grafika podstawowa) |
+
+## Rozdział 10 — Wnioskowanie statystyczne
+
+Rozdział wprowadzający, bez poleceń R.
+
+## Rozdział 11 — Estymacja punktowa i przedziałowa
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `t.test(x)` | przedział ufności dla średniej (sekcja *confidence interval*) |
+| `t.test(x, conf.level = 0.99)` | przedział ufności na innym poziomie |
+| `t.test(x)$conf.int` | sam przedział, bez reszty wydruku |
+| `qnorm(p, lower.tail = FALSE)` | wartość krytyczna rozkładu normalnego |
+| `qt(p, df, lower.tail = FALSE)` | wartość krytyczna rozkładu t-Studenta |
+| `sd(x)/sqrt(length(x))` | błąd standardowy średniej |
+| `ci.examp()` *(TeachingDemos)* | symulacja pokazująca sens przedziału ufności |
+
+## Rozdział 12 — Testowanie hipotez statystycznych
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `rbinom(n, size, prob)` | losowanie z rozkładu dwumianowego |
+| `pbinom(q, size, prob, lower.tail = FALSE)` | prawdopodobieństwo wyniku co najmniej tak skrajnego |
+| `geom_vline(xintercept =)` | pionowa linia na wykresie (np. zaznaczenie wyniku) |
+
+## Rozdział 13 — Testy statystyczne
+
+Rozdział porządkujący wybór testu, bez poleceń R. Zestawienie wszystkich testów znajduje się w tym rozdziale w tabeli *Zestawienie testów*.
+
+## Rozdział 14 — Testy parametryczne
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `t.test(y ~ grupa, data = df)` | test t-Studenta dla prób niezależnych |
+| `t.test(x, y, paired = TRUE)` | test t-Studenta dla prób zależnych |
+| `t.test(x, mu = wartosc)` | test t-Studenta dla jednej próby |
+| `t.test(..., alternative = "greater" / "less")` | test jednostronny |
+| `t.test(..., var.equal = TRUE)` | klasyczny test t zamiast domyślnego testu Welcha |
+| `var.test(y ~ grupa)` | test F — porównanie wariancji w dwóch grupach |
+| `leveneTest(y ~ factor(grupa))` *(car)* | test Levene'a — porównanie wariancji w wielu grupach |
+| `wynik$p.value`, `wynik$conf.int`, `wynik$estimate` | wyciągnięcie pojedynczych wartości z wyniku testu |
+
+## Rozdział 15 — Testy nieparametryczne
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `wilcox.test(y ~ grupa, data = df)` | test U Manna-Whitneya (próby niezależne) |
+| `wilcox.test(x, y, paired = TRUE)` | test kolejności par Wilcoxona (próby zależne) |
+| `median(x)` | mediana — miara położenia podawana przy testach nieparametrycznych |
+
+## Rozdział 16 — Testy dla wielu grup
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `aov(y ~ grupa, data = df)` | jednoczynnikowa analiza wariancji |
+| `summary(model)` | wynik analizy wariancji (statystyka F i p-value) |
+| `TukeyHSD(model)` | test post-hoc Tukeya — które pary grup się różnią |
+| `kruskal.test(y ~ grupa)` | test Kruskala-Wallisa (nieparametryczny odpowiednik ANOVA) |
+| `dunn.test(y, grupa, method = "bonferroni")` *(dunn.test)* | test post-hoc Dunna |
+| `friedman.test()` | test Friedmana dla pomiarów powtarzanych; składnia formuły — zob. rozdz. 16 |
+| `tapply(x, grupa, funkcja)` | zastosowanie funkcji osobno w każdej grupie |
+
+## Rozdział 17 — Testowanie istotności proporcji
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `chisq.test(x, p = c(...))` | test zgodności chi-kwadrat z rozkładem teoretycznym |
+| `chisq.test(tabela)` | test niezależności chi-kwadrat dla dwóch zmiennych |
+| `chisq.test(tabela)$expected` | liczebności oczekiwane (sprawdzenie założeń testu) |
+| `chisq.test(tabela, correct = FALSE)` | wyłączenie poprawki Yatesa |
+| `mcnemar.test(tabela)` | test McNemara dla prób zależnych |
+| `fisher.test(tabela)` | dokładny test Fishera przy małych liczebnościach |
+| `table(zm1, zm2)` | utworzenie tabeli kontyngencji z danych |
+| `matrix(c(...), nrow =, dimnames =)` | ręczne utworzenie tabeli kontyngencji |
+
+## Rozdział 18 — Analiza korelacji
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `cor(x, y, method = "pearson")` | współczynnik korelacji (bez testu istotności) |
+| `cor(df, use = "complete.obs")` | macierz współczynników korelacji |
+| `cor.test(x, y)` | test istotności korelacji wraz z przedziałem ufności |
+| `cor.test(x, y, method = "spearman")` | korelacja rang Spearmana |
+| `rcorr(as.matrix(df))` *(Hmisc)* | macierz korelacji wraz z wartościami p |
+| `corrplot(macierz)` *(corrplot)* | wizualizacja macierzy korelacji |
+| `pairs(~ x + y + z, data = df)` | macierz wykresów rozrzutu |
+| `ggpairs(df)` *(GGally)* | macierz wykresów z współczynnikami korelacji |
+| `chart.Correlation(df)` *(PerformanceAnalytics)* | macierz z histogramami i korelacjami |
+| `pairs.panels(df)` *(psych)* | podobna macierz z pakietu psych |
+| `stat_smooth(method = lm)` *(ggplot2)* | linia trendu na wykresie rozrzutu |
+
+## Rozdział 19 — Analiza regresji
+
+| Funkcja | Zastosowanie |
+|---------|--------------|
+| `lm(y ~ x, data = df)` | budowa modelu regresji liniowej |
+| `lm(y ~ x1 + x2, data = df)` | regresja wielokrotna |
+| `summary(model)` | pełne podsumowanie modelu (współczynniki, R², istotność) |
+| `model$coefficients` | same współczynniki modelu |
+| `model$residuals` | reszty modelu |
+| `model$fitted.values` | wartości przewidywane przez model |
+| `confint(model)` | przedziały ufności dla współczynników |
+| `predict(model, newdata = df)` | predykcja dla nowych wartości |
+| `predict(model, newdata, interval = "prediction")` | predykcja z przedziałem predykcji |
+| `plot(model)` | cztery standardowe wykresy diagnostyczne |
+| `residuals(model)` | reszty (do testu normalności) |
+| `nobs(model)` | liczba obserwacji użytych do budowy modelu |
+| `AIC(model1, model2)` | porównanie modeli kryterium informacyjnym |
+| `augment(model)` *(broom)* | ramka danych z resztami i wartościami dopasowanymi |
+
+------------------------------------------------------------------------
+
+## Najczęściej używane — jedną stroną {.unnumbered}
+
+Jeśli nie pamiętasz, od czego zacząć:
+
+``` r
+# 1. wczytanie i obejrzenie danych
+dane <- read.csv("dane/pomiary_pol.csv")
+str(dane); summary(dane); colSums(is.na(dane))
+
+# 2. wybór i przekształcenie
+library(dplyr)
+wybrane <- dane |> filter(wojewodztwo == "wielkopolskie") |> select(tmax_9, annual_precip)
+
+# 3. statystyki opisowe w grupach
+dane |> group_by(prowincja) |> summarize(srednia = mean(annual_tavg, na.rm = TRUE), n = n())
+
+# 4. wykres
+library(ggplot2)
+ggplot(dane, aes(x = prowincja, y = annual_tavg)) + geom_boxplot() + theme_bw()
+
+# 5. sprawdzenie założeń
+shapiro.test(dane$annual_tavg)
+car::leveneTest(annual_tavg ~ factor(prowincja), data = dane)
+
+# 6. test i odczytanie wyniku
+wynik <- t.test(annual_tavg ~ prowincja, data = dwie_prowincje)
+wynik                 # pełny wydruk
+wynik$p.value         # sama wartość p
+wynik$conf.int        # przedział ufności
+```

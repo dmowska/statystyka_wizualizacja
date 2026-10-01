@@ -1,3 +1,18 @@
+---
+format: live-html
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+
+```
+
 # Estymacja punktowa i przedziałowa
 
 **Estymacja** to oszacowanie (z pewną dokładnością) na podstawie próby wartości badanej cechy statystycznej (np. średniej) oraz rozciągnięcie otrzymanych wyników na całą populację.
@@ -29,20 +44,20 @@
 
 -   Wyznaczamy pewien przedział liczbowy, który z pewnym prawdopodobieństwem zawiera wartość nieznanego parametru. Przedział taki nazywany jest ***przedziałem ufności***.
 
-    -   Np. 95% przedział ufności mówi, że dla 95% z próby, ten przedział zawiera poprawną wartość
+    -   Np. 95% przedział ufności mówi, że dla 95% losowo pobranych prób wyznaczony w ten sposób przedział zawiera prawdziwą wartość parametru
 
 ### Przedział ufności
 
 -   zakres możliwych wartości dla nieznanej średniej populacji oparty na danych próby
 -   wyliczany jest dla oszacowania wartości pewnej charakterystyki populacji (np. średniej arytmetycznej) na podstawie próby.
--   wartość charakterystki (np.średniej) wyliczona z próby, będzie się nieco róźnić od tej dla całej populacji.
+-   wartość charakterystyki (np. średniej) wyliczona z próby będzie się nieco różnić od tej dla całej populacji.
 -   gdy próba jest reprezentatywna możemy oczekiwać niezbyt dużych różnic między rzeczywistą wartością charakterystyki dla populacji, a wyznaczoną z próby. **PODSUMOWUJĄC: Przedział ufności określa nam prawdopodobny zakres odchylenia naszych wyliczeń od wartości rzeczywistej.**
 
 **Interpretacja**
 
--   Jeśli wielokrotnie z wielu niezależnych prób losowych będziemy wyznaczali przedziały, to $100(1-\alpha)%$ (np. 95%) takich przedziałów będzie zawierało prawdziwą wartość parametru.
+-   Jeśli wielokrotnie z wielu niezależnych prób losowych będziemy wyznaczali przedziały, to $100(1-\alpha)\%$ (np. 95%) takich przedziałów będzie zawierało prawdziwą wartość parametru.
 
--   Zatem przy dużej liczbie powtórzeń zdanie "Prawdziwa wartość parametru mieści się w przedziale ufności" będzie prawdziwe w $100(1-\alpha)%$ powtórzeń.
+-   Zatem przy dużej liczbie powtórzeń zdanie "Prawdziwa wartość parametru mieści się w przedziale ufności" będzie prawdziwe w $100(1-\alpha)\%$ powtórzeń.
 
 -   Często (choć mniej precyzyjnie) przedział ufności określany jest zdaniem: "z 95% prawdpopodobieństwem przedział zawiera wartość parametru"
 
@@ -64,7 +79,10 @@ ci.examp(mean.sim = 10, sd = 2, n = 25, reps = 100, conf.level = 0.95, method = 
 
 Funkcja ta pozwala na definiowanie przedziału ufności za pomocą suwaka i interaktywne wprowadzanie zmian.
 
-```{r, eval=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| eval: false
+#| message: false
+#| warning: false
 library(TeachingDemos)
 if(interactive()) {
   run.ci.examp()
@@ -85,11 +103,11 @@ if(interactive()) {
     -   wyliczenie wartości krytycznych rozkładu t-Studenta (stosowany, gdy nie znamy odchylenia standardowego populacji) lub rozkładu normalnego (gdy znamy odchylenie standardowe populacji)
     -   podanie wartości przedziału, np. w postaci (dolna granica, gorna granica)
 
-Przedział ufności dla średniej ma postać $Średnia \pm Zakres błędu$ ( $Mean \pm Margin of error$ )
+Przedział ufności dla średniej ma postać $\text{średnia} \pm \text{zakres błędu}$ (ang. $\text{mean} \pm \text{margin of error}$).
 
 ## Estymacja parametrów w R
 
-Estymacja parametrów w R zostanie omówiona na przykładzie danych `survey` z pakietu MASS. Zbiór ten zawiera wyniki badania studentów z Australijskiego uniwersytetu, którzy udzielali odpowiedzi na różne pytania.
+Estymacja parametrów w R zostanie omówiona na przykładzie danych `survey` z pakietu MASS. Zbiór ten zawiera wyniki badania studentów jednego z australijskich uniwersytetów, którzy udzielali odpowiedzi na różne pytania.
 
 ```{r}
 #| message: false
@@ -107,7 +125,7 @@ help(survey)
 
 ### Estymacja punktowa średniej z populacji.
 
-Badanie zostało przeprowadzone na próbie 237 studenów. Możemy obliczyć średnią z próby, którą będziemy traktować jako oszacowanie średniej populacji.
+Badanie zostało przeprowadzone na próbie 237 studentów. Możemy obliczyć średnią z próby, którą będziemy traktować jako oszacowanie średniej populacji.
 
 **Problem: Oszacować średni wzrost studentów uniwersytetu na podstawie danych z próby**
 
@@ -126,7 +144,7 @@ mean(wzrost, na.rm=TRUE)
 
 **Odpowiedź:**
 
-Średni wzrostu studentów wynosi 172,38 cm.
+Średni wzrost studentów wynosi 172,38 cm.
 
 ### Wyznaczenie przedziałów ufności dla średniej znając odchylenie standardowe (SD)
 
@@ -136,7 +154,7 @@ Przy założeniu, że odchylenie standardowe jest znane do wyznaczenia przedzia�
 
 $$\overline{x} \pm z_{\alpha/2} \frac{\sigma} {\sqrt{n}}$$
 
-gdzie, $z_{\alpha/2}$ oznacza 100(1-$\alpha$) percentyl standaryzowanego rozkładu normalnego.
+gdzie, $z_{\alpha/2}$ oznacza percentyl 100(1-$\alpha$/2) standaryzowanego rozkładu normalnego. Dla 95% poziomu ufności ($\alpha = 0{,}05$) jest to percentyl 97,5, w R: `qnorm(0.975)`, co jest równoważne zapisowi `qnorm(0.025, lower.tail = FALSE)` używanemu niżej.
 
 **Problem**
 
@@ -177,14 +195,20 @@ Zakładając, że odchylenie standardowe populacji jest równe 9.48 to zakres b�
 
 > Znajdź przedział, w którym znajduje się średnia przy założeniu 99% poziomu ufności.
 
-```{r class.source = 'fold-hide'}
+```{r}
+#| message: false
+#| code-fold: true
+#| code-summary: "Kod R"
+
 #Wartosc sem nie zmieni się, sem = sigma/sqrt(n)
 wzrost <- na.omit(survey$Height)
 sem = 9.48/sqrt(length(wzrost))
-#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, 
+#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005
 E = qnorm(0.005, lower.tail = FALSE) * sem 
-srednia<- mean(wzrost)
-ci <- srednia + c(-E, E)  # przedzial ufności
+E                          # zakres błędu
+srednia <- mean(wzrost)
+ci <- srednia + c(-E, E)
+ci                         # przedział ufności
 ```
 
 ### Wyznaczanie przedziałów ufności dla średniej populacji nieznając odchylenia standardowego (SD)
@@ -193,7 +217,7 @@ Przy założeniu, że odchylenie standardowe jest nieznane do wyznaczenia przedz
 
 $$\overline{x} \pm t_{\alpha/2} \frac{s} {\sqrt{n}}$$
 
-gdzie, $t_{\alpha/2}$ oznacza 100(1-$\alpha$) percentyl rozkładu t-Studenta z n-1 stopni swobody.
+gdzie, $t_{\alpha/2}$ oznacza percentyl 100(1-$\alpha$/2) rozkładu t-Studenta z n-1 stopniami swobody. Dla 95% poziomu ufności jest to percentyl 97,5, w R: `qt(0.025, df = n-1, lower.tail = FALSE)`.
 
 **Problem**
 
@@ -213,8 +237,8 @@ SE             #szacowany błąd standardowy średniej (standard error estimate)
 Obliczenie zakresu błędu
 
 ```{r}
-E = qt(0.025, df=n-1, lower.tail = FALSE) * sem 
-E     # zakres błędu margin of error 
+E = qt(0.025, df=n-1, lower.tail = FALSE) * SE
+E     # zakres błędu margin of error
 ```
 
 Następnie wartość błędu dodajemy do średniej i otrzymujemy przedział ufności:
@@ -226,7 +250,7 @@ sr_wzrost + c(-E, E)  # CI
 
 **Odpowiedź**
 
-Przy założeniu, że odchylenie standardowe z populacji jest nienznane to zakres błędu w ocenie wzrostu studentów przy 95% poziom ufności wynosi 1.3429 cm. Przedział ufności jest pomiędzy 171.04 a 173.72 cm.
+Przy założeniu, że odchylenie standardowe w populacji jest nieznane to zakres błędu w ocenie wzrostu studentów przy 95% poziom ufności wynosi 1.3429 cm. Przedział ufności jest pomiędzy 171.04 a 173.72 cm.
 
 > Znajdź przedział, w którym znajduje się średnia przy założeniu 99% poziomu ufności (i nieznanym odchyleniu standardowym populacji)
 
@@ -236,14 +260,127 @@ Przy założeniu, że odchylenie standardowe z populacji jest nienznane to zakre
 #| code-fold: true
 #| code-summary: "Kod R"
 
-#Wartosc sem nie zmieni się, sem = sigma/sqrt(n)
+#Wartosc SE nie zmieni się, SE = s/sqrt(n)
 wzrost <- na.omit(survey$Height)
 SE = sd(wzrost)/sqrt(length(wzrost))
-#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, prcentyl=0.99+0.005=0.995
-E = qt(0.005, df=length(wzrost)-1)*SE # zakres błędu
-srednia<- mean(wzrost)
-ci <- srednia + c(-E, E)  # przedzial ufności
+#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, percentyl=1-0.005=0.995
+E = qt(0.005, df=length(wzrost)-1, lower.tail = FALSE)*SE # zakres błędu
+E                          # zakres błędu
+srednia <- mean(wzrost)
+ci <- srednia + c(-E, E)
+ci                         # przedział ufności
 ```
+
+## Przedział ufności w praktyce: funkcja `t.test()`
+
+Obliczenia powyżej pokazują, **skąd bierze się** przedział ufności: z błędu standardowego i wartości krytycznej odpowiedniego rozkładu. Warto raz przejść tę drogę krok po kroku, żeby rozumieć, co oznacza szerokość przedziału.
+
+W codziennej pracy nie liczymy go jednak ręcznie. Funkcja `t.test()` - ta sama, której używamy do testowania hipotez - zwraca przedział ufności dla średniej od razu:
+
+```{r}
+wzrost <- na.omit(survey$Height)
+t.test(wzrost)
+```
+
+W wyniku interesuje nas sekcja **95 percent confidence interval**. To dokładnie ten sam przedział, który wyliczyliśmy wyżej ręcznie (171,04 - 173,72 cm).
+
+### Sam przedział, bez reszty wydruku
+
+```{r}
+t.test(wzrost)$conf.int
+```
+
+### Inny poziom ufności
+
+Poziom ufności zmieniamy jednym argumentem - nie trzeba szukać nowej wartości krytycznej:
+
+```{r}
+t.test(wzrost, conf.level = 0.99)$conf.int
+```
+
+Zwróć uwagę, że przedział 99% jest **szerszy** od 95%. Im większej pewności wymagamy, tym mniej precyzyjne musi być oszacowanie - to ta sama zależność, którą widać na rycinie z symulacją na początku rozdziału.
+
+### Co wpływa na szerokość przedziału
+
+| Czynnik | Wpływ na przedział |
+|---------|--------------------|
+| większa liczebność próby (n) | **węższy** - pierwiastek z n jest w mianowniku błędu standardowego |
+| większe zróżnicowanie danych (s) | **szerszy** - w liczniku błędu standardowego |
+| wyższy poziom ufności (99% zamiast 95%) | **szerszy** - większa wartość krytyczna |
+
+### Jak opisać przedział ufności w raporcie
+
+Przedział ufności podajemy razem z oszacowaniem punktowym, a nie zamiast niego:
+
+> Średni wzrost studentów wyniósł 172,38 cm (95% przedział ufności: 171,04 - 173,72 cm).
+
+**Czego nie należy pisać:** „z prawdopodobieństwem 95% prawdziwa średnia leży w tym przedziale”. Prawdziwa średnia jest ustaloną liczbą - to przedział jest losowy. Poprawna interpretacja jest taka: gdybyśmy wielokrotnie pobierali próby i za każdym razem wyznaczali przedział w ten sam sposób, 95% z tych przedziałów zawierałoby prawdziwą średnią.
+
+## Zadania
+
+> Wczytaj dane z pliku `dane/pomiary_pol.csv` i wyznacz 95% przedział ufności dla średniej maksymalnej temperatury powietrza we wrześniu (*tmax_9*).
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol <- read.csv("dane/pomiary_pol.csv")
+t.test(pomiary_pol$tmax_9)
+```
+
+Interesuje nas sekcja *95 percent confidence interval*. Zwróć uwagę, że test pominął obserwacje z brakami danych - liczba stopni swobody jest o kilka mniejsza niż liczba wierszy w zbiorze.
+:::
+::::
+
+> Wyznacz ten sam przedział na poziomie ufności 90% oraz 99%. O ile zmienia się jego szerokość?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+t.test(pomiary_pol$tmax_9, conf.level = 0.90)$conf.int
+t.test(pomiary_pol$tmax_9, conf.level = 0.95)$conf.int
+t.test(pomiary_pol$tmax_9, conf.level = 0.99)$conf.int
+```
+
+Im wyższy poziom ufności, tym szerszy przedział. Przy tak dużej próbie (ok. 1500 stacji) wszystkie trzy przedziały są jednak bardzo wąskie - duża liczebność próby daje precyzyjne oszacowanie.
+:::
+::::
+
+> Zapisz wynik testu do obiektu, a następnie wyciągnij z niego **samą dolną granicę** przedziału ufności i zaokrąglij ją do dwóch miejsc po przecinku.
+
+```{webr}
+#| exercise: ex_3
+
+```
+
+:::: {.solution exercise="ex_3"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+wynik <- t.test(pomiary_pol$tmax_9)
+
+wynik$conf.int        # obie granice
+wynik$conf.int[1]     # dolna granica
+round(wynik$conf.int[1], 2)
+```
+
+Taki zapis przydaje się przy pisaniu raportów: pozwala wstawić liczbę do tekstu, zamiast przepisywać ją ręcznie z wydruku.
+:::
+::::
 
 > Zadanie: Zebraliśmy losową próbę, pytając 10 studentów z wybranego kierunku, którzy skończyli studia w 2019 roku, jakie są ich roczne zarobki. Otrzymaliśmy odpowiedź: x = c(44617, 7066, 17594, 2726, 1178, 18898, 5033, 37151, 4514, 4000). Oszacuj średnie zarobki wszystkich studentów studiujących na tym kierunku, którzy ukończyli studia w 2019 roku. Określ także 90 oraz 95% przedział ufności dla średniej. 1) Wykonaj obliczenia, zakładając, że zarobki mają rozkład normalny, z odchyleniem standardowym 15000. 2) Wykonaj obliczenia przy nieznanym odchyleniu standardowym.
 
@@ -259,30 +396,35 @@ x <- c(44617, 7066, 17594, 2726, 1178, 18898, 5033, 37151, 4514, 4000)
 srednia <- mean(x)
 
 #blad standardowy sigma/sqrt(n), sigma to znane odchylenie standardowe a n to liczba elementów w probie
-se <- 15000/10
+n = length(x)
+se <- 15000/sqrt(n)
 
-#z(alfa/2) 1-alfa = 0.95, alfa=0.05, alfa/2=0.025, 
+#z(alfa/2) 1-alfa = 0.95, alfa=0.05, alfa/2=0.025,
 #wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005
-E = qnorm(0.025, lower.tail = FALSE)*se 
+E = qnorm(0.025, lower.tail = FALSE)*se
 ci = srednia + c(-E, E)
+ci
 
-# odpowiedz: Srednie zarobki beda w przedziale 11338 a 17218 przy zalozeniu 95% poziomu ufnosci. 
-# odpowiedz: Srednie zarobki beda w przedziale 10414 a 18141 przy zalozeniu 99% poziomu ufnosci. 
+# odpowiedz: Srednie zarobki beda w przedziale 4981 a 23575 przy zalozeniu 95% poziomu ufnosci.
+# odpowiedz: Srednie zarobki beda w przedziale 2059 a 26496 przy zalozeniu 99% poziomu ufnosci.
 
-# OBLICZENIA PRZY NIEZNANYM SD 
-#jesli nieznamy sd to musimy oszacowac jego wartosc na podstawie proby 
+# OBLICZENIA PRZY NIEZNANYM SD
+#jesli nieznamy sd to musimy oszacowac jego wartosc na podstawie proby
 s = sd(x)
 srednia = mean(x)
-n = 10
-SE = s/n
+n = length(x)
+SE = s/sqrt(n)
 
-#zakres bledu przy nieznanym odchyleniu standardowym obliczamy korzystajac z rozkladu t-studenta 
+#zakres bledu przy nieznanym odchyleniu standardowym obliczamy korzystajac z rozkladu t-studenta
 #wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005
-E = qnorm(0.025, lower.tail = FALSE)*SE
+E = qt(0.025, df = n - 1, lower.tail = FALSE)*SE
 ci = srednia + c(-E, E)
+ci
 
-# odpowiedz: Srednie zarobki beda w przedziale 11270 a 17285 przy zalozeniu 95% poziomu ufnosci. 
-# odpowiedz: Srednie zarobki beda w przedziale 10325 a 18231 przy zalozeniu 99% poziomu ufnosci. 
+# odpowiedz: Srednie zarobki beda w przedziale 3300 a 25256 przy zalozeniu 95% poziomu ufnosci.
+# odpowiedz: Srednie zarobki beda w przedziale -1493 a 30049 przy zalozeniu 99% poziomu ufnosci.
+# (przy n = 10 i tak duzej zmiennosci zarobkow przedzial 99% jest bardzo szeroki i obejmuje
+#  wartosci ujemne - to sygnal, ze proba jest zbyt mala do precyzyjnego oszacowania)
 
 # Zauwaz, ze Zwiększanie poziomu ufności powoduje zwiększanie szerokości przedziału ufności - czyli zmniejszenie precyzji estymacji. 
 ```

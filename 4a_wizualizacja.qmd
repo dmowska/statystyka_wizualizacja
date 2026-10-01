@@ -2,7 +2,8 @@
 format: live-html
 webr:
   packages:
-    - tidyverse
+    - gapminder
+    - dplyr
     - ggplot2
 ---
 
@@ -28,7 +29,7 @@ webr:
 #|  - ex_15
 
 library(gapminder)
-library(tidyverse)
+library(dplyr)
 library(ggplot2)
 
 data('gapminder', package = 'gapminder')
@@ -37,20 +38,30 @@ dane2007 <- filter(gapminder, year==2007)
 
 # Typy wykresów
 
+## Jaki wykres wybrać?
+
+Wybór wykresu zależy od tego, **co chcemy pokazać** i **jakiego typu są zmienne**. Poniższy schemat prowadzi od pytania do odpowiedniego obiektu geometrycznego.
+
+![Dobór wykresu do typu danych](figures/7_schemat_wykresow.png)
+
+Niebieskie pola dotyczą zmiennych ilościowych, zielone - jakościowych. Pole szare przypomina, że niemal każdy z tych wykresów można dodatkowo rozbić na podgrupy funkcją `facet_wrap()`.
+
+W tym rozdziale omówione są wszystkie typy wykresów z poniższej tabeli - najpierw te używane najczęściej, a na końcu, w sekcji *Inne typy wykresów*, pozostałe.
+
 | Typ wykresu       | Typ (ang)      | ggplot2                         |
 |-------------------|----------------|---------------------------------|
 | Histogram         | Histogram      | geom_histogram()                |
 | Wykres gęstości   | Density plot   | geom_density()                  |
 | Wykres słupkowy   | Bar plot       | geom_bar(), geom_col()          |
-| Wykres linniowy   | Line plot      | geom_line()                     |
+| Wykres liniowy    | Line plot      | geom_line()                     |
 | Wykres rozrzutu   | Scatter plot   | geom_point()                    |
 | Wykres pudełkowy  | Box plot       | geom_boxplot()                  |
 | Wykres skrzypcowy | Violin plot    | geom_violin()                   |
-| Wykres kropkowe   | Dot plot       | geom_point() + coord_flip()     |
-| Heatmapy          | Heatmap        | geom_tile()                     |
-| Wykres grzbietowe | Ridgeline plot | ggridges::geom_density_ridges() |
+| Wykres kropkowy   | Dot plot       | geom_point() + coord_flip()     |
+| Heatmapa          | Heatmap        | geom_tile()                     |
+| Wykres grzbietowy | Ridgeline plot | ggridges::geom_density_ridges() |
 | Dystrybuanta      | CDF plot       | stat_ecdf()                     |
-| Wykres mozaikowe  | Mosaic plot    | ggmosaic: geom_mosaic()         |
+| Wykres udziałów   | Filled bar plot | geom_bar(position = "fill")    |
 | Tree map          | Tree map       | treemapify::geom_treemap()      |
 
 ```{r}
@@ -60,7 +71,6 @@ library(gapminder)
 library(forcats)
 library(ggplot2)
 library(ggridges)
-library(ggmosaic)
 library(treemapify)
 ```
 
@@ -73,7 +83,7 @@ dane2007 <- subset(gapminder, year==2007)
 
 -   Graficzny sposób przedstawiania rozkładu liczebności dla wybranej zmiennej.
 
--   Wykres został poraz pierwszy wprowadzony przez Pearsona w 1895 roku.
+-   Nazwę *histogram* wprowadził po raz pierwszy Karl Pearson w 1895 roku.
 
 -   Wykres powstaje w dwóch etapach:
 
@@ -99,7 +109,7 @@ ggplot(dane2007, aes(x = gdpPercap)) + geom_histogram(bins = 15)
 ggplot(dane2007, aes(x = gdpPercap)) + geom_histogram(binwidth=10000)
 ```
 
-> Wykonać histogram dla zmiennej lifeExp dla 2007 roku. Ustawić szerokość przedziałów co 5 lat.
+> Wykonać histogram dla zmiennej lifeExp dla 2007 roku. Ustawić szerokość przedziałów co 5 lat. Następnie zmień szerokość przedziałów na 1 rok i na 20 lat. Który z trzech histogramów najlepiej pokazuje kształt rozkładu i dlaczego pozostałe dwa są gorsze?
 
 ```{webr}
 #| exercise: ex_1
@@ -127,7 +137,7 @@ ggplot(dane2007, aes(x = continent)) + geom_bar()
 -   wizualizacja danych ilościowych według kategorii - np. PKB na osobę w poszczególnych państwach.
 
 ```{r}
-gapminder_sel = gapminder %>% 
+gapminder_sel = gapminder |> 
   filter(country %in% c("Poland", "Germany", "Czech Republic", "Slovak Republic") & year == 2007)
 
 ggplot(data = gapminder_sel, aes(x = fct_reorder(as.factor(country), gdpPercap), y = gdpPercap)) +
@@ -160,7 +170,7 @@ mean_lifeExp_by_year <- summarize(by_year,
 ggplot(data = mean_lifeExp_by_year, aes(x = year, y = srednia)) + geom_line()
 ```
 
-> Wykonać wykres liniowy pokazujący jak zmieniała się średnia wartość gpdPercap w poszczególnych latach?
+> Wykonać wykres liniowy pokazujący jak zmieniała się średnia wartość gdpPercap w poszczególnych latach?
 
 ```{webr}
 #| exercise: ex_2
@@ -191,7 +201,7 @@ ggplot(data = mean_gdp_by_year, aes(x = year, y = srednia)) + geom_line()
 ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp)) + geom_point()
 ```
 
-> Zwizualizować zależnośc między długością trwania życia a liczbą ludności w 2007 roku.
+> Zwizualizować zależność między długością trwania życia a liczbą ludności w 2007 roku.
 
 ```{webr}
 #| exercise: ex_3
@@ -231,11 +241,11 @@ ggplot(data=gapminder, aes(x=gdpPercap, y=lifeExp)) + geom_point()
 
 Obrazuje podstawowe statystyki opisowe oraz wartości odstające :
 
--   dolny kwartyl - dolna krawędz pudełka
+-   dolny kwartyl (Q1) - dolna krawędź pudełka
 -   mediana - linia środkowa
--   górny kwartyl - górna krawędź pudełka
--   linie pionowe oznaczają najbardziej ekstremalne wartości (1,5*IQR ponad krawędź pudełka, dolna to 1,5*IQR poniżej wartości dolnej krawędzi pudełka)
--   punkty oznaczają wartości odstające
+-   górny kwartyl (Q3) - górna krawędź pudełka
+-   wąsy (linie pionowe) sięgają do najbardziej skrajnej obserwacji, która **mieści się** w odległości 1,5\*IQR od krawędzi pudełka: górny wąs w górę od Q3, dolny w dół od Q1. Wąs jest więc zwykle **krótszy** niż 1,5\*IQR, a jego długość zależy od danych.
+-   punkty poza wąsami oznaczają wartości odstające, tj. takie, które leżą dalej niż 1,5\*IQR od krawędzi pudełka
 
 ![Statystyki opisowe na wykresie pudełkowym](figures/4_boxplot.png)
 
@@ -260,7 +270,7 @@ ggplot(data = gapminder, aes(x = year, y = gdpPercap, group = year)) + geom_boxp
 :::
 ::::
 
-> Wykonaj wykres pudełkowy w podziale na kontynenty dla zmiennej gdpPercap. Wykorzystaj zbiór danych gapminder.
+> Wykonaj wykres pudełkowy w podziale na kontynenty dla zmiennej gdpPercap. Wykorzystaj zbiór danych gapminder. Na którym kontynencie zróżnicowanie PKB jest największe? Co oznaczają pojedyncze punkty widoczne powyżej wąsów?
 
 ```{webr}
 #| exercise: ex_6
@@ -288,7 +298,7 @@ ggplot(data = gapminder, aes(x = year, y = lifeExp)) +
   stat_summary(fun = "mean", geom = "line")
 ```
 
-> Wykonaj wykres pokazujący jak zmieniała się wartość średnia PKB na osobę (zmienna gdPercap) w latach 1952-2007.
+> Wykonaj wykres pokazujący jak zmieniała się wartość średnia PKB na osobę (zmienna gdpPercap) w latach 1952-2007.
 
 ```{webr}
 #| exercise: ex_7
@@ -325,7 +335,7 @@ ggplot(data = gapminder, aes(x = year, y = lifeExp)) +
                fun.max = max)
 ```
 
-> Wykonaj wykres pokazujący jak zmieniała się wartość średnia, minimalna oraz maksymalna PKB na osobę (zmienna gdPercap) w latach 1952-2007.
+> Wykonaj wykres pokazujący jak zmieniała się wartość średnia, minimalna oraz maksymalna PKB na osobę (zmienna gdpPercap) w latach 1952-2007.
 
 ```{webr}
 #| exercise: ex_8
@@ -356,7 +366,7 @@ ggplot(data = gapminder, aes(x = year, y = lifeExp)) +
                fun.min = function(x) mean(x) - sd(x))
 ```
 
-> Wykonaj wykres pokazujący wartości śrendnie $\pm$ odchylenie standardowe dla zmiennej gdpPercap.
+> Wykonaj wykres pokazujący wartości średnie $\pm$ odchylenie standardowe dla zmiennej gdpPercap.
 
 ```{webr}
 #| exercise: ex_9
@@ -382,7 +392,7 @@ ggplot(data = gapminder, aes(x = year, y = gdpPercap)) +
 ```{r}
 ggplot(gapminder, aes(x = year, y = lifeExp)) +
   stat_summary(fun = mean, geom = "ribbon", fill = "blue", 
-               fun.max = min, fun.min = max)
+               fun.min = min, fun.max = max)
 ```
 
 ## Warstwy - łączenie różnych typów wykresów
@@ -439,7 +449,7 @@ ggplot(data = dane2007, aes(x = continent, y = lifeExp)) +
   stat_summary(fun =mean, geom="point", shape=20, size=5, color="red", fill="red") 
 ```
 
-> Wykonaj wykres pudełkowy dla zmiennej gdPercap w podziale na lata oraz dodaj do wykresu punkt oznaczający średnią wartość.
+> Wykonaj wykres pudełkowy dla zmiennej gdpPercap w podziale na lata oraz dodaj do wykresu punkt oznaczający średnią wartość.
 
 ```{webr}
 #| exercise: ex_11
@@ -491,19 +501,19 @@ ggplot(data = gapminder, aes(x = year, y = lifeExp, group = year)) +
 :::
 ::::
 
--   **wizualizacja statystyk opisowych długości trwnia życia (zmienna lifeExp) w Europie w latach 1952-2007**
+-   **wizualizacja statystyk opisowych długości trwania życia (zmienna lifeExp) w Europie w latach 1952-2007**
 
 ```{r}
-gapminder %>% 
-  filter(continent == 'Europe') %>% 
+gapminder |> 
+  filter(continent == 'Europe') |> 
   ggplot(aes(x = year, y = lifeExp)) +
-  stat_summary(fun = mean, geom = "ribbon", alpha = .3, fill = "#1E90FF", fun.max = min, fun.min = max) +
-  stat_summary(fun = mean, geom = "pointrange", fun.max = min, fun.min = max, color = "darkblue") +
+  stat_summary(fun = mean, geom = "ribbon", alpha = .3, fill = "#1E90FF", fun.min = min, fun.max = max) +
+  stat_summary(fun = mean, geom = "pointrange", fun.min = min, fun.max = max, color = "darkblue") +
   stat_summary(fun = max, geom = "line", color = "black") +
   stat_summary(fun = min, geom = "line", color = "black")
 ```
 
-> Zwizaulizuj statystyki opisowe (min, max, średnią) PKB na osobę (zmienna gdpPercap) w Azji w latach 1952-2007
+> Zwizualizuj statystyki opisowe (min, max, średnią) PKB na osobę (zmienna gdpPercap) w Azji w latach 1952-2007
 
 ```{webr}
 #| exercise: ex_13
@@ -515,11 +525,11 @@ gapminder %>%
 Rozwiązanie:
 
 ``` r
-gapminder %>% 
-  filter(continent == 'Asia') %>% 
+gapminder |> 
+  filter(continent == 'Asia') |> 
   ggplot(aes(x = year, y = gdpPercap)) +
-  stat_summary(fun = mean, geom = "ribbon", alpha = .3, fill = "#1E90FF", fun.max = min, fun.min = max) +
-  stat_summary(fun = mean, geom = "pointrange", fun.max = min, fun.min = max, color = "darkblue") +
+  stat_summary(fun = mean, geom = "ribbon", alpha = .3, fill = "#1E90FF", fun.min = min, fun.max = max) +
+  stat_summary(fun = mean, geom = "pointrange", fun.min = min, fun.max = max, color = "darkblue") +
   stat_summary(fun = max, geom = "line", color = "black") +
   stat_summary(fun = min, geom = "line", color = "black")  
 ```
@@ -540,7 +550,7 @@ ggplot(data = dane2007, aes(x = continent, y = lifeExp)) +
   geom_violin()
 ```
 
-> Wykonaj wykres skrzypcowy dla zmiennej gdPercap w podziale na kontynenty.
+> Wykonaj wykres skrzypcowy dla zmiennej gdpPercap w podziale na kontynenty.
 
 ```{webr}
 #| exercise: ex_14
@@ -572,7 +582,7 @@ ggplot(data = dane2007, aes(x = lifeExp)) +
   facet_wrap(~continent)
 ```
 
-> Wykonaj multiwykres przedstawiający rozkład wartości zmiennej gdpPercap (na histogramie) w podziale na kontynenty.
+> Wykonaj multiwykres przedstawiający rozkład wartości zmiennej gdpPercap (na histogramie) w podziale na kontynenty. Porównaj go z pojedynczym histogramem dla wszystkich krajów łącznie - jaką informację widać na multiwykresie, a jaką traci się na wykresie zbiorczym?
 
 ```{webr}
 #| exercise: ex_15
@@ -602,11 +612,29 @@ p <- ggplot(data = dane2007, aes(x = continent, y = lifeExp)) +
 ```{r}
 #| message: false
 #| warning: false
-ggsave(filename = "Wykres.pdf", plot = p)
-ggsave(filename = "Wykres.png", plot = p, dpi = 300)
+#Wykresy zapisujemy do osobnego folderu - trzeba go wcześniej utworzyć
+dir.create("out", showWarnings = FALSE)
+
+ggsave(filename = "out/Wykres.pdf", plot = p)
+ggsave(filename = "out/Wykres.png", plot = p, dpi = 300)
 ```
 
 ## Inne typy wykresów
+
+Wykresy omówione powyżej wystarczają do wykonania zadań z ćwiczeń. Typy zebrane poniżej przydają się przede wszystkim przy **tworzeniu raportów i projektów**, gdzie dobrze dobrany, nietypowy wykres potrafi pokazać strukturę danych lepiej niż histogram czy wykres słupkowy. Warto je przejrzeć i wiedzieć, że istnieją - a sięgnąć po nie wtedy, gdy standardowy wykres nie oddaje tego, co chcemy przekazać.
+
+| Typ wykresu | Kiedy się przydaje |
+|-------------|--------------------|
+| wykres kropkowy | ranking kilkunastu kategorii - czytelniejszy niż długi wykres słupkowy |
+| heatmapa | wartość zmiennej dla dwóch wymiarów naraz (np. kraj i rok) |
+| wykres gęstości | porównanie kształtu rozkładu w kilku grupach na jednym rysunku |
+| wykres grzbietowy | wiele rozkładów ułożonych jeden pod drugim (np. rozkład w kolejnych latach) |
+| dystrybuanta | odpowiedź na pytanie „jaki odsetek obserwacji nie przekracza wartości X” |
+| wykres obszarowy | zmiana wielkości w czasie, gdy ważny jest też poziom bezwzględny |
+| wykres kołowy | udział kilku kategorii w całości; przy większej liczbie kategorii nieczytelny |
+| wykres skumulowany | zmiana struktury w czasie |
+| wykres udziałów | porównanie struktury między grupami, niezależnie od ich liczebności |
+| tree map | struktura zagnieżdżona (np. kraje w obrębie kontynentów) |
 
 ### Wykresy kropkowe
 
@@ -673,7 +701,7 @@ ggplot(data = dane2007, aes(lifeExp)) +
 ### Wykresy liniowe z wypełnionym obszarem
 
 ```{r}
-gapminder_pol = gapminder %>% filter(country == 'Poland')
+gapminder_pol = gapminder |> filter(country == 'Poland')
 ggplot(gapminder_pol, aes(year, gdpPercap)) +
   geom_line() +
   geom_area() +
@@ -683,9 +711,9 @@ ggplot(gapminder_pol, aes(year, gdpPercap)) +
 ### Wykresy kołowe
 
 ```{r}
-gapminder2007_unique = gapminder %>%
-  filter(year == 2007) %>% 
-  group_by(continent) %>% 
+gapminder2007_unique = gapminder |>
+  filter(year == 2007) |> 
+  group_by(continent) |> 
   summarize(liczba = n())
 ```
 
@@ -722,21 +750,36 @@ ggplot(gapminder5_sum, aes(year, n, gdpPercap_group, fill = fct_rev(gdpPercap_gr
   labs(x = NULL, y = "Liczba krajów", fill = NULL, title = "Grupa zamożności")
 ```
 
-### Wykresy mozaikowe
+### Wykresy udziałów
+
+Argument `position = "fill"` w funkcji `geom_bar()` sprawia, że wszystkie słupki mają jednakową
+wysokość odpowiadającą 100%, a kolory pokazują **udział** poszczególnych kategorii wewnątrz każdej
+grupy. Pozwala to porównywać strukturę grup niezależnie od ich liczebności.
 
 ```{r}
-gapminder5 = mutate(gapminder, 
-                    gdpPercap_group = cut_number(gdpPercap, 3, 
+gapminder5 = mutate(gapminder,
+                    gdpPercap_group = cut_number(gdpPercap, 3,
                                                  labels = c("niska", "średnia", "wysoka")))
 ```
 
 ```{r}
 #| message: false
 #| warning: false
-library(ggmosaic)
 gapminder5_2007 = filter(gapminder5, year == 2007)
-ggplot(data = gapminder5_2007) +
-  geom_mosaic(aes(x = product(continent), fill = gdpPercap_group))
+ggplot(data = gapminder5_2007, aes(x = continent, fill = gdpPercap_group)) +
+  geom_bar(position = "fill") +
+  labs(x = NULL, y = "Udział krajów", fill = "Grupa zamożności")
+```
+
+Dla porównania ten sam wykres bez argumentu `position = "fill"` pokazuje liczby bezwzględne -
+widać wtedy różnice w liczbie krajów na kontynentach, ale trudniej porównać strukturę grup.
+
+```{r}
+#| message: false
+#| warning: false
+ggplot(data = gapminder5_2007, aes(x = continent, fill = gdpPercap_group)) +
+  geom_bar() +
+  labs(x = NULL, y = "Liczba krajów", fill = "Grupa zamożności")
 ```
 
 ### Tree map

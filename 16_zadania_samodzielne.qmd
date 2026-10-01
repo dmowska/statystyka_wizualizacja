@@ -1,186 +1,323 @@
 # Zadania
 
+Każdy zestaw zadań odpowiada jednemu rozdziałowi skryptu i jest rozwiązywany na ćwiczeniach, po wcześniejszym zapoznaniu się z materiałem w domu.
+
+**Jak pracować z zadaniami**
+
+-   Rozwiązania zapisuj w **dokumencie Quarto** - po jednym dokumencie na każdy zestaw (zob. rozdział *Wprowadzenie do pracy w R*, sekcja *Dokument Quarto*).
+-   Zadania oznaczone gwiazdką **(\*)** są dodatkowe. Wykonaj je, jeśli skończysz wcześniej.
+-   **Korzystaj ze skryptu.** Jeśli nie pamiętasz nazwy funkcji, zajrzyj do **załącznika** na końcu skryptu - znajdziesz tam zestawienie wszystkich poleceń według rozdziałów.
+-   Każdy zestaw zaczyna się od krótkiej **rozgrzewki** - to powtórzenie czynności z wcześniejszych rozdziałów. Nie pomijaj jej: te polecenia będą Ci potrzebne w każdym kolejnym zadaniu.
+
 ## Wprowadzenie
 
-1.  Stwórz nowy dokument Quarto. (File - New File - Quarto document)
+**Materiał:** rozdziały 1-2 · **Dane:** `gapminder` (pakiet `gapminder`)
 
-2.  Nazwij dokument *dane_gapminder*.
+### Zadania {.unnumbered}
 
-3.  W dokumencie dodać tytuł, autora.
+1.  Utwórz nowy dokument Quarto (*File → New File → Quarto Document*). Nazwij go *dane_gapminder* i zapisz w folderze projektu.
 
-4.  Opisz w dokumencie dane `gapminder`. Dodaj odpowiednie bloki kodu potrzebne do wyświetlenia informacji:
+2.  W nagłówku dokumentu ustaw tytuł oraz autora.
 
-    -   Wczytanie danych `gapminder` z pakietu `gapminder`
-    -   Wyświetl nazwy kolumn w zbiorze danych `gapminder`
-    -   Ile wierszy oraz ile kolumn znajduje się w zbiorze danych gapminder?
-    -   Jakiej klasy są zmienne gdpPercap, lifeExp oraz pop?
-    -   Które zmienne są zmiennymi czynnikowymi (factor)?
+3.  Opisz w dokumencie dane `gapminder`. Pod każdym blokiem kodu dopisz jednym zdaniem, co z niego wynika. Dodaj bloki kodu potrzebne do odpowiedzi na pytania:
+
+    -   Wczytaj dane `gapminder` z pakietu `gapminder`.
+    -   Wyświetl nazwy kolumn w zbiorze danych.
+    -   Ile wierszy oraz ile kolumn znajduje się w zbiorze danych?
+    -   Jakiej klasy są zmienne `gdpPercap`, `lifeExp` oraz `pop`? Które zmienne są zmiennymi czynnikowymi (*factor*)?
     -   Dla jakich lat dostępne są dane?
-    -   Wyświetl unikalne wartości zmiennej continent.
+    -   Wyświetl unikalne wartości zmiennej `continent`.
     -   Wyświetl podsumowanie podstawowych statystyk opisowych.
-    -   Podaj nazwy trzech najludniejszych krajów w roku 1952 oraz w 2007 roku.
-    -   Który kraj miał najkrótszą, a który najdłuższa oczekiwaną długość życia? W którym roku?
-    -   Dla ilu krajów są dostępne dane dla 2007 roku?
-    -   Ile było państw w 2007 roku z liczbą ludności przekraczającą 100 milionów mieszkańców? Na ilu kontynentach były położone te pańtwa?
+
+4.  Wygeneruj dokument przyciskiem **Render** i sprawdź, czy powstał plik HTML.
+
+### Zadania dodatkowe {.unnumbered}
+
+5.  (\*) Podaj nazwy trzech najludniejszych krajów w roku 1952 oraz w 2007 roku.
+
+6.  (\*) Który kraj miał najkrótszą, a który najdłuższą oczekiwaną długość życia? W którym roku?
+
+7.  (\*) Dla ilu krajów są dostępne dane dla 2007 roku?
+
+8.  (\*) Ile było państw w 2007 roku z liczbą ludności przekraczającą 100 milionów mieszkańców? Na ilu kontynentach były położone te państwa?
 
 ## Przetwarzanie danych - pakiet dplyr
 
-Wczytaj dane z pliku tekstowego `pomiary_pol.csv`.
+**Materiał:** rozdział 4 · **Dane:** `dane/pomiary_pol.csv`
 
--   Ile zmiennych i obserwacji znajduje się w zbiorze `pomiary_pol`?
--   Ile unikalnych prowincji znajduje się w tym zbiorze? Jakie mają one nazwy?
--   Ile unikalnych województw znajduje się w tym zbiorze?
--   Stwórz obiekt `pomiary_pol2`, który nie zawiera kolumn z pomiarami dla kwietnia i września.
--   W którym województwie zanotowano drugą najwyższą i drugą najniższą średnią temperaturę roczną (*annual_tavg*)?
--   Stwórz obiekt `pomiary_wlkp`, który zawiera tylko pomiary temperatury minimalnej oraz maksymalnej dla kwietnia (tmin_4, tmax_4) wyłącznie dla województwa wielkopolskiego.
--   Stwórz obiekt `pomiary_wyzyny`, który zawiera pomiary dla prowincji wyżynnych.
--   Do zbioru `pomiary_pol` dodaj nową kolumnę *tmax_diff*, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu.
--   Stwórz obiekt `pomiary_pol_long`, składający się z trzech kolumn *pomiar_id*, *name*, *value*. W kolumnie *name* powinny znajdować się wartości *tmin_4* i *tmax_4*, a w kolumnie *value* odpowiadające im wartości.
--   Stwórz obiekt `pomiary_pol_wide`, zamieniający obiekt `pomiary_pol_long` na postać szeroką.
--   Dla ilu pomiarów w województwie małopolskim średnia temperatura roczna (annaul_tavg) jest większa od 7.5C?
--   Ile prowincji znajduje się w obrębie województwa mazowieckiego?
+### Rozgrzewka {.unnumbered}
+
+-   Wczytaj dane z pliku `dane/pomiary_pol.csv` i sprawdź ich strukturę.
+-   Wyświetl pięć pierwszych wierszy zbioru.
+
+### Zadania {.unnumbered}
+
+1.  Ile zmiennych i obserwacji znajduje się w zbiorze `pomiary_pol`?
+
+2.  Ile unikalnych prowincji znajduje się w tym zbiorze? Jakie mają one nazwy?
+
+    -   Uwaga: sprawdź, czy wśród wartości nie ma braków danych (`NA`). Jeśli są, podaj liczbę rzeczywistych prowincji i wyjaśnij, skąd bierze się różnica.
+
+3.  Stwórz obiekt `pomiary_pol2`, który nie zawiera kolumn z pomiarami dla kwietnia i września.
+
+4.  W którym województwie zanotowano drugą najwyższą i drugą najniższą średnią temperaturę roczną (*annual_tavg*)?
+
+5.  Stwórz obiekt `pomiary_wlkp`, który zawiera tylko pomiary temperatury minimalnej oraz maksymalnej dla kwietnia (*tmin_4*, *tmax_4*) wyłącznie dla województwa wielkopolskiego.
+
+6.  Stwórz obiekt `pomiary_wyzyny`, który zawiera pomiary dla obu prowincji wyżynnych (*Wyżyny Polskie* oraz *Wyżyny Ukraińskie*).
+
+7.  Do zbioru `pomiary_pol` dodaj nową kolumnę *tmax_diff*, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu.
+
+8.  Dla ilu pomiarów w województwie małopolskim średnia temperatura roczna (*annual_tavg*) jest większa od 7,5 °C?
+
+9.  Stwórz obiekt `pomiary_pol_long`, składający się z trzech kolumn *pomiar_id*, *name*, *value*. W kolumnie *name* powinny znajdować się wartości *tmin_4* i *tmax_4*, a w kolumnie *value* odpowiadające im wartości.
+
+10. Stwórz obiekt `pomiary_pol_wide`, zamieniający obiekt `pomiary_pol_long` z powrotem na postać szeroką.
 
 ## Statystyki opisowe
 
-Wczytaj dane z pliku tekstowego *pomiary_pol.csv*.
+**Materiał:** rozdział 5 · **Dane:** `dane/pomiary_pol.csv`
 
--   Jaka jest średnia wartość średniej temperatury rocznej (*annual_tavg*) w tym zbiorze?
--   Jaka jest mediana rocznej sumy opadów (*annual_precip*)?
--   Jaka jest różnica między wartością średnią a medianą rocznej sumy opadów (*annual_precip*)?
--   Jaka jest najniższa i najwyższa zarejestrowana wartość średniej temperatury rocznej (*annual_tavg*) w tym zbiorze?
--   Powyżej jakiej wartości średniej temperatury rocznej (*annual_tavg*) znajduje się 25% obserwacji?
--   Jaki jest zakres danych dla temperatury minimalnej w kwietniu (*tmin_4*)?
--   Jakie jest średnia i odchylenie standardowe temperatury minimalnej we wrześniu (*tmin_9*)?
--   Wylicz średnią i odchylenie standardowe *tmin_9* dla kolejnych prowincji.
--   Ile pomiarów wykonano w każdej z prowincji?
--   Do zbioru `pomiary_pol` dodaj nową kolumnę *tmax_diff*, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu. Oblicz największą oraz najmniejsza różnicę.
--   Ile wynosi 95 percentyl dla rocznej sumy opadów (annual_precip) w województwie wielkopolskim?
+### Rozgrzewka {.unnumbered}
+
+-   Wczytaj dane i wybierz obserwacje dla województwa pomorskiego.
+-   Wyświetl nazwy prowincji występujących w zbiorze.
+
+### Zadania {.unnumbered}
+
+1.  Sprawdź, w których kolumnach zbioru są braki danych i ile ich jest. Następnie oblicz średnią zmiennej *annual_precip* raz bez argumentu `na.rm`, a raz z nim. Wyjaśnij różnicę w wynikach.
+
+2.  Jaka jest średnia wartość średniej temperatury rocznej (*annual_tavg*) w tym zbiorze?
+
+3.  Jaka jest mediana rocznej sumy opadów (*annual_precip*)? Jaka jest różnica między wartością średnią a medianą tej zmiennej? O czym świadczy ta różnica?
+
+4.  Jaka jest najniższa i najwyższa zarejestrowana wartość średniej temperatury rocznej (*annual_tavg*)?
+
+5.  Wyznacz wartość średniej temperatury rocznej, powyżej której znajduje się jedna czwarta obserwacji (czyli 25% najcieplejszych stacji).
+
+6.  Jaki jest zakres danych dla temperatury minimalnej w kwietniu (*tmin_4*)?
+
+7.  Jaka jest średnia i odchylenie standardowe temperatury minimalnej we wrześniu (*tmin_9*)?
+
+8.  Wylicz średnią i odchylenie standardowe *tmin_9* dla kolejnych prowincji (rozdz. 5, *Statystyki w grupach*).
+
+9.  Ile pomiarów wykonano w każdej z prowincji?
+
+### Zadania dodatkowe {.unnumbered}
+
+10. (\*) Do zbioru `pomiary_pol` dodaj kolumnę *tmax_diff* (różnica temperatury maksymalnej września i kwietnia). Oblicz największą oraz najmniejszą różnicę.
+
+11. (\*) Ile wynosi 95 percentyl dla rocznej sumy opadów (*annual_precip*) w województwie wielkopolskim?
 
 ## Wizualizacja danych - typy wykresów
 
-Wczytaj dane z pliku tekstowego *pomiary_pol.csv*.
+**Materiał:** rozdziały 6-7 · **Dane:** `dane/pomiary_pol.csv`
 
--   Stwórz histogram pokazujący rozkład średniej temperatury rocznej (*annual_tavg*) w tym zbiorze.
--   Stwórz wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną w kwietniu. W jaki sposób można go zinterpretować?
--   Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej temperatury rocznej (*annual_tavg*) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.
--   Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej rocznej sumy opadów (*annual_precip*) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.
--   Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w każdej prowincji.
--   Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w województwach.
--   Wykorzystaj opcję multiwykresów do pokazania relacji pomiędzy temperaturą minimalną a maksymalną we wrześniu w podziale na poszczególne prowincje.
--   Postaraj się ulepszyć stworzone wykresy poprzez dodanie tytułu, zmianę podpisu osi, edycję kolorów, itd.
--   Zapisz stworzone wykresy do plików w formacie .png. Jak nazwiesz te pliki?
+### Rozgrzewka {.unnumbered}
+
+-   Wczytaj dane i policz średnią rocznej sumy opadów dla każdej prowincji.
+-   Przypomnij sobie schemat doboru wykresu z rozdziału 7.
+
+### Zadania {.unnumbered}
+
+1.  Stwórz histogram pokazujący rozkład średniej temperatury rocznej (*annual_tavg*).
+
+2.  Stwórz wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną w kwietniu. W jaki sposób można go zinterpretować?
+
+3.  Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej temperatury rocznej (*annual_tavg*) dla kolejnych prowincji fizjograficznych. Zinterpretuj go: która prowincja jest najcieplejsza, a w której zróżnicowanie jest największe?
+
+4.  Zbuduj wykres pudełkowy pokazujący rozkład rocznej sumy opadów (*annual_precip*) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.
+
+5.  Wykorzystaj wykres słupkowy do zwizualizowania liczby stacji pomiarowych w każdej prowincji, a następnie w każdym województwie.
+
+6.  Wykorzystaj multiwykres do pokazania relacji pomiędzy temperaturą minimalną a maksymalną we wrześniu w podziale na poszczególne prowincje. Jaką informację widać na multiwykresie, a jaką traci się na wykresie zbiorczym?
+
+7.  Zapisz dwa wybrane wykresy do plików w formacie PNG, do folderu `out`. Jak nazwiesz te pliki, żeby za tydzień wiedzieć, co przedstawiają?
 
 ## Wizualizacja danych - formatowanie wykresów
 
-Sformatuj wykresy przygotowane w ramach zadań "Wizualizacja danych - typy wykresów".
+**Materiał:** rozdział 8 · **Dane:** `dane/pomiary_pol.csv`
 
--   dodaj etykiety osi oraz tytuł wykresu
--   zmień sposób wyświetlania linii oraz punktów.
--   zastosuj różne skale kolorystyczne.
--   odpowiednio sformatuj legendę wykresów.
--   dodaj motyw wyświetlania (theme).
+### Rozgrzewka {.unnumbered}
+
+-   Odtwórz wykres pudełkowy *annual_tavg* według prowincji z poprzednich zajęć.
+-   Odtwórz wykres rozrzutu *tmin_4* wobec *tmax_4*.
+
+### Zadania {.unnumbered}
+
+1.  Dopracuj **wykres pudełkowy** tak, aby nadawał się do umieszczenia w raporcie:
+
+    -   podpisz obie osie pełnymi nazwami wraz z jednostką,
+    -   dodaj tytuł mówiący, co wykres przedstawia,
+    -   pokoloruj pudełka według prowincji, używając jednej z palet pakietu `RColorBrewer`,
+    -   spraw, aby nazwy prowincji na osi były czytelne (skróć je albo obróć wykres),
+    -   przenieś legendę pod wykres albo usuń ją, jeśli powiela informację z osi,
+    -   zastosuj motyw `theme_bw()`.
+
+2.  Dopracuj **wykres rozrzutu**:
+
+    -   pokoloruj punkty według prowincji,
+    -   zmień kształt i wielkość punktów,
+    -   podpisz osie i legendę,
+    -   zastosuj wybrany motyw.
+
+3.  Zapisz oba wykresy do plików PNG o szerokości 20 cm i rozdzielczości 300 dpi.
+
+### Zadania dodatkowe {.unnumbered}
+
+4.  (\*) Wykonaj wykres rozrzutu *tmax_4* wobec *annual_precip*, kolorując punkty według **liczbowej** zmiennej *annual_tavg*. Dobierz skalę ciągłą tak, aby zróżnicowanie było dobrze widoczne.
+
+5.  (\*) Zmień nazwy prowincji wyświetlane w legendzie na krótsze, bez zmieniania danych (podpowiedź: argument `labels` w funkcjach `scale_*`).
 
 ## Rozkład danych
 
-Wczytaj dane z pliku tekstowego *pomiary_pol.csv*.
+**Materiał:** rozdział 9 · **Dane:** `dane/pomiary_pol.csv`
 
--   Jak można opisać rozkład zmiennej *annual_tavg*?
--   Jak można opisać rozkład zmiennej *annual_precip*?
--   Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej *annual_tavg*
--   Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej *annual_precip*
--   Jakie mogą być konsekwencje różnic w rozkładach zmiennych *annual_tavg* i *annual_precip* do celów analizy danych?
--   Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj multiwykres pokazujący histogramy zmiennej *annual_tavg* dla wybranych województw. Oblicz wartość średniej, mediany, skośności oraz kurtozy zmiennej *annual_tavg* dla każdego z wybranych województw. Które z województw mają rozkład zbliżony do rozkładu symetrycznego?
--   Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj dla każdego województwa test Shapiro-Wilka. Które z województw mają rozkład zmiennej annual_tavg zbliżony do rozkładu normalnego?
+### Rozgrzewka {.unnumbered}
 
-## Wnioskowanie statystyczne - estymacje punktowe i przedziałowe
+-   Wczytaj dane i wykonaj histogram zmiennej *annual_tavg*.
+-   Policz średnią i medianę tej zmiennej.
 
-Wczytaj dane z pliku tekstowego *pomiary_pol.csv*.
+### Zadania {.unnumbered}
 
--   Odchylenie standardowe temperatury maksymalnej we wrześniu (tmax_9) nie jest znane. Wyznacz 95% przedział ufności dla średniej temperatury maksymalnej we wrześniu.
+1.  Jak można opisać rozkład zmiennej *annual_tavg*? A zmiennej *annual_precip*? Odpowiedz, posługując się histogramem oraz wykresem pudełkowym.
 
--   Średnia temperatura roczna dla Polski wynosi 8.1 stopnia Celsjusza oraz ma odchylenie standardowe równe 0.9 stopnia Celsjusza. Pewnego roku średnia temperatura wyniosła 10.1 stopnia Celsjusza. Chcemy się dowiedzieć, czy ta wartość jest nietypowo wysoka. Jak powinniśmy określić hipotezę zerową i alternatywną?
+2.  Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej *annual_tavg*.
 
-    -   Zwizualizuj rozkład średniej temperatury rocznej dla Polski wraz z tym dodatkowym pomiarem.
-    -   Jakie jest prawdopodobieństwo, że nowa wartość jest nietypowo wysoka? Jaką hipotezę przyjmujemy/odrzucamy?
+3.  Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej *annual_precip*.
+
+4.  Jakie mogą być konsekwencje różnic w rozkładach tych dwóch zmiennych dla dalszej analizy danych - na przykład dla wyboru testu statystycznego?
+
+5.  Wyselekcjonuj dane dla województw: zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj multiwykres pokazujący histogramy zmiennej *annual_tavg* dla wybranych województw. Oblicz średnią, medianę, skośność oraz kurtozę *annual_tavg* dla każdego z nich. Które województwa mają rozkład zbliżony do symetrycznego?
+
+6.  Dla tych samych pięciu województw wykonaj test Shapiro-Wilka. Które z nich mają rozkład *annual_tavg* zbliżony do normalnego? Czy wniosek zgadza się z tym, co pokazały histogramy?
+
+### Zadania dodatkowe {.unnumbered}
+
+7.  (\*) Wykonaj wykres kwantylowy (*QQ-plot*) z linią odniesienia dla zmiennej *annual_precip*. Jak odstępstwa od linii łączą się z obliczoną wcześniej skośnością?
+
+## Wnioskowanie statystyczne - estymacja punktowa i przedziałowa
+
+**Materiał:** rozdział 11 · **Dane:** `dane/pomiary_pol.csv`
+
+### Rozgrzewka {.unnumbered}
+
+-   Wczytaj dane i policz średnią oraz odchylenie standardowe zmiennej *tmax_9*.
+-   Sprawdź, ile obserwacji ma ta zmienna po pominięciu braków danych.
+
+### Zadania {.unnumbered}
+
+1.  Odchylenie standardowe temperatury maksymalnej we wrześniu (*tmax_9*) nie jest znane. Wyznacz 95% przedział ufności dla średniej tej zmiennej.
+
+2.  Wyznacz ten sam przedział na poziomie ufności 90% oraz 99%. Jak zmienia się jego szerokość i dlaczego?
+
+3.  Zapisz wynik jednym zdaniem, tak jak zrobiłbyś to w raporcie - z oszacowaniem punktowym i przedziałem ufności (rozdz. 11, *Jak opisać przedział ufności w raporcie*).
+
+4.  Średnia temperatura roczna dla Polski wynosi 8,1 °C, a odchylenie standardowe 0,9 °C. Pewnego roku średnia temperatura wyniosła 10,1 °C. Chcemy ustalić, czy ta wartość jest nietypowo wysoka.
+
+    -   Jak powinniśmy sformułować hipotezę zerową i alternatywną?
+    -   Zwizualizuj **teoretyczny** rozkład normalny o średniej 8,1 i odchyleniu standardowym 0,9 (funkcja `curve`), a następnie zaznacz na nim pionową linią zaobserwowaną wartość 10,1 (funkcja `abline`).
+    -   Jakie jest prawdopodobieństwo uzyskania wartości co najmniej tak wysokiej, jeśli hipoteza zerowa jest prawdziwa? Jaką hipotezę przyjmujemy, a jaką odrzucamy?
+
+### Zadania dodatkowe {.unnumbered}
+
+5.  (\*) Wyznacz 95% przedział ufności dla średniej rocznej sumy opadów osobno dla województwa pomorskiego i opolskiego. Czy przedziały na siebie zachodzą? Co to sugeruje o różnicy między województwami?
 
 ## Testy parametryczne
 
-Rozwiąż poniższe zadania. Każdorazowo:
+**Materiał:** rozdział 14 · **Dane:** `dane/pomiary_pol.csv`
 
--   Sformułuj hipotezę zerową oraz hipotezę alternatywną.
--   Wykonaj odpowiedni test statystyczny.
--   Zinterpretuj wyniki testu.
+Przy każdym zadaniu: **(1)** sformułuj hipotezę zerową oraz alternatywną, **(2)** wykonaj odpowiedni test, **(3)** zinterpretuj wynik.
 
-Wczytaj dane z pliku tekstowego *pomiary_pol.csv*.
+### Rozgrzewka {.unnumbered}
 
--   Czy średnia temperatura roczna (*annual_tavg*) na Wyżynach Polskich różni się od Masywu Czeskiego?
+-   Wczytaj dane i wybierz obserwacje dla Wyżyn Polskich oraz Masywu Czeskiego.
+-   Policz liczbę stacji i średnią *annual_tavg* w każdej z tych prowincji.
 
-    -   Stwórz wykres porównujący tą zmienną dla tych prowincji.
-    -   Określ czy różnica pomiędzy średnimi jest istotna statystycznie.
+### Zadania {.unnumbered}
 
--   Sprawdź, używając testów statystycznych, czy wariancja średniej temperatury rocznej (*annual_tavg*) na Wyżynach Polskich różni się od Masywu Czeskiego?
+1.  Czy średnia temperatura roczna (*annual_tavg*) na Wyżynach Polskich różni się od Masywu Czeskiego?
 
--   Porównaj maksymalną temperaturę dla kwietnia oraz września.
+    -   Stwórz wykres porównujący tę zmienną dla obu prowincji.
+    -   Określ, czy różnica pomiędzy średnimi jest istotna statystycznie.
+
+2.  Sprawdź testem statystycznym, czy wariancja średniej temperatury rocznej (*annual_tavg*) na Wyżynach Polskich różni się od Masywu Czeskiego.
+
+3.  Porównaj maksymalną temperaturę kwietnia i września.
 
     -   Przygotuj wykres porównujący te zmienne.
-    -   Określ czy różnica pomiędzy tymi pomiarami jest istotna statystycznie.
+    -   Zastanów się, czy próby są zależne, czy niezależne - i co z tego wynika dla wyboru testu (rozdz. 13).
+    -   Określ, czy różnica pomiędzy pomiarami jest istotna statystycznie.
+
+4.  Wybierz jeden z powyższych testów i zapisz jego wynik **jednym zdaniem nadającym się do raportu**: z nazwą testu, porównywanymi grupami, ich średnimi, statystyką t ze stopniami swobody oraz wartością p (rozdz. 14, *Jak opisać wynik w raporcie*).
 
 ## Testy nieparametryczne
 
-Rozwiąż poniższe zadania. Każdorazowo:
+**Materiał:** rozdział 15 · **Dane:** `dane/pomiary_pol.csv`, `dane/tetno.csv`
 
--   Sformułuj hipotezę zerową oraz hipotezę alternatywną.
--   Wykonaj odpowiedni test statystyczny.
--   Zinterpretuj wyniki testu.
+Przy każdym zadaniu: **(1)** sformułuj hipotezę zerową oraz alternatywną, **(2)** wykonaj odpowiedni test, **(3)** zinterpretuj wynik.
 
-### Zadanie 1 {.unnumbered}
+### Rozgrzewka {.unnumbered}
 
-Wczytaj dane z pliku tekstowego `pomiary_pol.csv`.
+-   Wczytaj dane i wykonaj histogram zmiennej *annual_precip* dla województwa podlaskiego.
+-   Sprawdź testem Shapiro-Wilka, czy rozkład tej zmiennej jest zbliżony do normalnego.
 
--   Czy istnieje istotna statystycznie różnica pomiędzy średnią temperaturą roczną (*annual_tavg*) dla Karpat Wschodnich i Karpat Zachodnich? Stwórz wizualizację, a następnie wykonaj test statystyczny.
+### Zadania {.unnumbered}
 
--   Czy istnieje istotna statystycznie różnica pomiędzy sumą roczną opadów (*annual_precip*) dla województw podlaskiego i kujawsko-pomorskiego? Stwórz wizualizację, a następnie wykonaj test statystyczny.
+1.  Czy istnieje istotna statystycznie różnica pomiędzy średnią temperaturą roczną (*annual_tavg*) dla Karpat Wschodnich i Karpat Zachodnich? Stwórz wizualizację, a następnie wykonaj test.
 
-### Zadanie 2 {.unnumbered}
+2.  Czy istnieje istotna statystycznie różnica pomiędzy roczną sumą opadów (*annual_precip*) dla województw podlaskiego i kujawsko-pomorskiego? Stwórz wizualizację, a następnie wykonaj test.
 
-Wczytaj dane z pliku `tetno.csv`
+3.  Wczytaj dane z pliku `dane/tetno.csv`. Przeprowadzono badanie tętna u 20 osób przed krótkim (3-minutowym) wysiłkiem fizycznym i po nim. Kolumna *Tętno_1* zawiera pomiar przed wysiłkiem, a *Tętno_2* - po wysiłku. Czy otrzymane wyniki przeczą hipotezie, że wysiłek wpływa na przyspieszenie tętna?
 
--   Przeprowadzono badanie tętna u 20 osób przed i po krótkim (trwającym 3 min) wysiłku fizycznym. Otrzymane dane z uwzględnieniem płci zestawiono w tabeli. Czy otrzymane wyniki przeczą hipotezie, że wysiłek wpływa na przyspieszenie tętna? (przykład pochodzi z książki Andrzeja Stanisza „Przystępny kurs statystyki w oparciu o program STATISTICA PL na przykładach z medycyny”)
+    (przykład pochodzi z książki Andrzeja Stanisza „Przystępny kurs statystyki w oparciu o program STATISTICA PL na przykładach z medycyny")
+
+4.  **Dobierz test.** Dla każdej z poniższych sytuacji wskaż właściwy test, uzasadnij wybór i wykonaj go w R. Korzystaj ze schematu w rozdziale 13.
+
+    -   Czy roczna suma opadów różni się między województwem pomorskim a śląskim?
+    -   Czy temperatura minimalna kwietnia różni się od temperatury minimalnej września?
+    -   Czy temperatura maksymalna kwietnia wiąże się z roczną sumą opadów?
 
 ## Testy parametryczne i nieparametryczne dla wielu grup
 
+**Materiał:** rozdział 16 · **Dane:** `dane/daneMieszkania.csv`
+
 ### Zadanie 1 {.unnumbered}
 
-W miejscowości A wykonywano pomiary temperatury powietrza przez cztery kolejne miesiące. Rozkład temperatury w kolejnych miesiącach był symetryczny i wykazywał się podobną zmiennością.
+W miejscowości A wykonywano pomiary temperatury powietrza przez cztery kolejne miesiące. W każdym miesiącu pomiarów dokonywano na innej, losowo wybranej grupie dni, więc pomiary z poszczególnych miesięcy są od siebie niezależne. Rozkład temperatury w kolejnych miesiącach był symetryczny i wykazywał podobną zmienność.
 
-Jakiego testu użył(a)byś, aby odpowiedzieć na pytanie: "Czy średnia temperatura powietrza różni się isotnie statystycznie pomiędzy miesiącami, w których wykonano pomiary?".
+Jakiego testu użył(a)byś, aby odpowiedzieć na pytanie: *„Czy średnia temperatura powietrza różni się istotnie statystycznie pomiędzy miesiącami, w których wykonano pomiary?"*
 
-W odpowiedzi proszę podać: (1) nazwę testu statystycznego, (2) nazwę funkcji R służącej do wykonania testu, (3) Co w wyniku testu wskazuje, że wynik jest istotny statystycznie? (4) Co oznacza istotny statystycznie wynik?
+W odpowiedzi podaj: **(1)** nazwę testu statystycznego, **(2)** nazwę funkcji R służącej do jego wykonania, **(3)** co w wyniku testu wskazuje, że wynik jest istotny statystycznie, **(4)** co oznacza istotny statystycznie wynik.
 
 ### Zadanie 2 {.unnumbered}
 
-Wczytaj dane `mieszkania` z pakietu `Przewodnik`. Dane te przedstawiają informacje o cenie mieszkań, liczbie pokoi oraz powierzchni mieszkań w 3 dzielnicach Wrocławia.
+Wczytaj dane z pliku `dane/daneMieszkania.csv`. Dane przedstawiają informacje o cenie mieszkań, liczbie pokoi, powierzchni oraz typie budynku dla 200 mieszkań w 3 dzielnicach Wrocławia (Biskupin, Krzyki, Śródmieście). Zbiór pochodzi z pakietu `Przewodnik` towarzyszącego podręcznikowi: Biecek P. (2017), *Przewodnik po pakiecie R*, wyd. 4 rozszerzone, Oficyna Wydawnicza GiS, Wrocław.
 
--   Stwórz wykres porównujący ceny mieszkań w 3 dzielnicach Wrocławia.
+1.  Stwórz wykres porównujący ceny mieszkań w trzech dzielnicach.
 
--   Oblicz minimalną, maksymalną, średnią oraz odchylenie standardowe dla cen mieszkań w podziale na dzielnice.
+2.  Oblicz minimalną, maksymalną i średnią cenę oraz odchylenie standardowe w podziale na dzielnice.
 
--   Zastosuj test Shapiro-Wilka do określenia, czy ceny mieszkań w każdej z dzielnic Wrocławia są zbliżone do rozkładu normalnego. Zinterpretuj wyniki testu.
+3.  Zastosuj test Shapiro-Wilka, aby sprawdzić, czy ceny mieszkań w każdej z dzielnic mają rozkład zbliżony do normalnego. Zinterpretuj wyniki.
 
--   Wykorzystaj analizę wariancji do określenia czy ceny mieszkań różnią się istotnie statystycznie między dzielnicami Wrocławia.
+4.  Wykorzystaj analizę wariancji, aby określić, czy ceny mieszkań różnią się istotnie statystycznie między dzielnicami.
 
-    -   Sformułuj hipotezę zerową oraz altenatywną.
+    -   Sformułuj hipotezę zerową oraz alternatywną.
     -   Zinterpretuj wynik.
 
--   Pomiędzy którymi dzielnicami występują różnice.
+5.  Pomiędzy którymi dzielnicami występują różnice? Jakiego testu trzeba do tego użyć i dlaczego sama analiza wariancji nie wystarcza?
+
+6.  Zapisz wynik analizy wariancji oraz testu post-hoc jednym zdaniem nadającym się do raportu (rozdz. 16, *Jak opisać wynik w raporcie*).
 
 ## Testowanie istotności proporcji
 
+**Materiał:** rozdział 17 · **Dane:** `dane/plony.csv`
+
 ### Zadanie 1 {.unnumbered}
 
-Wczytaj dane z pliku `plony.csv`
+Wczytaj dane z pliku `dane/plony.csv`.
 
--   Zastosuj test niezależności chi-2 do określenia czy istnieje relacja między klasą jakości gleb a wielkością plonu?
+-   Zastosuj test niezależności chi-kwadrat, aby określić, czy istnieje relacja między klasą jakości gleb a wielkością plonu.
 
 ### Zadanie 2 {.unnumbered}
 
@@ -188,83 +325,109 @@ Wśród mieszkańców dzielnicy wykonano badanie dotyczące poczucia bezpieczeń
 
 ## Analiza korelacji
 
-Wczytaj dane z pliku tekstowego `pomiary_pol.csv`.
+**Materiał:** rozdział 18 · **Dane:** `dane/pomiary_pol.csv`
 
--   Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną a maksymalną we wrześniu. Co może oznaczać ten wynik?
+### Rozgrzewka {.unnumbered}
 
-    -   Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu
+-   Wczytaj dane i wykonaj wykres rozrzutu *tmin_9* wobec *tmax_9*.
+-   Sprawdź, czy rozkłady obu zmiennych są zbliżone do normalnego.
+
+### Zadania {.unnumbered}
+
+1.  Sprawdź, czy istnieje korelacja pomiędzy temperaturą minimalną a maksymalną we wrześniu.
+
+    -   Wykonaj wykres pokazujący relację pomiędzy tymi zmiennymi.
     -   Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.
-    -   Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?
+    -   Jakiego współczynnika (Pearsona czy Spearmana) należy użyć w tym wypadku i dlaczego?
+    -   Co ten wynik może oznaczać?
 
--   Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną w kwietniu a temperaturą minimalną we wrześniu. Co może oznaczać ten wynik?
+2.  Sprawdź, czy istnieje korelacja pomiędzy temperaturą minimalną w kwietniu a temperaturą minimalną we wrześniu.
 
-    -   Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu
+    -   Wykonaj wykres pokazujący relację pomiędzy tymi dwiema zmiennymi.
     -   Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.
-    -   Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?
+    -   Jakiego współczynnika należy użyć w tym wypadku i dlaczego?
+    -   Co ten wynik może oznaczać?
+
+3.  Zapisz wynik jednego z testów zdaniem nadającym się do raportu - z wartością współczynnika, przedziałem ufności i wartością p (rozdz. 18, *Jak opisać wynik w raporcie*).
+
+### Zadania dodatkowe {.unnumbered}
+
+4.  (\*) Wykonaj macierz korelacji dla wszystkich zmiennych pomiarowych w zbiorze (*tmin_4*, *tmax_4*, *tmin_9*, *tmax_9*, *annual_tavg*, *annual_precip*). Która para zmiennych jest najsilniej powiązana, a która najsłabiej? Pamiętaj o argumencie obsługującym braki danych.
 
 ## Analiza regresji
 
-Wczytaj dane z pliku tekstowego `pomiary_pol.csv` oraz wybierz dane dla województwa zachodniopomorskiego.
+**Materiał:** rozdział 19 · **Dane:** `dane/pomiary_pol.csv` (województwo zachodniopomorskie)
 
-Dla wybranych danych:
+### Rozgrzewka {.unnumbered}
 
--   zwizualizuj relację między roczną sumą opadów (*annual_precip*) a temperaturą maksymalną w kwietniu (*tmax_4*).
+-   Wczytaj dane i wybierz obserwacje dla województwa zachodniopomorskiego.
+-   Sprawdź zakres zmiennych *tmax_4* oraz *annual_precip* (funkcja `range`).
 
--   zbuduj model regresji liniowej zależności rocznej sumy opadów (*annual_precip*) od temperatury maksymalnej w kwietniu (*tmax_4*) i nazwij go model1.
+### Zadania {.unnumbered}
 
--   opisz wyniki modelu, w tym wartości współczynników, poziomy istotności, jakość modelu.
+1.  Zwizualizuj relację między roczną sumą opadów (*annual_precip*) a temperaturą maksymalną w kwietniu (*tmax_4*).
 
--   wyznacz współczynniki modelu i zapisz równanie modelu regresji liniowej.
+2.  Zbuduj model regresji liniowej zależności *annual_precip* od *tmax_4* i nazwij go `model1`.
 
--   zwizualizuj model regresji liniowej.
+3.  Opisz wyniki modelu: wartości współczynników, ich istotność oraz jakość dopasowania modelu.
 
--   wykonaj predykcję rocznej sumy opadów dla temperatury maksymalnej w kwietniu równej 11,1 stopnia Celsjusza.
+4.  Wyznacz współczynniki modelu i zapisz równanie regresji liniowej.
 
--   przeanalizuj reszty z modelu
+5.  Zwizualizuj model regresji liniowej (dodaj linię regresji do wykresu rozrzutu).
+
+6.  Wykonaj predykcję rocznej sumy opadów dla temperatury maksymalnej w kwietniu równej 12, 13 oraz 14 °C. Przed wykonaniem predykcji sprawdź zakres zmiennej *tmax_4* w analizowanych danych - dlaczego to ważne?
+
+7.  Przeanalizuj reszty modelu:
 
     -   jakie są statystyki reszt,
-    -   wykonaj histogram reszt - jaki jest rozkład reszt z modelu?
+    -   wykonaj histogram reszt - jaki jest ich rozkład?
 
--   wykonaj wykres rozrzutu pokazujący zależność między wartościami obserwowanymi (oś x), a wartościami obliczonymi z modelu (oś y).
+8.  Zapisz wynik modelu jednym akapitem nadającym się do raportu: czego dotyczy model, jaka jest jego istotność i dopasowanie oraz jak zinterpretować współczynnik kierunkowy w jednostkach zmiennych (rozdz. 19, *Jak opisać wynik modelu w raporcie*).
 
--   zbuduj model zależności rocznej sumy opadów (*annual_precip*) od temperatury maksymalnej w kwietniu (*tmax_4*) oraz temperatury minimalnej w kwietniu (*tmin_4*) i nazwij go model2.
+### Zadania dodatkowe {.unnumbered}
 
--   Porównaj oba modele (model1 oraz model2) za pomocą kryterium informacyjnego AIC. Określ, który model jest lepszy.
+9.  (\*) Wykonaj wykres rozrzutu pokazujący zależność między wartościami obliczonymi z modelu (oś x) a wartościami obserwowanymi (oś y). Czego oczekujemy po takim wykresie, gdy model jest dobrze dopasowany?
 
--   Który z modeli w większym stopniu wyjaśnia roczną sumą opadów?
+10. (\*) Zbuduj model zależności *annual_precip* od *tmax_4* oraz *tmin_4* i nazwij go `model2`.
+
+11. (\*) Porównaj oba modele za pomocą kryterium AIC oraz skorygowanego $R^2$. Czy dodanie temperatury minimalnej opłaciło się? Odpowiedź uzasadnij liczbami.
+
+12. (\*) Sprawdź w podsumowaniu `model2`, czy zmienna *tmin_4* jest istotna statystycznie. Jak ten wynik łączy się z porównaniem AIC?
 
 ## Podsumowanie ćwiczeń
 
-Wczytaj dane `airquality` z pakietu datasets.
+**Materiał:** rozdziały 1-19 · **Dane:** `airquality` (pakiet `datasets`)
+
+Zestaw podsumowujący, obejmujący materiał całego semestru - przewidziany do samodzielnego rozwiązania w domu.
 
 1.  Przedstaw podstawowe informacje o zbiorze danych `airquality`. Wykorzystaj w tym celu narzędzie pomocy w R oraz podstawowe funkcje.
 
 -   Ile zmiennych oraz rekordów znajduje się w zbiorze danych?
--   Jakie są nazwy zmiennych w zbiorze danych.
+-   Jakie są nazwy zmiennych w zbiorze danych?
 
 2.  Scharakteryzuj statystycznie dane.
 
 -   Oblicz podstawowe statystyki dla zmiennych w zbiorze danych.
 -   Przedstaw podstawowe statystyki dla zmiennych w podziale na poszczególne miesiące.
--   Wykonaj wykres pudełkowy pokazujący jak wartości zmiennych Temp oraz Ozone różnią się między miesiącami.
+-   Wykonaj wykres pudełkowy pokazujący, jak wartości zmiennych *Temp* oraz *Ozone* różnią się między miesiącami.
 
 3.  Scharakteryzuj rozkład zmiennych.
 
--   Jaki jest rozkład zmiennych Temp, oraz Ozone.
+-   Jaki jest rozkład zmiennych *Temp* oraz *Ozone*?
 
-    -   Przedstaw wyniki na wykresach oraz
+    -   Przedstaw wyniki na wykresach.
     -   Oblicz odpowiednie statystyki charakteryzujące rozkład zmiennych.
-    -   Wykonaj test Shapiro-Wilka dla określenia czy rozkład zmiennej Temp jest zbliżony do rozkładu normalnego.
+    -   Wykonaj test Shapiro-Wilka, aby określić, czy rozkład zmiennej *Temp* jest zbliżony do normalnego.
 
-4.  Ile było dni, w których stężenie Ozonu było powyżej 30 ppb oraz temperatura wynosiła powyżej 90F?
+4.  Ile było dni, w których stężenie ozonu było powyżej 30 ppb oraz temperatura wynosiła powyżej 90 °F?
 
-5.  W ilu dniach nie zmierzono stężenia Ozonu?
+5.  W ilu dniach nie zmierzono stężenia ozonu?
 
-6.  W którym dniu odnotowano najniższą wartość stężenia Ozonu? Podaj dzień oraz miesiąc.
+6.  W którym dniu odnotowano najniższą wartość stężenia ozonu? Podaj dzień oraz miesiąc.
 
-7.  Wskaż miesiące, w których średnie stężenie Ozonu było niższe od średniej dla całego okresu pomiarowego.
+7.  Wskaż miesiące, w których średnie stężenie ozonu było niższe od średniej dla całego okresu pomiarowego.
 
-8.  Czy istnieje zależność między zmiennymi Ozone oraz Temp?
+8.  Czy istnieje zależność między zmiennymi *Ozone* oraz *Temp*?
 
-    -   Proszę wykonać odpowiedni test oraz zinterpretować jego wyniki.
-    -   Proszę zwizualizować relację między zmiennymi Ozone oraz Temp.
+    -   Wykonaj odpowiedni test oraz zinterpretuj jego wyniki.
+    -   Zwizualizuj relację między zmiennymi *Ozone* oraz *Temp*.

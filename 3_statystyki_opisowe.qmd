@@ -32,7 +32,8 @@ webr:
 #|  - ex_18
 
 library(gapminder)
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 
 data('gapminder', package = 'gapminder')
 dane2007 <- filter(gapminder, year==2007)
@@ -46,7 +47,7 @@ Statystyki opisowe dzielimy na:
 
 1.  **Miary położenia** - określają przeciętny poziom oraz rozmieszczenie wartości zmiennej:
 
-    -   *Miary przeciętne* - np. *średnia arytemtyczna* - charakteryzują średni lub typowy poziom wartości zmiennej; mówią zatem o *przeciętnym* poziomie rozważanej zmiennej;
+    -   *Miary przeciętne* - np. *średnia arytmetyczna* - charakteryzują średni lub typowy poziom wartości zmiennej; mówią zatem o *przeciętnym* poziomie rozważanej zmiennej;
     -   *Wartość modalna* - wartość najczęściej występująca w zbiorze danych;
     -   *Kwantyle* - dzielą zbiorowość na określone części, np. 4, 10, 100 części.
 
@@ -133,11 +134,19 @@ mean(asia2002$lifeExp)
 
 ### Średnia ważona
 
+Stosowana, gdy poszczególne obserwacje mają różną "wagę". W przykładzie poniżej obliczamy średnią oczekiwaną długość trwania życia dla świata, ważąc każdy kraj liczbą jego ludności - w średniej nieważonej Chiny liczyłyby się tyle samo, co Islandia.
+
 ```{r}
 srednia_w_lifeExp <- weighted.mean(dane2007$lifeExp, dane2007$pop)
+srednia_w_lifeExp
+mean(dane2007$lifeExp)   # dla porównania: średnia nieważona
 ```
 
 ### Średnia harmoniczna
+
+Stosowana dla wielkości wyrażonych jako iloraz (np. prędkość, czyli droga na jednostkę czasu), gdy uśredniamy je przy stałym liczniku.
+
+Przykład: łódź płynie 1 km z prądem z prędkością 6 km/h i wraca ten sam 1 km przeciw prądowi z prędkością 3,2 km/h. Jaka jest średnia prędkość na całej trasie? Średnia arytmetyczna daje tu zły wynik, ponieważ na odcinku wolniejszym łódź spędziła więcej czasu.
 
 ```{r}
 harmonic_mean = function(x){
@@ -147,10 +156,15 @@ harmonic_mean = function(x){
 
 ```{r}
 rzeka = c(6, 3.2) #km/h
-harmonic_mean(rzeka)
+harmonic_mean(rzeka)   # średnia prędkość na trasie
+mean(rzeka)            # dla porównania: średnia arytmetyczna
 ```
 
 ### Średnia geometryczna
+
+Stosowana dla wielkości zmieniających się multiplikatywnie - stóp wzrostu, indeksów, wskaźników zmiany. Uśrednia się tu nie przyrosty, lecz mnożniki.
+
+Przykład: w pierwszym roku pewna wielkość wzrosła o 2,6392% (mnożnik 1,026392), a w drugim o 1,1959% (mnożnik 1,011959). Jaki był przeciętny roczny wzrost?
 
 ```{r}
 geometric_mean = function(x){
@@ -161,8 +175,10 @@ geometric_mean = function(x){
 
 ```{r}
 zmiana <- c(1.026392, 1.011959)
-geometric_mean(zmiana)
+geometric_mean(zmiana)   # przeciętny mnożnik roczny
 ```
+
+Wynik 1,0192 oznacza przeciętny wzrost o 1,92% rocznie.
 
 ### Kwantyle
 
@@ -172,16 +188,16 @@ Kwantyle to wartości cechy, które dzielą analizowany zbiór danych na określ
     -   Kwartyl pierwszy (Q1)
     -   Mediana - kwartyl drugi
     -   Kwartyl trzeci (Q3)
--   Decyle - podzial na 10 części
--   Percentyle - podział na 100 częsci
+-   Decyle - podział na 10 części
+-   Percentyle - podział na 100 części
 
-Funkcja `quantile()` oblicza dowolną wartość kwantyli. Argument *probs* pozwala na zdefyniowanie dowolnych wartości, które mają zostać wyliczone. Argument ten przyjmuje wartości z przedziału od 0 do 1.
+Funkcja `quantile()` oblicza dowolną wartość kwantyli. Argument *probs* pozwala na zdefiniowanie dowolnych wartości, które mają zostać wyliczone. Argument ten przyjmuje wartości z przedziału od 0 do 1.
 
 ![](figures/3_stat_kwartyle.png){width="500"}
 
 #### Kwartyle
 
-Funkcja `quantile()` domyślnie zwraca wartośći kwartyli.
+Funkcja `quantile()` domyślnie zwraca wartości kwartyli.
 
 ```{r}
 kwartyle <- quantile(dane2007$lifeExp)
@@ -261,7 +277,7 @@ median_lifeExp <- median(dane2007$lifeExp)
 median_lifeExp 
 ```
 
-> Obliczyć medianę dla gdpPercap dla danych z 2007 roku.
+> Obliczyć medianę dla gdpPercap dla danych z 2007 roku. Porównaj ją ze średnią obliczoną wcześniej. Dlaczego te dwie wartości tak bardzo się różnią i która z nich lepiej opisuje typowy kraj?
 
 ```{webr}
 #| exercise: ex_5
@@ -301,13 +317,19 @@ median(africa1952$lifeExp)
 -   dla rozkładu symetrycznego mediana oraz średnia będą równe.
 -   mediana jest lepszą miarą w przypadku rozkładów skośnych.
 -   średnia jest bardziej czuła na wartości odstające.
--   średnia jest bardziej przydatna dla małych zbiorów danych.
 
 Podsumowanie: Warto podawać obie wartości.
 
 ### Wartość modalna
 
--   wartość cechy, która w zbiorze danych występuje najczęściej. W R nie ma wbudowanej funkcji do obliczania tej statystyki.
+-   wartość cechy, która w zbiorze danych występuje najczęściej. W R nie ma wbudowanej funkcji do obliczania tej statystyki, ale można ją wyznaczyć z tabeli liczebności:
+
+```{r}
+liczebnosci <- table(dane2007$continent)
+names(liczebnosci)[which.max(liczebnosci)]
+```
+
+-   dla zmiennych ciągłych (np. *lifeExp*) wartość modalna zwykle nie ma sensu, bo prawie każda obserwacja jest inna - mówimy wtedy raczej o *modzie rozkładu*, czyli położeniu szczytu histogramu (patrz rozdział *Rozkłady danych*).
 
 ## Statystyki opisowe: Miary rozrzutu
 
@@ -366,7 +388,7 @@ max(pl$lifeExp)
 :::
 ::::
 
-> W jakim zakresie zmieniała się oczekiwana długość trwania życia w 2002 roku w krajach azjatyckich z PKB (gpdPercap) przekraczającym 25000?
+> W jakim zakresie zmieniała się oczekiwana długość trwania życia w 2002 roku w krajach azjatyckich z PKB (gdpPercap) przekraczającym 25000?
 
 ```{webr}
 #| exercise: ex_9
@@ -392,9 +414,10 @@ range(asia2002$lifeExp)
 
 ```{r}
 range_lifeExp <- max(dane2007$lifeExp) - min(dane2007$lifeExp)
+range_lifeExp
 ```
 
-Uwaga! W R funkcja `range()` zwraca wektor składający się z dwóch wartości - minimalnej oraz maksymalnej, a nie rostęp (różnicę między tymi wartościami).
+Uwaga! W R funkcja `range()` zwraca wektor składający się z dwóch wartości - minimalnej oraz maksymalnej, a nie rozstęp (różnicę między tymi wartościami).
 
 > Obliczyć rozstęp dla gdpPercap dla danych z 2007 roku.
 
@@ -419,6 +442,7 @@ Rozwiązanie:
 
 ```{r}
 IQR_lifeExp <- IQR(dane2007$lifeExp)
+IQR_lifeExp
 ```
 
 > Obliczyć rozstęp kwartylowy dla gdpPercap dla danych z 2007 roku.
@@ -462,6 +486,7 @@ IQR(africa$lifeExp)
 
 ```{r}
 var_lifeExp <- var(dane2007$lifeExp)
+var_lifeExp
 ```
 
 ### Odchylenie standardowe
@@ -482,7 +507,7 @@ sd_lifeExp <- sd(dane2007$lifeExp)
 sd_lifeExp 
 ```
 
-> Jakie była wartość odchylenia standardowego dla gdpPercap w 2007 roku?
+> Jakie była wartość odchylenia standardowego dla gdpPercap w 2007 roku? Porównaj je z odchyleniem standardowym zmiennej lifeExp. Dlaczego porównywanie tych dwóch liczb wprost nie ma sensu?
 
 ```{webr}
 #| exercise: ex_13
@@ -529,7 +554,7 @@ table(dane1952$continent)
 :::
 ::::
 
-## Statystykiw grupach
+## Statystyki w grupach
 
 Pakiet `dplyr` pozwala także na obliczenie statystyk według grup, np. średnia długość trwania życia na poszczególnych kontynentach.
 
@@ -546,18 +571,18 @@ smr_by_continent <- summarize(by_continent,
 smr_by_continent
 ```
 
-Powyższy kod można zapisać także z wykorzystaniem operatora łączącego %\>%
+Powyższy kod można zapisać zwięźlej z wykorzystaniem operatora potokowego `|>` (patrz podrozdział *Operatory potokowe* w rozdziale *Przetwarzanie danych - dplyr*)
 
 ```{r}
-mean_by_continent <- gapminder %>% 
-  filter(year == 2007) %>% 
-  group_by(continent) %>% 
+mean_by_continent <- gapminder |> 
+  filter(year == 2007) |> 
+  group_by(continent) |> 
   summarize(mean_le = mean(lifeExp))
 
 mean_by_continent
 ```
 
-> Oblicz średnią oczekiwaną długość trwania życia w poszczególnych latach. Posortuj wyniki od największej do najmniejszej wartości.
+> Oblicz średnią oczekiwaną długość trwania życia w poszczególnych latach. Posortuj wyniki od największej do najmniejszej wartości. Co wynik mówi o zmianie długości życia na świecie w latach 1952-2007?
 
 ```{webr}
 #| exercise: ex_15
@@ -569,9 +594,9 @@ mean_by_continent
 Rozwiązanie:
 
 ``` r
-ex15 <- gapminder %>% 
-  group_by(year) %>% 
-  summarize(mean_le = mean(lifeExp)) %>% 
+ex15 <- gapminder |> 
+  group_by(year) |> 
+  summarize(mean_le = mean(lifeExp)) |> 
   arrange(desc(mean_le))
 ex15
 ```
@@ -590,9 +615,9 @@ ex15
 Rozwiązanie:
 
 ``` r
-ex16  <- gapminder %>% 
-  filter(continent == 'Africa')  %>% 
-  group_by(year) %>% 
+ex16  <- gapminder |> 
+  filter(continent == 'Africa')  |> 
+  group_by(year) |> 
   summarize(mean_gpd = mean(gdpPercap))  
 ex16
 ```
@@ -621,9 +646,9 @@ smr_by_continent_year
 Rozwiązanie:
 
 ``` r
-ex17 <- gapminder %>% 
-  filter(year == 2007) %>% 
-  group_by(continent) %>% 
+ex17 <- gapminder |> 
+  filter(year == 2007) |> 
+  group_by(continent) |> 
   summarize(mean_gpd = mean(gdpPercap))  
   
 ex17
@@ -643,9 +668,9 @@ ex17
 Rozwiązanie:
 
 ``` r
-ex18 <- gapminder %>% 
- group_by(continent, year) %>% 
- summarize(mean_gdp = mean(gdpPercap)) %>% 
+ex18 <- gapminder |> 
+ group_by(continent, year) |> 
+ summarize(mean_gdp = mean(gdpPercap)) |> 
  pivot_wider(names_from = year, values_from = mean_gdp)
 ex18
 ```
@@ -654,15 +679,57 @@ ex18
 
 ## Braki danych
 
-W R braki danych zazwyczaj kodowane są jako NA - Not Available.
+W R braki danych kodowane są jako `NA` (ang. *Not Available*). Są one częste w rzeczywistych danych - zbiór `pomiary_pol.csv`, z którego korzystamy na ćwiczeniach, ma braki **w każdej kolumnie**. Warto więc wiedzieć, jak się zachowują.
+
+### Braki „zarażają” wyniki
+
+Każde działanie, w którym bierze udział `NA`, daje w wyniku `NA`. Dotyczy to także funkcji statystycznych:
 
 ```{r}
 NA + 1 
 2*NA 
 x = c(1,2,NA)
 mean(x)
+```
+
+Dlatego funkcje statystyczne mają argument `na.rm` (ang. *NA remove*), który każe im pominąć braki:
+
+```{r}
 mean(x, na.rm = TRUE)
 ```
+
+Gdy `mean()`, `sd()` czy `median()` zwracają `NA`, przyczyną prawie zawsze jest brak danych w kolumnie - a nie błąd w kodzie.
+
+### Ile braków jest i gdzie?
+
+Zanim zaczniemy analizę, warto sprawdzić skalę problemu:
+
+```{r}
+pomiary_pol <- read.csv("dane/pomiary_pol.csv")
+
+sum(is.na(pomiary_pol$annual_tavg))   # liczba braków w jednej kolumnie
+colSums(is.na(pomiary_pol))           # liczba braków w każdej kolumnie
+```
+
+Braki pokazuje też `summary()` - w wierszu `NA's` pod statystykami kolumny.
+
+### Jak braki traktują testy i modele
+
+-   **Funkcje statystyczne** (`mean()`, `sd()`, `quantile()`) wymagają `na.rm = TRUE` - inaczej zwrócą `NA`.
+-   **Testy statystyczne** i **modele** (`t.test()`, `aov()`, `lm()`, `cor.test()`) pomijają obserwacje z brakami automatycznie i zwykle informują o tym w wyniku - np. *„15 observations deleted due to missingness”*. Zawsze warto ten komunikat przeczytać: mówi on, na ilu obserwacjach faktycznie wykonano analizę.
+-   **Funkcja `cor()`** wymaga wskazania sposobu postępowania argumentem `use = "complete.obs"`.
+
+### Usuwanie braków
+
+Wiersze z brakami można usunąć, ale warto robić to świadomie - usuwamy wtedy całą obserwację, także wartości z pozostałych kolumn:
+
+```{r}
+pomiary_pelne <- na.omit(pomiary_pol)   # tylko wiersze bez żadnego braku
+nrow(pomiary_pol)
+nrow(pomiary_pelne)
+```
+
+> Sprawdź, w których kolumnach zbioru `pomiary_pol` jest najwięcej braków. Następnie oblicz średnią rocznej sumy opadów (*annual_precip*) raz bez argumentu `na.rm`, a raz z nim. Dlaczego pierwszy wynik jest bezużyteczny?
 
 ## Ćwiczenie
 

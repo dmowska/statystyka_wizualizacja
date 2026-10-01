@@ -2,8 +2,11 @@
 format: live-html
 webr:
   packages:
-    - tidyverse
+    - gapminder
+    - dplyr
     - ggplot2
+    - colorspace
+    - RColorBrewer
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -22,9 +25,10 @@ webr:
 #|  - ex_9
 
 library(gapminder)
-library(tidyverse)
+library(dplyr)
 library(ggplot2)
 library(colorspace)
+library(RColorBrewer)
 
 data('gapminder', package = 'gapminder')
 dane2007 <- filter(gapminder, year==2007)
@@ -50,7 +54,7 @@ Elementy formatowania wykresów:
 
 ## Zmiana koloru, kształtu oraz wielkości punktów
 
-W R sposób wyświetlania punktu (kształt) kodowany jest za pomoca numeru.
+W R sposób wyświetlania punktu (kształt) kodowany jest za pomocą numeru.
 
 ![](figures/5_points-symbols.png){width="220"}
 
@@ -82,10 +86,10 @@ ggplot(data=gapminder, aes(x=gdpPercap, y=lifeExp)) +
 ```{r}
 ggplot(data = gapminder, aes(x = year, y = lifeExp)) + 
   stat_summary(fun = "mean", geom = "line", 
-               color = "orange", lwd = 2, linetype = "dotted" )
+               color = "orange", linewidth = 2, linetype = "dotted" )
 ```
 
-> Zmień kolor linii na zielony, typ: linia kreskowa, grubość: 3
+> Zmień kolor linii na zielony, typ: linia kreskowa, grubość (argument `linewidth`): 3
 
 ```{webr}
 #| exercise: ex_2
@@ -99,12 +103,12 @@ Rozwiązanie:
 ``` r
 ggplot(data = gapminder, aes(x = year, y = lifeExp)) + 
   stat_summary(fun = "mean", geom = "line", 
-               color = "darkgreen", lwd = 3, linetype = "dashed" ) 
+               color = "darkgreen", linewidth = 3, linetype = "dashed" ) 
 ```
 :::
 ::::
 
-## Modyfikacjia wykresu względem wartości zmiennej
+## Modyfikacja wykresu względem wartości zmiennej
 
 Wykresy mogą być modyfikowane na podstawie wartości zmiennej. W tym celu można posłużyć się atrybutami:
 
@@ -131,7 +135,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = pop)) +
 ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, size = pop)) + geom_point()
 ```
 
-> Zwizualizować zależnośc między długością trwania życia a liczbą ludności w Azji w 1952 roku. Wykorzystaj zmienną gdpPercap do przypisania kolorów do poszczególnych punktów.
+> Zwizualizować zależność między długością trwania życia a liczbą ludności w Azji w 1952 roku. Wykorzystaj zmienną gdpPercap do przypisania kolorów do poszczególnych punktów.
 
 ```{webr}
 #| exercise: ex_3
@@ -143,8 +147,8 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, size = pop)) + geom_point()
 Rozwiązanie:
 
 ``` r
-gapminder %>% 
-  filter(continent == 'Asia' & year == 1952) %>% 
+gapminder |> 
+  filter(continent == 'Asia' & year == 1952) |> 
   ggplot(aes(x=lifeExp, y=pop, color = gdpPercap)) + 
   geom_point()
 ```
@@ -172,7 +176,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp)) +
        title = "Zależność między oczekiwaną długością trwania życia, a PKB w 2007 roku")
 ```
 
-> Zwizualizować zależnośc między długością trwania życia a PKB używając danych z Europy i Azji. Wykorzystaj zmienną continent do przypisania kolorów do poszczególnych punktów. Dodaj odpowiedni tytuł do wykresu oraz podpisy osi.
+> Zwizualizować zależność między długością trwania życia a PKB używając danych z Europy i Azji. Wykorzystaj zmienną continent do przypisania kolorów do poszczególnych punktów. Dodaj odpowiedni tytuł do wykresu oraz podpisy osi. Czy po dodaniu koloru widać różnicę między kontynentami? Jak opisałbyś ją jednym zdaniem?
 
 ```{webr}
 #| exercise: ex_4
@@ -184,8 +188,8 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp)) +
 Rozwiązanie:
 
 ``` r
-gapminder %>% 
-  filter(continent %in% c('Europe', 'Asia')) %>% 
+gapminder |> 
+  filter(continent %in% c('Europe', 'Asia')) |> 
   ggplot(aes(x=gdpPercap, y=lifeExp, color = continent)) + 
   geom_point() + 
   labs(x = "PKB na osobę (USD)", 
@@ -218,7 +222,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp)) +
   lims(x = c(0, 10000))
 ```
 
-> Zwizualizować zależnośc między długością trwania życia a PKB w Azji w 1952 i 2007 roku. Wykorzystaj zmienną year do przypisania kolorów do poszczególnych punktów. Dodaj tytuł do wykresu, etykiety osi. Ogranicz zakres PKB do 60000
+> Zwizualizować zależność między długością trwania życia a PKB w Azji w 1952 i 2007 roku. Wykorzystaj zmienną year do przypisania kolorów do poszczególnych punktów. Dodaj tytuł do wykresu, etykiety osi. Ogranicz zakres PKB do 60000
 
 ```{webr}
 #| exercise: ex_5
@@ -238,8 +242,8 @@ Zamień zmienną year na factor, aby przypisać kolor na podstawie roku 1952 i 2
 Rozwiązanie:
 
 ``` r
-gapminder %>% 
-  filter(continent == 'Asia' & year %in% c(1952, 2007)) %>% 
+gapminder |> 
+  filter(continent == 'Asia' & year %in% c(1952, 2007)) |> 
   ggplot(aes(x=lifeExp, y=gdpPercap, color = as.factor(year))) + 
   geom_point() + 
   labs(x = "Oczekiwana dalsza długość trwania życia", 
@@ -266,7 +270,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp)) +
 ```{r}
 ggplot(data=dane2007, aes(x = continent, y = lifeExp)) +
   geom_boxplot() + 
-  labs(x = "Oczekiwana długość trwania życia") + 
+  labs(y = "Oczekiwana długość trwania życia") + 
   scale_x_discrete(name = "Kontynenty", 
                    labels = c(
                      "Africa" = "Afryka", 
@@ -335,11 +339,11 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = continent)) +
 ```{r}
 ggplot(data=dane2007, aes(x = continent, y = lifeExp, fill = continent)) +
   geom_boxplot() + 
-  labs(x = "Oczekiwana długość trwania życia") + 
+  labs(x = "Kontynent", y = "Oczekiwana długość trwania życia") + 
   scale_fill_manual(values = c("blue", "orange", "magenta", "yellow", "green"))
 ```
 
-> Zwizualizować zależnośc między długością trwania życia a PKB w Azji w 1952 i 2007 roku. Wykorzystaj zmienną year do przypisania kolorów do poszczególnych punktów. Przypisz kolor pomarańczowy do roku 1952 oraz kolor granatowy do roku 2007. Dodaj tytuł do wykresu, etykiety osi.
+> Zwizualizować zależność między długością trwania życia a PKB w Azji w 1952 i 2007 roku. Wykorzystaj zmienną year do przypisania kolorów do poszczególnych punktów. Przypisz kolor pomarańczowy do roku 1952 oraz kolor granatowy do roku 2007. Dodaj tytuł do wykresu, etykiety osi.
 
 ```{webr}
 #| exercise: ex_6
@@ -351,8 +355,8 @@ ggplot(data=dane2007, aes(x = continent, y = lifeExp, fill = continent)) +
 Rozwiązanie:
 
 ``` r
-gapminder %>% 
-  filter(continent == 'Asia' & year %in% c(1952, 2007)) %>% 
+gapminder |> 
+  filter(continent == 'Asia' & year %in% c(1952, 2007)) |> 
   ggplot(aes(x=lifeExp, y=gdpPercap, color = as.factor(year))) + 
   geom_point() + 
   labs(x = "Oczekiwana dalsza długość trwania życia", 
@@ -365,7 +369,7 @@ gapminder %>%
 :::
 ::::
 
--   `scale_color_brewer` oraz `scale_fill_brewer` z pakietu `RColorBrewer` pozwala na zdefiniowanie jednej z palet dostarczanych przez pakier `RColorBrewer. Dostępne palety w pakiecie`RColorBrewer\`.
+-   `scale_color_brewer` oraz `scale_fill_brewer` pozwalają na wykorzystanie jednej z palet dostarczanych przez pakiet `RColorBrewer`. Zestawienie wszystkich dostępnych palet wyświetla funkcja `RColorBrewer::display.brewer.all()`.
 
 ```{r}
 #| eval: false
@@ -383,14 +387,14 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = continent)) +
 ```{r}
 ggplot(data=dane2007, aes(x = continent, y = lifeExp, fill = continent)) +
   geom_boxplot() + 
-  labs(x = "Oczekiwana długość trwania życia") + 
+  labs(x = "Kontynent", y = "Oczekiwana długość trwania życia") + 
   scale_fill_brewer(palette = "Set1")
 ```
 
 ```{r}
 ggplot(data=dane2007, aes(x = continent, y = lifeExp, fill = continent)) +
   geom_boxplot() + 
-  labs(x = "Oczekiwana długość trwania życia") + 
+  labs(x = "Kontynent", y = "Oczekiwana długość trwania życia") + 
   scale_fill_brewer(palette = "YlGn", direction = -1)
 ```
 
@@ -406,7 +410,7 @@ ggplot(data = dane2007, aes(x = gdpPercap, y = lifeExp, color = continent)) +
 ```{r}
 ggplot(data=dane2007, aes(x = continent, y = lifeExp, fill = continent)) +
   geom_boxplot() + 
-  labs(x = "Oczekiwana długość trwania życia") + 
+  labs(x = "Kontynent", y = "Oczekiwana długość trwania życia") + 
   scale_fill_discrete_qualitative(palette = "Harmonic")
 ```
 
@@ -441,7 +445,7 @@ ggplot(data = gapminder, aes(x = factor(year), y = gdpPercap, fill = factor(year
 ```{r}
 ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = pop)) +
   geom_point() + 
-  labs(x = "PKB na osobę (USD)", y = "Oczekiwana dalsza długość trwania życia", color = "Kontynent") + 
+  labs(x = "PKB na osobę (USD)", y = "Oczekiwana dalsza długość trwania życia", color = "Liczba ludności") + 
   scale_colour_gradient(low = "orange", high = "brown")
 ```
 
@@ -461,7 +465,7 @@ ggplot(data =dane2007, aes(x = gdpPercap, y = lifeExp, color = pop)) +
   scale_color_continuous_sequential(trans = "log10", labels = scales::label_comma(), palette = "YlOrRd")
 ```
 
-> Wykonaj wykres ilustrujący zależność między PKB na osobę, a długością trwania życia. Pokoloruj punkty względem zmienej pop. Użyj dowolnej palety.
+> Wykonaj wykres ilustrujący zależność między PKB na osobę, a długością trwania życia. Pokoloruj punkty względem zmiennej pop. Użyj dowolnej palety. Czy kolor dobrze pokazuje zróżnicowanie liczby ludności? Jeśli nie - co można zrobić, żeby wykres stał się czytelniejszy (podpowiedź: zobacz przykład ze skalą logarytmiczną powyżej)?
 
 ```{webr}
 #| exercise: ex_8
@@ -513,7 +517,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = continent)) +
 #| message: false
 ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = continent)) +
   geom_point() + 
-  labs(x = "PKB na osobę w USD", y = "Oczekiwana długość trwania życia", labs = "", 
+  labs(x = "PKB na osobę w USD", y = "Oczekiwana długość trwania życia", 
        title = "Zależność między oczekiwaną długością trwania życia\na PKB na osobę w 2007 roku") + 
   scale_color_brewer(name = "Kontynent", palette = "Set1", 
                      labels = c("Africa" = "Afryka", "Americas" = "Ameryka N/S", "Asia" = "Azja", "Europe" = "Europa", "Oceania" = "Australia i Oceania")) + 
@@ -523,7 +527,7 @@ ggplot(data=dane2007, aes(x=gdpPercap, y=lifeExp, color = continent)) +
         legend.title = element_text(face = "bold"))
 ```
 
-> Wykonaj wykres pudełkowy dla zmiennej gdpPercap w podziale na kontynenty. Zdefiniuj kolory, które mają być przypisane poszczególnym kontynentom. Podpisz osie oraz dodaj tytuł do wykresu. Wybierz motyw. Ustaw legendę na dole (pod wykresem). Zmień nazwy kontynentów na polsie nazwy.
+> Wykonaj wykres pudełkowy dla zmiennej gdpPercap w podziale na kontynenty. Zdefiniuj kolory, które mają być przypisane poszczególnym kontynentom. Podpisz osie oraz dodaj tytuł do wykresu. Wybierz motyw. Ustaw legendę na dole (pod wykresem). Zmień nazwy kontynentów na polskie nazwy.
 
 ```{webr}
 #| exercise: ex_9

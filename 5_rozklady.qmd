@@ -2,8 +2,10 @@
 format: live-html
 webr:
   packages:
-    - tidyverse
+    - gapminder
+    - dplyr
     - ggplot2
+    - e1071
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -20,7 +22,7 @@ webr:
 
 
 library(gapminder)
-library(tidyverse)
+library(dplyr)
 library(ggplot2)
 library(e1071)
 
@@ -76,7 +78,7 @@ Dla każdego rozkładu danych dostępnego w R istnieją cztery funkcje, rozpoczy
 
 -   *d* - zwraca wartość funkcji gęstości rozkładu (pdf - probability density function)
 -   *p* - zwraca wartości dystrybuanty
--   *q* - podaje jaki kwantyl znajduje się po lewej stronie wykresu gęstości
+-   *q* - działa odwrotnie do *p*: dla zadanego prawdopodobieństwa kumulowanego zwraca wartość zmiennej (kwantyl), poniżej której znajduje się ten odsetek obserwacji. Np. `qnorm(0.975)` zwraca wartość, poniżej której leży 97,5% obserwacji standaryzowanego rozkładu normalnego
 -   *r* - zwraca losowo wygenerowane wartości z danego rozkładu
 
 ```{r}
@@ -91,8 +93,8 @@ wiecej informacji: <https://github.com/bearloga/tinydensR>
 -   Zwany inaczej rozkładem Gaussa.
 -   Opisywany jest za pomocą dwóch parametrów: średniej $\mu$ oraz wariancji $\sigma^2$ (odchylenie standardowe rozkładu jest określane przez $\sigma$).
 -   Opisuje on sytuacje, gdy większość przypadków ma wartość zbliżoną do średniej, a im wartość jest dalsza od średniej tym jest ich coraz mniej.
--   Jeden z najważniejszych rozkładów prawdopodobieństwa, odgrywający ważną rolę w statystyce. Wykres funkcji prawdopodobieństwa tego rozkładu jest krzwą w kształcie dzwonu.
--   Znacenie tego rozkładu wynika z faktu, że często jest on obserwowany w naturze. Obserwacja wielu zjawisk przyrodniczych pozwoliła stwierdzić, że podlegają one prawu rozkładu normalnego lub bardzo zbliżonego do niego.
+-   Jeden z najważniejszych rozkładów prawdopodobieństwa, odgrywający ważną rolę w statystyce. Wykres funkcji prawdopodobieństwa tego rozkładu jest krzywą w kształcie dzwonu.
+-   Znaczenie tego rozkładu wynika z faktu, że często jest on obserwowany w naturze. Obserwacja wielu zjawisk przyrodniczych pozwoliła stwierdzić, że podlegają one prawu rozkładu normalnego lub bardzo zbliżonego do niego.
 
 Rozkład normalny o średniej równej 0 a odchyleniu standardowym równym 1 nazywamy *standaryzowanym rozkładem normalnym* i oznaczamy N(0,1).
 
@@ -103,18 +105,26 @@ Rozkład normalny o średniej równej 0 a odchyleniu standardowym równym 1 nazy
 -   Prawdopodobieństwo, że wartość zmiennej znajduje się w odległości nie większej (lub mniejszej):
 
     -   niż jedno odchylenie standardowe od średniej wynosi 68.3%;
-    -   niż dwa odchylenia standardowe od średniejwynosi 95.5%;
+    -   niż dwa odchylenia standardowe od średniej wynosi 95.5%;
     -   niż trzy odchylenia standardowe od średniej wynosi 99.7%.
 
-![Ilutracja reguły trzech sigm](figures/6_normalny.png){width="487"}
+![Ilustracja reguły trzech sigm](figures/6_normalny.png){width="487"}
 
 ```{r}
 rnorm(n = 10, mean = 0, sd = 1)
 ```
 
 ```{r}
-hist(rnorm(n = 10000, mean = 0, sd = 1))
+#| message: false
+library(ggplot2)
+losowe <- data.frame(x = rnorm(n = 10000, mean = 0, sd = 1))
+ggplot(losowe, aes(x = x)) + 
+  geom_histogram(bins = 40) + 
+  labs(x = "wartość", y = "liczba obserwacji") +
+  theme_bw()
 ```
+
+Wykresy w tym skrypcie rysujemy pakietem `ggplot2`. Wyjątkiem są rysunki przedstawiające **funkcje teoretyczne** (a nie dane) - takie jak krzywa gęstości rozkładu poniżej. Do nich wygodniejsza jest funkcja `curve()` z grafiki podstawowej, która rysuje wykres wzoru matematycznego bez potrzeby tworzenia ramki danych.
 
 ```{r}
 #| fig_width: 400px
@@ -123,8 +133,9 @@ curve(dnorm(x, mean = 0, sd = 1), xlim = c(-5, 5))
 abline(h = 0)
 ```
 
+Funkcja `pnorm()` zwraca prawdopodobieństwo, że zmienna przyjmie wartość **mniejszą** od podanej. Poniżej: prawdopodobieństwo uzyskania wartości mniejszej od 90 w rozkładzie normalnym o średniej 120 i odchyleniu standardowym 20.
+
 ```{r}
-## Probability of having a value *lower* than 90 in a normal distribution with a mean of 120 and sd of 20.
 pnorm(q = 90, mean = 120, sd = 20, lower.tail = TRUE)
 ```
 
@@ -139,22 +150,10 @@ polygon(x = c(sequence,90,0),
         col = "grey")
 ```
 
-```{r}
+Funkcja `qnorm()` działa w drugą stronę: dla podanego prawdopodobieństwa zwraca wartość zmiennej. Podstawiając wynik z poprzedniego przykładu (6,68%) otrzymamy z powrotem wartość 90.
 
-## X-axis value *below* which the probability is 6%
+```{r}
 qnorm(p = 0.0668072, mean = 120, sd = 20, lower.tail = TRUE)
-```
-
-```{r}
-#| fig_width: 400px
-#| echo: false
-curve(dnorm(x, mean = 120, sd = 20), xlim = c(0, 200))
-abline(h = 0)
-sequence <- seq(0, 90, 0.1)
-polygon(x = c(sequence,90,0),
-        y = c(dnorm(c(sequence),120,20),0,0),
-        col = "grey")
-
 ```
 
 **Przykład**: Załóżmy, że wyniki z egzaminów wstępnych mają rozkład normalny, ze średnią 72 punktów oraz odchyleniem standardowym 15.2 Jaki procent studentów uzyska wynik 84 lub wyższy na egzaminie?
@@ -167,7 +166,7 @@ Odpowiedź: Procent studentów z wynikiem 84 punkty lub większym wynosi 21,5%
 
 ### Test Shapiro-Wilka
 
--   służy do sprawdzenia czy analizowna zmienna ma rozkład zbliżony do rozkładu normalnego.
+-   służy do sprawdzenia czy analizowana zmienna ma rozkład zbliżony do rozkładu normalnego.
 -   hipoteza zerowa testu: rozkład analizowanej zmiennej jest zbliżony do rozkładu normalnego.
 -   istotny wynik testu Shapiro-Wilka ([***p-value \<0.05***]{.underline}) świadczy o tym, że rozkład zmiennej obserwowanej [**nie jest podobny**]{.underline} do rozkładu normalnego
 -   w R obliczany za pomocą `shapiro.test()`
@@ -180,16 +179,19 @@ x <- rnorm(1000, mean = 10, sd = 2)
 ```
 
 ```{r}
-hist(x)
+ggplot(data.frame(x = x), aes(x = x)) + 
+  geom_histogram(bins = 30) + 
+  labs(x = "wartość", y = "liczba obserwacji") +
+  theme_bw()
 ```
 
 ```{r}
 shapiro.test(x)
 ```
 
-Wartość p-value wynosi p-value = 0.7595 (jest większa od 0.05), zatem powyższy rozkład jest zbliżony rozkładu normalnego.
+Wartość p-value wynosi 0,7595, czyli jest większa od 0,05. Nie mamy zatem podstaw do odrzucenia hipotezy zerowej o normalności rozkładu i możemy traktować go jako zbliżony do normalnego. Warto pamiętać, że brak odrzucenia $H_0$ nie jest dowodem normalności - test mógł odstępstwa od niej po prostu nie wykryć, co jest tym bardziej prawdopodobne, im mniejsza próba.
 
-> Ze zbioru danych gapminder wyselekcjonować dane dla kontynentu Afryka. Wykonać histogram dla zmiennej lifeExp oraz test Shapiro-Wilka. Czy zmienna lifeExp dla kontynentu Afryka ma rozkład zbiżony do rozkładu normalnego?
+> Ze zbioru danych gapminder wyselekcjonować dane dla kontynentu Afryka. Wykonać histogram dla zmiennej lifeExp oraz test Shapiro-Wilka. Czy zmienna lifeExp dla kontynentu Afryka ma rozkład zbliżony do rozkładu normalnego?
 
 ```{webr}
 #| exercise: ex_1
@@ -213,9 +215,8 @@ shapiro.test(afryka$lifeExp)
 
 ## Rozkład t-Studenta
 
--   Rozkład t-Studenta powstaje podczas pobierania próbek z populacji o rozkładzie normalnym, gdy wielkość próby jest mała, a odchylenie standardowe populacji jest nieznane.
--   Stosowany do estymacji średniej z populacji o rozkładzie normalnych w sytuacji, gdy wielkość próby jest niewielka a odchylenie standardowe populacji jest nieznane.
--   Rozkład ten zależy tylko od jednego parametru - liczby stopni swobody (parametrt $df$). Im więcej stopni swobody, tym rozkład bardziej zbliżony do rozkładu normalnego.
+-   Rozkład t-Studenta powstaje podczas pobierania próbek z populacji o rozkładzie normalnym, gdy wielkość próby jest mała, a odchylenie standardowe populacji jest nieznane. Stosuje się go wtedy do estymacji średniej w populacji (patrz rozdział *Estymacja punktowa i przedziałowa*).
+-   Rozkład ten zależy tylko od jednego parametru - liczby stopni swobody (parametr $df$). Im więcej stopni swobody, tym rozkład bardziej zbliżony do rozkładu normalnego.
 -   Rozkład t-Studenta jest symetryczny, dzwonowaty podobnie jak rozkład normalny, ale posiada więcej wartości dalej od średniej (tj. w pobliżu ogona)
 
 ```{r}
@@ -343,7 +344,7 @@ ggplot(data = gapminder, aes(x = gdpPercap)) +
 
 ### Wykres pudełkowy
 
-Wykres pudełkowy poza wizaulizacją statystyk opisowych pozwala także na określenie typu rozkładu danych (symetryczny, asymetryczny).
+Wykres pudełkowy poza wizualizacją statystyk opisowych pozwala także na określenie typu rozkładu danych (symetryczny, asymetryczny).
 
 ### Rozkład danych, a wykres pudełkowy.
 
@@ -419,8 +420,13 @@ skewness(gapminder$lifeExp)
 
 Miary koncentracji opisują koncentrację wartości cechy wokół średniej. Jedną z miar koncentracji jest kurtoza.
 
--   K \> 0 - Im wyższa kurtoza, tym bardziej wysmukła jest krzywa liczebności,a zatem większa koncentracja wokół średniej
--   K \< 0 - rozkład bardziej spłaszczony niż rozkład normalny.
+Funkcja `kurtosis()` z pakietu `e1071` domyślnie zwraca **kurtozę nadmiarową**, czyli liczoną względem rozkładu normalnego - dla rozkładu normalnego wynosi ona 0. Stąd interpretacja:
+
+-   K \> 0 - rozkład bardziej wysmukły niż normalny (leptokurtyczny); ma "grubsze" ogony, czyli częściej pojawiają się w nim wartości skrajne
+-   K = 0 - koncentracja wartości jak w rozkładzie normalnym (mezokurtyczny)
+-   K \< 0 - rozkład bardziej spłaszczony niż normalny (platykurtyczny); ma "cieńsze" ogony
+
+Uwaga: o kurtozie często mówi się jako o "koncentracji wokół średniej", ale decydują o niej przede wszystkim ogony rozkładu, czyli częstość występowania wartości skrajnych.
 
 ![](figures/6_koncentracja.png)
 
@@ -450,9 +456,9 @@ kurtosis(gapminder$gdpPercap)
 
 ## Porównanie rozkładów
 
-W statystyce wykres kwantylowy (QQ-plot) jest wykresem prawdopodobieństwa, który porównuje (w graficzny sposób) 2 rozkłady prawdopodobieństwa przez wykreślenie ich kwantyli na przeciwnych osiach (x,y). Jeśli 2 porównywane rozkłady są podobne, punkty na wykresie kwantylowym ułożą się wzdłuż linii y=x Wykres normalności (Norm QQ Plot) porównuje rozkład próbki z rozkładem normalnym.
+W statystyce wykres kwantylowy (QQ-plot) jest wykresem prawdopodobieństwa, który porównuje (w graficzny sposób) 2 rozkłady prawdopodobieństwa przez wykreślenie ich kwantyli na przeciwnych osiach (x, y). Jeśli 2 porównywane rozkłady są podobne, punkty na wykresie kwantylowym ułożą się wzdłuż linii prostej. Wykres normalności (ang. *Normal QQ Plot*) porównuje rozkład próbki z rozkładem normalnym.
 
-W R wykresy te można wykreślić używając funkcji `qqplot()` oraz `qqnorm()` z grafiki podstawowej. Wykonując wykres za pomocą pakietu `ggplot2` należy dodać geometrię `geom_qq`.
+W R wykresy te można wykreślić używając funkcji `qqplot()` oraz `qqnorm()` z grafiki podstawowej. Wykonując wykres za pomocą pakietu `ggplot2` dodajemy warstwę `stat_qq()` (punkty) oraz `stat_qq_line()` (linia odniesienia) - bez linii odniesienia wykres jest znacznie trudniejszy do odczytania.
 
 **Porównanie rozkładu zmiennej lifeExp dla kontynentu Afryka z rozkładem teoretycznym**.
 
@@ -462,8 +468,15 @@ dane_Africa <- gapminder[gapminder$continent == 'Africa',]
 ```
 
 ```{r}
-ggplot(data = dane_Africa, aes(sample = lifeExp)) + stat_qq()
+ggplot(data = dane_Africa, aes(sample = lifeExp)) + 
+  stat_qq() + 
+  stat_qq_line(color = "red") +
+  labs(x = "Kwantyle teoretyczne (rozkład normalny)", 
+       y = "Kwantyle z próby") +
+  theme_bw()
 ```
+
+**Interpretacja:** punkty w środkowej części wykresu układają się blisko linii odniesienia, ale na obu końcach wyraźnie od niej odchodzą - co oznacza, że rozkład oczekiwanej długości trwania życia w Afryce ma "grubsze" ogony niż rozkład normalny. Wniosek jest zgodny z wynikiem testu Shapiro-Wilka z zadania powyżej, który odrzucił hipotezę o normalności rozkładu.
 
 ## Dodatkowe materiały
 

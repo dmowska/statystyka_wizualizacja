@@ -1,10 +1,5 @@
 ---
 format: live-html
-webr:
-  packages:
-    - dplyr
-    - gapminder
-    - tidyr
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -21,7 +16,7 @@ webr:
 
 ```
 
-# Testowanie istoności proporcji
+# Testowanie istotności proporcji
 
 Zajmując się danymi jakościowymi można zadać sobie pytania o:
 
@@ -30,7 +25,7 @@ Zajmując się danymi jakościowymi można zadać sobie pytania o:
 
 ## Test zgodności Chi-kwadrat
 
--   służy do porównania ze sobą zaobserowanego rozkładu naszej zmiennej z jakimś teoretycznym rozkładem.
+-   służy do porównania ze sobą zaobserwowanego rozkładu naszej zmiennej z jakimś teoretycznym rozkładem.
 
 -   Test zgodności chi-kwadrat w praktyce można wykorzystać przynajmniej na dwa sposoby
 
@@ -89,8 +84,10 @@ chisq.test(napoje_freq)
 
 Załóżmy, że żyjemy w kraju, w którym 70% społeczeństwa stanowią kobiety. Badacz w swoim badaniu przebadał 60 mężczyzn i 40 kobiet. Następnie chciał sprawdzić, czy rozkład płci w jego badaniu pokrywa się z rozkładem w populacji danego kraju.
 
+Kolejność wartości w argumencie *x* musi odpowiadać kolejności prawdopodobieństw w argumencie *p* - dlatego warto nazwać elementy wektora, żeby się nie pomylić.
+
 ```{r}
-chisq.test(x = c(40, 60), p = c(0.7, 0.3))
+chisq.test(x = c(kobiety = 40, mezczyzni = 60), p = c(0.7, 0.3))
 ```
 
 W naszym przypadku H0 = 'rozkład danych jest zgodny z rozkładem teoretycznym'. Wynik testu (p-value = 5.889e-11) wskazuje, że rozkład danych różni się od rozkładu teoretycznego.
@@ -111,7 +108,7 @@ Rozwiązanie:
 Wynik testu (p value mniejsze od poziomu 0,05) wskazuje, że różnica w proporcji kobiet i mężczyzn jest na tyle duża, aby móc powiedzieć, że jego rozkład płci w jego badaniu nie odzwierciedla rozkładu w populacji.
 
 ``` r
-chisq.test(x = c(60, 40), p = c(0.7, 0.3))    
+chisq.test(x = c(kobiety = 60, mezczyzni = 40), p = c(0.7, 0.3))    
 ```
 :::
 ::::
@@ -130,7 +127,7 @@ Rozwiązanie:
 Wynik testu (p value większe od poziomu 0,05) wskazuje, że rozkład płci w jego badaniu  odzwierciedla rozkład w populacji.
 
 ``` r
-chisq.test(x = c(65, 35), p = c(0.7, 0.3))       
+chisq.test(x = c(kobiety = 65, mezczyzni = 35), p = c(0.7, 0.3))       
 ```
 :::
 ::::
@@ -148,7 +145,7 @@ chisq.test(x = c(65, 35), p = c(0.7, 0.3))
 
 ### Przykład {.unnumbered}
 
-Badacz przeprowadził ankietę wśród losowo spotkanych osób, czy wolą piwo czy wino. Badacz zbadał 1000 osób, aby określić czy jest istotna różnica pomiędzy kobietami a mężczyznami pod względem preferencji wina i piwa.
+Badacz przeprowadził ankietę wśród losowo spotkanych osób, czy wolą piwo czy wino. Badacz zbadał 200 osób - 100 mężczyzn i 100 kobiet - aby określić czy jest istotna różnica pomiędzy kobietami a mężczyznami pod względem preferencji wina i piwa.
 
 ```{r}
 m <- c(piwo = 78, wino = 22)
@@ -162,9 +159,48 @@ dane
 chisq.test(dane)
 ```
 
+### Jak czytać wynik testu chi-kwadrat
+
+```         
+	Pearson's Chi-squared test with Yates' continuity correction   <- (1)
+data:  dane                                                      <- (2)
+X-squared = 9.9729, df = 1, p-value = 0.001589                   <- (3)
+```
+
+1.  **Nazwa testu** - informuje też, czy zastosowano poprawkę Yatesa (robi to automatycznie dla tabel 2x2).
+2.  **Dane** - analizowana tabela kontyngencji.
+3.  **X-squared** - statystyka testowa, **df** - stopnie swobody (dla tabeli: liczba wierszy minus 1, razy liczba kolumn minus 1), **p-value** - podstawa decyzji.
+
+Wydruk jest krótki, więc najważniejsze informacje trzeba wyciągnąć osobno:
+
+```{r}
+wynik <- chisq.test(dane)
+
+wynik$observed    # liczebności zaobserwowane
+wynik$expected    # liczebności oczekiwane przy braku zależności
+```
+
+Porównanie tych dwóch tabel pokazuje, **na czym polega** zależność: w których komórkach obserwacji jest więcej, a w których mniej, niż gdyby zmienne były niezależne. Test mówi tylko, że różnica istnieje - kierunek odczytujemy właśnie stąd.
+
+### Jak opisać wynik w raporcie
+
+> Test niezależności chi-kwadrat wykazał istotny statystycznie związek między płcią a preferencją rodzaju alkoholu; chi2(1) = 9,97; p = 0,002. Piwo wybrało 78% mężczyzn i 56% kobiet.
+
+W nawiasie po `chi2` podajemy liczbę stopni swobody, a wynik warto uzupełnić o wartości procentowe - sama statystyka testowa nie mówi czytelnikowi, jak duża jest różnica.
+
 W powyższym przykładzie, zarówno płeć jak i rodzaj alkoholu są zmiennymi nominalnymi, dlatego wykorzystujemy tu test niezależności chi-kwadrat. Test wykazał zależność pomiędzy płcią a preferencją rodzaju alkoholu. Piwo jest bardziej preferowanym trunkiem wśród mężczyzn niż u kobiet.
 
-> Wczytaj dane z pliku data/plony.csv. Dane zawierają 3 zmienne (jakość gleby, plon, opady). Czy istnieje relacja pomiędzy klasą opadu a wielkością plonu?
+Zwróć uwagę na nagłówek wyniku: *Pearson's Chi-squared test with Yates' continuity correction*. Dla tabel 2x2 funkcja `chisq.test()` domyślnie stosuje **poprawkę Yatesa na ciągłość**, która nieco zmniejsza wartość statystyki testowej. Ma to znaczenie przy małych liczebnościach; poprawkę można wyłączyć argumentem `correct = FALSE`.
+
+**Uwaga: ograniczenie testu chi-kwadrat.** Jeśli w którejkolwiek komórce tabeli liczebność **oczekiwana** jest mniejsza od 5, przybliżenie rozkładem chi-kwadrat przestaje być wiarygodne - R ostrzega wtedy komunikatem *Chi-squared approximation may be incorrect*. Liczebności oczekiwane sprawdzimy tak:
+
+```{r}
+chisq.test(dane)$expected
+```
+
+W takiej sytuacji należy albo połączyć kategorie o małych liczebnościach, albo zastosować dokładny test Fishera - `fisher.test()`. W powyższym przykładzie z piwem i winem wszystkie liczebności oczekiwane przekraczają 5, więc test chi-kwadrat jest uprawniony. W zadaniu poniżej (dane o plonach) takie ostrzeżenie już się pojawi - warto wtedy sprawdzić liczebności oczekiwane.
+
+> Wczytaj dane z pliku dane/plony.csv. Dane zawierają 4 kolumny (id, jakość gleby, plon, opady). Czy istnieje relacja pomiędzy klasą opadu a wielkością plonu?
 
 ```{webr}
 #| exercise: ex_4
@@ -178,14 +214,14 @@ Rozwiązanie:
 Wynik testu (p-value > 0.05) wskazuje na brak możliwości odrzucenia hipotezy zerowej (H0 = zmienne są niezależne - nie istnieje zależność między zmiennymi). Nie mamy podstaw odrzucić hipotezę mówiącą, że zmienne są niezależne - nie ma między nimi relacji. 
 
 ``` r
-plony <- read.csv("data/plony.csv")
-tbl <- table(plony$opad, plony$plon) 
+plony <- read.csv("dane/plony.csv")
+tbl <- table(plony$opady, plony$plon) 
 chisq.test(tbl)
 ```
 :::
 ::::
 
-> Wczytaj dane z pliku data/plony.csv. Dane zawierają 3 zmienne (jakość gleby, plon, opady). Czy istnieje relacja między klasą jakości gleb a wielkością plonu?
+> Wczytaj dane z pliku dane/plony.csv. Dane zawierają 4 kolumny (id, jakość gleby, plon, opady). Czy istnieje relacja między klasą jakości gleb a wielkością plonu?
 
 ```{webr}
 #| exercise: ex_5
@@ -198,7 +234,7 @@ Rozwiązanie:
 
 Wynik testu (p-value < 0.05) wskazuje na istnienie relacji między zmiennymi. 
 ``` r
-plony <- read.csv("data/plony.csv")
+plony <- read.csv("dane/plony.csv")
 tbl = table(plony$jakosc_gleby, plony$plon) 
 chisq.test(tbl)
 ```
@@ -209,7 +245,7 @@ chisq.test(tbl)
 
 ### Przykład {.unnumbered}
 
-Badacz chciał sprawdzić jak reklama wpłynie na opinię respondentów na temat określonego prawa. Badacz przeprowadził ankietę wśród 100 osób. Zapytał ich czy popierają prawo czy nie. Następnie pokazał im wideo reklamowe i ponownie przeprowadził ankietę, aby sprawdzić czy proporcja osób popierających prawo zmieni się isotnie przed i po pokazaniu filmu reklamowego.
+Badacz chciał sprawdzić jak reklama wpłynie na opinię respondentów na temat określonego prawa. Badacz przeprowadził ankietę wśród 100 osób. Zapytał ich czy popierają prawo czy nie. Następnie pokazał im wideo reklamowe i ponownie przeprowadził ankietę, aby sprawdzić czy proporcja osób popierających prawo zmieni się istotnie przed i po pokazaniu filmu reklamowego.
 
 ```{r}
 dane <- matrix(c(30, 12, 40, 18), nrow = 2,
@@ -223,9 +259,11 @@ dane
 mcnemar.test(dane, correct = FALSE)
 ```
 
+Argument `correct = FALSE` wyłącza poprawkę na ciągłość. Domyślnie (`correct = TRUE`) test McNemara ją stosuje, co przy małej liczbie obserwacji niezgodnych daje bardziej ostrożny (wyższy) wynik p. Przy dużych liczebnościach różnica jest niewielka.
+
 Odpowiedź: Wartość p (p-value) jest niższa niż 0,05. Możemy zatem odrzucić hipotezę zerową i wyciągnąć wniosek, że istnieje istotna statystycznie różnica w proporcji osób, które popierały prawo przed i po pokazaniu im filmu reklamowego.
 
-> Poniżej zestawiono wyniki dwóch badań ankietowych przeprowadzone na grupie 1600 osób w odstępstwie miesiąca. Ankietowane osoby, które osiągnęły wiek uprawniający do głosowania zapytano jak oceniają działania Prezydenta. Czy propocje osób popierających działania prezydenta zmieniły się istotnie pomiędzy dwoma badaniami?
+> Poniżej zestawiono wyniki dwóch badań ankietowych przeprowadzone na grupie 1600 osób w odstępie miesiąca. Ankietowane osoby, które osiągnęły wiek uprawniający do głosowania zapytano jak oceniają działania Prezydenta. Czy proporcje osób popierających działania prezydenta zmieniły się istotnie pomiędzy dwoma badaniami?
 
 
 ```{webr}

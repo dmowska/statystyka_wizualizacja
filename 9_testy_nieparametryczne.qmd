@@ -2,7 +2,9 @@
 format: live-html
 webr:
   packages:
-    - tidyverse
+    - gapminder
+    - dplyr
+    - tidyr
     - ggplot2
 ---
 
@@ -14,9 +16,10 @@ webr:
 #|  - ex_1
 #|  - ex_2
 
-library(tidyverse)
-library(ggplot2)
 library(gapminder)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 
 data('gapminder', package = 'gapminder')
 
@@ -25,11 +28,11 @@ data('gapminder', package = 'gapminder')
 # Testy nieparametryczne
 
 -   Nie wymagają spełnienia założenia o normalności rozkładu (w przeciwieństwie do metod parametrycznych, które zakładają, że dane są ilościowe, populacja posiada rozkład normalny, a próba ma odpowiednią wielkość)
--   Wnioski wysunięte na podstawie testów nieparametrycznych nie mają tak dużej mocy jak testu parametryczne (zazwyczaj)
+-   Wnioski wysunięte na podstawie testów nieparametrycznych nie mają tak dużej mocy jak testy parametryczne (zazwyczaj)
 -   Wymagają spełnienia mniejszej liczby założeń, są bardziej elastyczne oraz można je stosować również do danych nieilościowych
--   Są oparte o analizę rang (czyli o kolejność a nie aktualne wartości)
+-   Są oparte o analizę rang (czyli o kolejność, a nie o rzeczywiste wartości)
 -   Dane w porównywanych grupach są porządkowane (rosnąco lub malejąco) i na tej podstawie są wykonywane obliczenia
--   Metody nieparametryczne są najbardziej odpowiednie w przypadku prób o małych liczebnościach (patrz Centralne Twierdzenie Graniczne), zazwyczaj jako górną granicę stosowania testów nieparametycznych przyjmuje się n=100
+-   Metody nieparametryczne są najbardziej odpowiednie w przypadku prób o małych liczebnościach (patrz Centralne Twierdzenie Graniczne), zazwyczaj jako górną granicę stosowania testów nieparametrycznych przyjmuje się n=100
 
 ```{r}
 #| message: false
@@ -47,7 +50,7 @@ data('gapminder', package = 'gapminder')
 
 -   Nieparametryczna alternatywa testu t-Studenta dla prób niezależnych
 -   Stosowany, gdy rozkład w populacji odbiega od normalnego lub gdy skala jest porządkowa, ale nie jest przedziałowa
--   Moc testu jest znaczaco większa od testu t-Studenta, gdy rozkład odbiega wyraźnie od normalnego
+-   Moc testu jest znacząco większa od testu t-Studenta, gdy rozkład odbiega wyraźnie od normalnego
 
 ```{r}
 gapminder2007 = subset(gapminder, year == 2007)
@@ -65,7 +68,35 @@ gapminder2007_sel = filter(gapminder2007,
 wilcox.test(gdpPercap ~ continent, data = gapminder2007_sel)
 ```
 
+### Jak czytać wynik testu nieparametrycznego
+
+```         
+	Wilcoxon rank sum exact test        <- (1) nazwa testu
+data:  gdpPercap by continent          <- (2) analizowane dane
+W = 486, p-value = 0.2539              <- (3) statystyka testowa i p-value
+alternative hypothesis: true location shift is not equal to 0   <- (4)
+```
+
+1.  **Nazwa testu** - *rank sum* oznacza test Manna-Whitneya (próby niezależne), *signed rank* - test kolejności par Wilcoxona (próby zależne). To szybki sposób sprawdzenia, czy argument `paired` został ustawiony zgodnie z zamiarem.
+2.  **Dane** - zmienna i zmienna grupująca.
+3.  **p-value** - podstawa decyzji. Statystyka `W` jest sumą rang; jej wartość bezwzględna niewiele mówi, więc w raporcie podaje się ją tylko dla porządku.
+4.  **Hipoteza alternatywna** - *location shift* oznacza przesunięcie rozkładu. Test nie porównuje średnich, lecz położenie całych rozkładów.
+
+Wydruk testu nieparametrycznego jest krótszy od wydruku testu t: **nie ma w nim przedziału ufności ani średnich w grupach**. Dlatego przy teście nieparametrycznym tym bardziej warto podać medianę w każdej grupie - inaczej czytelnik nie dowie się, w którą stronę i jak duża jest różnica:
+
+```{r}
+gapminder2007_sel |> 
+  group_by(continent) |> 
+  summarise(mediana = median(gdpPercap), n = n())
+```
+
 Wynik testu wskazuje na brak istotnych statystycznie różnic w PKB między Azją a Amerykami w 2007 roku.
+
+### Jak opisać wynik w raporcie
+
+> Test U Manna-Whitneya nie wykazał istotnej statystycznie różnicy w PKB na osobę między krajami Azji (Mdn = 4471 USD) a krajami Ameryk (Mdn = 8948 USD); W = 486; p = 0,254.
+
+Przy teście nieparametrycznym podajemy **medianę**, a nie średnią - to mediana jest miarą położenia odpowiadającą temu, co bada test.
 
 > Porównaj wartości oczekiwanej długości życia pomiędzy Afryką a Azją w 2007 roku. Stwórz wizualizację, a następnie wykonaj test statystyczny. Jaki dał on wynik?
 
@@ -78,7 +109,7 @@ Wynik testu wskazuje na brak istotnych statystycznie różnic w PKB między Azj�
 ::: {.callout-tip title="Solution" collapse="false"}
 Rozwiązanie:
 
-Wynik testu wskazuje na  istnieie istotnych statystycznie różnic w  długości trwania życia między Azją a Afrryką w 2007 roku.
+Wynik testu wskazuje na istnienie istotnych statystycznie różnic w długości trwania życia między Azją a Afryką w 2007 roku.
 
 ``` r
 gapminder2007_sel = filter(gapminder, year == 2007 & continent %in% c("Africa", "Asia"))
@@ -89,20 +120,31 @@ wilcox.test(lifeExp ~ continent, data = gapminder2007_sel)
 :::
 ::::
 
+### Zadanie: znajdź błąd
+
+> Badaczka wykonała test Shapiro-Wilka dla swoich danych i otrzymała p = 0,76. W raporcie napisała: „Test Shapiro-Wilka wykazał, że rozkład zmiennej jest normalny (p = 0,76), dlatego zastosowano test parametryczny”. Co jest nie tak z tym zdaniem?
+
+:::: {.callout-tip title="Odpowiedź" collapse="true"}
+Test nie „wykazał normalności” - brak odrzucenia hipotezy zerowej nie jest jej dowodem. Poprawnie: *„Test Shapiro-Wilka nie dał podstaw do odrzucenia hipotezy o normalności rozkładu (p = 0,76), dlatego zastosowano test parametryczny”*.
+
+Różnica nie jest wyłącznie językowa. Test mógł nie wykryć odstępstwa od normalności, zwłaszcza przy małej próbie - wtedy duże p mówi raczej „brak dowodów” niż „wszystko w porządku”. Dlatego oprócz testu warto zawsze obejrzeć histogram lub wykres kwantylowy.
+::::
+
 ## Test Wilcoxona
 
 -   Nieparametryczna alternatywa testu t-Studenta dla prób zależnych
 -   Test wykorzystywany jest do oceny zmian
--   Test Wilcoxona zakłada, że losowa próba z populacji ma symetryczny rozkład (niekoniecznie normalny)
+-   Test Wilcoxona zakłada, że rozkład **różnic** między sparowanymi pomiarami jest symetryczny względem swojej mediany (nie musi być normalny)
+-   W R wykonuje go ta sama funkcja `wilcox.test()`, co test U Manna-Whitneya - o tym, który test jest wykonywany, decyduje argument `paired`: `paired = FALSE` (domyślnie) daje test Manna-Whitneya dla prób niezależnych, a `paired = TRUE` - test kolejności par Wilcoxona
 
 **Przykład: Czy pomiędzy rokiem 1987 a 2007 nastąpiła istotnie statystyczna zmiana w wartościach oczekiwanej długości życia?**
 
 ```{r}
-gapminder8707 <- gapminder %>% 
-  filter(year %in% c(1987, 2007)) %>% 
-  select(country, year, lifeExp) %>% 
+gapminder8707 <- gapminder |> 
+  filter(year %in% c(1987, 2007)) |> 
+  select(country, year, lifeExp) |> 
   pivot_wider(values_from = lifeExp, 
-              names_from = year) %>% 
+              names_from = year) |> 
   setNames(c("kraj", "rok1987", "rok2007"))
 
 head(gapminder8707)
@@ -131,17 +173,17 @@ Rozwiązanie:
 Wartość p-value wynosi 9.313e-09 i jest mniejsza od założonego progu. Istnieją zatem istotne statystycznie różnice w PKB krajów Europy między rokiem 1977 a 1987.
 
 ``` r
-gapminder7787 <- gapminder %>% 
-  filter(year %in% c(1977, 1987) & continent == 'Europe') %>% 
+gapminder7787 <- gapminder |> 
+  filter(year %in% c(1977, 1987) & continent == 'Europe') |> 
   select(country, year, gdpPercap) 
 
 # wizualizacja 
 ggplot(gapminder7787, aes(x = factor(year), y = gdpPercap)) + geom_boxplot()
 
 # format danych użyty w teście
-gapminder7787wide <-  gapminder7787 %>%
+gapminder7787wide <-  gapminder7787 |>
   pivot_wider(values_from = gdpPercap, 
-              names_from = year) %>% 
+              names_from = year) |> 
   setNames(c("kraj", "rok1977", "rok1987"))
 
 #test

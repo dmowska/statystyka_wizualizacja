@@ -9,8 +9,9 @@ webr:
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
 ```{webr}
-#| setup: TRUE
+#| setup: true
 #| exercise: 
+#|  - ex_1
 #|  - ex_2
 #|  - ex_3
 #|  - ex_4
@@ -36,11 +37,11 @@ data('gapminder', package = 'gapminder')
 #| eval: false
 str(gapminder)
 
-#wyświetlanie początkowych wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 5)
+#wyświetlanie początkowych wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)
 head(gapminder)
 head(gapminder, n = 2)
 
-#wyświetlanie n ostatnich wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 5)
+#wyświetlanie n ostatnich wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)
 tail(gapminder)
 
 #wyświetlanie nazw zmiennych, nazw kolumn oraz nazw wierszy
@@ -77,7 +78,7 @@ summary(gapminder$lifeExp)
 ```{webr}
 #| exercise: ex_1
 
-# Wczytaj do R zbiór danych z pliku `dane.csv` z folderu `data` oraz przypisz go do obiektu o nazwie `dane`
+# Wczytaj do R zbiór danych z pliku `dane.csv` z folderu `dane` oraz przypisz go do obiektu o nazwie `dane`
 
 
 # Wyświetl 4 ostatnie wiersze zbioru danych `dane`. 
@@ -166,23 +167,12 @@ gapminder[gapminder$continent %in% c('Asia', 'Africa'),]
 
 ## Selekcja oraz tworzenie nowej zmiennej
 
-### Indeksowanie
-```{r, eval=FALSE}
-gapminder[1,]
-gapminder[,1]
-```
-
-### Selekcja danych o określonej wartości 
-```{r, eval=FALSE}
-gapminder[gapminder$year == 1952, ]
-gapminder[gapminder$year == 1952 & gapminder$continent == 'Asia',]
-gapminder[gapminder$year == 1952, c(5)]
-gapminder[gapminder$pop > 10000000, ]
-```
-
 ### Funkcja `subset()`
 
-```{r, eval=FALSE}
+Funkcja `subset()` pozwala wybrać wiersze spełniające warunek oraz kolumny (argument *select*) w jednym wywołaniu - bez powtarzania nazwy obiektu, jak przy indeksowaniu.
+
+```{r}
+#| eval: false
 dane_sel <- subset(gapminder, continent == "Europe" & year == 1952, select = c(country, pop))
 dane_selection <- subset(gapminder, continent == "Europe" & year == 1952, select = c(country:pop))
 ```
@@ -197,18 +187,21 @@ dane_selection <- subset(gapminder, continent == "Europe" & year == 1952, select
 
 ### Tworzenie nowej zmiennej 
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 dane1952 <- gapminder[gapminder$year == 1952, ]
 ```
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 gapminder$pop_mln <- gapminder$pop / 1000000
 head(gapminder, 3)
 ```
 
 ### Porządkowanie 
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 dane_2 <- gapminder[order(gapminder$year), ]
 
 #sortowanie względemm dwóch zmiennych

@@ -4,7 +4,7 @@ W statystyce celem wielu analiz jest ***uzyskanie wiedzy o populacji (czyli wnio
 
 **Jak przebiega wnioskowanie statystyczne?**
 
--   pomiar pojedyńczej cechy liczbowej (np. wzrost, waga, powierzchnia);
+-   pomiar pojedynczej cechy liczbowej (np. wzrost, waga, powierzchnia);
 -   z populacji wybierana jest próba (losowa lub reprezentatywna);
 -   wykonywana jest estymacja (określanie/szacowanie) nieznanej średniej wartości dla populacji na podstawie wartości próby.
 

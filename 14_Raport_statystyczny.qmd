@@ -1,90 +1,249 @@
 # Tworzenie raportów
 
+Raport statystyczny to dokument, w którym przedstawia się wyniki analizy danych. Nie jest to zapis przebiegu pracy ani lista wykonanych poleceń - jest to **uporządkowana odpowiedź na postawione pytanie**, poparta liczbami i rycinami.
+
+Rozdział omawia zasady budowy raportu. Napisany według nich przykład znajduje się w rozdziale 21.
+
 ## Analiza statystyczna
 
-Podstawowym elementem każdej analizy statystycznej jest wykonanie **charakterystyki statystycznej danych**. Charakterystyka statystyczna danych powinna obejmować zarówno ***obliczenie statystyk opisowych*** jak i ***wizualizację wyników***.
-
-Wyniki powinne być przedstawione w postaci tabel, wykresów oraz map.
-
-## Raport statystyczny
-
-Każdy raport statystyczny zawiera:
-
--   tekst
--   ryciny
--   kod
--   inne elementy
+Podstawowym elementem każdej analizy statystycznej jest wykonanie **charakterystyki statystycznej danych**. Powinna ona obejmować zarówno ***obliczenie statystyk opisowych***, jak i ***wizualizację wyników***. Wyniki przedstawia się w postaci tabel, wykresów oraz map.
 
 ## Kompozycja raportu
 
-Każdy raport przedstawiający opracowanie statystyczne wyników powinien składać się z kilku części:
+Każdy raport przedstawiający opracowanie statystyczne powinien składać się z kilku części:
 
-1.  Wprowadzenie
+1.  **Wprowadzenie**
 
-    -   stanowi wprowadzenie do problematyki
-    -   powinien być zakończony postawieniem celu badań
+    -   stanowi wprowadzenie do problematyki,
+    -   kończy się **wyraźnym sformułowaniem celu** analizy; warto rozbić go na kilka pytań szczegółowych.
 
-2.  Dane
+2.  **Dane**
 
-    -   informacje o wykorzystanym zbiorze danych (co mierzono? kiedy? gdzie? po co? jak?)
-    -   źródło danych
+    -   informacje o wykorzystanym zbiorze danych (co mierzono? kiedy? gdzie? po co? jak?),
+    -   źródło danych,
+    -   liczebność zbioru i braki danych.
 
-3.  Metody
+3.  **Metody**
 
-    -   opis wykorzystanych metod do eksploracji danych
-    -   opis wykorzystanych metod do analizy danych
-    -   określenie wykorzystanego oprogramowania
+    -   jakie dane wykorzystano i jakich kroków przygotowania wymagały,
+    -   opis metod użytych do eksploracji i analizy danych,
+    -   wykorzystane oprogramowanie i pakiety.
 
-4.  Wyniki
+4.  **Wyniki**
 
-    -   Co odkryliśmy w wyniku analizy danych?
-    -   Wyniki eksploracji danych
-    -   Wyniki zastosowanych testów
-    -   Ta część zawiera zestawienia tabelaryczne, wykresy.
-    -   Ta część **nie zawiera** analizy i interpretacji wyników.
+    -   co odkryliśmy w wyniku analizy danych,
+    -   wyniki eksploracji danych oraz zastosowanych testów,
+    -   ta część zawiera zestawienia tabelaryczne i wykresy.
 
-5.  Wnioski i podsumowanie
+5.  **Wnioski i podsumowanie**
 
-    -   Określenie wyników analiz
-    -   Podsumowanie analizy
-    -   Odniesienie się do postawionego celu
-    -   Stwierdzenie braków czy problemów w analizie
+    -   odniesienie się do postawionego celu,
+    -   podsumowanie wyników analizy,
+    -   stwierdzenie braków czy problemów w analizie.
 
-6.  Literatura
+6.  **Literatura**
 
-## Ryciny
+::: callout-important
+## Wyniki a wnioski
+
+To dwie różne części i nie należy ich mieszać. Sekcja **Wyniki** mówi, **co wyszło**: jakie są wartości statystyk, co widać na rycinie. Sekcja **Wnioski** mówi, **co z tego wynika**: czy cel został osiągnięty, jak odpowiadamy na postawione pytania, czego na podstawie tych danych stwierdzić nie można.
+:::
+
+## Ryciny i tabele
 
 Ryciny zawarte w raportach muszą być wykonane z pełną dbałością o czytelność.
 
--   wykresy muszą być czytelne oraz informacyjne
--   osie na wykresach muszą być podpisane
--   ryciny muszą być podpisane.
--   każda rycina zamieszczona w raporcie musi być opisana w tekście.
+-   wykresy muszą być czytelne oraz informacyjne,
+-   osie na wykresach muszą być podpisane, wraz z jednostkami,
+-   każda rycina i tabela musi mieć **numer i podpis**,
+-   każda rycina i tabela zamieszczona w raporcie musi być **opisana w tekście**.
+
+Ostatnia zasada działa w obie strony: rycina, do której tekst się nie odwołuje, nie jest w raporcie potrzebna. Podpis ma mówić, **co na rycinie widać**, a nie tylko jak się ona nazywa.
 
 ## Kod
 
 -   Kod załączony do raportu powinien być przejrzysty i dobrze skomentowany.
--   W tekście umieszczamy tabele, wykresy ale nie pokazujemy kodu, który je wykonał.
--   Kod może zostać zamieszczony w formie skryptu jako Załącznik do raportu.
+-   W tekście umieszczamy tabele i wykresy, ale **nie pokazujemy kodu**, który je wykonał - stosujemy opcję ukrycia kodu (`code-fold`).
+-   Kod może też zostać zamieszczony w formie skryptu jako załącznik do raportu.
 
-## Kilka technicznych uwag
+## Nagłówek dokumentu
 
--   W bloku kodu należy dodać *label: fig-nazwaryciny* oraz *fig-cap: "Podpis ryciny"*, a następnie w tekście należy odwołać się do ryciny `@fig-nazwaryciny`. Zapewni to automatyczne numerowanie rycin.
+-   W bloku kodu należy dodać *label: fig-nazwaryciny* oraz *fig-cap: "Podpis ryciny"*, a następnie w tekście odwołać się do ryciny przez `@fig-nazwaryciny`. Zapewni to automatyczne numerowanie rycin.
 
--   W bloku kodu należy dodać *label: tbl-nazwatabelo* oraz *tbl-cap: "Podpis tabeli"*, a następnie w tekście należy odwołać się do tabeli `@tbl-nazwatabeli`. Zapewni to automatyczne numerowanie tabel.
+-   W bloku kodu należy dodać *label: tbl-nazwatabeli* oraz *tbl-cap: "Podpis tabeli"*, a następnie w tekście odwołać się do tabeli przez `@tbl-nazwatabeli`. Zapewni to automatyczne numerowanie tabel.
 
 -   Nagłówek dokumentu:
 
-```         
+``` yaml
 title: "Tytuł raportu"
-author: "Autor"
+author: "Imię Nazwisko"
+date: today
 format:
   html:
-    code-fold: true # ta opcja spowoduje, że kod będzie domyślnie ukryty z możliwością odkrycia bloku kodu. 
-crossref: #parametry pozwalające na odwoływanie się do rycin w języku polskim 
-  fig-title: Rycina     # (domyślnie jest "Figure")
-  tbl-title: Tabela     # (domyślnie jest  "Figure")
-  fig-prefix: Ryc.   # (domyślnie jest "Figure")
-  tbl-prefix: Tabela   # (domyślnie jest "Table")
-  ref-hyperlink: false # (domyślnie jest  true)
+    toc: true
+    code-fold: true          # kod domyślnie ukryty, z możliwością rozwinięcia
+    code-summary: "Pokaż kod"
+crossref:                    # polskie podpisy i odwołania
+  fig-title: Rycina          # (domyślnie "Figure")
+  tbl-title: Tabela          # (domyślnie "Table")
+  fig-prefix: ryc.           # (domyślnie "Figure")
+  tbl-prefix: tab.           # (domyślnie "Table")
+  ref-hyperlink: false       # (domyślnie true)
 ```
+
+## Jak czytać przykładowy raport
+
+Rozdział 21 zawiera przykładowy raport, napisany według powyższych zasad. Dotyczy on cen mieszkań w trzech dzielnicach Wrocławia. Czytając go, zwróć uwagę na cztery rzeczy, które decydują o ocenie raportu:
+
+1.  **Cel jest sformułowany wprost i rozbity na pytania szczegółowe.** Dzięki temu wiadomo, po co wykonano każdą kolejną analizę.
+2.  **Każda rycina i tabela ma numer, podpis i jest omówiona w tekście.**
+3.  **Analiza ma tok rozumowania**, a nie jest listą wykonanych poleceń. Pierwsze spostrzeżenie prowadzi do pytania, pytanie do kolejnej ryciny, a ta do wniosku.
+4.  **Ograniczenia są nazwane wprost.** Raport, który o niczym nie wątpi, jest mniej wiarygodny, a nie bardziej.
+
+::: callout-warning
+## Przykład nie jest szablonem do podmiany danych
+
+Raport z rozdziału 21 dotyczy innych danych i innego pytania badawczego niż projekt zaliczeniowy. Jednostką analizy jest tam mieszkanie, a nie państwo; porównywane są dzielnice, a nie regiony świata.
+
+Zrobiono tak celowo. Raport, który powstaje przez podstawienie własnych danych pod cudzy tekst, zawsze to po sobie widać - a ocenie podlega między innymi **dobór metod i wykresów do postawionego pytania**. Z przykładu przenieś **zasady**: strukturę dokumentu, sposób opisywania rycin, formułowanie wniosków, uczciwe nazwanie ograniczeń. Treść, dobór wykresów i tok rozumowania wymyśl samodzielnie.
+:::
+
+## Na co zwrócić uwagę we własnym raporcie
+
+**Zasady ogólne, które warto powtórzyć**
+
+-   Rodzaje wykresów dobieraj do treści, zamiast powielać jeden typ: histogram do rozkładu jednej zmiennej, wykres rozrzutu do relacji dwóch zmiennych ilościowych, wykres pudełkowy lub grzbietowy do porównania rozkładów w grupach, wykres udziałów do struktury zmiennej jakościowej.
+-   Liczby w tekście podawaj z jednostką i sensownie zaokrąglone - nie przepisuj wszystkich miejsc po przecinku z konsoli R.
+-   Ograniczenia wymieniaj konkretnie (liczebność grup, rodzaj danych, brakujące zmienne), a nie zdaniem „analiza ma pewne ograniczenia".
+-   Odwołanie do ryciny nie powinno zaczynać zdania małą literą. Zamiast „ryc. 3 pokazuje..." napisz „Jak pokazuje `@fig-nazwa`, ...".
+
+**Jeden nawyk wart przeniesienia**
+
+Gdy w danych pojawi się różnica między grupami, zapytaj, czy nie tłumaczy jej jakaś inna, oczywista cecha - i sprawdź to. W przykładzie z rozdziału 21 sprawdzono trzy takie cechy: powierzchnię mieszkania, typ zabudowy i liczbę pokoi. Dopiero gdy różnica przetrwa taką kontrolę, można mówić o niej jako o czymś, co wiąże się z samą lokalizacją. To rozumowanie da się przenieść na dowolne dane - zmieni się tylko to, jakie cechy trzeba sprawdzić.
+
+**Czego nie przenosić**
+
+Tok rozumowania przykładowego raportu - od ceny całkowitej, przez cenę za metr kwadratowy, po strukturę zabudowy - wynika z pytania o ceny mieszkań i do innego pytania nie pasuje. We własnym raporcie trzeba zbudować własny tok: zdecydować, co jest głównym pytaniem, w jakiej kolejności je rozwijać i jakimi rycinami to pokazać. To właśnie podlega ocenie.
+
+## Jakie jeszcze wykresy można wykorzystać
+
+Przykładowy raport mieści się w 1800 słowach i sześciu rycinach, więc pokazuje tylko część możliwości. Poniżej zebrano wykresy, po które warto sięgnąć przy większej objętości raportu - wraz z informacją, **kiedy** każdy z nich jest lepszy od standardowego rozwiązania. Wszystkie wykonano na tych samych danych o cenach mieszkań, żeby łatwo było je porównać z rozdziałem 21. Zbiór pochodzi z pakietu `Przewodnik` towarzyszącego podręcznikowi: Biecek P. (2017), *Przewodnik po pakiecie R*, wyd. 4 rozszerzone, Oficyna Wydawnicza GiS, Wrocław.
+
+```{r}
+#| label: dane-wykresy
+#| message: false
+#| warning: false
+
+library(dplyr)
+library(ggplot2)
+
+mieszkania <- read.csv("dane/daneMieszkania.csv") |>
+  mutate(cena_m2   = cena / powierzchnia,
+         dzielnica = recode(dzielnica, "Srodmiescie" = "Śródmieście"))
+```
+
+### Wykres skrzypcowy z pudełkiem
+
+Wykres pudełkowy pokazuje pięć statystyk, ale ukrywa kształt rozkładu - dwa zupełnie różne rozkłady mogą dać identyczne pudełko. Połączenie wykresu skrzypcowego z pudełkowym daje jedno i drugie naraz.
+
+```{r}
+#| label: fig-skrzypce
+#| fig-cap: "Wykres skrzypcowy z nałożonym wykresem pudełkowym - pokazuje jednocześnie kształt rozkładu i statystyki pozycyjne."
+#| fig-height: 3.4
+
+ggplot(mieszkania, aes(x = dzielnica, y = cena_m2, fill = dzielnica)) +
+  geom_violin(alpha = 0.5, colour = NA) +
+  geom_boxplot(width = 0.15, outlier.size = 0.8) +
+  scale_fill_brewer(palette = "Dark2") +
+  labs(x = NULL, y = "Cena [zł/m²]") +
+  theme_bw() +
+  theme(legend.position = "none")
+```
+
+### Dystrybuanta empiryczna
+
+Dystrybuanta odpowiada na pytanie „jaki odsetek obserwacji nie przekracza danej wartości". Jest szczególnie wygodna do porównywania grup, bo nie wygładza danych i nie wymaga dobierania liczby koszyków - krzywa położona bardziej na prawo oznacza grupę o wyższych wartościach.
+
+```{r}
+#| label: fig-ecdf
+#| fig-cap: "Dystrybuanta empiryczna ceny metra kwadratowego w trzech dzielnicach."
+#| fig-height: 3.4
+
+ggplot(mieszkania, aes(x = cena_m2, colour = dzielnica)) +
+  stat_ecdf(linewidth = 0.9) +
+  scale_colour_brewer(palette = "Dark2") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(x = "Cena [zł/m²]", y = "Odsetek ofert tańszych", colour = "Dzielnica") +
+  theme_bw()
+```
+
+### Wykres kropkowy zamiast tabeli
+
+Jeśli porównywanych grup jest więcej niż kilka, tabela ze średnimi staje się nieczytelna. Wykres kropkowy pokazuje te same liczby w sposób, który od razu porządkuje grupy od najmniejszej do największej wartości.
+
+```{r}
+#| label: fig-kropkowy
+#| fig-cap: "Mediana ceny metra kwadratowego według liczby pokoi. Wykres kropkowy zastępuje tabelę ze statystykami."
+#| fig-height: 3
+
+mieszkania |>
+  group_by(pokoi) |>
+  summarise(mediana = median(cena_m2)) |>
+  ggplot(aes(x = mediana, y = factor(pokoi))) +
+  geom_segment(aes(x = 0, xend = mediana, yend = factor(pokoi)), colour = "grey70") +
+  geom_point(size = 4, colour = "#1F3864") +
+  labs(x = "Mediana ceny [zł/m²]", y = "Liczba pokoi") +
+  theme_bw()
+```
+
+### Heatmapa
+
+Heatmapa pozwala pokazać wartość liczbową w podziale na **dwie** zmienne jakościowe naraz. Jest dobrym rozwiązaniem, gdy interesuje nas, czy wpływ jednej cechy jest taki sam we wszystkich kategoriach drugiej.
+
+```{r}
+#| label: fig-heatmapa
+#| fig-cap: "Mediana ceny metra kwadratowego według dzielnicy i liczby pokoi."
+#| fig-height: 3
+
+mieszkania |>
+  group_by(dzielnica, pokoi) |>
+  summarise(mediana = median(cena_m2), .groups = "drop") |>
+  ggplot(aes(x = factor(pokoi), y = dzielnica, fill = mediana)) +
+  geom_tile(colour = "white") +
+  # kolor etykiety zależny od tła - inaczej jasne pola są nieczytelne
+  geom_text(aes(label = round(mediana), colour = mediana > 5000), size = 3.2) +
+  scale_fill_viridis_c(option = "mako", direction = -1) +
+  scale_colour_manual(values = c("grey15", "white"), guide = "none") +
+  labs(x = "Liczba pokoi", y = NULL, fill = "Mediana\n[zł/m²]") +
+  theme_minimal()
+```
+
+### Multiwykres z histogramami
+
+Gdy porównywanych grup jest kilka, a chcemy pokazać pełne rozkłady, multiwykres bywa czytelniejszy niż wykres grzbietowy - zwłaszcza gdy rozkłady mają różną liczebność.
+
+```{r}
+#| label: fig-multiwykres
+#| fig-cap: "Rozkład ceny metra kwadratowego w podziale na dzielnice - multiwykres."
+#| fig-height: 2.8
+
+ggplot(mieszkania, aes(x = cena_m2)) +
+  geom_histogram(bins = 18, fill = "#8EAADB", colour = "white") +
+  facet_wrap(~ dzielnica) +
+  labs(x = "Cena [zł/m²]", y = "Liczba ofert") +
+  theme_bw()
+```
+
+### Inne możliwości
+
+-   **Wykres udziałów skumulowanych** (`position = "fill"`) - struktura zmiennej jakościowej w grupach; użyty w rozdziale 21.
+-   **Treemap** (pakiet `treemapify`) - struktura udziałów, gdy kategorii jest dużo i słupki stają się nieczytelne.
+-   **Wykres kwantylowy (QQ-plot)** - ocena zgodności rozkładu z normalnym; czytelniejszy niż sam histogram, gdy chodzi o ogony rozkładu.
+-   **Mapa** - jeżeli jednostką analizy jest obszar (państwo, województwo), mapa pokazuje układ przestrzenny, którego nie odda żaden wykres.
+-   **Wykres rozrzutu z trzecią zmienną** zakodowaną kolorem, kształtem albo wielkością punktu - pozwala pokazać trzy zmienne na jednej rycinie.
+
+::: callout-note
+## Więcej rycin nie znaczy lepiej
+
+Każda rycina musi mieć w raporcie zadanie: odpowiadać na jedno z postawionych pytań albo uzasadniać kolejny krok analizy. Trzy ryciny, z których każda coś wnosi, są warte więcej niż osiem pokazujących to samo w różnych konwencjach. Jeżeli nie potrafisz napisać zdania, które mówi, co z danej ryciny wynika - jest to rycina zbędna.
+:::

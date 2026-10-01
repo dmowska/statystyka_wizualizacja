@@ -33,7 +33,7 @@ book:
       - 6_wnioskowanie.qmd
       - 6a_wnioskowanie.qmd
       - 6b_wnioskowanie.qmd
-   - part: "TESTY STATYTYCZNE"
+   - part: "TESTY STATYSTYCZNE"
      chapters:
       - 7_testy.qmd
       - 8_testy_parametryczne.qmd
@@ -51,6 +51,9 @@ book:
    - part: "ZADANIA"
      chapters:
       - 16_zadania_samodzielne.qmd
+   - part: "ZAŁĄCZNIK"
+     chapters:
+      - zalacznik_funkcje.qmd
 
 execute:
   freeze: auto
@@ -59,7 +62,7 @@ bibliography: references.bib
   
 format: live-html
 resources:
-  - data
+  - dane
 engine: knitr
 editor: visual
 

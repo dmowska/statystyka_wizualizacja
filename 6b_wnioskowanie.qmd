@@ -19,7 +19,7 @@ Chcemy sprawdzić, czy średnia populacji $\mu$ jest równa pewnej przyjętej wa
 -   tworzymy hipotezę dwustronną:
 
     -   hipoteza zerowa: średnia populacji **jest równa** przyjętej wartości ($H_{0}: \mu = \mu_{0}$)
-    -   hipoteza alternatywna: średnia populacji **nie jest równa** przyjętej wartości ($H_{0}: \mu \neq \mu_{0}$)
+    -   hipoteza alternatywna: średnia populacji **nie jest równa** przyjętej wartości ($H_{A}: \mu \neq \mu_{0}$)
 
 -   Ustalenie hipotezy statystycznej:
 
@@ -34,17 +34,24 @@ Chcemy sprawdzić, czy średnia populacji $\mu$ jest równa pewnej przyjętej wa
     -   lewostronna: $H_A: \mu < \mu_0$
     -   prawostronna: $H_A: \mu > \mu_0$
 
-## Testowanie hipotez: rozdzaje błędów
+## Testowanie hipotez: rodzaje błędów
 
 -   błąd I rodzaju - odrzucenie hipotezy zerowej, wtedy gdy jest ona prawdziwa
 -   błąd II rodzaju - nie odrzucenie hipotezy fałszywej
 
 ## Testowanie hipotez: p-value
 
--   p-value - poziom istotności testu
--   Prawdopodobieństwo popełnienia błędu I rodzaju: wskazuje jak często popełnimy błąd, odrzucając daną hipotezę zerową, mimo, że jest ona prawdziwa (prawdopodobieństwo popełnienie tzw. błędu I rodzaju).
--   im mniejsza wartość poziomu istotności, tym mniejsza szansa, że $H_0$ jest prawdziwa
--   najczęściej przyjmowane wartości: 0.05, 0.01, 0.001. Np. poziom istotności 0,05 oznacza, że jesteśmy skłonni popełnić taki błąd 5 razy na 100 badań.
+Trzeba tu rozróżnić dwie wielkości, które łatwo pomylić:
+
+-   **Poziom istotności** $\alpha$ - granica, którą ustalamy **z góry, przed wykonaniem testu**. Jest to dopuszczane przez nas prawdopodobieństwo popełnienia błędu I rodzaju, czyli odrzucenia hipotezy zerowej, która w rzeczywistości jest prawdziwa.
+
+    -   najczęściej przyjmowane wartości: 0.05, 0.01, 0.001. Np. poziom istotności 0,05 oznacza, że jesteśmy skłonni popełnić taki błąd 5 razy na 100 badań.
+
+-   **p-value** - wartość, którą **obliczamy z danych** po wykonaniu testu. Jest to prawdopodobieństwo uzyskania takiego lub bardziej skrajnego wyniku **przy założeniu, że hipoteza zerowa jest prawdziwa**.
+
+-   Decyzję podejmujemy, porównując obie wielkości: jeśli p-value \< $\alpha$, odrzucamy $H_0$.
+
+**Czego p-value NIE oznacza.** p-value nie jest prawdopodobieństwem tego, że hipoteza zerowa jest prawdziwa, ani prawdopodobieństwem, że wynik jest "przypadkowy". Mała wartość p mówi tylko, że obserwowany wynik byłby rzadki, **gdyby** $H_0$ była prawdziwa.
 
 > Co oznacza poziom istotności 0,01, a co poziom istotności 0,001?
 
@@ -60,7 +67,7 @@ Chcemy sprawdzić, czy średnia populacji $\mu$ jest równa pewnej przyjętej wa
 
 -   obszar znajdujący się zawsze na krańcach rozkładu.
 -   Jeżeli obliczona przez nas wartość statystyki testowej znajdzie się w tym obszarze, to weryfikowaną przez nas hipotezę $H_0$ odrzucamy i przyjmujemy hipotezę alternatywną.
--   Wielkość obszaru krytycznego wyznacza dowolnie mały poziom istotności $\alpha$ , natomiast jego położenie określane jest przez hipotezę alternatywną.
+-   Wielkość obszaru krytycznego wyznacza przyjęty poziom istotności $\alpha$ - im mniejsze $\alpha$, tym mniejszy obszar krytyczny. Natomiast jego położenie (na którym krańcu rozkładu się znajduje) określane jest przez hipotezę alternatywną.
 
 ![](figures/7_crit_val.png)
 
@@ -91,14 +98,14 @@ Nieobciążona moneta powinna dawać 15 reszek w 30 rzutach. Rzucamy monetą 30 
 
 ```{r}
 #| message: false
-df = data.frame(reszka = rbinom(1000000, 30, 0.5))
+df = data.frame(reszka = rbinom(100000, 30, 0.5))
 library(ggplot2)
-ggplot(df, aes(reszka, y = ..density..)) + 
+ggplot(df, aes(reszka, y = after_stat(density))) + 
   geom_histogram(binwidth = 1)
 ```
 
 ```{r}
-ggplot(df, aes(reszka, y = ..density..)) + 
+ggplot(df, aes(reszka, y = after_stat(density))) + 
   geom_histogram(binwidth = 1) + 
   geom_vline(xintercept = 22, color = 'red')
 ```
@@ -108,7 +115,7 @@ prob = pbinom(21, 30, 0.5, lower.tail = FALSE)
 prob
 ```
 
-Prawdopodobieństwo równe 0,8% (więc $p=0,008$), że moneta nie jest obciążona.
+Gdyby moneta była nieobciążona, prawdopodobieństwo uzyskania 22 lub więcej reszek w 30 rzutach wynosi 0,8% (więc $p = 0,008$). Taki wynik byłby zatem bardzo rzadki, co daje nam podstawy do odrzucenia $H_0$. Zwróć uwagę: policzone 0,8% to **nie** prawdopodobieństwo tego, że moneta jest uczciwa.
 
 W efekcie odrzucamy $H_0$ i przyjmujemy $H_A$ ponieważ p (obliczone przez nas prob) jest mniejsze od przyjętego progu 0,05.
 
