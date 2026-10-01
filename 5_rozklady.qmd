@@ -1,0 +1,489 @@
+---
+format: live-html
+webr:
+  packages:
+    - gapminder
+    - dplyr
+    - ggplot2
+    - e1071
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+#|  - ex_4
+#|  - ex_5
+#|  - ex_6
+
+
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+library(e1071)
+
+data('gapminder', package = 'gapminder')
+```
+
+# Rozkłady danych
+
+## Podstawowe pojęcia
+
+### Zmienne losowe
+
+Zmienna losowa (ang. *random variables*) to wartość liczbowa, której wynik zależy od losu. Prawdopodobieństwo uzyskania danej wartości zależy od *gęstości prawdopodobieństwa* danej zmiennej $p(x)$ (lub $f(x)$).
+
+-   Zmienne dyskretne
+
+    -   Zmienne dyskretne przyjmują konkretną wartość liczbową (zliczenie)
+    -   Przykładem zmiennych dyskretnych jest rzut monetą albo rzut kostką
+
+-   Zmienne ciągłe
+
+    -   zmienna ciągła może przyjmować wszystkie wartości z określonego przedziału liczbowego
+    -   Przykładem zmiennych ciągłych jest wzrost, temperatura
+
+## Rozkłady zmiennych losowych
+
+Rozkłady zmiennych losowych można podzielić na:
+
+-   rozkłady dyskretne
+-   rozkłady ciągłe
+-   ani dyskretne, ani ciągłe.
+
+Rozkłady można także podzielić na **rozkłady teoretyczne** (tj. oparte o pewne założenia) oraz **rozkłady empiryczne** (tj. rozkład wartości oparty o obserwowane dane).
+
+### Rozkłady dyskretne
+
+-   Bernoulliego (zero-jedynkowy)
+-   Dwumianowy
+-   Poissona
+-   Geometryczny
+-   Hipergeometryczny
+
+### Rozkłady ciągłe
+
+-   Normalny
+-   t-Studenta
+-   Chi-kwadrat
+-   Fishera
+
+## Rozkłady danych w R
+
+Dla każdego rozkładu danych dostępnego w R istnieją cztery funkcje, rozpoczynające się od kolejnych liter:
+
+-   *d* - zwraca wartość funkcji gęstości rozkładu (pdf - probability density function)
+-   *p* - zwraca wartości dystrybuanty
+-   *q* - działa odwrotnie do *p*: dla zadanego prawdopodobieństwa kumulowanego zwraca wartość zmiennej (kwantyl), poniżej której znajduje się ten odsetek obserwacji. Np. `qnorm(0.975)` zwraca wartość, poniżej której leży 97,5% obserwacji standaryzowanego rozkładu normalnego
+-   *r* - zwraca losowo wygenerowane wartości z danego rozkładu
+
+```{r}
+#| eval: false
+?Distributions
+```
+
+wiecej informacji: <https://github.com/bearloga/tinydensR>
+
+## Rozkład normalny
+
+-   Zwany inaczej rozkładem Gaussa.
+-   Opisywany jest za pomocą dwóch parametrów: średniej $\mu$ oraz wariancji $\sigma^2$ (odchylenie standardowe rozkładu jest określane przez $\sigma$).
+-   Opisuje on sytuacje, gdy większość przypadków ma wartość zbliżoną do średniej, a im wartość jest dalsza od średniej tym jest ich coraz mniej.
+-   Jeden z najważniejszych rozkładów prawdopodobieństwa, odgrywający ważną rolę w statystyce. Wykres funkcji prawdopodobieństwa tego rozkładu jest krzywą w kształcie dzwonu.
+-   Znaczenie tego rozkładu wynika z faktu, że często jest on obserwowany w naturze. Obserwacja wielu zjawisk przyrodniczych pozwoliła stwierdzić, że podlegają one prawu rozkładu normalnego lub bardzo zbliżonego do niego.
+
+Rozkład normalny o średniej równej 0 a odchyleniu standardowym równym 1 nazywamy *standaryzowanym rozkładem normalnym* i oznaczamy N(0,1).
+
+### Reguła trzech sigm
+
+-   We wszystkich rozkładach normalnych funkcja gęstości jest symetryczna względem wartości średniej rozkładu.
+
+-   Prawdopodobieństwo, że wartość zmiennej znajduje się w odległości nie większej (lub mniejszej):
+
+    -   niż jedno odchylenie standardowe od średniej wynosi 68.3%;
+    -   niż dwa odchylenia standardowe od średniej wynosi 95.5%;
+    -   niż trzy odchylenia standardowe od średniej wynosi 99.7%.
+
+![Ilustracja reguły trzech sigm](figures/6_normalny.png){width="487"}
+
+```{r}
+rnorm(n = 10, mean = 0, sd = 1)
+```
+
+```{r}
+#| message: false
+library(ggplot2)
+losowe <- data.frame(x = rnorm(n = 10000, mean = 0, sd = 1))
+ggplot(losowe, aes(x = x)) + 
+  geom_histogram(bins = 40) + 
+  labs(x = "wartość", y = "liczba obserwacji") +
+  theme_bw()
+```
+
+Wykresy w tym skrypcie rysujemy pakietem `ggplot2`. Wyjątkiem są rysunki przedstawiające **funkcje teoretyczne** (a nie dane) - takie jak krzywa gęstości rozkładu poniżej. Do nich wygodniejsza jest funkcja `curve()` z grafiki podstawowej, która rysuje wykres wzoru matematycznego bez potrzeby tworzenia ramki danych.
+
+```{r}
+#| fig_width: 400px
+
+curve(dnorm(x, mean = 0, sd = 1), xlim = c(-5, 5))
+abline(h = 0)
+```
+
+Funkcja `pnorm()` zwraca prawdopodobieństwo, że zmienna przyjmie wartość **mniejszą** od podanej. Poniżej: prawdopodobieństwo uzyskania wartości mniejszej od 90 w rozkładzie normalnym o średniej 120 i odchyleniu standardowym 20.
+
+```{r}
+pnorm(q = 90, mean = 120, sd = 20, lower.tail = TRUE)
+```
+
+```{r}
+#| fig_width: 400px
+#| echo: false
+curve(dnorm(x, mean = 120, sd = 20), xlim = c(0,200))
+abline(h = 0)
+sequence <- seq(0, 90, 0.1)
+polygon(x = c(sequence,90,0),
+        y = c(dnorm(c(sequence),120,20),0,0),
+        col = "grey")
+```
+
+Funkcja `qnorm()` działa w drugą stronę: dla podanego prawdopodobieństwa zwraca wartość zmiennej. Podstawiając wynik z poprzedniego przykładu (6,68%) otrzymamy z powrotem wartość 90.
+
+```{r}
+qnorm(p = 0.0668072, mean = 120, sd = 20, lower.tail = TRUE)
+```
+
+**Przykład**: Załóżmy, że wyniki z egzaminów wstępnych mają rozkład normalny, ze średnią 72 punktów oraz odchyleniem standardowym 15.2 Jaki procent studentów uzyska wynik 84 lub wyższy na egzaminie?
+
+```{r}
+pnorm(84, mean=72, sd=15.2, lower.tail=FALSE) 
+```
+
+Odpowiedź: Procent studentów z wynikiem 84 punkty lub większym wynosi 21,5%
+
+### Test Shapiro-Wilka
+
+-   służy do sprawdzenia czy analizowana zmienna ma rozkład zbliżony do rozkładu normalnego.
+-   hipoteza zerowa testu: rozkład analizowanej zmiennej jest zbliżony do rozkładu normalnego.
+-   istotny wynik testu Shapiro-Wilka ([***p-value \<0.05***]{.underline}) świadczy o tym, że rozkład zmiennej obserwowanej [**nie jest podobny**]{.underline} do rozkładu normalnego
+-   w R obliczany za pomocą `shapiro.test()`
+-   testowanie normalności rozkładu jest wymagane przy użyciu testów parametrycznych, np: testy t-Studenta, analiza wariancji, etc.
+-   Alternatywą do testowania normalności rozkładu jest test Kołmogorowa-Smirnowa
+
+```{r}
+set.seed(123456)
+x <- rnorm(1000, mean = 10, sd = 2)
+```
+
+```{r}
+ggplot(data.frame(x = x), aes(x = x)) + 
+  geom_histogram(bins = 30) + 
+  labs(x = "wartość", y = "liczba obserwacji") +
+  theme_bw()
+```
+
+```{r}
+shapiro.test(x)
+```
+
+Wartość p-value wynosi 0,7595, czyli jest większa od 0,05. Nie mamy zatem podstaw do odrzucenia hipotezy zerowej o normalności rozkładu i możemy traktować go jako zbliżony do normalnego. Warto pamiętać, że brak odrzucenia $H_0$ nie jest dowodem normalności - test mógł odstępstwa od niej po prostu nie wykryć, co jest tym bardziej prawdopodobne, im mniejsza próba.
+
+> Ze zbioru danych gapminder wyselekcjonować dane dla kontynentu Afryka. Wykonać histogram dla zmiennej lifeExp oraz test Shapiro-Wilka. Czy zmienna lifeExp dla kontynentu Afryka ma rozkład zbliżony do rozkładu normalnego?
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+Wynik testu (p-value < 0.05) wskazuje na odrzucenie hipotezy zerowej o zgodności z rozkładem normalnym. Dane nie mają rozkładu normalnego. 
+
+``` r
+library(dplyr)
+afryka <- filter(gapminder, continent == 'Africa')
+ggplot(afryka, aes(x = lifeExp)) + geom_histogram()
+shapiro.test(afryka$lifeExp)
+```
+:::
+::::
+
+## Rozkład t-Studenta
+
+-   Rozkład t-Studenta powstaje podczas pobierania próbek z populacji o rozkładzie normalnym, gdy wielkość próby jest mała, a odchylenie standardowe populacji jest nieznane. Stosuje się go wtedy do estymacji średniej w populacji (patrz rozdział *Estymacja punktowa i przedziałowa*).
+-   Rozkład ten zależy tylko od jednego parametru - liczby stopni swobody (parametr $df$). Im więcej stopni swobody, tym rozkład bardziej zbliżony do rozkładu normalnego.
+-   Rozkład t-Studenta jest symetryczny, dzwonowaty podobnie jak rozkład normalny, ale posiada więcej wartości dalej od średniej (tj. w pobliżu ogona)
+
+```{r}
+rt(10, df=1)
+```
+
+```{r}
+#| fig_width: 400px
+#| echo: false
+# source: https://www.geeksforgeeks.org/understanding-the-t-distribution-in-r/
+# Generate a vector of 100 values between -6 and 6 
+x <- seq(-6, 6, length = 100) 
+  
+# Degrees of freedom 
+df = c(1,4,10,30) 
+colour = c("red", "orange", "green", "blue","black") 
+  
+# Plot a normal distribution 
+plot(x, dnorm(x), type = "l", lty = 2, lwd = 2, xlab = "t-value", ylab = "Density",  
+     main = "Porównanie rozkładów t-Studenta i normalnego", col = "black") 
+  
+# Add the t-distributions to the plot 
+for (i in 1:4){ 
+  lines(x, dt(x, df[i]), col = colour[i]) 
+} 
+  
+# Add a legend 
+legend("topright", c("df = 1", "df = 4", "df = 10", "df = 30", "normal"),  
+       col = colour, title = "t-distributions", lty = c(1,1,1,1,2))
+```
+
+## Rozkłady empiryczne
+
+Rozkład empiryczny - rozkład wartości oparty o obserwowane dane. Najczęściej jest przedstawiany za pomocą histogramu.
+
+![](figures/6_rozklad.png){width="458"}
+
+```{r}
+data("gapminder", package = "gapminder")
+library(ggplot2)
+```
+
+### Histogram
+
+-   **Rozkład oczekiwanej długości trwania życia**
+
+```{r}
+ggplot(data = gapminder, aes(x = lifeExp)) + geom_histogram(binwidth = 2) + theme_bw()
+```
+
+> Określ jaki rozkład ma oczekiwana długość trwania życia: symetryczny/asymetryczny lewostronnie/asymetryczny prawostronnie, jednomodalny/dwumodalny/wielomodalny?
+
+-   **Rozkład produktu krajowego brutto (gdpPercap)**
+
+```{r}
+ggplot(data = gapminder, aes(x = gdpPercap)) + geom_histogram(binwidth=10000) + theme_bw()
+```
+
+> Określ jaki rozkład ma produkt krajowy brutto: symetryczny/asymetryczny lewostronnie/asymetryczny prawostronnie, jednomodalny/dwumodalny/wielomodalny?
+
+> Wykonaj histogram dla zmiennej gdpPercap, ustaw szerokość przedziałów na 5000 (binwidth = 5000). Jaki rozkład ma zmienna gdpPercap?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+Jest to rozkład asymetryczny, prawostronny. 
+``` r
+ggplot(data = gapminder, aes(x = gdpPercap)) + geom_histogram(binwidth=5000) + theme_bw()
+```
+:::
+::::
+
+> Wykonaj histogram dla zmiennej pop. Określ jaki rozkład ma zmienna pop: symetryczny/asymetryczny lewostronnie/asymetryczny prawostronnie, jednomodalny/dwumodalny/wielomodalny?
+
+```{webr}
+#| exercise: ex_3
+
+```
+
+:::: {.solution exercise="ex_3"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ggplot(data = gapminder, aes(x = pop)) + geom_histogram() + theme_bw()
+```
+:::
+::::
+
+-   **Rozkład oczekiwanej długości trwania życia (lifeExp) według kontynentów**
+
+```{r}
+ggplot(gapminder, aes(x = lifeExp)) + 
+  geom_histogram() + 
+  facet_wrap(~continent, ncol = 3) + 
+  theme_bw()
+```
+
+> Określ jaki rozkład ma oczekiwana długość trwania życia na poszczególnych kontynentach: symetryczny/asymetryczny lewostronnie/asymetryczny prawostronnie, jednomodalny/dwumodalny/wielomodalny?
+
+> Wykonaj histogram dla zmiennej gdpPercap w podziale na kontynenty oraz określ rozkład zmiennej gdpPercap dla każdego z kontynentów.
+
+```{webr}
+#| exercise: ex_4
+
+```
+
+:::: {.solution exercise="ex_4"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ggplot(data = gapminder, aes(x = gdpPercap)) +
+  geom_histogram() +
+  facet_wrap(~continent)
+```
+:::
+::::
+
+### Wykres pudełkowy
+
+Wykres pudełkowy poza wizualizacją statystyk opisowych pozwala także na określenie typu rozkładu danych (symetryczny, asymetryczny).
+
+### Rozkład danych, a wykres pudełkowy.
+
+![](figures/6_rozklad_box.png)
+
+-   **Rozkład symetryczny**
+
+    -   mediana wypada na środku pudełka,
+    -   wąsy równej długości po obu stronach pudełka
+
+-   **Rozkład asymetryczny lewostronnie**
+
+    -   mediana wypada bliżej górnej krawędzi pudełka,
+    -   mediana \> średnia
+    -   wąsy wychodzące z dolnej krawędzi pudełka są dłuższe.
+
+-   **Rozkład asymetryczny prawostronnie**
+
+    -   mediana wypada bliżej dolnej krawędzi pudełka,
+    -   mediana \< średnia
+    -   wąsy wychodzące z górnej krawędzi pudełka są dłuższe.
+
+![](figures/6_rozklad_box_2.png){width="353"}
+
+**Wykres pudełkowy dla oczekiwanej długości trwania życia według kontynentów**
+
+```{r}
+ggplot(data = gapminder, aes(x = continent, y = lifeExp)) + 
+  geom_boxplot() + 
+  stat_summary(fun = mean, geom="point", shape=20, size=4) +
+  labs(x = "Kontynent", 
+       y = "Oczekiwana długość trwania życia", 
+       title = "Zróżnicowanie oczekiwanej długości trwania życia na kontynentach") + 
+  theme_bw() 
+```
+
+> Proszę wykonać wykres pudełkowy przedstawiający rozkład wartości gdpPercap według kontynentów. Jak określisz rozkłady danych na poszczególnych kontynentach?
+
+```{webr}
+#| exercise: ex_5
+
+```
+
+:::: {.solution exercise="ex_5"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ggplot(data = gapminder, aes(x = continent, y = gdpPercap)) +
+  geom_boxplot()
+```
+:::
+::::
+
+## Miary asymetrii i koncentracji
+
+### Miary asymetrii
+
+Asymetrię rozkładu określa się za pomocą skośności.
+
+-   skośność = 0 - rozkład symetryczny
+-   skośność \< 0 - rozkład asymetryczny lewostronnie (rozkład ma dłuższy lewy ogon)
+-   skośność \> 0 - rozkład asymetryczny prawostronnie (rozkład ma dłuższy prawy ogon)
+
+![](figures/6_asymetria.png)
+
+```{r}
+library(e1071)
+skewness(gapminder$lifeExp)
+```
+
+### Miary koncentracji
+
+Miary koncentracji opisują koncentrację wartości cechy wokół średniej. Jedną z miar koncentracji jest kurtoza.
+
+Funkcja `kurtosis()` z pakietu `e1071` domyślnie zwraca **kurtozę nadmiarową**, czyli liczoną względem rozkładu normalnego - dla rozkładu normalnego wynosi ona 0. Stąd interpretacja:
+
+-   K \> 0 - rozkład bardziej wysmukły niż normalny (leptokurtyczny); ma "grubsze" ogony, czyli częściej pojawiają się w nim wartości skrajne
+-   K = 0 - koncentracja wartości jak w rozkładzie normalnym (mezokurtyczny)
+-   K \< 0 - rozkład bardziej spłaszczony niż normalny (platykurtyczny); ma "cieńsze" ogony
+
+Uwaga: o kurtozie często mówi się jako o "koncentracji wokół średniej", ale decydują o niej przede wszystkim ogony rozkładu, czyli częstość występowania wartości skrajnych.
+
+![](figures/6_koncentracja.png)
+
+```{r}
+library(e1071)
+kurtosis(gapminder$lifeExp)
+```
+
+> Oblicz skośność oraz kurtozę dla zmiennej gdpPercap w zbiorze danych gapminder.
+
+```{webr}
+#| exercise: ex_6
+
+```
+
+:::: {.solution exercise="ex_6"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+library(e1071)
+skewness(gapminder$gdpPercap)
+kurtosis(gapminder$gdpPercap)
+```
+:::
+::::
+
+## Porównanie rozkładów
+
+W statystyce wykres kwantylowy (QQ-plot) jest wykresem prawdopodobieństwa, który porównuje (w graficzny sposób) 2 rozkłady prawdopodobieństwa przez wykreślenie ich kwantyli na przeciwnych osiach (x, y). Jeśli 2 porównywane rozkłady są podobne, punkty na wykresie kwantylowym ułożą się wzdłuż linii prostej. Wykres normalności (ang. *Normal QQ Plot*) porównuje rozkład próbki z rozkładem normalnym.
+
+W R wykresy te można wykreślić używając funkcji `qqplot()` oraz `qqnorm()` z grafiki podstawowej. Wykonując wykres za pomocą pakietu `ggplot2` dodajemy warstwę `stat_qq()` (punkty) oraz `stat_qq_line()` (linia odniesienia) - bez linii odniesienia wykres jest znacznie trudniejszy do odczytania.
+
+**Porównanie rozkładu zmiennej lifeExp dla kontynentu Afryka z rozkładem teoretycznym**.
+
+```{r}
+#wyselekcjonować dane dla kontynentu Afryka dotyczące średniej długości trwania życia
+dane_Africa <- gapminder[gapminder$continent == 'Africa',]
+```
+
+```{r}
+ggplot(data = dane_Africa, aes(sample = lifeExp)) + 
+  stat_qq() + 
+  stat_qq_line(color = "red") +
+  labs(x = "Kwantyle teoretyczne (rozkład normalny)", 
+       y = "Kwantyle z próby") +
+  theme_bw()
+```
+
+**Interpretacja:** punkty w środkowej części wykresu układają się blisko linii odniesienia, ale na obu końcach wyraźnie od niej odchodzą - co oznacza, że rozkład oczekiwanej długości trwania życia w Afryce ma "grubsze" ogony niż rozkład normalny. Wniosek jest zgodny z wynikiem testu Shapiro-Wilka z zadania powyżej, który odrzucił hipotezę o normalności rozkładu.
+
+## Dodatkowe materiały
+
+-   Obliczanie prawdopodobieństwa z rozkładów
+
+<https://gallery.shinyapps.io/dist_calc/>
+
+-   Ilustracja wykresu kwantylowego
+
+<https://xiongge.shinyapps.io/QQplots/>

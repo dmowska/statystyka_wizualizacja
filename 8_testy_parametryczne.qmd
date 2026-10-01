@@ -1,0 +1,355 @@
+---
+format: live-html
+webr:
+  packages:
+    - dplyr
+    - ggplot2
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+
+library(dplyr)
+library(ggplot2)
+
+```
+
+# Testy parametryczne
+
+## Testy t-Studenta
+
+-   Służą do wnioskowania o wartości średniej w populacji, z której pobraliśmy próbę losową.
+
+-   Służą do porównania ze sobą dwóch grup
+
+-   Można wyróżnić trzy rodzaje testów t-Studenta:
+
+    -   dla prób niezależnych
+    -   dla prób zależnych
+    -   dla jednej próby
+
+-   Założenia testów t-Studenta
+
+    -   Zmienne powinny być ilościowe
+    -   Rozkład danych w każdej z grup jest zbliżony do rozkładu normalnego
+    -   Wartości w badanych grupach wykazują podobną wariancję (homogeniczność wariancji) - założenie klasycznego testu t-Studenta, nie testu Welcha (patrz uwaga poniżej)
+    -   Obserwacje są od siebie niezależne (dla testu dla prób niezależnych)
+
+**Uwaga: domyślnym testem w R jest test Welcha.** Funkcja `t.test()` ma argument `var.equal = FALSE`, więc domyślnie wykonuje **test Welcha** - odmianę testu t-Studenta, która **nie wymaga** równości wariancji w grupach. Dlatego w wyniku widzimy nagłówek *Welch Two Sample t-test*, a liczba stopni swobody nie jest liczbą całkowitą.
+
+Klasyczny test t-Studenta, zakładający równość wariancji, otrzymamy, podając `var.equal = TRUE`:
+
+```{r}
+#| eval: false
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, var.equal = TRUE)
+```
+
+Ma to sens dopiero wtedy, gdy równość wariancji wcześniej sprawdzimy - służy do tego test F lub test Levene'a (patrz podrozdział *Testowanie istotności różnic wariancji*). W praktyce test Welcha jest bezpieczniejszym wyborem i dlatego jest w R domyślny.
+
+-   Hipoteza statystyczna
+
+    -   Hipoteza zerowa: $H_0 : \mu_1 = \mu_2$
+
+    -   Hipotezy alternatywne:
+
+        -   test jednostronny: $H_A : \mu_1 > \mu_2$
+        -   test dwustronny: $H_A : \mu_1 \neq \mu_2$
+
+### Test t-Studenta dla prób niezależnych
+
+-   Dotyczy porównania ze sobą dwóch różnych grup obserwacji
+-   Próby muszą być od siebie niezależne (wyniki pomiaru jednej grupy nie zależą od wyników pomiaru drugiej grupy)
+
+**Przykład: Czy istnieją istotne różnice w średniej temperaturze (annual_tavg) między Niżem Wschodniobałtycko-Białoruskim, a Wyżynami Polskimi?**
+
+```{r}
+library(dplyr)
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, 
+                      prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+
+head(pomiary_pol2)
+```
+
+```{r}
+#| message: false
+#| warning: false
+library(ggplot2)
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+```
+
+Testowanie istotności różnic przy założeniu hipotezy dwustronnej tj. $\mu_{Niż} \neq \mu_{Wyżyny}$
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+
+### Jak czytać wynik testu t-Studenta
+
+Wydruk testu wygląda zawsze tak samo, niezależnie od danych. Warto raz nauczyć się, co oznacza każdy wiersz.
+
+```         
+	Welch Two Sample t-test                       <- (1) nazwa wykonanego testu
+
+data:  annual_tavg by prowincja                  <- (2) analizowane dane
+t = -29.666, df = 338.07, p-value < 2.2e-16      <- (3) statystyka, stopnie swobody, p-value
+alternative hypothesis: true difference in means  <- (4) testowana hipoteza alternatywna
+  between group Niż ... and group Wyżyny ... is not equal to 0
+95 percent confidence interval:                  <- (5) przedział ufności dla RÓŻNICY średnich
+ -0.6871  -0.6018
+sample estimates:                                <- (6) średnie w porównywanych grupach
+  mean in group Niż ...   mean in group Wyżyny ...
+                 6.9790                   7.6232
+```
+
+1.  **Nazwa testu** - sprawdź, czy R wykonał ten test, który zamierzałeś. *Welch* oznacza wariant nie zakładający równości wariancji; *Paired* - test dla prób zależnych.
+2.  **Dane** - która zmienna i według jakiej zmiennej grupującej.
+3.  **p-value** - liczba, na podstawie której podejmujesz decyzję. Statystyka `t` i stopnie swobody `df` są potrzebne przy opisie wyniku w raporcie.
+4.  **Hipoteza alternatywna** - co dokładnie było testowane oraz **w jakiej kolejności** R ustawił grupy (ważne przy testach jednostronnych).
+5.  **Przedział ufności** - tu dla **różnicy** średnich. Jeśli zawiera zero, różnica nie jest istotna statystycznie. To ta sama informacja co p-value, podana w jednostkach zmiennej.
+6.  **sample estimates** - średnie w grupach. Stąd odczytasz **kierunek** i **wielkość** różnicy; sam test mówi tylko, czy różnica istnieje.
+
+> **Zapamiętaj:** p-value mówi, *czy* różnica jest istotna statystycznie. O tym, czy jest **istotna praktycznie**, decyduje jej wielkość - a tę odczytasz z sekcji *sample estimates* i z przedziału ufności.
+
+### Jak wyciągnąć pojedynczą liczbę z wyniku
+
+Wynik testu można zapisać do obiektu i wyjmować z niego potrzebne wartości - przydaje się to przy pisaniu raportów:
+
+```{r}
+wynik <- t.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+
+wynik$p.value       # sama wartość p
+wynik$conf.int      # przedział ufności dla różnicy
+wynik$estimate      # średnie w grupach
+round(wynik$p.value, 4)
+```
+
+### Jak opisać wynik w raporcie
+
+Do raportu nie wklejamy wydruku z R, tylko opisujemy wynik zdaniem zawierającym: nazwę testu, porównywane grupy, ich średnie, statystykę testową ze stopniami swobody oraz wartość p.
+
+> Test t-Studenta dla prób niezależnych wykazał istotną statystycznie różnicę w średniej rocznej temperaturze powietrza między Niżem Wschodniobałtycko-Białoruskim (M = 6,98 °C) a Wyżynami Polskimi (M = 7,62 °C); t(338,1) = -29,67; p < 0,001.
+
+**Interpretacja wyników**
+
+-   Poziom prawdopodobieństwa p (p-wartość) - jest to wyliczany w pakietach komputerowych najmniejszy poziom istotności, przy której wyliczona wartość testującej statystyki doprowadza do odrzucenia hipotezy zerowej.
+
+-   ***Jeśli p-wartość jest poniżej założonego poziomu istotności (np. 0.05) tzn. że hipotezę zerową możemy odrzucić na rzecz hipotezy alternatywnej.***
+
+W powyższym przykładzie:
+
+-   Hipoteza zerowa: prawdziwa różnica w średnich jest równa 0
+
+-   Hipoteza alternatywna: Prawdziwa różnica w średnich nie jest równa 0.
+
+-   P-wartość \< 2.2e-16
+
+    -   P-wartość jest mniejsza od 0.05 a zatem możemy odrzucić hipotezę zerową (różnica w średnich równa 0) na rzecz hipotezy alternatywnej (różnica w średnich różna od 0)
+
+-   ***Pytanie: Czy średnia temperatura powietrza na Niżu i na Wyżynach różni się istotnie?***
+
+-   ***Odpowiedź: Średnia temperatura na Niżu i na Wyżynach różni się istotnie.***
+
+**Przykład: Czy średnia temperatura (annual_tavg) Niżu Wschodniobałtycko-Białoruskiego jest istotnie wyższa od temperatury na Wyżynach Polskich?**
+
+Testowanie istotności różnic przy założeniu hipotezy jednostronnej tj. $\mu_{Niż} > \mu_{Wyżyny}$
+
+**Uwaga!** Przy zapisie formułowym (`annual_tavg ~ prowincja`) R porównuje grupy w kolejności **alfabetycznej** nazw. Tutaj "Niż Wschodniobałtycko-Białoruski" poprzedza "Wyżyny Polskie", więc pierwszą grupą jest Niż i `alternative = "greater"` oznacza hipotezę $\mu_{Niż} > \mu_{Wyżyny}$. Przy innej parze prowincji kolejność może być odwrotna! Zawsze warto sprawdzić, która grupa jest pierwsza:
+
+```{r}
+#| eval: false
+levels(factor(pomiary_pol2$prowincja))
+```
+
+Kolejność można też odczytać z wiersza *sample estimates* w wyniku testu - tam średnie są wypisane w tej samej kolejności, w jakiej test je porównał.
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "greater")
+```
+
+**Interpretacja:** p-value wynosi 1, czyli nie ma **żadnych** podstaw do odrzucenia hipotezy zerowej w tym kierunku. Wynik ten **nie oznacza**, że grupy się nie różnią - oznacza, że różnica przebiega w kierunku **przeciwnym** do postawionej hipotezy alternatywnej. Widać to w wierszu *sample estimates*: średnia na Niżu wynosi 6,98 C, a na Wyżynach 7,62 C, więc Niż jest chłodniejszy. Wartość p blisko 1 w teście jednostronnym to typowy sygnał, że hipotezę postawiono w złą stronę - w kolejnym przykładzie sprawdzamy kierunek przeciwny.
+
+**Przykład: Czy średnia temperatura (annual_tavg) Niżu Wschodniobałtycko-Białoruskiego jest istotnie niższa od temperatury na Wyżynach Polskich?**
+
+Testowanie istotności różnic przy założeniu hipotezy jednostronnej tj. $\mu_{Niż} < \mu_{Wyżyny}$
+
+```{r}
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "less")
+```
+
+**Interpretacja:** p-value wynosi 9,8e-34, czyli znacznie mniej od przyjętego poziomu 0,05. Odrzucamy hipotezę zerową na rzecz alternatywnej: średnia temperatura roczna na Niżu Wschodniobałtycko-Białoruskim jest istotnie statystycznie niższa niż na Wyżynach Polskich. Zwróć uwagę, że to ten sam zestaw danych, co w poprzednim przykładzie - zmienił się tylko kierunek hipotezy alternatywnej, a wynik z nieistotnego stał się bardzo istotny.
+
+> Wczytaj dane z pliku dane/pomiary_pol.csv. Sprawdź czy średnia temperatura roczna (annual_tavg) na Wyżynach Polskich różni się od Masywu Czeskiego? Stwórz wykres porównujący tę zmienną dla tych prowincji. Określ czy różnica pomiędzy średnimi jest istotna statystycznie.
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, prowincja %in% c("Masyw Czeski", "Wyżyny Polskie"))
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+  
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+:::
+::::
+
+> Wczytaj dane z pliku dane/pomiary_pol.csv. Sprawdź czy średnia temperatura roczna (annual_tavg) Masywu Czeskiego jest większa od temperatury na Wyżynach Polskich?
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol2 = filter(pomiary_pol, prowincja %in% c("Masyw Czeski", "Wyżyny Polskie"))
+ggplot(pomiary_pol2, aes(x = prowincja, y = annual_tavg)) + 
+  geom_boxplot() + 
+  labs(x = "Prowincja", y = "Temperatura powietrza [C]") + 
+  theme_bw()
+  
+t.test(annual_tavg ~ prowincja, data = pomiary_pol2, 
+       alternative = "greater")
+```
+:::
+::::
+
+### Test t-Studenta dla prób zależnych
+
+-   Dotyczy porównania ze sobą tej samej grupy obserwacji
+-   Próby są zależne, czyli wynik pomiaru w drugim badaniu zależy od pierwszego (dotyczy tej samej obserwacji)
+-   Służy określeniu wielkości zmian pomiędzy pomiarami
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+head(pomiary_pol)
+```
+
+**Przykład: Czy maksymalna temperatura kwietnia (tmax_4) oraz września (tmax_9) różni się istotnie?**
+
+```{r}
+#| message: false
+#| warning: false
+
+#Wykonanie wykresu pudelkowego wymaga zamiany danych na format dlugi
+pomiary_pol_l <- pomiary_pol |> 
+  select(pomiar_id, tmax_4, tmax_9) |> 
+  pivot_longer(contains("tmax"))
+
+ggplot(pomiary_pol_l, aes(name, value)) + 
+  geom_boxplot() + 
+  labs(y = "Temperatura powietrza [C]") + 
+  theme_bw()
+```
+
+Test t-Studenta dla prób zależnych, jeśli dane są w formacie szerokim.
+
+```{r}
+t.test(pomiary_pol$tmax_4, pomiary_pol$tmax_9, paired = TRUE)
+```
+
+**Interpretacja:** średnia różnica (tmax_4 - tmax_9) wynosi -5,25 C, a p-value jest mniejsze od 2,2e-16. Odrzucamy hipotezę zerową: maksymalna temperatura kwietnia różni się istotnie statystycznie od maksymalnej temperatury września, przy czym kwiecień jest chłodniejszy. Znak średniej różnicy wskazuje kierunek - sam test dwustronny mówi tylko, że różnica istnieje.
+
+> Wczytaj dane z pliku dane/pomiary_pol.csv. Wykonaj test dla określenia czy maksymalna temperatura powietrza w kwietniu (tmax_4) jest niższa od maksymalnej temperatury września (tmax_9). Sformułuj hipotezę zerową oraz hipotezę alternatywną oraz zinterpretuj wynik testu.
+
+```{webr}
+#| exercise: ex_3
+
+```
+
+:::: {.solution exercise="ex_3"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+t.test(pomiary_pol$tmax_4, pomiary_pol$tmax_9, paired = TRUE, alternative = "less")
+```
+:::
+::::
+
+### Zadanie: znajdź błąd
+
+> Badacz chciał sprawdzić, czy maksymalna temperatura powietrza w kwietniu różni się od maksymalnej temperatury we wrześniu. Dysponował pomiarami z 1500 stacji - dla każdej stacji miał obie wartości. Wykonał test: `t.test(pomiary_pol$tmax_4, pomiary_pol$tmax_9)`. Co zrobił źle i jaki będzie skutek tego błędu?
+
+:::: {.callout-tip title="Odpowiedź" collapse="true"}
+Badacz zastosował test dla prób **niezależnych**, podczas gdy obie wartości pochodzą z **tej samej stacji** - próby są sparowane. Powinien dodać argument `paired = TRUE`.
+
+Skutek: test dla prób niezależnych nie wykorzystuje informacji o powiązaniu obserwacji. Zmienność między stacjami (jedne są ogólnie cieplejsze, inne chłodniejsze) trafia wtedy do oszacowania błędu, zamiast zostać wyłączona z analizy. Test ma przez to **mniejszą moc** - przy mniejszej różnicy mógłby jej w ogóle nie wykryć.
+::::
+
+## Testowanie istotności różnic wariancji
+
+-   Pozwala na porównywanie wariancji w dwóch grupach pomiarów
+-   Zakłada rozkład normalny w obu grupach
+-   Test ten może być jednostronny lub dwustronny
+-   Dla wielu wariancji używany jest **test Levene'a**
+
+```{r}
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol2 = subset(pomiary_pol, 
+                     prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+```
+
+```{r}
+var.test(annual_tavg ~ prowincja, data = pomiary_pol2)
+```
+
+**Interpretacja:**
+
+-   Wartość p-value dla testu F p = 0.3405 jest większa od założonego poziomu istotności (0.05). Nie ma istotnych różnic między wariancją dla obu grup (Niżu oraz Wyżyn).
+
+### Test Levene'a
+
+-   Porównywane grupy w testach parametrycznych powinny mieć podobne wariancje
+-   Do weryfikacji czy zachowana jest homogeniczność wariancji w grupach stosuje się, między innymi, test Levene'a
+-   $H_0$ - wariancje są takie same
+-   $H_A$ - wariancje się różnią
+
+```{r}
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol2 = subset(pomiary_pol, 
+                     prowincja %in%
+                       c("Niż Wschodniobałtycko-Białoruski",
+                         "Wyżyny Polskie"))
+```
+
+```{r}
+#| message: false
+library(car)
+leveneTest(annual_tavg ~ factor(prowincja), data = pomiary_pol2)
+```
+
+**Interpretacja:** p-value wynosi 0,2686, czyli jest większe od 0,05. Nie ma podstaw do odrzucenia hipotezy zerowej o równości wariancji - założenie homogeniczności wariancji w obu prowincjach można uznać za spełnione. Wynik jest zgodny z wcześniejszym testem F (p = 0,3405), co jest typowe: oba testy odpowiadają na to samo pytanie, ale test Levene'a jest mniej wrażliwy na odstępstwa od normalności i nadaje się także dla więcej niż dwóch grup.

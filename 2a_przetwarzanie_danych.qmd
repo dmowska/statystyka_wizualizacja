@@ -1,0 +1,223 @@
+---
+format: live-html
+webr:
+  packages:
+    - gapminder
+
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+#|  - ex_3
+#|  - ex_4
+#|  - ex_5
+#|  - ex_6
+#|  - ex_7
+
+library(gapminder)
+data('gapminder', package = 'gapminder')
+```
+
+# Przetwarzanie danych w R 
+
+```{r}
+#| label: wczytanie-danych
+#| include: false
+data('gapminder', package = 'gapminder')
+```
+
+## Wstępna eksploracja danych 
+
+```{r}
+#| eval: false
+str(gapminder)
+
+#wyświetlanie początkowych wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)
+head(gapminder)
+head(gapminder, n = 2)
+
+#wyświetlanie n ostatnich wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)
+tail(gapminder)
+
+#wyświetlanie nazw zmiennych, nazw kolumn oraz nazw wierszy
+names(gapminder)
+colnames(gapminder)
+rownames(gapminder)
+
+#liczba kolumn
+ncol(gapminder)
+
+#liczba wierszy
+nrow(gapminder)
+
+#wyświetlanie unikalnych wartości 
+unique(gapminder$continent)
+
+#typ/klasa zmiennej
+class(gapminder$continent)
+
+#Liczność poszczególnych kategorii 
+table(gapminder$continent) 
+
+#Podstawowe statystyki zbioru danych
+summary(gapminder)
+
+#Podstawowe statystyki zmiennej lifeExp (oczekiwana długość życia)
+summary(gapminder$lifeExp)
+```
+
+> Uwaga! W ten sposób zaznaczane będą w tekście zadania do wykonania odnoszące się do omówionego powyżej fragmentu materiału. 
+
+> Wczytaj do R zbiór danych z pliku `dane.csv` oraz przypisz go do obiektu o nazwie `dane`. Wyświetl 4 ostatnie wiersze zbioru danych `dane`. Wyświetl unikalne wartości dla kolumny `country`. Wyświetl podstawowe statystyki zbioru danych `dane`. 
+
+```{webr}
+#| exercise: ex_1
+
+# Wczytaj do R zbiór danych z pliku `dane.csv` z folderu `dane` oraz przypisz go do obiektu o nazwie `dane`
+
+
+# Wyświetl 4 ostatnie wiersze zbioru danych `dane`. 
+
+
+# Wyświetl unikalne wartości dla kolumny `country`. 
+
+
+# Wyświetl podstawowe statystyki zbioru danych `dane`. 
+
+
+```
+
+## Indeksowanie
+
+### wektory
+
+W R pierwszy element wektora indeksowany jest jako 1.
+
+```{r}
+#| label: indeks-wektor
+#| eval: false
+v <- c(a = 1, b = 2, c = 3, d = 4, e = 5)
+v
+v[1]
+v[-1]
+v[1:3]
+v[v>4]
+v['a']
+```
+
+### data.frame
+
+Indeksowanie ramki danych ma postać: obiekt\[wiersz, kolumna\].
+
+Wybór jednej zmiennej wykonywany jest za pomocą operatora '\$' (np. gapminder$continent)
+
+```{r}
+#| label: indeks-df
+#| eval: false
+gapminder[1,]
+gapminder[,1]
+gapminder[3, 4]
+gapminder[, -1]
+gapminder[, c(2,3)]
+gapminder[gapminder$year == 1952, ]
+gapminder[gapminder$year == 1952 & gapminder$continent=='Asia',]
+gapminder[gapminder$year == 1952, c(5)]
+gapminder[gapminder$pop > 10000000, ]
+gapminder[gapminder$continent != 'Asia',]
+gapminder[gapminder$continent %in% c('Asia', 'Africa'),]
+```
+
+> Używając indeksowania wybierz ze zbioru danych gapminder dane dla kontynentu Europa.
+
+```{webr}
+#| exercise: ex_2
+# Dane dla kontynentu Europa
+
+```
+
+> Używając indeksowania wybierz ze zbioru danych gapminder dane dla kontynentu Azja (Asia); ogranicz wybór tylko do kolumn pop oraz lifeExp. 
+
+```{webr}
+#| exercise: ex_3
+# Zmienne lifeExp oraz pop dla kontynentu Azja
+
+```
+
+> Używając indeksowania wybierz ze zbioru danych gapminder obserwacje, dla których oczekiwana długość trwania życia przekroczyła 75 lat
+
+```{webr}
+#| exercise: ex_4
+# lifeExp > 75
+
+```
+
+> Używając indeksowania wybierz ze zbioru danych gapminder dane dla lat 1952 oraz 2007.
+
+```{webr}
+#| exercise: ex_5
+# Dane dla lat 1952 i 2007
+
+```
+
+
+## Selekcja oraz tworzenie nowej zmiennej
+
+### Funkcja `subset()`
+
+Funkcja `subset()` pozwala wybrać wiersze spełniające warunek oraz kolumny (argument *select*) w jednym wywołaniu - bez powtarzania nazwy obiektu, jak przy indeksowaniu.
+
+```{r}
+#| eval: false
+dane_sel <- subset(gapminder, continent == "Europe" & year == 1952, select = c(country, pop))
+dane_selection <- subset(gapminder, continent == "Europe" & year == 1952, select = c(country:pop))
+```
+
+> W jakich latach w Australii długość trwania życia wynosiła powyżej 75 lat? 
+
+```{webr}
+#| exercise: ex_6
+#  W jakich latach w Australii długość trwania życia wynosiła powyżej 75 lat? 
+
+```
+
+### Tworzenie nowej zmiennej 
+
+```{r}
+#| eval: false
+dane1952 <- gapminder[gapminder$year == 1952, ]
+```
+
+```{r}
+#| eval: false
+gapminder$pop_mln <- gapminder$pop / 1000000
+head(gapminder, 3)
+```
+
+### Porządkowanie 
+
+```{r}
+#| eval: false
+dane_2 <- gapminder[order(gapminder$year), ]
+
+#sortowanie względemm dwóch zmiennych
+dane_2 <- gapminder[order(gapminder$continent, gapminder$country), ]
+head(dane_2)
+
+#sortowanie według kraju (rosnąco) oraz roku (malejąco)
+dane_2 <- gapminder[order(gapminder$country, -gapminder$year),]
+head(dane_2)
+
+```
+
+> W którym roku liczba ludności Nowej Zelandii (New Zealand) przekroczyła 3 miliony? 
+
+```{webr}
+#| exercise: ex_7
+# W którym roku liczba ludności Nowej Zelandii (New Zealand) przekroczyła 3 miliony? 
+
+```

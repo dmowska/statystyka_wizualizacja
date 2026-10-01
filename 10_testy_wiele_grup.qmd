@@ -1,0 +1,295 @@
+---
+format: live-html
+webr:
+  packages:
+    - gapminder
+    - dplyr
+    - ggplot2
+    - dunn.test
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| setup: true
+#| exercise: 
+#|  - ex_1
+#|  - ex_2
+
+library(gapminder)
+library(dplyr)
+library(ggplot2)
+library(dunn.test)
+
+data('gapminder', package = 'gapminder')
+gapminder2007 <- filter(gapminder, year == 2007)
+```
+
+# Testy dla wielu grup 
+
+## Testowanie istotności różnic średnich wielu prób
+
+- Parametryczne
+
+    + Jednoczynnikowa analiza wariancji (ANOVA)
+    + Test Tukeya (HSD)
+
+- Nieparametryczne
+
+    + Test Kruskala-Wallisa
+    + Test Friedmana
+
+## Analiza wariancji 
+
+- Celem analizy wariancji (ANOVA) jest zazwyczaj testowanie istotności różnic pomiędzy średnimi w wielu grupach.
+- Służą do oceny czy średnie wartości cechy Y (cecha ilościowa) różnią się istotnie pomiędzy grupami wyznaczonymi przez zmienną X.
+- W analizie jednoczynnikowej badamy zależność pomiędzy cechą Y a jedną zmienną jakościową.
+- Hipoteza zerowa - średnie w grupach są jednakowe: $H_0: \mu_1 = \mu_2 = ... = \mu_k$
+- Hipoteza alternatywna: $H_A$: co najmniej dwie średnie różnią się między sobą.
+- Analiza wariancji nie pozwala stwierdzić pomiędzy którymi grupami występują różnice.
+- Aby określić między którymi grupami występują różnice trzeba wykonać porównania wielokrotne (“post-hoc”)
+
+### Podstawowe założenia
+
+- Zmienna w każdej z analizowanych grup ma rozkład zbliżony do rozkładu normalnego.
+- Wariancje w grupach są do siebie podobne.
+- Próby zostały losowo wybrane z populacji.
+
+**Przykład: Czy średnia roczna temperatura powietrza różni się istotnie między prowincjami? **
+
+```{r}
+#| message: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+pomiary_pol = read.csv("dane/pomiary_pol.csv")
+pomiary_pol$prow_id = as.factor(pomiary_pol$prow_id)
+summary(pomiary_pol)
+```
+
+### Sprawdzenie założeń
+
+Przed wykonaniem analizy wariancji sprawdzamy jej założenia. Zwróć uwagę, że zbiór zawiera braki danych - funkcja `aov()` pomija takie obserwacje i informuje o tym w wyniku ("15 observations deleted due to missingness").
+
+Normalność rozkładu w każdej z grup (test Shapiro-Wilka):
+
+```{r}
+tapply(pomiary_pol$annual_tavg, pomiary_pol$prow_id,
+       function(x) shapiro.test(na.omit(x))$p.value)
+```
+
+Równość wariancji w grupach (test Levene'a):
+
+```{r}
+#| message: false
+library(car)
+leveneTest(annual_tavg ~ prow_id, data = pomiary_pol)
+```
+
+Jeśli założenia nie są spełnione, zamiast analizy wariancji stosujemy test Kruskala-Wallisa (patrz dalej w tym rozdziale).
+
+### Wykonanie analizy wariancji
+
+```{r}
+pomiary_anova = aov(annual_tavg ~ prow_id, data = pomiary_pol)
+pomiary_anova
+```
+
+```{r}
+summary(pomiary_anova)
+```
+
+### Jak czytać wynik analizy wariancji
+
+```         
+              Df Sum Sq Mean Sq F value Pr(>F)    
+prow_id        6  144.5  24.079    44.8 <2e-16 ***   <- wiersz zmiennej grupującej
+Residuals   1478  794.4   0.537                      <- wiersz reszt
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+15 observations deleted due to missingness           <- pominięte braki danych
+```
+
+-   **Df** - stopnie swobody. W wierszu zmiennej grupującej to liczba grup minus 1 (tu: 7 prowincji - 1 = 6).
+-   **Sum Sq / Mean Sq** - sumy i średnie kwadratów; są podstawą obliczeń, ale same w sobie nie są interpretowane.
+-   **F value** - statystyka testowa. Im większa, tym wyraźniejsze różnice między grupami w stosunku do zmienności wewnątrz grup.
+-   **Pr(>F)** - to jest **p-value**, liczba, na podstawie której podejmujesz decyzję. Gwiazdki obok są skrótem graficznym (`***` oznacza p < 0,001).
+-   **Ostatni wiersz** - informacja o pominiętych obserwacjach z brakami danych. Zawsze warto go przeczytać: mówi, na ilu obserwacjach faktycznie wykonano analizę.
+
+Istotny wynik oznacza tylko, że **co najmniej dwie** grupy się różnią - nie mówi, które. Odpowiada na to dopiero test post-hoc.
+
+## Test Tukeya
+
+- Wynikiem testu Tukeya są różnice między średnimi oraz 95% przedział ufności dla tych różnic dla każdej pary porównań.
+- Wynik jest pokazywany w postaci numerycznej i graficznej.
+- Szukamy takich par, dla których przedział ufności średnich nie przecina 0, wskazując na statystycznie istotne różnice między grupami.
+
+Graficzna reprezentacja wyniku – przedziały ufności dla różnic w średnich rocznych temperatur między prowincjami. 
+
+```{r}
+posthoc = TukeyHSD(pomiary_anova, which = "prow_id",
+                   conf.level = 0.95)
+posthoc
+```
+
+```{r}
+par(mar = c(4, 4, 4, 0.1)) # zmiana marginesów
+plot(posthoc, las = 1, cex.axis=0.7)
+```
+
+### Jak czytać wynik testu Tukeya
+
+```         
+      diff     lwr    upr  p adj
+2-1 0.7225  0.2513 1.1936 0.0001   <- przedział nie zawiera 0 -> różnica istotna
+5-1 0.4411 -0.0323 0.9145 0.0868   <- przedział zawiera 0 -> różnica nieistotna
+```
+
+-   **nazwa wiersza** (`2-1`) - która para grup jest porównywana.
+-   **diff** - różnica średnich między tymi grupami, w jednostkach zmiennej (tu: °C).
+-   **lwr, upr** - granice przedziału ufności dla tej różnicy. **Jeśli przedział zawiera zero, różnica nie jest istotna statystycznie.**
+-   **p adj** - wartość p **skorygowana** na wielokrotne porównania. Przy 7 grupach wykonujemy 21 porównań; bez korekty prawdopodobieństwo przypadkowego „odkrycia" różnicy byłoby bardzo wysokie.
+
+Kolumna `p adj` i przedział `lwr`-`upr` mówią to samo: jeśli przedział obejmuje zero, to `p adj` przekroczy 0,05.
+
+### Jak opisać wynik w raporcie
+
+> Jednoczynnikowa analiza wariancji wykazała istotne statystycznie różnice w średniej rocznej temperaturze powietrza między prowincjami fizjograficznymi; F(6; 1478) = 44,8; p < 0,001. Test post-hoc Tukeya wskazał różnice między 12 z 21 par prowincji - największą między Karpatami Wschodnimi a Niżem Środkowoeuropejskim (różnica 1,26 °C; p < 0,001).
+
+**Wnioski z analizy danych:**
+
+Wnioskiem z przeprowadzenia testu post-hoc jest stwierdzenie, że istnieją istotne statystycznie różnice w średniej rocznej temperaturze powietrza między prowincjami: 
+
+- Karpaty Wschodnie z Podkarpaciem Wschodnim (1) a pozostałymi (z wyjątkiem 5: Niż Wschodniobałtycko-Białoruski)
+- Karpaty Zachodnie z Podkarpaciem Zachodnim i Północnym (2), a Niż Środkowoeuropejski (4), Niż Wschodniobałtycko-Białoruski (5), Wyżyny Polskie (6)
+- Masyw Czeski (3), a Niż Środkowoeuropejski (4) oraz Niż Wschodniobałtycko-Białoruski (5)
+- Niż Środkowoeuropejski (4), a Niż Wschodniobałtycko-Białoruski (5)
+- Niż Wschodniobałtycko-Białoruski (5), a Wyżyny Polskie (6)
+
+Parą graniczną jest Niż Środkowoeuropejski (4) i Wyżyny Polskie (6): skorygowane p wynosi 0,0525, czyli nieco powyżej przyjętego progu 0,05. Formalnie nie odrzucamy hipotezy o braku różnicy, ale wynik tak bliski granicy warto opisać jako niejednoznaczny, a nie jako "brak różnicy" - przy nieco większej próbie mógłby wyjść istotny. Pokazuje to, że próg 0,05 jest umowny i decyzja "istotne / nieistotne" nie powinna być jedynym wnioskiem z analizy.
+
+Zestawienie prowincji i ich id
+
+```{r}
+pomiary_pol |> 
+  select(prow_id, prowincja) |> 
+  arrange(prow_id) |> 
+  na.omit() |> 
+  unique()
+```
+
+> Używając danych `gapminder` dla roku 2007 sprawdź, czy oczekiwana długość trwania życia różni się istotnie statystycznie między kontynentami. Wykonaj wykres pudełkowy, sprawdź założenia, przeprowadź analizę wariancji oraz test post-hoc. Między którymi kontynentami występują różnice?
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+:::: {.solution exercise="ex_1"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+# wizualizacja
+ggplot(gapminder2007, aes(continent, lifeExp)) + geom_boxplot()
+
+# sprawdzenie normalnosci w grupach
+tapply(gapminder2007$lifeExp, gapminder2007$continent,
+       function(x) if(length(x) > 2) shapiro.test(x)$p.value else NA)
+
+# analiza wariancji
+anova_le = aov(lifeExp ~ continent, data = gapminder2007)
+summary(anova_le)
+
+# test post-hoc
+TukeyHSD(anova_le)
+```
+
+Analiza wariancji daje p < 2e-16, więc odrzucamy hipotezę o równości średnich. Test Tukeya pokazuje istotne różnice między większością par kontynentów - najwyraźniejsze dla Afryki, która odstaje od wszystkich pozostałych. Zwróć uwagę, że dla Oceanii mamy tylko 2 obserwacje, co czyni wnioski dla tego kontynentu bardzo niepewnymi.
+:::
+::::
+
+## Test Kruskala-Wallisa
+
+- Nieparametryczną alternatywą dla jednoczynnikowej analizy wariancji stanowi **test Kruskala-Wallisa**. 
+- Za pomocą tego testu sprawdzamy, czy *n* niezależnych próbek pochodzi z tej samej populacji, bądź z populacji z taką samą medianą. 
+- Statystycznie istotny wynik tego testu informuje, że co najmniej jedna z par grup jest różna od siebie
+- Poszczególne próbki nie muszą mieć takiej samej liczebności. 
+- Test ten jest rozszerzeniem testu U Manna-Whitneya (testu Wilcoxona dla prób niezależnych) na 3 i więcej grup.
+- Testem post-hoc dla testu Kruskala-Wallisa jest test Dunna (library(dunn.test); ?dunn.test)
+
+```{r}
+library(gapminder)
+gapminder2007 = subset(gapminder, year == 2007)
+```
+
+**Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy kontynentami?**
+
+```{r}
+library(ggplot2)
+ggplot(gapminder2007, aes(continent, lifeExp)) + geom_boxplot()
+```
+
+
+```{r}
+kruskal.test(lifeExp ~ continent, data = gapminder2007)
+```
+```{r}
+library(dunn.test)
+dunn.test(gapminder2007$lifeExp, gapminder2007$continent, kw=FALSE, method="bonferroni")
+```
+Jeśli wartość P.adj jest mniejsza od założonego progu (zazwyczaj 0,05) to hipotezę zerową o braku różnic między grupami można odrzucić na rzecz hipotezy alternatywnej (grupy różnią się).
+
+> Pytanie: Pomiędzy którymi grupami istnieją statystycznie istotne różnice?
+
+**Odpowiedź:** istotne różnice (P.adj \< 0,05) występują między wszystkimi parami kontynentów z wyjątkiem pary Europa - Oceania. Przy odczytywaniu wyniku trzeba pamiętać, że Oceania jest w tych danych reprezentowana tylko przez 2 kraje, więc brak istotnej różnicy może wynikać z bardzo małej liczebności grupy, a nie z faktycznego podobieństwa.
+
+> Rozkład PKB na osobę (gdpPercap) jest silnie prawoskośny, więc analiza wariancji nie jest tu odpowiednia. Sprawdź testem nieparametrycznym, czy PKB na osobę różni się istotnie między kontynentami w 2007 roku, i wykonaj odpowiedni test post-hoc.
+
+```{webr}
+#| exercise: ex_2
+
+```
+
+:::: {.solution exercise="ex_2"}
+::: {.callout-tip title="Solution" collapse="false"}
+Rozwiązanie:
+
+``` r
+ggplot(gapminder2007, aes(continent, gdpPercap)) + geom_boxplot()
+
+kruskal.test(gdpPercap ~ continent, data = gapminder2007)
+
+dunn.test(gapminder2007$gdpPercap, gapminder2007$continent,
+          kw = FALSE, method = "bonferroni")
+```
+
+Test Kruskala-Wallisa daje wynik istotny statystycznie, więc co najmniej jedna para kontynentów różni się pod względem PKB na osobę. Test Dunna wskazuje, które pary - przy odczytywaniu wyniku zwróć uwagę na kolumnę *P.adj*, czyli wartość p po poprawce Bonferroniego na wielokrotne porównania.
+:::
+::::
+
+## Test Friedmana
+
+Test wykonywany dla pomiarów powtarzanych (liczba powtórzeń większa od dwóch)
+
+**Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy kolejnymi pomiarami (kolejnymi latami)?**
+
+```{r}
+ggplot(gapminder, aes(year, lifeExp, group = country)) + 
+  geom_point(color = "red") +
+  geom_line()
+```
+
+
+```{r}
+friedman.test(lifeExp ~ year | country, data = gapminder)
+```
+
+Test Friedmana jest nieparametrycznym odpowiednikiem **analizy wariancji dla pomiarów powtarzanych** - stosujemy go, gdy te same obiekty mierzymy więcej niż dwa razy. W przykładzie powyżej "obiektem" jest kraj, a kolejnymi pomiarami - lata 1952-2007. Formuła `lifeExp ~ year | country` czyta się: zmienna *lifeExp* w zależności od *year*, w blokach wyznaczonych przez *country*.
+
+**Interpretacja:** p-value jest mniejsze od 2,2e-16, więc odrzucamy hipotezę zerową. Oczekiwana dalsza długość życia różni się istotnie statystycznie pomiędzy kolejnymi latami pomiaru. Test nie mówi jednak, **które** lata różnią się między sobą - aby to ustalić, potrzebny jest test post-hoc dla pomiarów powtarzanych (np. testy kolejności par Wilcoxona dla wybranych par lat z poprawką na wielokrotne porównania).
+
+> Pytanie: dlaczego do porównania lat nie można tu użyć testu Kruskala-Wallisa?
+

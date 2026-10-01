@@ -1,0 +1,69 @@
+project:
+  type: book
+
+lang: pl
+
+book:
+  title: "Statystyka i wizualizacja danych"
+  author: "Anna Dmowska, Jakub Nowosad"
+  date: 2024-09-29
+  chapters:
+   - index.qmd
+   - part: "WPROWADZENIE"
+     chapters: 
+      - 1a_wprowadzenie.qmd
+      - 1b_wprowadzenie_do_r.qmd   
+   - part: "PRZETWARZANIE DANYCH"
+     chapters: 
+      - 2a_przetwarzanie_danych.qmd
+      - 2b_przetwarzanie_danych_dplyr.qmd
+   - part: "STATYSTYKI OPISOWE"
+     chapters: 
+      - 3_statystyki_opisowe.qmd
+   - part: "WIZUALIZACJA DANYCH"
+     chapters: 
+      - 4_wizualizacja.qmd
+      - 4a_wizualizacja.qmd
+      - 4b_wizualizacja.qmd
+   - part: "ROZKŁADY DANYCH"
+     chapters:
+      - 5_rozklady.qmd
+   - part: "WNIOSKOWANIE STATYSTYCZNE"
+     chapters:
+      - 6_wnioskowanie.qmd
+      - 6a_wnioskowanie.qmd
+      - 6b_wnioskowanie.qmd
+   - part: "TESTY STATYSTYCZNE"
+     chapters:
+      - 7_testy.qmd
+      - 8_testy_parametryczne.qmd
+      - 9_testy_nieparametryczne.qmd
+      - 10_testy_wiele_grup.qmd
+      - 11_testowanie_istotnosci_proporcji.qmd
+   - part: "ANALIZA KORELACJI I REGRESJI"
+     chapters:
+      - 12_analiza_korelacji.qmd
+      - 13_analiza_regresji.qmd   
+   - part: "RAPORTY STATYSTYCZNE"
+     chapters:
+      - 14_Raport_statystyczny.qmd
+      - 15_Raport_przyklad.qmd
+   - part: "ZADANIA"
+     chapters:
+      - 16_zadania_samodzielne.qmd
+   - part: "ZAŁĄCZNIK"
+     chapters:
+      - zalacznik_funkcje.qmd
+
+execute:
+  freeze: auto
+  
+bibliography: references.bib
+  
+format: live-html
+resources:
+  - dane
+engine: knitr
+editor: visual
+
+number-depth: 3
