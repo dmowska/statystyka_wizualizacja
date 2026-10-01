@@ -320,7 +320,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -353,7 +353,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +399,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,6 +421,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -433,7 +450,7 @@ window.Quarto = {
   <ul>
   <li><a href="#podstawowe-pojęcia" id="toc-podstawowe-pojęcia" class="nav-link active" data-scroll-target="#podstawowe-pojęcia"><span class="header-section-number">12.1</span> Podstawowe pojęcia</a></li>
   <li><a href="#testowanie-hipotez-1-formułowanie-hipotez-statystycznych" id="toc-testowanie-hipotez-1-formułowanie-hipotez-statystycznych" class="nav-link" data-scroll-target="#testowanie-hipotez-1-formułowanie-hipotez-statystycznych"><span class="header-section-number">12.2</span> Testowanie hipotez: (1) Formułowanie hipotez statystycznych</a></li>
-  <li><a href="#testowanie-hipotez-rozdzaje-błędów" id="toc-testowanie-hipotez-rozdzaje-błędów" class="nav-link" data-scroll-target="#testowanie-hipotez-rozdzaje-błędów"><span class="header-section-number">12.3</span> Testowanie hipotez: rozdzaje błędów</a></li>
+  <li><a href="#testowanie-hipotez-rodzaje-błędów" id="toc-testowanie-hipotez-rodzaje-błędów" class="nav-link" data-scroll-target="#testowanie-hipotez-rodzaje-błędów"><span class="header-section-number">12.3</span> Testowanie hipotez: rodzaje błędów</a></li>
   <li><a href="#testowanie-hipotez-p-value" id="toc-testowanie-hipotez-p-value" class="nav-link" data-scroll-target="#testowanie-hipotez-p-value"><span class="header-section-number">12.4</span> Testowanie hipotez: p-value</a></li>
   <li><a href="#testowanie-hipotez-określenie-wyniku-testu" id="toc-testowanie-hipotez-określenie-wyniku-testu" class="nav-link" data-scroll-target="#testowanie-hipotez-określenie-wyniku-testu"><span class="header-section-number">12.5</span> Testowanie hipotez: określenie wyniku testu</a></li>
   <li><a href="#testowanie-hipotez-obszar-krytyczny" id="toc-testowanie-hipotez-obszar-krytyczny" class="nav-link" data-scroll-target="#testowanie-hipotez-obszar-krytyczny"><span class="header-section-number">12.6</span> Testowanie hipotez: obszar krytyczny</a></li>
@@ -483,7 +500,7 @@ window.Quarto = {
 <li><p>tworzymy hipotezę dwustronną:</p>
 <ul>
 <li>hipoteza zerowa: średnia populacji <strong>jest równa</strong> przyjętej wartości (<span class="math inline">\(H_{0}: \mu = \mu_{0}\)</span>)</li>
-<li>hipoteza alternatywna: średnia populacji <strong>nie jest równa</strong> przyjętej wartości (<span class="math inline">\(H_{0}: \mu \neq \mu_{0}\)</span>)</li>
+<li>hipoteza alternatywna: średnia populacji <strong>nie jest równa</strong> przyjętej wartości (<span class="math inline">\(H_{A}: \mu \neq \mu_{0}\)</span>)</li>
 </ul></li>
 <li><p>Ustalenie hipotezy statystycznej:</p>
 <ul>
@@ -499,8 +516,8 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="testowanie-hipotez-rozdzaje-błędów" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="testowanie-hipotez-rozdzaje-błędów"><span class="header-section-number">12.3</span> Testowanie hipotez: rozdzaje błędów</h2>
+<section id="testowanie-hipotez-rodzaje-błędów" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="testowanie-hipotez-rodzaje-błędów"><span class="header-section-number">12.3</span> Testowanie hipotez: rodzaje błędów</h2>
 <ul>
 <li>błąd I rodzaju - odrzucenie hipotezy zerowej, wtedy gdy jest ona prawdziwa</li>
 <li>błąd II rodzaju - nie odrzucenie hipotezy fałszywej</li>
@@ -508,12 +525,16 @@ window.Quarto = {
 </section>
 <section id="testowanie-hipotez-p-value" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="testowanie-hipotez-p-value"><span class="header-section-number">12.4</span> Testowanie hipotez: p-value</h2>
+<p>Trzeba tu rozróżnić dwie wielkości, które łatwo pomylić:</p>
 <ul>
-<li>p-value - poziom istotności testu</li>
-<li>Prawdopodobieństwo popełnienia błędu I rodzaju: wskazuje jak często popełnimy błąd, odrzucając daną hipotezę zerową, mimo, że jest ona prawdziwa (prawdopodobieństwo popełnienie tzw. błędu I rodzaju).</li>
-<li>im mniejsza wartość poziomu istotności, tym mniejsza szansa, że <span class="math inline">\(H_0\)</span> jest prawdziwa</li>
+<li><p><strong>Poziom istotności</strong> <span class="math inline">\(\alpha\)</span> - granica, którą ustalamy <strong>z góry, przed wykonaniem testu</strong>. Jest to dopuszczane przez nas prawdopodobieństwo popełnienia błędu I rodzaju, czyli odrzucenia hipotezy zerowej, która w rzeczywistości jest prawdziwa.</p>
+<ul>
 <li>najczęściej przyjmowane wartości: 0.05, 0.01, 0.001. Np. poziom istotności 0,05 oznacza, że jesteśmy skłonni popełnić taki błąd 5 razy na 100 badań.</li>
+</ul></li>
+<li><p><strong>p-value</strong> - wartość, którą <strong>obliczamy z danych</strong> po wykonaniu testu. Jest to prawdopodobieństwo uzyskania takiego lub bardziej skrajnego wyniku <strong>przy założeniu, że hipoteza zerowa jest prawdziwa</strong>.</p></li>
+<li><p>Decyzję podejmujemy, porównując obie wielkości: jeśli p-value &lt; <span class="math inline">\(\alpha\)</span>, odrzucamy <span class="math inline">\(H_0\)</span>.</p></li>
 </ul>
+<p><strong>Czego p-value NIE oznacza.</strong> p-value nie jest prawdopodobieństwem tego, że hipoteza zerowa jest prawdziwa, ani prawdopodobieństwem, że wynik jest “przypadkowy”. Mała wartość p mówi tylko, że obserwowany wynik byłby rzadki, <strong>gdyby</strong> <span class="math inline">\(H_0\)</span> była prawdziwa.</p>
 <blockquote class="blockquote">
 <p>Co oznacza poziom istotności 0,01, a co poziom istotności 0,001?</p>
 </blockquote>
@@ -531,7 +552,7 @@ window.Quarto = {
 <ul>
 <li>obszar znajdujący się zawsze na krańcach rozkładu.</li>
 <li>Jeżeli obliczona przez nas wartość statystyki testowej znajdzie się w tym obszarze, to weryfikowaną przez nas hipotezę <span class="math inline">\(H_0\)</span> odrzucamy i przyjmujemy hipotezę alternatywną.</li>
-<li>Wielkość obszaru krytycznego wyznacza dowolnie mały poziom istotności <span class="math inline">\(\alpha\)</span> , natomiast jego położenie określane jest przez hipotezę alternatywną.</li>
+<li>Wielkość obszaru krytycznego wyznacza przyjęty poziom istotności <span class="math inline">\(\alpha\)</span> - im mniejsze <span class="math inline">\(\alpha\)</span>, tym mniejszy obszar krytyczny. Natomiast jego położenie (na którym krańcu rozkładu się znajduje) określane jest przez hipotezę alternatywną.</li>
 </ul>
 <p><img src="figures/7_crit_val.png" class="img-fluid"></p>
 <p>Jeśli obliczona na podstawie próby wartość statystyki nie należy do obszaru krytycznego, to stwierdzamy, że <strong>nie mamy podstaw do odrzucenia hipotezy zerowej</strong>. <strong>Nie odrzucenie hipotezy zerowej nie dowodzi jej prawdziwości</strong>. Stąd wniosek, że hipoteza zerowa może, ale nie musi, być prawdziwa, a postępowanie nie dało żadnych dodatkowych informacji uprawniających do podjęcia decyzji o przyjęciu lub odrzuceniu hipotezy zerowej.</p>
@@ -558,14 +579,10 @@ window.Quarto = {
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">reszka =</span> <span class="fu">rbinom</span>(<span class="dv">1000000</span>, <span class="dv">30</span>, <span class="fl">0.5</span>))</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">reszka =</span> <span class="fu">rbinom</span>(<span class="dv">100000</span>, <span class="dv">30</span>, <span class="fl">0.5</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(reszka, <span class="at">y =</span> ..density..)) <span class="sc">+</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(reszka, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(density)` instead.</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -575,9 +592,9 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(reszka, <span class="at">y =</span> ..density..)) <span class="sc">+</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">22</span>, <span class="at">color =</span> <span class="st">'red'</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(reszka, <span class="at">y =</span> <span class="fu">after_stat</span>(density))) <span class="sc">+</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">22</span>, <span class="at">color =</span> <span class="st">'red'</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -587,13 +604,13 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">=</span> <span class="fu">pbinom</span>(<span class="dv">21</span>, <span class="dv">30</span>, <span class="fl">0.5</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prob</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>prob <span class="ot">=</span> <span class="fu">pbinom</span>(<span class="dv">21</span>, <span class="dv">30</span>, <span class="fl">0.5</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>prob</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.008062401</code></pre>
 </div>
 </div>
-<p>Prawdopodobieństwo równe 0,8% (więc <span class="math inline">\(p=0,008\)</span>), że moneta nie jest obciążona.</p>
+<p>Gdyby moneta była nieobciążona, prawdopodobieństwo uzyskania 22 lub więcej reszek w 30 rzutach wynosi 0,8% (więc <span class="math inline">\(p = 0,008\)</span>). Taki wynik byłby zatem bardzo rzadki, co daje nam podstawy do odrzucenia <span class="math inline">\(H_0\)</span>. Zwróć uwagę: policzone 0,8% to <strong>nie</strong> prawdopodobieństwo tego, że moneta jest uczciwa.</p>
 <p>W efekcie odrzucamy <span class="math inline">\(H_0\)</span> i przyjmujemy <span class="math inline">\(H_A\)</span> ponieważ p (obliczone przez nas prob) jest mniejsze od przyjętego progu 0,05.</p>
 <blockquote class="blockquote">
 <p>Dane zawierają pomiary temperatur dla wybranego obszaru. Naszym zadaniem jest sprawdzenie, czy średnia temperatura będzie równa 8C, przy założeniu poziomu istotności 0,01. Sformułuj hipotezę zerową oraz hipotezy alternatywne (dwustronne, lewostronną i prawostronną). Co oznacza, poziom istotności 0,01?</p>
@@ -612,7 +629,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 

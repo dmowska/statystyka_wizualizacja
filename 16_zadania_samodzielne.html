@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./zalacznik_funkcje.html" rel="next">
 <link href="./15_Raport_przyklad.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -256,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -289,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -335,7 +365,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -357,6 +387,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -367,31 +414,77 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie"><span class="header-section-number">22.1</span> Wprowadzenie</a></li>
-  <li><a href="#przetwarzanie-danych---pakiet-dplyr" id="toc-przetwarzanie-danych---pakiet-dplyr" class="nav-link" data-scroll-target="#przetwarzanie-danych---pakiet-dplyr"><span class="header-section-number">22.2</span> Przetwarzanie danych - pakiet dplyr</a></li>
-  <li><a href="#statystyki-opisowe" id="toc-statystyki-opisowe" class="nav-link" data-scroll-target="#statystyki-opisowe"><span class="header-section-number">22.3</span> Statystyki opisowe</a></li>
-  <li><a href="#wizualizacja-danych---typy-wykresów" id="toc-wizualizacja-danych---typy-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---typy-wykresów"><span class="header-section-number">22.4</span> Wizualizacja danych - typy wykresów</a></li>
-  <li><a href="#wizualizacja-danych---formatowanie-wykresów" id="toc-wizualizacja-danych---formatowanie-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---formatowanie-wykresów"><span class="header-section-number">22.5</span> Wizualizacja danych - formatowanie wykresów</a></li>
-  <li><a href="#rozkład-danych" id="toc-rozkład-danych" class="nav-link" data-scroll-target="#rozkład-danych"><span class="header-section-number">22.6</span> Rozkład danych</a></li>
-  <li><a href="#wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" id="toc-wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" class="nav-link" data-scroll-target="#wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacje punktowe i przedziałowe</a></li>
-  <li><a href="#testy-parametryczne" id="toc-testy-parametryczne" class="nav-link" data-scroll-target="#testy-parametryczne"><span class="header-section-number">22.8</span> Testy parametryczne</a></li>
+  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link active" data-scroll-target="#wprowadzenie"><span class="header-section-number">22.1</span> Wprowadzenie</a>
+  <ul class="collapse">
+  <li><a href="#zadania" id="toc-zadania" class="nav-link" data-scroll-target="#zadania">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe" id="toc-zadania-dodatkowe" class="nav-link" data-scroll-target="#zadania-dodatkowe">Zadania dodatkowe</a></li>
+  </ul></li>
+  <li><a href="#przetwarzanie-danych---pakiet-dplyr" id="toc-przetwarzanie-danych---pakiet-dplyr" class="nav-link" data-scroll-target="#przetwarzanie-danych---pakiet-dplyr"><span class="header-section-number">22.2</span> Przetwarzanie danych - pakiet dplyr</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka" id="toc-rozgrzewka" class="nav-link" data-scroll-target="#rozgrzewka">Rozgrzewka</a></li>
+  <li><a href="#zadania-1" id="toc-zadania-1" class="nav-link" data-scroll-target="#zadania-1">Zadania</a></li>
+  </ul></li>
+  <li><a href="#statystyki-opisowe" id="toc-statystyki-opisowe" class="nav-link" data-scroll-target="#statystyki-opisowe"><span class="header-section-number">22.3</span> Statystyki opisowe</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-1" id="toc-rozgrzewka-1" class="nav-link" data-scroll-target="#rozgrzewka-1">Rozgrzewka</a></li>
+  <li><a href="#zadania-2" id="toc-zadania-2" class="nav-link" data-scroll-target="#zadania-2">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-1" id="toc-zadania-dodatkowe-1" class="nav-link" data-scroll-target="#zadania-dodatkowe-1">Zadania dodatkowe</a></li>
+  </ul></li>
+  <li><a href="#wizualizacja-danych---typy-wykresów" id="toc-wizualizacja-danych---typy-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---typy-wykresów"><span class="header-section-number">22.4</span> Wizualizacja danych - typy wykresów</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-2" id="toc-rozgrzewka-2" class="nav-link" data-scroll-target="#rozgrzewka-2">Rozgrzewka</a></li>
+  <li><a href="#zadania-3" id="toc-zadania-3" class="nav-link" data-scroll-target="#zadania-3">Zadania</a></li>
+  </ul></li>
+  <li><a href="#wizualizacja-danych---formatowanie-wykresów" id="toc-wizualizacja-danych---formatowanie-wykresów" class="nav-link" data-scroll-target="#wizualizacja-danych---formatowanie-wykresów"><span class="header-section-number">22.5</span> Wizualizacja danych - formatowanie wykresów</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-3" id="toc-rozgrzewka-3" class="nav-link" data-scroll-target="#rozgrzewka-3">Rozgrzewka</a></li>
+  <li><a href="#zadania-4" id="toc-zadania-4" class="nav-link" data-scroll-target="#zadania-4">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-2" id="toc-zadania-dodatkowe-2" class="nav-link" data-scroll-target="#zadania-dodatkowe-2">Zadania dodatkowe</a></li>
+  </ul></li>
+  <li><a href="#rozkład-danych" id="toc-rozkład-danych" class="nav-link" data-scroll-target="#rozkład-danych"><span class="header-section-number">22.6</span> Rozkład danych</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-4" id="toc-rozgrzewka-4" class="nav-link" data-scroll-target="#rozgrzewka-4">Rozgrzewka</a></li>
+  <li><a href="#zadania-5" id="toc-zadania-5" class="nav-link" data-scroll-target="#zadania-5">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-3" id="toc-zadania-dodatkowe-3" class="nav-link" data-scroll-target="#zadania-dodatkowe-3">Zadania dodatkowe</a></li>
+  </ul></li>
+  <li><a href="#wnioskowanie-statystyczne---estymacja-punktowa-i-przedziałowa" id="toc-wnioskowanie-statystyczne---estymacja-punktowa-i-przedziałowa" class="nav-link" data-scroll-target="#wnioskowanie-statystyczne---estymacja-punktowa-i-przedziałowa"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacja punktowa i przedziałowa</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-5" id="toc-rozgrzewka-5" class="nav-link" data-scroll-target="#rozgrzewka-5">Rozgrzewka</a></li>
+  <li><a href="#zadania-6" id="toc-zadania-6" class="nav-link" data-scroll-target="#zadania-6">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-4" id="toc-zadania-dodatkowe-4" class="nav-link" data-scroll-target="#zadania-dodatkowe-4">Zadania dodatkowe</a></li>
+  </ul></li>
+  <li><a href="#testy-parametryczne" id="toc-testy-parametryczne" class="nav-link" data-scroll-target="#testy-parametryczne"><span class="header-section-number">22.8</span> Testy parametryczne</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-6" id="toc-rozgrzewka-6" class="nav-link" data-scroll-target="#rozgrzewka-6">Rozgrzewka</a></li>
+  <li><a href="#zadania-7" id="toc-zadania-7" class="nav-link" data-scroll-target="#zadania-7">Zadania</a></li>
+  </ul></li>
   <li><a href="#testy-nieparametryczne" id="toc-testy-nieparametryczne" class="nav-link" data-scroll-target="#testy-nieparametryczne"><span class="header-section-number">22.9</span> Testy nieparametryczne</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-7" id="toc-rozgrzewka-7" class="nav-link" data-scroll-target="#rozgrzewka-7">Rozgrzewka</a></li>
+  <li><a href="#zadania-8" id="toc-zadania-8" class="nav-link" data-scroll-target="#zadania-8">Zadania</a></li>
+  </ul></li>
+  <li><a href="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup" id="toc-testy-parametryczne-i-nieparametryczne-dla-wielu-grup" class="nav-link" data-scroll-target="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup"><span class="header-section-number">22.10</span> Testy parametryczne i nieparametryczne dla wielu grup</a>
   <ul class="collapse">
   <li><a href="#zadanie-1" id="toc-zadanie-1" class="nav-link" data-scroll-target="#zadanie-1">Zadanie 1</a></li>
   <li><a href="#zadanie-2" id="toc-zadanie-2" class="nav-link" data-scroll-target="#zadanie-2">Zadanie 2</a></li>
   </ul></li>
-  <li><a href="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup" id="toc-testy-parametryczne-i-nieparametryczne-dla-wielu-grup" class="nav-link" data-scroll-target="#testy-parametryczne-i-nieparametryczne-dla-wielu-grup"><span class="header-section-number">22.10</span> Testy parametryczne i nieparametryczne dla wielu grup</a>
+  <li><a href="#testowanie-istotności-proporcji" id="toc-testowanie-istotności-proporcji" class="nav-link" data-scroll-target="#testowanie-istotności-proporcji"><span class="header-section-number">22.11</span> Testowanie istotności proporcji</a>
   <ul class="collapse">
   <li><a href="#zadanie-1-1" id="toc-zadanie-1-1" class="nav-link" data-scroll-target="#zadanie-1-1">Zadanie 1</a></li>
   <li><a href="#zadanie-2-1" id="toc-zadanie-2-1" class="nav-link" data-scroll-target="#zadanie-2-1">Zadanie 2</a></li>
   </ul></li>
-  <li><a href="#testowanie-istotności-proporcji" id="toc-testowanie-istotności-proporcji" class="nav-link" data-scroll-target="#testowanie-istotności-proporcji"><span class="header-section-number">22.11</span> Testowanie istotności proporcji</a>
+  <li><a href="#analiza-korelacji" id="toc-analiza-korelacji" class="nav-link" data-scroll-target="#analiza-korelacji"><span class="header-section-number">22.12</span> Analiza korelacji</a>
   <ul class="collapse">
-  <li><a href="#zadanie-1-2" id="toc-zadanie-1-2" class="nav-link" data-scroll-target="#zadanie-1-2">Zadanie 1</a></li>
-  <li><a href="#zadanie-2-2" id="toc-zadanie-2-2" class="nav-link" data-scroll-target="#zadanie-2-2">Zadanie 2</a></li>
+  <li><a href="#rozgrzewka-8" id="toc-rozgrzewka-8" class="nav-link" data-scroll-target="#rozgrzewka-8">Rozgrzewka</a></li>
+  <li><a href="#zadania-9" id="toc-zadania-9" class="nav-link" data-scroll-target="#zadania-9">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-5" id="toc-zadania-dodatkowe-5" class="nav-link" data-scroll-target="#zadania-dodatkowe-5">Zadania dodatkowe</a></li>
   </ul></li>
-  <li><a href="#analiza-korelacji" id="toc-analiza-korelacji" class="nav-link" data-scroll-target="#analiza-korelacji"><span class="header-section-number">22.12</span> Analiza korelacji</a></li>
-  <li><a href="#analiza-regresji" id="toc-analiza-regresji" class="nav-link" data-scroll-target="#analiza-regresji"><span class="header-section-number">22.13</span> Analiza regresji</a></li>
+  <li><a href="#analiza-regresji" id="toc-analiza-regresji" class="nav-link" data-scroll-target="#analiza-regresji"><span class="header-section-number">22.13</span> Analiza regresji</a>
+  <ul class="collapse">
+  <li><a href="#rozgrzewka-9" id="toc-rozgrzewka-9" class="nav-link" data-scroll-target="#rozgrzewka-9">Rozgrzewka</a></li>
+  <li><a href="#zadania-10" id="toc-zadania-10" class="nav-link" data-scroll-target="#zadania-10">Zadania</a></li>
+  <li><a href="#zadania-dodatkowe-6" id="toc-zadania-dodatkowe-6" class="nav-link" data-scroll-target="#zadania-dodatkowe-6">Zadania dodatkowe</a></li>
+  </ul></li>
   <li><a href="#podsumowanie-ćwiczeń" id="toc-podsumowanie-ćwiczeń" class="nav-link" data-scroll-target="#podsumowanie-ćwiczeń"><span class="header-section-number">22.14</span> Podsumowanie ćwiczeń</a></li>
   </ul>
 </nav>
@@ -418,249 +511,410 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Każdy zestaw zadań odpowiada jednemu rozdziałowi skryptu i jest rozwiązywany na ćwiczeniach, po wcześniejszym zapoznaniu się z materiałem w domu.</p>
+<p><strong>Jak pracować z zadaniami</strong></p>
+<ul>
+<li>Rozwiązania zapisuj w <strong>dokumencie Quarto</strong> - po jednym dokumencie na każdy zestaw (zob. rozdział <em>Wprowadzenie do pracy w R</em>, sekcja <em>Dokument Quarto</em>).</li>
+<li>Zadania oznaczone gwiazdką <strong>(*)</strong> są dodatkowe. Wykonaj je, jeśli skończysz wcześniej.</li>
+<li><strong>Korzystaj ze skryptu.</strong> Jeśli nie pamiętasz nazwy funkcji, zajrzyj do <strong>załącznika</strong> na końcu skryptu - znajdziesz tam zestawienie wszystkich poleceń według rozdziałów.</li>
+<li>Każdy zestaw zaczyna się od krótkiej <strong>rozgrzewki</strong> - to powtórzenie czynności z wcześniejszych rozdziałów. Nie pomijaj jej: te polecenia będą Ci potrzebne w każdym kolejnym zadaniu.</li>
+</ul>
 <section id="wprowadzenie" class="level2" data-number="22.1">
 <h2 data-number="22.1" class="anchored" data-anchor-id="wprowadzenie"><span class="header-section-number">22.1</span> Wprowadzenie</h2>
+<p><strong>Materiał:</strong> rozdziały 1-2 · <strong>Dane:</strong> <code>gapminder</code> (pakiet <code>gapminder</code>)</p>
+<section id="zadania" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania">Zadania</h3>
 <ol type="1">
-<li><p>Stwórz nowy dokument Quarto. (File - New File - Quarto document)</p></li>
-<li><p>Nazwij dokument <em>dane_gapminder</em>.</p></li>
-<li><p>W dokumencie dodać tytuł, autora.</p></li>
-<li><p>Opisz w dokumencie dane <code>gapminder</code>. Dodaj odpowiednie bloki kodu potrzebne do wyświetlenia informacji:</p>
+<li><p>Utwórz nowy dokument Quarto (<em>File → New File → Quarto Document</em>). Nazwij go <em>dane_gapminder</em> i zapisz w folderze projektu.</p></li>
+<li><p>W nagłówku dokumentu ustaw tytuł oraz autora.</p></li>
+<li><p>Opisz w dokumencie dane <code>gapminder</code>. Pod każdym blokiem kodu dopisz jednym zdaniem, co z niego wynika. Dodaj bloki kodu potrzebne do odpowiedzi na pytania:</p>
 <ul>
-<li>Wczytanie danych <code>gapminder</code> z pakietu <code>gapminder</code></li>
-<li>Wyświetl nazwy kolumn w zbiorze danych <code>gapminder</code></li>
-<li>Ile wierszy oraz ile kolumn znajduje się w zbiorze danych gapminder?</li>
-<li>Jakiej klasy są zmienne gdpPercap, lifeExp oraz pop?</li>
-<li>Które zmienne są zmiennymi czynnikowymi (factor)?</li>
+<li>Wczytaj dane <code>gapminder</code> z pakietu <code>gapminder</code>.</li>
+<li>Wyświetl nazwy kolumn w zbiorze danych.</li>
+<li>Ile wierszy oraz ile kolumn znajduje się w zbiorze danych?</li>
+<li>Jakiej klasy są zmienne <code>gdpPercap</code>, <code>lifeExp</code> oraz <code>pop</code>? Które zmienne są zmiennymi czynnikowymi (<em>factor</em>)?</li>
 <li>Dla jakich lat dostępne są dane?</li>
-<li>Wyświetl unikalne wartości zmiennej continent.</li>
+<li>Wyświetl unikalne wartości zmiennej <code>continent</code>.</li>
 <li>Wyświetl podsumowanie podstawowych statystyk opisowych.</li>
-<li>Podaj nazwy trzech najludniejszych krajów w roku 1952 oraz w 2007 roku.</li>
-<li>Który kraj miał najkrótszą, a który najdłuższa oczekiwaną długość życia? W którym roku?</li>
-<li>Dla ilu krajów są dostępne dane dla 2007 roku?</li>
-<li>Ile było państw w 2007 roku z liczbą ludności przekraczającą 100 milionów mieszkańców? Na ilu kontynentach były położone te pańtwa?</li>
 </ul></li>
+<li><p>Wygeneruj dokument przyciskiem <strong>Render</strong> i sprawdź, czy powstał plik HTML.</p></li>
 </ol>
+</section>
+<section id="zadania-dodatkowe" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe">Zadania dodatkowe</h3>
+<ol start="5" type="1">
+<li><p>(*) Podaj nazwy trzech najludniejszych krajów w roku 1952 oraz w 2007 roku.</p></li>
+<li><p>(*) Który kraj miał najkrótszą, a który najdłuższą oczekiwaną długość życia? W którym roku?</p></li>
+<li><p>(*) Dla ilu krajów są dostępne dane dla 2007 roku?</p></li>
+<li><p>(*) Ile było państw w 2007 roku z liczbą ludności przekraczającą 100 milionów mieszkańców? Na ilu kontynentach były położone te państwa?</p></li>
+</ol>
+</section>
 </section>
 <section id="przetwarzanie-danych---pakiet-dplyr" class="level2" data-number="22.2">
 <h2 data-number="22.2" class="anchored" data-anchor-id="przetwarzanie-danych---pakiet-dplyr"><span class="header-section-number">22.2</span> Przetwarzanie danych - pakiet dplyr</h2>
-<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
+<p><strong>Materiał:</strong> rozdział 4 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka">Rozgrzewka</h3>
 <ul>
-<li>Ile zmiennych i obserwacji znajduje się w zbiorze <code>pomiary_pol</code>?</li>
-<li>Ile unikalnych prowincji znajduje się w tym zbiorze? Jakie mają one nazwy?</li>
-<li>Ile unikalnych województw znajduje się w tym zbiorze?</li>
-<li>Stwórz obiekt <code>pomiary_pol2</code>, który nie zawiera kolumn z pomiarami dla kwietnia i września.</li>
-<li>W którym województwie zanotowano drugą najwyższą i drugą najniższą średnią temperaturę roczną (<em>annual_tavg</em>)?</li>
-<li>Stwórz obiekt <code>pomiary_wlkp</code>, który zawiera tylko pomiary temperatury minimalnej oraz maksymalnej dla kwietnia (tmin_4, tmax_4) wyłącznie dla województwa wielkopolskiego.</li>
-<li>Stwórz obiekt <code>pomiary_wyzyny</code>, który zawiera pomiary dla prowincji wyżynnych.</li>
-<li>Do zbioru <code>pomiary_pol</code> dodaj nową kolumnę <em>tmax_diff</em>, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu.</li>
-<li>Stwórz obiekt <code>pomiary_pol_long</code>, składający się z trzech kolumn <em>pomiar_id</em>, <em>name</em>, <em>value</em>. W kolumnie <em>name</em> powinny znajdować się wartości <em>tmin_4</em> i <em>tmax_4</em>, a w kolumnie <em>value</em> odpowiadające im wartości.</li>
-<li>Stwórz obiekt <code>pomiary_pol_wide</code>, zamieniający obiekt <code>pomiary_pol_long</code> na postać szeroką.</li>
-<li>Dla ilu pomiarów w województwie małopolskim średnia temperatura roczna (annaul_tavg) jest większa od 7.5C?</li>
-<li>Ile prowincji znajduje się w obrębie województwa mazowieckiego?</li>
+<li>Wczytaj dane z pliku <code>dane/pomiary_pol.csv</code> i sprawdź ich strukturę.</li>
+<li>Wyświetl pięć pierwszych wierszy zbioru.</li>
 </ul>
+</section>
+<section id="zadania-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-1">Zadania</h3>
+<ol type="1">
+<li><p>Ile zmiennych i obserwacji znajduje się w zbiorze <code>pomiary_pol</code>?</p></li>
+<li><p>Ile unikalnych prowincji znajduje się w tym zbiorze? Jakie mają one nazwy?</p>
+<ul>
+<li>Uwaga: sprawdź, czy wśród wartości nie ma braków danych (<code>NA</code>). Jeśli są, podaj liczbę rzeczywistych prowincji i wyjaśnij, skąd bierze się różnica.</li>
+</ul></li>
+<li><p>Stwórz obiekt <code>pomiary_pol2</code>, który nie zawiera kolumn z pomiarami dla kwietnia i września.</p></li>
+<li><p>W którym województwie zanotowano drugą najwyższą i drugą najniższą średnią temperaturę roczną (<em>annual_tavg</em>)?</p></li>
+<li><p>Stwórz obiekt <code>pomiary_wlkp</code>, który zawiera tylko pomiary temperatury minimalnej oraz maksymalnej dla kwietnia (<em>tmin_4</em>, <em>tmax_4</em>) wyłącznie dla województwa wielkopolskiego.</p></li>
+<li><p>Stwórz obiekt <code>pomiary_wyzyny</code>, który zawiera pomiary dla obu prowincji wyżynnych (<em>Wyżyny Polskie</em> oraz <em>Wyżyny Ukraińskie</em>).</p></li>
+<li><p>Do zbioru <code>pomiary_pol</code> dodaj nową kolumnę <em>tmax_diff</em>, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu.</p></li>
+<li><p>Dla ilu pomiarów w województwie małopolskim średnia temperatura roczna (<em>annual_tavg</em>) jest większa od 7,5 °C?</p></li>
+<li><p>Stwórz obiekt <code>pomiary_pol_long</code>, składający się z trzech kolumn <em>pomiar_id</em>, <em>name</em>, <em>value</em>. W kolumnie <em>name</em> powinny znajdować się wartości <em>tmin_4</em> i <em>tmax_4</em>, a w kolumnie <em>value</em> odpowiadające im wartości.</p></li>
+<li><p>Stwórz obiekt <code>pomiary_pol_wide</code>, zamieniający obiekt <code>pomiary_pol_long</code> z powrotem na postać szeroką.</p></li>
+</ol>
+</section>
 </section>
 <section id="statystyki-opisowe" class="level2" data-number="22.3">
 <h2 data-number="22.3" class="anchored" data-anchor-id="statystyki-opisowe"><span class="header-section-number">22.3</span> Statystyki opisowe</h2>
-<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<p><strong>Materiał:</strong> rozdział 5 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-1">Rozgrzewka</h3>
 <ul>
-<li>Jaka jest średnia wartość średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze?</li>
-<li>Jaka jest mediana rocznej sumy opadów (<em>annual_precip</em>)?</li>
-<li>Jaka jest różnica między wartością średnią a medianą rocznej sumy opadów (<em>annual_precip</em>)?</li>
-<li>Jaka jest najniższa i najwyższa zarejestrowana wartość średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze?</li>
-<li>Powyżej jakiej wartości średniej temperatury rocznej (<em>annual_tavg</em>) znajduje się 25% obserwacji?</li>
-<li>Jaki jest zakres danych dla temperatury minimalnej w kwietniu (<em>tmin_4</em>)?</li>
-<li>Jakie jest średnia i odchylenie standardowe temperatury minimalnej we wrześniu (<em>tmin_9</em>)?</li>
-<li>Wylicz średnią i odchylenie standardowe <em>tmin_9</em> dla kolejnych prowincji.</li>
-<li>Ile pomiarów wykonano w każdej z prowincji?</li>
-<li>Do zbioru <code>pomiary_pol</code> dodaj nową kolumnę <em>tmax_diff</em>, zawierającą różnicę pomiędzy temperaturą maksymalną we wrześniu i w kwietniu. Oblicz największą oraz najmniejsza różnicę.</li>
-<li>Ile wynosi 95 percentyl dla rocznej sumy opadów (annual_precip) w województwie wielkopolskim?</li>
+<li>Wczytaj dane i wybierz obserwacje dla województwa pomorskiego.</li>
+<li>Wyświetl nazwy prowincji występujących w zbiorze.</li>
 </ul>
+</section>
+<section id="zadania-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-2">Zadania</h3>
+<ol type="1">
+<li><p>Sprawdź, w których kolumnach zbioru są braki danych i ile ich jest. Następnie oblicz średnią zmiennej <em>annual_precip</em> raz bez argumentu <code>na.rm</code>, a raz z nim. Wyjaśnij różnicę w wynikach.</p></li>
+<li><p>Jaka jest średnia wartość średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze?</p></li>
+<li><p>Jaka jest mediana rocznej sumy opadów (<em>annual_precip</em>)? Jaka jest różnica między wartością średnią a medianą tej zmiennej? O czym świadczy ta różnica?</p></li>
+<li><p>Jaka jest najniższa i najwyższa zarejestrowana wartość średniej temperatury rocznej (<em>annual_tavg</em>)?</p></li>
+<li><p>Wyznacz wartość średniej temperatury rocznej, powyżej której znajduje się jedna czwarta obserwacji (czyli 25% najcieplejszych stacji).</p></li>
+<li><p>Jaki jest zakres danych dla temperatury minimalnej w kwietniu (<em>tmin_4</em>)?</p></li>
+<li><p>Jaka jest średnia i odchylenie standardowe temperatury minimalnej we wrześniu (<em>tmin_9</em>)?</p></li>
+<li><p>Wylicz średnią i odchylenie standardowe <em>tmin_9</em> dla kolejnych prowincji (rozdz. 5, <em>Statystyki w grupach</em>).</p></li>
+<li><p>Ile pomiarów wykonano w każdej z prowincji?</p></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-1">Zadania dodatkowe</h3>
+<ol start="10" type="1">
+<li><p>(*) Do zbioru <code>pomiary_pol</code> dodaj kolumnę <em>tmax_diff</em> (różnica temperatury maksymalnej września i kwietnia). Oblicz największą oraz najmniejszą różnicę.</p></li>
+<li><p>(*) Ile wynosi 95 percentyl dla rocznej sumy opadów (<em>annual_precip</em>) w województwie wielkopolskim?</p></li>
+</ol>
+</section>
 </section>
 <section id="wizualizacja-danych---typy-wykresów" class="level2" data-number="22.4">
 <h2 data-number="22.4" class="anchored" data-anchor-id="wizualizacja-danych---typy-wykresów"><span class="header-section-number">22.4</span> Wizualizacja danych - typy wykresów</h2>
-<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<p><strong>Materiał:</strong> rozdziały 6-7 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-2">Rozgrzewka</h3>
 <ul>
-<li>Stwórz histogram pokazujący rozkład średniej temperatury rocznej (<em>annual_tavg</em>) w tym zbiorze.</li>
-<li>Stwórz wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną w kwietniu. W jaki sposób można go zinterpretować?</li>
-<li>Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej temperatury rocznej (<em>annual_tavg</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.</li>
-<li>Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej rocznej sumy opadów (<em>annual_precip</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.</li>
-<li>Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w każdej prowincji.</li>
-<li>Wykorzystaj wykres słupkowy do zwizaulizowania liczby stacji pomiarowych w województwach.</li>
-<li>Wykorzystaj opcję multiwykresów do pokazania relacji pomiędzy temperaturą minimalną a maksymalną we wrześniu w podziale na poszczególne prowincje.</li>
-<li>Postaraj się ulepszyć stworzone wykresy poprzez dodanie tytułu, zmianę podpisu osi, edycję kolorów, itd.</li>
-<li>Zapisz stworzone wykresy do plików w formacie .png. Jak nazwiesz te pliki?</li>
+<li>Wczytaj dane i policz średnią rocznej sumy opadów dla każdej prowincji.</li>
+<li>Przypomnij sobie schemat doboru wykresu z rozdziału 7.</li>
 </ul>
+</section>
+<section id="zadania-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-3">Zadania</h3>
+<ol type="1">
+<li><p>Stwórz histogram pokazujący rozkład średniej temperatury rocznej (<em>annual_tavg</em>).</p></li>
+<li><p>Stwórz wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną w kwietniu. W jaki sposób można go zinterpretować?</p></li>
+<li><p>Zbuduj wykres pudełkowy pokazujący rozkład wartości średniej temperatury rocznej (<em>annual_tavg</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go: która prowincja jest najcieplejsza, a w której zróżnicowanie jest największe?</p></li>
+<li><p>Zbuduj wykres pudełkowy pokazujący rozkład rocznej sumy opadów (<em>annual_precip</em>) dla kolejnych prowincji fizjograficznych. Zinterpretuj go.</p></li>
+<li><p>Wykorzystaj wykres słupkowy do zwizualizowania liczby stacji pomiarowych w każdej prowincji, a następnie w każdym województwie.</p></li>
+<li><p>Wykorzystaj multiwykres do pokazania relacji pomiędzy temperaturą minimalną a maksymalną we wrześniu w podziale na poszczególne prowincje. Jaką informację widać na multiwykresie, a jaką traci się na wykresie zbiorczym?</p></li>
+<li><p>Zapisz dwa wybrane wykresy do plików w formacie PNG, do folderu <code>out</code>. Jak nazwiesz te pliki, żeby za tydzień wiedzieć, co przedstawiają?</p></li>
+</ol>
+</section>
 </section>
 <section id="wizualizacja-danych---formatowanie-wykresów" class="level2" data-number="22.5">
 <h2 data-number="22.5" class="anchored" data-anchor-id="wizualizacja-danych---formatowanie-wykresów"><span class="header-section-number">22.5</span> Wizualizacja danych - formatowanie wykresów</h2>
-<p>Sformatuj wykresy przygotowane w ramach zadań “Wizualizacja danych - typy wykresów”.</p>
+<p><strong>Materiał:</strong> rozdział 8 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-3">Rozgrzewka</h3>
 <ul>
-<li>dodaj etykiety osi oraz tytuł wykresu</li>
-<li>zmień sposób wyświetlania linii oraz punktów.</li>
-<li>zastosuj różne skale kolorystyczne.</li>
-<li>odpowiednio sformatuj legendę wykresów.</li>
-<li>dodaj motyw wyświetlania (theme).</li>
+<li>Odtwórz wykres pudełkowy <em>annual_tavg</em> według prowincji z poprzednich zajęć.</li>
+<li>Odtwórz wykres rozrzutu <em>tmin_4</em> wobec <em>tmax_4</em>.</li>
 </ul>
+</section>
+<section id="zadania-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-4">Zadania</h3>
+<ol type="1">
+<li><p>Dopracuj <strong>wykres pudełkowy</strong> tak, aby nadawał się do umieszczenia w raporcie:</p>
+<ul>
+<li>podpisz obie osie pełnymi nazwami wraz z jednostką,</li>
+<li>dodaj tytuł mówiący, co wykres przedstawia,</li>
+<li>pokoloruj pudełka według prowincji, używając jednej z palet pakietu <code>RColorBrewer</code>,</li>
+<li>spraw, aby nazwy prowincji na osi były czytelne (skróć je albo obróć wykres),</li>
+<li>przenieś legendę pod wykres albo usuń ją, jeśli powiela informację z osi,</li>
+<li>zastosuj motyw <code>theme_bw()</code>.</li>
+</ul></li>
+<li><p>Dopracuj <strong>wykres rozrzutu</strong>:</p>
+<ul>
+<li>pokoloruj punkty według prowincji,</li>
+<li>zmień kształt i wielkość punktów,</li>
+<li>podpisz osie i legendę,</li>
+<li>zastosuj wybrany motyw.</li>
+</ul></li>
+<li><p>Zapisz oba wykresy do plików PNG o szerokości 20 cm i rozdzielczości 300 dpi.</p></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-2">Zadania dodatkowe</h3>
+<ol start="4" type="1">
+<li><p>(*) Wykonaj wykres rozrzutu <em>tmax_4</em> wobec <em>annual_precip</em>, kolorując punkty według <strong>liczbowej</strong> zmiennej <em>annual_tavg</em>. Dobierz skalę ciągłą tak, aby zróżnicowanie było dobrze widoczne.</p></li>
+<li><p>(*) Zmień nazwy prowincji wyświetlane w legendzie na krótsze, bez zmieniania danych (podpowiedź: argument <code>labels</code> w funkcjach <code>scale_*</code>).</p></li>
+</ol>
+</section>
 </section>
 <section id="rozkład-danych" class="level2" data-number="22.6">
 <h2 data-number="22.6" class="anchored" data-anchor-id="rozkład-danych"><span class="header-section-number">22.6</span> Rozkład danych</h2>
-<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<p><strong>Materiał:</strong> rozdział 9 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-4">Rozgrzewka</h3>
 <ul>
-<li>Jak można opisać rozkład zmiennej <em>annual_tavg</em>?</li>
-<li>Jak można opisać rozkład zmiennej <em>annual_precip</em>?</li>
-<li>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_tavg</em></li>
-<li>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_precip</em></li>
-<li>Jakie mogą być konsekwencje różnic w rozkładach zmiennych <em>annual_tavg</em> i <em>annual_precip</em> do celów analizy danych?</li>
-<li>Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj multiwykres pokazujący histogramy zmiennej <em>annual_tavg</em> dla wybranych województw. Oblicz wartość średniej, mediany, skośności oraz kurtozy zmiennej <em>annual_tavg</em> dla każdego z wybranych województw. Które z województw mają rozkład zbliżony do rozkładu symetrycznego?</li>
-<li>Wyselekcjonuj dane dla województw zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj dla każdego województwa test Shapiro-Wilka. Które z województw mają rozkład zmiennej annual_tavg zbliżony do rozkładu normalnego?</li>
+<li>Wczytaj dane i wykonaj histogram zmiennej <em>annual_tavg</em>.</li>
+<li>Policz średnią i medianę tej zmiennej.</li>
 </ul>
 </section>
-<section id="wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe" class="level2" data-number="22.7">
-<h2 data-number="22.7" class="anchored" data-anchor-id="wnioskowanie-statystyczne---estymacje-punktowe-i-przedziałowe"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacje punktowe i przedziałowe</h2>
-<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
+<section id="zadania-5" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-5">Zadania</h3>
+<ol type="1">
+<li><p>Jak można opisać rozkład zmiennej <em>annual_tavg</em>? A zmiennej <em>annual_precip</em>? Odpowiedz, posługując się histogramem oraz wykresem pudełkowym.</p></li>
+<li><p>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_tavg</em>.</p></li>
+<li><p>Oblicz średnią, medianę, skośność oraz kurtozę dla zmiennej <em>annual_precip</em>.</p></li>
+<li><p>Jakie mogą być konsekwencje różnic w rozkładach tych dwóch zmiennych dla dalszej analizy danych - na przykład dla wyboru testu statystycznego?</p></li>
+<li><p>Wyselekcjonuj dane dla województw: zachodniopomorskiego, pomorskiego, świętokrzyskiego, małopolskiego oraz lubelskiego. Wykonaj multiwykres pokazujący histogramy zmiennej <em>annual_tavg</em> dla wybranych województw. Oblicz średnią, medianę, skośność oraz kurtozę <em>annual_tavg</em> dla każdego z nich. Które województwa mają rozkład zbliżony do symetrycznego?</p></li>
+<li><p>Dla tych samych pięciu województw wykonaj test Shapiro-Wilka. Które z nich mają rozkład <em>annual_tavg</em> zbliżony do normalnego? Czy wniosek zgadza się z tym, co pokazały histogramy?</p></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-3">Zadania dodatkowe</h3>
+<ol start="7" type="1">
+<li>(*) Wykonaj wykres kwantylowy (<em>QQ-plot</em>) z linią odniesienia dla zmiennej <em>annual_precip</em>. Jak odstępstwa od linii łączą się z obliczoną wcześniej skośnością?</li>
+</ol>
+</section>
+</section>
+<section id="wnioskowanie-statystyczne---estymacja-punktowa-i-przedziałowa" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="wnioskowanie-statystyczne---estymacja-punktowa-i-przedziałowa"><span class="header-section-number">22.7</span> Wnioskowanie statystyczne - estymacja punktowa i przedziałowa</h2>
+<p><strong>Materiał:</strong> rozdział 11 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-5" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-5">Rozgrzewka</h3>
 <ul>
-<li><p>Odchylenie standardowe temperatury maksymalnej we wrześniu (tmax_9) nie jest znane. Wyznacz 95% przedział ufności dla średniej temperatury maksymalnej we wrześniu.</p></li>
-<li><p>Średnia temperatura roczna dla Polski wynosi 8.1 stopnia Celsjusza oraz ma odchylenie standardowe równe 0.9 stopnia Celsjusza. Pewnego roku średnia temperatura wyniosła 10.1 stopnia Celsjusza. Chcemy się dowiedzieć, czy ta wartość jest nietypowo wysoka. Jak powinniśmy określić hipotezę zerową i alternatywną?</p>
-<ul>
-<li>Zwizualizuj rozkład średniej temperatury rocznej dla Polski wraz z tym dodatkowym pomiarem.</li>
-<li>Jakie jest prawdopodobieństwo, że nowa wartość jest nietypowo wysoka? Jaką hipotezę przyjmujemy/odrzucamy?</li>
-</ul></li>
+<li>Wczytaj dane i policz średnią oraz odchylenie standardowe zmiennej <em>tmax_9</em>.</li>
+<li>Sprawdź, ile obserwacji ma ta zmienna po pominięciu braków danych.</li>
 </ul>
+</section>
+<section id="zadania-6" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-6">Zadania</h3>
+<ol type="1">
+<li><p>Odchylenie standardowe temperatury maksymalnej we wrześniu (<em>tmax_9</em>) nie jest znane. Wyznacz 95% przedział ufności dla średniej tej zmiennej.</p></li>
+<li><p>Wyznacz ten sam przedział na poziomie ufności 90% oraz 99%. Jak zmienia się jego szerokość i dlaczego?</p></li>
+<li><p>Zapisz wynik jednym zdaniem, tak jak zrobiłbyś to w raporcie - z oszacowaniem punktowym i przedziałem ufności (rozdz. 11, <em>Jak opisać przedział ufności w raporcie</em>).</p></li>
+<li><p>Średnia temperatura roczna dla Polski wynosi 8,1 °C, a odchylenie standardowe 0,9 °C. Pewnego roku średnia temperatura wyniosła 10,1 °C. Chcemy ustalić, czy ta wartość jest nietypowo wysoka.</p>
+<ul>
+<li>Jak powinniśmy sformułować hipotezę zerową i alternatywną?</li>
+<li>Zwizualizuj <strong>teoretyczny</strong> rozkład normalny o średniej 8,1 i odchyleniu standardowym 0,9 (funkcja <code>curve</code>), a następnie zaznacz na nim pionową linią zaobserwowaną wartość 10,1 (funkcja <code>abline</code>).</li>
+<li>Jakie jest prawdopodobieństwo uzyskania wartości co najmniej tak wysokiej, jeśli hipoteza zerowa jest prawdziwa? Jaką hipotezę przyjmujemy, a jaką odrzucamy?</li>
+</ul></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-4">Zadania dodatkowe</h3>
+<ol start="5" type="1">
+<li>(*) Wyznacz 95% przedział ufności dla średniej rocznej sumy opadów osobno dla województwa pomorskiego i opolskiego. Czy przedziały na siebie zachodzą? Co to sugeruje o różnicy między województwami?</li>
+</ol>
+</section>
 </section>
 <section id="testy-parametryczne" class="level2" data-number="22.8">
 <h2 data-number="22.8" class="anchored" data-anchor-id="testy-parametryczne"><span class="header-section-number">22.8</span> Testy parametryczne</h2>
-<p>Rozwiąż poniższe zadania. Każdorazowo:</p>
+<p><strong>Materiał:</strong> rozdział 14 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<p>Przy każdym zadaniu: <strong>(1)</strong> sformułuj hipotezę zerową oraz alternatywną, <strong>(2)</strong> wykonaj odpowiedni test, <strong>(3)</strong> zinterpretuj wynik.</p>
+<section id="rozgrzewka-6" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-6">Rozgrzewka</h3>
 <ul>
-<li>Sformułuj hipotezę zerową oraz hipotezę alternatywną.</li>
-<li>Wykonaj odpowiedni test statystyczny.</li>
-<li>Zinterpretuj wyniki testu.</li>
+<li>Wczytaj dane i wybierz obserwacje dla Wyżyn Polskich oraz Masywu Czeskiego.</li>
+<li>Policz liczbę stacji i średnią <em>annual_tavg</em> w każdej z tych prowincji.</li>
 </ul>
-<p>Wczytaj dane z pliku tekstowego <em>pomiary_pol.csv</em>.</p>
-<ul>
+</section>
+<section id="zadania-7" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-7">Zadania</h3>
+<ol type="1">
 <li><p>Czy średnia temperatura roczna (<em>annual_tavg</em>) na Wyżynach Polskich różni się od Masywu Czeskiego?</p>
 <ul>
-<li>Stwórz wykres porównujący tą zmienną dla tych prowincji.</li>
-<li>Określ czy różnica pomiędzy średnimi jest istotna statystycznie.</li>
+<li>Stwórz wykres porównujący tę zmienną dla obu prowincji.</li>
+<li>Określ, czy różnica pomiędzy średnimi jest istotna statystycznie.</li>
 </ul></li>
-<li><p>Sprawdź, używając testów statystycznych, czy wariancja średniej temperatury rocznej (<em>annual_tavg</em>) na Wyżynach Polskich różni się od Masywu Czeskiego?</p></li>
-<li><p>Porównaj maksymalną temperaturę dla kwietnia oraz września.</p>
+<li><p>Sprawdź testem statystycznym, czy wariancja średniej temperatury rocznej (<em>annual_tavg</em>) na Wyżynach Polskich różni się od Masywu Czeskiego.</p></li>
+<li><p>Porównaj maksymalną temperaturę kwietnia i września.</p>
 <ul>
 <li>Przygotuj wykres porównujący te zmienne.</li>
-<li>Określ czy różnica pomiędzy tymi pomiarami jest istotna statystycznie.</li>
+<li>Zastanów się, czy próby są zależne, czy niezależne - i co z tego wynika dla wyboru testu (rozdz. 13).</li>
+<li>Określ, czy różnica pomiędzy pomiarami jest istotna statystycznie.</li>
 </ul></li>
-</ul>
+<li><p>Wybierz jeden z powyższych testów i zapisz jego wynik <strong>jednym zdaniem nadającym się do raportu</strong>: z nazwą testu, porównywanymi grupami, ich średnimi, statystyką t ze stopniami swobody oraz wartością p (rozdz. 14, <em>Jak opisać wynik w raporcie</em>).</p></li>
+</ol>
+</section>
 </section>
 <section id="testy-nieparametryczne" class="level2" data-number="22.9">
 <h2 data-number="22.9" class="anchored" data-anchor-id="testy-nieparametryczne"><span class="header-section-number">22.9</span> Testy nieparametryczne</h2>
-<p>Rozwiąż poniższe zadania. Każdorazowo:</p>
+<p><strong>Materiał:</strong> rozdział 15 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code>, <code>dane/tetno.csv</code></p>
+<p>Przy każdym zadaniu: <strong>(1)</strong> sformułuj hipotezę zerową oraz alternatywną, <strong>(2)</strong> wykonaj odpowiedni test, <strong>(3)</strong> zinterpretuj wynik.</p>
+<section id="rozgrzewka-7" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-7">Rozgrzewka</h3>
 <ul>
-<li>Sformułuj hipotezę zerową oraz hipotezę alternatywną.</li>
-<li>Wykonaj odpowiedni test statystyczny.</li>
-<li>Zinterpretuj wyniki testu.</li>
-</ul>
-<section id="zadanie-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-1">Zadanie 1</h3>
-<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
-<ul>
-<li><p>Czy istnieje istotna statystycznie różnica pomiędzy średnią temperaturą roczną (<em>annual_tavg</em>) dla Karpat Wschodnich i Karpat Zachodnich? Stwórz wizualizację, a następnie wykonaj test statystyczny.</p></li>
-<li><p>Czy istnieje istotna statystycznie różnica pomiędzy sumą roczną opadów (<em>annual_precip</em>) dla województw podlaskiego i kujawsko-pomorskiego? Stwórz wizualizację, a następnie wykonaj test statystyczny.</p></li>
+<li>Wczytaj dane i wykonaj histogram zmiennej <em>annual_precip</em> dla województwa podlaskiego.</li>
+<li>Sprawdź testem Shapiro-Wilka, czy rozkład tej zmiennej jest zbliżony do normalnego.</li>
 </ul>
 </section>
-<section id="zadanie-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-2">Zadanie 2</h3>
-<p>Wczytaj dane z pliku <code>tetno.csv</code></p>
+<section id="zadania-8" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-8">Zadania</h3>
+<ol type="1">
+<li><p>Czy istnieje istotna statystycznie różnica pomiędzy średnią temperaturą roczną (<em>annual_tavg</em>) dla Karpat Wschodnich i Karpat Zachodnich? Stwórz wizualizację, a następnie wykonaj test.</p></li>
+<li><p>Czy istnieje istotna statystycznie różnica pomiędzy roczną sumą opadów (<em>annual_precip</em>) dla województw podlaskiego i kujawsko-pomorskiego? Stwórz wizualizację, a następnie wykonaj test.</p></li>
+<li><p>Wczytaj dane z pliku <code>dane/tetno.csv</code>. Przeprowadzono badanie tętna u 20 osób przed krótkim (3-minutowym) wysiłkiem fizycznym i po nim. Kolumna <em>Tętno_1</em> zawiera pomiar przed wysiłkiem, a <em>Tętno_2</em> - po wysiłku. Czy otrzymane wyniki przeczą hipotezie, że wysiłek wpływa na przyspieszenie tętna?</p>
+<p>(przykład pochodzi z książki Andrzeja Stanisza „Przystępny kurs statystyki w oparciu o program STATISTICA PL na przykładach z medycyny”)</p></li>
+<li><p><strong>Dobierz test.</strong> Dla każdej z poniższych sytuacji wskaż właściwy test, uzasadnij wybór i wykonaj go w R. Korzystaj ze schematu w rozdziale 13.</p>
 <ul>
-<li>Przeprowadzono badanie tętna u 20 osób przed i po krótkim (trwającym 3 min) wysiłku fizycznym. Otrzymane dane z uwzględnieniem płci zestawiono w tabeli. Czy otrzymane wyniki przeczą hipotezie, że wysiłek wpływa na przyspieszenie tętna? (przykład pochodzi z książki Andrzeja Stanisza „Przystępny kurs statystyki w oparciu o program STATISTICA PL na przykładach z medycyny”)</li>
-</ul>
+<li>Czy roczna suma opadów różni się między województwem pomorskim a śląskim?</li>
+<li>Czy temperatura minimalna kwietnia różni się od temperatury minimalnej września?</li>
+<li>Czy temperatura maksymalna kwietnia wiąże się z roczną sumą opadów?</li>
+</ul></li>
+</ol>
 </section>
 </section>
 <section id="testy-parametryczne-i-nieparametryczne-dla-wielu-grup" class="level2" data-number="22.10">
 <h2 data-number="22.10" class="anchored" data-anchor-id="testy-parametryczne-i-nieparametryczne-dla-wielu-grup"><span class="header-section-number">22.10</span> Testy parametryczne i nieparametryczne dla wielu grup</h2>
-<section id="zadanie-1-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-1-1">Zadanie 1</h3>
-<p>W miejscowości A wykonywano pomiary temperatury powietrza przez cztery kolejne miesiące. Rozkład temperatury w kolejnych miesiącach był symetryczny i wykazywał się podobną zmiennością.</p>
-<p>Jakiego testu użył(a)byś, aby odpowiedzieć na pytanie: “Czy średnia temperatura powietrza różni się isotnie statystycznie pomiędzy miesiącami, w których wykonano pomiary?”.</p>
-<p>W odpowiedzi proszę podać: (1) nazwę testu statystycznego, (2) nazwę funkcji R służącej do wykonania testu, (3) Co w wyniku testu wskazuje, że wynik jest istotny statystycznie? (4) Co oznacza istotny statystycznie wynik?</p>
+<p><strong>Materiał:</strong> rozdział 16 · <strong>Dane:</strong> <code>dane/daneMieszkania.csv</code></p>
+<section id="zadanie-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-1">Zadanie 1</h3>
+<p>W miejscowości A wykonywano pomiary temperatury powietrza przez cztery kolejne miesiące. W każdym miesiącu pomiarów dokonywano na innej, losowo wybranej grupie dni, więc pomiary z poszczególnych miesięcy są od siebie niezależne. Rozkład temperatury w kolejnych miesiącach był symetryczny i wykazywał podobną zmienność.</p>
+<p>Jakiego testu użył(a)byś, aby odpowiedzieć na pytanie: <em>„Czy średnia temperatura powietrza różni się istotnie statystycznie pomiędzy miesiącami, w których wykonano pomiary?“</em></p>
+<p>W odpowiedzi podaj: <strong>(1)</strong> nazwę testu statystycznego, <strong>(2)</strong> nazwę funkcji R służącej do jego wykonania, <strong>(3)</strong> co w wyniku testu wskazuje, że wynik jest istotny statystycznie, <strong>(4)</strong> co oznacza istotny statystycznie wynik.</p>
 </section>
-<section id="zadanie-2-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-2-1">Zadanie 2</h3>
-<p>Wczytaj dane <code>mieszkania</code> z pakietu <code>Przewodnik</code>. Dane te przedstawiają informacje o cenie mieszkań, liczbie pokoi oraz powierzchni mieszkań w 3 dzielnicach Wrocławia.</p>
+<section id="zadanie-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-2">Zadanie 2</h3>
+<p>Wczytaj dane z pliku <code>dane/daneMieszkania.csv</code>. Dane przedstawiają informacje o cenie mieszkań, liczbie pokoi, powierzchni oraz typie budynku dla 200 mieszkań w 3 dzielnicach Wrocławia (Biskupin, Krzyki, Śródmieście). Zbiór pochodzi z pakietu <code>Przewodnik</code> towarzyszącego podręcznikowi: Biecek P. (2017), <em>Przewodnik po pakiecie R</em>, wyd. 4 rozszerzone, Oficyna Wydawnicza GiS, Wrocław.</p>
+<ol type="1">
+<li><p>Stwórz wykres porównujący ceny mieszkań w trzech dzielnicach.</p></li>
+<li><p>Oblicz minimalną, maksymalną i średnią cenę oraz odchylenie standardowe w podziale na dzielnice.</p></li>
+<li><p>Zastosuj test Shapiro-Wilka, aby sprawdzić, czy ceny mieszkań w każdej z dzielnic mają rozkład zbliżony do normalnego. Zinterpretuj wyniki.</p></li>
+<li><p>Wykorzystaj analizę wariancji, aby określić, czy ceny mieszkań różnią się istotnie statystycznie między dzielnicami.</p>
 <ul>
-<li><p>Stwórz wykres porównujący ceny mieszkań w 3 dzielnicach Wrocławia.</p></li>
-<li><p>Oblicz minimalną, maksymalną, średnią oraz odchylenie standardowe dla cen mieszkań w podziale na dzielnice.</p></li>
-<li><p>Zastosuj test Shapiro-Wilka do określenia, czy ceny mieszkań w każdej z dzielnic Wrocławia są zbliżone do rozkładu normalnego. Zinterpretuj wyniki testu.</p></li>
-<li><p>Wykorzystaj analizę wariancji do określenia czy ceny mieszkań różnią się istotnie statystycznie między dzielnicami Wrocławia.</p>
-<ul>
-<li>Sformułuj hipotezę zerową oraz altenatywną.</li>
+<li>Sformułuj hipotezę zerową oraz alternatywną.</li>
 <li>Zinterpretuj wynik.</li>
 </ul></li>
-<li><p>Pomiędzy którymi dzielnicami występują różnice.</p></li>
-</ul>
+<li><p>Pomiędzy którymi dzielnicami występują różnice? Jakiego testu trzeba do tego użyć i dlaczego sama analiza wariancji nie wystarcza?</p></li>
+<li><p>Zapisz wynik analizy wariancji oraz testu post-hoc jednym zdaniem nadającym się do raportu (rozdz. 16, <em>Jak opisać wynik w raporcie</em>).</p></li>
+</ol>
 </section>
 </section>
 <section id="testowanie-istotności-proporcji" class="level2" data-number="22.11">
 <h2 data-number="22.11" class="anchored" data-anchor-id="testowanie-istotności-proporcji"><span class="header-section-number">22.11</span> Testowanie istotności proporcji</h2>
-<section id="zadanie-1-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-1-2">Zadanie 1</h3>
-<p>Wczytaj dane z pliku <code>plony.csv</code></p>
+<p><strong>Materiał:</strong> rozdział 17 · <strong>Dane:</strong> <code>dane/plony.csv</code></p>
+<section id="zadanie-1-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-1-1">Zadanie 1</h3>
+<p>Wczytaj dane z pliku <code>dane/plony.csv</code>.</p>
 <ul>
-<li>Zastosuj test niezależności chi-2 do określenia czy istnieje relacja między klasą jakości gleb a wielkością plonu?</li>
+<li>Zastosuj test niezależności chi-kwadrat, aby określić, czy istnieje relacja między klasą jakości gleb a wielkością plonu.</li>
 </ul>
 </section>
-<section id="zadanie-2-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="zadanie-2-2">Zadanie 2</h3>
+<section id="zadanie-2-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadanie-2-1">Zadanie 2</h3>
 <p>Wśród mieszkańców dzielnicy wykonano badanie dotyczące poczucia bezpieczeństwa na pobliskim skrzyżowaniu. 412 osób określiło je jako niebezpieczne, a 213 jako bezpieczne. Następnie zainstalowano system monitoringu w pobliżu skrzyżowania i powtórzono badanie. Tym razem 400 osób określiło skrzyżowanie jako niebezpieczne (2 osoby z nich wcześniej uważały je za bezpieczne), a 225 jako bezpieczne. Czy system monitoringu wpłynął w istotny sposób na odczucia mieszkańców?</p>
 </section>
 </section>
 <section id="analiza-korelacji" class="level2" data-number="22.12">
 <h2 data-number="22.12" class="anchored" data-anchor-id="analiza-korelacji"><span class="header-section-number">22.12</span> Analiza korelacji</h2>
-<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code>.</p>
+<p><strong>Materiał:</strong> rozdział 18 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code></p>
+<section id="rozgrzewka-8" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-8">Rozgrzewka</h3>
 <ul>
-<li><p>Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną a maksymalną we wrześniu. Co może oznaczać ten wynik?</p>
-<ul>
-<li>Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu</li>
-<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
-<li>Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?</li>
-</ul></li>
-<li><p>Sprawdź czy istnieje korelacja pomiędzy temperaturą minimalną w kwietniu a temperaturą minimalną we wrześniu. Co może oznaczać ten wynik?</p>
-<ul>
-<li>Wykonaj wykres pokazujący relację pomiędzy temperaturą minimalną a maksymalną we wrześniu</li>
-<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
-<li>Jaki współczynnik korelacji (Pearsona czy Spearmana) należy użyć w tym wypadku?</li>
-</ul></li>
+<li>Wczytaj dane i wykonaj wykres rozrzutu <em>tmin_9</em> wobec <em>tmax_9</em>.</li>
+<li>Sprawdź, czy rozkłady obu zmiennych są zbliżone do normalnego.</li>
 </ul>
+</section>
+<section id="zadania-9" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-9">Zadania</h3>
+<ol type="1">
+<li><p>Sprawdź, czy istnieje korelacja pomiędzy temperaturą minimalną a maksymalną we wrześniu.</p>
+<ul>
+<li>Wykonaj wykres pokazujący relację pomiędzy tymi zmiennymi.</li>
+<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
+<li>Jakiego współczynnika (Pearsona czy Spearmana) należy użyć w tym wypadku i dlaczego?</li>
+<li>Co ten wynik może oznaczać?</li>
+</ul></li>
+<li><p>Sprawdź, czy istnieje korelacja pomiędzy temperaturą minimalną w kwietniu a temperaturą minimalną we wrześniu.</p>
+<ul>
+<li>Wykonaj wykres pokazujący relację pomiędzy tymi dwiema zmiennymi.</li>
+<li>Oblicz współczynnik korelacji oraz wykonaj odpowiedni test.</li>
+<li>Jakiego współczynnika należy użyć w tym wypadku i dlaczego?</li>
+<li>Co ten wynik może oznaczać?</li>
+</ul></li>
+<li><p>Zapisz wynik jednego z testów zdaniem nadającym się do raportu - z wartością współczynnika, przedziałem ufności i wartością p (rozdz. 18, <em>Jak opisać wynik w raporcie</em>).</p></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-5" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-5">Zadania dodatkowe</h3>
+<ol start="4" type="1">
+<li>(*) Wykonaj macierz korelacji dla wszystkich zmiennych pomiarowych w zbiorze (<em>tmin_4</em>, <em>tmax_4</em>, <em>tmin_9</em>, <em>tmax_9</em>, <em>annual_tavg</em>, <em>annual_precip</em>). Która para zmiennych jest najsilniej powiązana, a która najsłabiej? Pamiętaj o argumencie obsługującym braki danych.</li>
+</ol>
+</section>
 </section>
 <section id="analiza-regresji" class="level2" data-number="22.13">
 <h2 data-number="22.13" class="anchored" data-anchor-id="analiza-regresji"><span class="header-section-number">22.13</span> Analiza regresji</h2>
-<p>Wczytaj dane z pliku tekstowego <code>pomiary_pol.csv</code> oraz wybierz dane dla województwa zachodniopomorskiego.</p>
-<p>Dla wybranych danych:</p>
+<p><strong>Materiał:</strong> rozdział 19 · <strong>Dane:</strong> <code>dane/pomiary_pol.csv</code> (województwo zachodniopomorskie)</p>
+<section id="rozgrzewka-9" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rozgrzewka-9">Rozgrzewka</h3>
 <ul>
-<li><p>zwizualizuj relację między roczną sumą opadów (<em>annual_precip</em>) a temperaturą maksymalną w kwietniu (<em>tmax_4</em>).</p></li>
-<li><p>zbuduj model regresji liniowej zależności rocznej sumy opadów (<em>annual_precip</em>) od temperatury maksymalnej w kwietniu (<em>tmax_4</em>) i nazwij go model1.</p></li>
-<li><p>opisz wyniki modelu, w tym wartości współczynników, poziomy istotności, jakość modelu.</p></li>
-<li><p>wyznacz współczynniki modelu i zapisz równanie modelu regresji liniowej.</p></li>
-<li><p>zwizualizuj model regresji liniowej.</p></li>
-<li><p>wykonaj predykcję rocznej sumy opadów dla temperatury maksymalnej w kwietniu równej 11,1 stopnia Celsjusza.</p></li>
-<li><p>przeanalizuj reszty z modelu</p>
+<li>Wczytaj dane i wybierz obserwacje dla województwa zachodniopomorskiego.</li>
+<li>Sprawdź zakres zmiennych <em>tmax_4</em> oraz <em>annual_precip</em> (funkcja <code>range</code>).</li>
+</ul>
+</section>
+<section id="zadania-10" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-10">Zadania</h3>
+<ol type="1">
+<li><p>Zwizualizuj relację między roczną sumą opadów (<em>annual_precip</em>) a temperaturą maksymalną w kwietniu (<em>tmax_4</em>).</p></li>
+<li><p>Zbuduj model regresji liniowej zależności <em>annual_precip</em> od <em>tmax_4</em> i nazwij go <code>model1</code>.</p></li>
+<li><p>Opisz wyniki modelu: wartości współczynników, ich istotność oraz jakość dopasowania modelu.</p></li>
+<li><p>Wyznacz współczynniki modelu i zapisz równanie regresji liniowej.</p></li>
+<li><p>Zwizualizuj model regresji liniowej (dodaj linię regresji do wykresu rozrzutu).</p></li>
+<li><p>Wykonaj predykcję rocznej sumy opadów dla temperatury maksymalnej w kwietniu równej 12, 13 oraz 14 °C. Przed wykonaniem predykcji sprawdź zakres zmiennej <em>tmax_4</em> w analizowanych danych - dlaczego to ważne?</p></li>
+<li><p>Przeanalizuj reszty modelu:</p>
 <ul>
 <li>jakie są statystyki reszt,</li>
-<li>wykonaj histogram reszt - jaki jest rozkład reszt z modelu?</li>
+<li>wykonaj histogram reszt - jaki jest ich rozkład?</li>
 </ul></li>
-<li><p>wykonaj wykres rozrzutu pokazujący zależność między wartościami obserwowanymi (oś x), a wartościami obliczonymi z modelu (oś y).</p></li>
-<li><p>zbuduj model zależności rocznej sumy opadów (<em>annual_precip</em>) od temperatury maksymalnej w kwietniu (<em>tmax_4</em>) oraz temperatury minimalnej w kwietniu (<em>tmin_4</em>) i nazwij go model2.</p></li>
-<li><p>Porównaj oba modele (model1 oraz model2) za pomocą kryterium informacyjnego AIC. Określ, który model jest lepszy.</p></li>
-<li><p>Który z modeli w większym stopniu wyjaśnia roczną sumą opadów?</p></li>
-</ul>
+<li><p>Zapisz wynik modelu jednym akapitem nadającym się do raportu: czego dotyczy model, jaka jest jego istotność i dopasowanie oraz jak zinterpretować współczynnik kierunkowy w jednostkach zmiennych (rozdz. 19, <em>Jak opisać wynik modelu w raporcie</em>).</p></li>
+</ol>
+</section>
+<section id="zadania-dodatkowe-6" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zadania-dodatkowe-6">Zadania dodatkowe</h3>
+<ol start="9" type="1">
+<li><p>(*) Wykonaj wykres rozrzutu pokazujący zależność między wartościami obliczonymi z modelu (oś x) a wartościami obserwowanymi (oś y). Czego oczekujemy po takim wykresie, gdy model jest dobrze dopasowany?</p></li>
+<li><p>(*) Zbuduj model zależności <em>annual_precip</em> od <em>tmax_4</em> oraz <em>tmin_4</em> i nazwij go <code>model2</code>.</p></li>
+<li><p>(*) Porównaj oba modele za pomocą kryterium AIC oraz skorygowanego <span class="math inline">\(R^2\)</span>. Czy dodanie temperatury minimalnej opłaciło się? Odpowiedź uzasadnij liczbami.</p></li>
+<li><p>(*) Sprawdź w podsumowaniu <code>model2</code>, czy zmienna <em>tmin_4</em> jest istotna statystycznie. Jak ten wynik łączy się z porównaniem AIC?</p></li>
+</ol>
+</section>
 </section>
 <section id="podsumowanie-ćwiczeń" class="level2" data-number="22.14">
 <h2 data-number="22.14" class="anchored" data-anchor-id="podsumowanie-ćwiczeń"><span class="header-section-number">22.14</span> Podsumowanie ćwiczeń</h2>
-<p>Wczytaj dane <code>airquality</code> z pakietu datasets.</p>
+<p><strong>Materiał:</strong> rozdziały 1-19 · <strong>Dane:</strong> <code>airquality</code> (pakiet <code>datasets</code>)</p>
+<p>Zestaw podsumowujący, obejmujący materiał całego semestru - przewidziany do samodzielnego rozwiązania w domu.</p>
 <ol type="1">
 <li>Przedstaw podstawowe informacje o zbiorze danych <code>airquality</code>. Wykorzystaj w tym celu narzędzie pomocy w R oraz podstawowe funkcje.</li>
 </ol>
 <ul>
 <li>Ile zmiennych oraz rekordów znajduje się w zbiorze danych?</li>
-<li>Jakie są nazwy zmiennych w zbiorze danych.</li>
+<li>Jakie są nazwy zmiennych w zbiorze danych?</li>
 </ul>
 <ol start="2" type="1">
 <li>Scharakteryzuj statystycznie dane.</li>
@@ -668,28 +922,28 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Oblicz podstawowe statystyki dla zmiennych w zbiorze danych.</li>
 <li>Przedstaw podstawowe statystyki dla zmiennych w podziale na poszczególne miesiące.</li>
-<li>Wykonaj wykres pudełkowy pokazujący jak wartości zmiennych Temp oraz Ozone różnią się między miesiącami.</li>
+<li>Wykonaj wykres pudełkowy pokazujący, jak wartości zmiennych <em>Temp</em> oraz <em>Ozone</em> różnią się między miesiącami.</li>
 </ul>
 <ol start="3" type="1">
 <li>Scharakteryzuj rozkład zmiennych.</li>
 </ol>
 <ul>
-<li><p>Jaki jest rozkład zmiennych Temp, oraz Ozone.</p>
+<li><p>Jaki jest rozkład zmiennych <em>Temp</em> oraz <em>Ozone</em>?</p>
 <ul>
-<li>Przedstaw wyniki na wykresach oraz</li>
+<li>Przedstaw wyniki na wykresach.</li>
 <li>Oblicz odpowiednie statystyki charakteryzujące rozkład zmiennych.</li>
-<li>Wykonaj test Shapiro-Wilka dla określenia czy rozkład zmiennej Temp jest zbliżony do rozkładu normalnego.</li>
+<li>Wykonaj test Shapiro-Wilka, aby określić, czy rozkład zmiennej <em>Temp</em> jest zbliżony do normalnego.</li>
 </ul></li>
 </ul>
 <ol start="4" type="1">
-<li><p>Ile było dni, w których stężenie Ozonu było powyżej 30 ppb oraz temperatura wynosiła powyżej 90F?</p></li>
-<li><p>W ilu dniach nie zmierzono stężenia Ozonu?</p></li>
-<li><p>W którym dniu odnotowano najniższą wartość stężenia Ozonu? Podaj dzień oraz miesiąc.</p></li>
-<li><p>Wskaż miesiące, w których średnie stężenie Ozonu było niższe od średniej dla całego okresu pomiarowego.</p></li>
-<li><p>Czy istnieje zależność między zmiennymi Ozone oraz Temp?</p>
+<li><p>Ile było dni, w których stężenie ozonu było powyżej 30 ppb oraz temperatura wynosiła powyżej 90 °F?</p></li>
+<li><p>W ilu dniach nie zmierzono stężenia ozonu?</p></li>
+<li><p>W którym dniu odnotowano najniższą wartość stężenia ozonu? Podaj dzień oraz miesiąc.</p></li>
+<li><p>Wskaż miesiące, w których średnie stężenie ozonu było niższe od średniej dla całego okresu pomiarowego.</p></li>
+<li><p>Czy istnieje zależność między zmiennymi <em>Ozone</em> oraz <em>Temp</em>?</p>
 <ul>
-<li>Proszę wykonać odpowiedni test oraz zinterpretować jego wyniki.</li>
-<li>Proszę zwizualizować relację między zmiennymi Ozone oraz Temp.</li>
+<li>Wykonaj odpowiedni test oraz zinterpretuj jego wyniki.</li>
+<li>Zwizualizuj relację między zmiennymi <em>Ozone</em> oraz <em>Temp</em>.</li>
 </ul></li>
 </ol>
 
@@ -706,7 +960,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 
@@ -1141,11 +1395,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./15_Raport_przyklad.html" class="pagination-link" aria-label="Analiza statystyczna długości trwania życia na świecie w 2007 roku.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span>
+      <a href="./15_Raport_przyklad.html" class="pagination-link" aria-label="Przykładowy raport statystyczny">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./zalacznik_funkcje.html" class="pagination-link" aria-label="Załącznik: zestawienie funkcji">
+        <span class="nav-page-text">Załącznik: zestawienie funkcji</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

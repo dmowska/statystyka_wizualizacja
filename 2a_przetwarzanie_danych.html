@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -388,6 +388,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -410,11 +427,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#selekcja-oraz-tworzenie-nowej-zmiennej" id="toc-selekcja-oraz-tworzenie-nowej-zmiennej" class="nav-link" data-scroll-target="#selekcja-oraz-tworzenie-nowej-zmiennej"><span class="header-section-number">3.3</span> Selekcja oraz tworzenie nowej zmiennej</a>
   <ul class="collapse">
-  <li><a href="#indeksowanie-1" id="toc-indeksowanie-1" class="nav-link" data-scroll-target="#indeksowanie-1"><span class="header-section-number">3.3.1</span> Indeksowanie</a></li>
-  <li><a href="#selekcja-danych-o-określonej-wartości" id="toc-selekcja-danych-o-określonej-wartości" class="nav-link" data-scroll-target="#selekcja-danych-o-określonej-wartości"><span class="header-section-number">3.3.2</span> Selekcja danych o określonej wartości</a></li>
-  <li><a href="#funkcja-subset" id="toc-funkcja-subset" class="nav-link" data-scroll-target="#funkcja-subset"><span class="header-section-number">3.3.3</span> Funkcja <code>subset()</code></a></li>
-  <li><a href="#tworzenie-nowej-zmiennej" id="toc-tworzenie-nowej-zmiennej" class="nav-link" data-scroll-target="#tworzenie-nowej-zmiennej"><span class="header-section-number">3.3.4</span> Tworzenie nowej zmiennej</a></li>
-  <li><a href="#porządkowanie" id="toc-porządkowanie" class="nav-link" data-scroll-target="#porządkowanie"><span class="header-section-number">3.3.5</span> Porządkowanie</a></li>
+  <li><a href="#funkcja-subset" id="toc-funkcja-subset" class="nav-link" data-scroll-target="#funkcja-subset"><span class="header-section-number">3.3.1</span> Funkcja <code>subset()</code></a></li>
+  <li><a href="#tworzenie-nowej-zmiennej" id="toc-tworzenie-nowej-zmiennej" class="nav-link" data-scroll-target="#tworzenie-nowej-zmiennej"><span class="header-section-number">3.3.2</span> Tworzenie nowej zmiennej</a></li>
+  <li><a href="#porządkowanie" id="toc-porządkowanie" class="nav-link" data-scroll-target="#porządkowanie"><span class="header-section-number">3.3.3</span> Porządkowanie</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -441,24 +456,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell" data-setup="true" data-exercise="[&quot;ex_2&quot;,&quot;ex_3&quot;,&quot;ex_4&quot;,&quot;ex_5&quot;,&quot;ex_6&quot;,&quot;ex_7&quot;]">
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;,&quot;ex_3&quot;,&quot;ex_4&quot;,&quot;ex_5&quot;,&quot;ex_6&quot;,&quot;ex_7&quot;]">
+<script type="exercise-setup-ex_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
+</script>
 <script type="exercise-setup-ex_2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 <script type="exercise-setup-ex_3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 <script type="exercise-setup-ex_4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 <script type="exercise-setup-ex_5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 <script type="exercise-setup-ex_6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 <script type="exercise-setup-ex_7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciXSwic2V0dXAiOnRydWV9LCJjb2RlIjoiXG5saWJyYXJ5KGdhcG1pbmRlcilcbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJykifQ==
 </script>
 </div>
 <section id="wstępna-eksploracja-danych" class="level2" data-number="3.1">
@@ -466,11 +484,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwi
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#wyświetlanie początkowych wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 5)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#wyświetlanie początkowych wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="at">n =</span> <span class="dv">2</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#wyświetlanie n ostatnich wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 5)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#wyświetlanie n ostatnich wierszy, argument n definiuje ile wierszy ma być wyświetlonych (domyślnie 6)</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(gapminder)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#wyświetlanie nazw zmiennych, nazw kolumn oraz nazw wierszy</span></span>
@@ -511,7 +529,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwi
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiXG4jIFdjenl0YWogZG8gUiB6YmnDs3IgZGFueWNoIHogcGxpa3UgYGRhbmUuY3N2YCB6IGZvbGRlcnUgYGRhdGFgIG9yYXogcHJ6eXBpc3ogZ28gZG8gb2JpZWt0dSBvIG5hendpZSBgZGFuZWBcblxuXG4jIFd5xZt3aWV0bCA0IG9zdGF0bmllIHdpZXJzemUgemJpb3J1IGRhbnljaCBgZGFuZWAuIFxuXG5cbiMgV3nFm3dpZXRsIHVuaWthbG5lIHdhcnRvxZtjaSBkbGEga29sdW1ueSBgY291bnRyeWAuIFxuXG5cbiMgV3nFm3dpZXRsIHBvZHN0YXdvd2Ugc3RhdHlzdHlraSB6YmlvcnUgZGFueWNoIGBkYW5lYC4gIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiXG4jIFdjenl0YWogZG8gUiB6YmnDs3IgZGFueWNoIHogcGxpa3UgYGRhbmUuY3N2YCB6IGZvbGRlcnUgYGRhbmVgIG9yYXogcHJ6eXBpc3ogZ28gZG8gb2JpZWt0dSBvIG5hendpZSBgZGFuZWBcblxuXG4jIFd5xZt3aWV0bCA0IG9zdGF0bmllIHdpZXJzemUgemJpb3J1IGRhbnljaCBgZGFuZWAuIFxuXG5cbiMgV3nFm3dpZXRsIHVuaWthbG5lIHdhcnRvxZtjaSBkbGEga29sdW1ueSBgY291bnRyeWAuIFxuXG5cbiMgV3nFm3dpZXRsIHBvZHN0YXdvd2Ugc3RhdHlzdHlraSB6YmlvcnUgZGFueWNoIGBkYW5lYC4gIn0=
 </script>
 </div>
 </div>
@@ -604,27 +622,12 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNSJ9LCJjb2RlIjoi
 </section>
 <section id="selekcja-oraz-tworzenie-nowej-zmiennej" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="selekcja-oraz-tworzenie-nowej-zmiennej"><span class="header-section-number">3.3</span> Selekcja oraz tworzenie nowej zmiennej</h2>
-<section id="indeksowanie-1" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="indeksowanie-1"><span class="header-section-number">3.3.1</span> Indeksowanie</h3>
+<section id="funkcja-subset" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="funkcja-subset"><span class="header-section-number">3.3.1</span> Funkcja <code>subset()</code></h3>
+<p>Funkcja <code>subset()</code> pozwala wybrać wiersze spełniające warunek oraz kolumny (argument <em>select</em>) w jednym wywołaniu - bez powtarzania nazwy obiektu, jak przy indeksowaniu.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gapminder[<span class="dv">1</span>,]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>gapminder[,<span class="dv">1</span>]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="selekcja-danych-o-określonej-wartości" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="selekcja-danych-o-określonej-wartości"><span class="header-section-number">3.3.2</span> Selekcja danych o określonej wartości</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1952</span>, ]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1952</span> <span class="sc">&amp;</span> gapminder<span class="sc">$</span>continent <span class="sc">==</span> <span class="st">'Asia'</span>,]</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1952</span>, <span class="fu">c</span>(<span class="dv">5</span>)]</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>gapminder[gapminder<span class="sc">$</span>pop <span class="sc">&gt;</span> <span class="dv">10000000</span>, ]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="funkcja-subset" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="funkcja-subset"><span class="header-section-number">3.3.3</span> Funkcja <code>subset()</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dane_sel <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>, <span class="at">select =</span> <span class="fu">c</span>(country, pop))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dane_selection <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>, <span class="at">select =</span> <span class="fu">c</span>(country<span class="sc">:</span>pop))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dane_sel <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>, <span class="at">select =</span> <span class="fu">c</span>(country, pop))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dane_selection <span class="ot">&lt;-</span> <span class="fu">subset</span>(gapminder, continent <span class="sc">==</span> <span class="st">"Europe"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>, <span class="at">select =</span> <span class="fu">c</span>(country<span class="sc">:</span>pop))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>W jakich latach w Australii długość trwania życia wynosiła powyżej 75 lat?</p>
@@ -640,28 +643,28 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfNiJ9LCJjb2RlIjoi
 </div>
 </div>
 </section>
-<section id="tworzenie-nowej-zmiennej" class="level3" data-number="3.3.4">
-<h3 data-number="3.3.4" class="anchored" data-anchor-id="tworzenie-nowej-zmiennej"><span class="header-section-number">3.3.4</span> Tworzenie nowej zmiennej</h3>
+<section id="tworzenie-nowej-zmiennej" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="tworzenie-nowej-zmiennej"><span class="header-section-number">3.3.2</span> Tworzenie nowej zmiennej</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dane1952 <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1952</span>, ]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dane1952 <span class="ot">&lt;-</span> gapminder[gapminder<span class="sc">$</span>year <span class="sc">==</span> <span class="dv">1952</span>, ]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>pop_mln <span class="ot">&lt;-</span> gapminder<span class="sc">$</span>pop <span class="sc">/</span> <span class="dv">1000000</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="dv">3</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gapminder<span class="sc">$</span>pop_mln <span class="ot">&lt;-</span> gapminder<span class="sc">$</span>pop <span class="sc">/</span> <span class="dv">1000000</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="dv">3</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="porządkowanie" class="level3" data-number="3.3.5">
-<h3 data-number="3.3.5" class="anchored" data-anchor-id="porządkowanie"><span class="header-section-number">3.3.5</span> Porządkowanie</h3>
+<section id="porządkowanie" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="porządkowanie"><span class="header-section-number">3.3.3</span> Porządkowanie</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>year), ]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sortowanie względemm dwóch zmiennych</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>continent, gapminder<span class="sc">$</span>country), ]</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane_2)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#sortowanie według kraju (rosnąco) oraz roku (malejąco)</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>country, <span class="sc">-</span>gapminder<span class="sc">$</span>year),]</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane_2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>year), ]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sortowanie względemm dwóch zmiennych</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>continent, gapminder<span class="sc">$</span>country), ]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane_2)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#sortowanie według kraju (rosnąco) oraz roku (malejąco)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>dane_2 <span class="ot">&lt;-</span> gapminder[<span class="fu">order</span>(gapminder<span class="sc">$</span>country, <span class="sc">-</span>gapminder<span class="sc">$</span>year),]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane_2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>W którym roku liczba ludności Nowej Zelandii (New Zealand) przekroczyła 3 miliony?</p>
@@ -693,7 +696,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC04IiwiaW5saW5lIjpmYWxzZSwibWV0
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 </section>

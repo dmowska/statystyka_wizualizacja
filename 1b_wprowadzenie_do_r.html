@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -392,6 +392,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -402,15 +419,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#katalog-roboczy" id="toc-katalog-roboczy" class="nav-link active" data-scroll-target="#katalog-roboczy"><span class="header-section-number">2.1</span> Katalog roboczy</a></li>
-  <li><a href="#otwieranie-i-zapisywanie-plików-tekstowych" id="toc-otwieranie-i-zapisywanie-plików-tekstowych" class="nav-link" data-scroll-target="#otwieranie-i-zapisywanie-plików-tekstowych"><span class="header-section-number">2.2</span> Otwieranie i zapisywanie plików tekstowych</a></li>
-  <li><a href="#dane-zawarte-w-pakietach" id="toc-dane-zawarte-w-pakietach" class="nav-link" data-scroll-target="#dane-zawarte-w-pakietach"><span class="header-section-number">2.3</span> Dane zawarte w pakietach</a></li>
-  <li><a href="#zapisywanie-wyników-pracy" id="toc-zapisywanie-wyników-pracy" class="nav-link" data-scroll-target="#zapisywanie-wyników-pracy"><span class="header-section-number">2.4</span> Zapisywanie wyników pracy</a>
+  <li><a href="#przebieg-ćwiczenia" id="toc-przebieg-ćwiczenia" class="nav-link active" data-scroll-target="#przebieg-ćwiczenia"><span class="header-section-number">2.1</span> Przebieg ćwiczenia</a></li>
+  <li><a href="#projekt-rstudio" id="toc-projekt-rstudio" class="nav-link" data-scroll-target="#projekt-rstudio"><span class="header-section-number">2.2</span> Projekt RStudio</a></li>
+  <li><a href="#dokument-quarto" id="toc-dokument-quarto" class="nav-link" data-scroll-target="#dokument-quarto"><span class="header-section-number">2.3</span> Dokument Quarto</a>
   <ul class="collapse">
-  <li><a href="#zapisywanie-pojedyńczego-obiektu-np.-ramki-danych" id="toc-zapisywanie-pojedyńczego-obiektu-np.-ramki-danych" class="nav-link" data-scroll-target="#zapisywanie-pojedyńczego-obiektu-np.-ramki-danych"><span class="header-section-number">2.4.1</span> Zapisywanie pojedyńczego obiektu (np. ramki danych)</a></li>
-  <li><a href="#zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" id="toc-zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" class="nav-link" data-scroll-target="#zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r"><span class="header-section-number">2.4.2</span> Zapisywanie wyników pracy w formacie dostępnym tylko w R</a></li>
+  <li><a href="#jak-utworzyć-dokument" id="toc-jak-utworzyć-dokument" class="nav-link" data-scroll-target="#jak-utworzyć-dokument"><span class="header-section-number">2.3.1</span> Jak utworzyć dokument</a></li>
+  <li><a href="#z-czego-składa-się-dokument" id="toc-z-czego-składa-się-dokument" class="nav-link" data-scroll-target="#z-czego-składa-się-dokument"><span class="header-section-number">2.3.2</span> Z czego składa się dokument</a></li>
+  <li><a href="#jak-uruchamiać-kod" id="toc-jak-uruchamiać-kod" class="nav-link" data-scroll-target="#jak-uruchamiać-kod"><span class="header-section-number">2.3.3</span> Jak uruchamiać kod</a></li>
+  <li><a href="#jak-wygenerować-dokument" id="toc-jak-wygenerować-dokument" class="nav-link" data-scroll-target="#jak-wygenerować-dokument"><span class="header-section-number">2.3.4</span> Jak wygenerować dokument</a></li>
+  <li><a href="#przydatne-opcje-bloków" id="toc-przydatne-opcje-bloków" class="nav-link" data-scroll-target="#przydatne-opcje-bloków"><span class="header-section-number">2.3.5</span> Przydatne opcje bloków</a></li>
   </ul></li>
-  <li><a href="#pomoc" id="toc-pomoc" class="nav-link" data-scroll-target="#pomoc"><span class="header-section-number">2.5</span> Pomoc</a></li>
+  <li><a href="#katalog-roboczy" id="toc-katalog-roboczy" class="nav-link" data-scroll-target="#katalog-roboczy"><span class="header-section-number">2.4</span> Katalog roboczy</a></li>
+  <li><a href="#otwieranie-plików-z-danymi" id="toc-otwieranie-plików-z-danymi" class="nav-link" data-scroll-target="#otwieranie-plików-z-danymi"><span class="header-section-number">2.5</span> Otwieranie plików z danymi</a></li>
+  <li><a href="#dane-zawarte-w-pakietach" id="toc-dane-zawarte-w-pakietach" class="nav-link" data-scroll-target="#dane-zawarte-w-pakietach"><span class="header-section-number">2.6</span> Dane zawarte w pakietach</a></li>
+  <li><a href="#zapisywanie-wyników-pracy" id="toc-zapisywanie-wyników-pracy" class="nav-link" data-scroll-target="#zapisywanie-wyników-pracy"><span class="header-section-number">2.7</span> Zapisywanie wyników pracy</a>
+  <ul class="collapse">
+  <li><a href="#zapisywanie-pojedynczego-obiektu-np.-ramki-danych" id="toc-zapisywanie-pojedynczego-obiektu-np.-ramki-danych" class="nav-link" data-scroll-target="#zapisywanie-pojedynczego-obiektu-np.-ramki-danych"><span class="header-section-number">2.7.1</span> Zapisywanie pojedynczego obiektu (np. ramki danych)</a></li>
+  <li><a href="#zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" id="toc-zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" class="nav-link" data-scroll-target="#zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r"><span class="header-section-number">2.7.2</span> Zapisywanie wyników pracy w formacie dostępnym tylko w R</a></li>
+  </ul></li>
+  <li><a href="#pomoc" id="toc-pomoc" class="nav-link" data-scroll-target="#pomoc"><span class="header-section-number">2.8</span> Pomoc</a></li>
+  <li><a href="#zadania" id="toc-zadania" class="nav-link" data-scroll-target="#zadania"><span class="header-section-number">2.9</span> Zadania</a></li>
   </ul>
 </nav>
     </div>
@@ -436,79 +464,328 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="katalog-roboczy" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="katalog-roboczy"><span class="header-section-number">2.1</span> Katalog roboczy</h2>
-<p><strong><em>Zawsze rozpocznij pracę od ustawienia ścieżki do folder roboczego.</em></strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ustawienie ścieżki do katalogu roboczego</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"statystyka_wizualizacja/cwiczenie_1"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;,&quot;ex_3&quot;]">
+<script type="exercise-setup-ex_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+</script>
+<script type="exercise-setup-ex_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+</script>
+<script type="exercise-setup-ex_3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+</script>
 </div>
+<p>Ten rozdział opisuje, <strong>jak zorganizować pracę</strong> na ćwiczeniach: gdzie trzymać pliki, jak wczytywać dane i jak zapisywać wyniki. Nawyki wyrobione w tym miejscu oszczędzają później bardzo dużo czasu - większość problemów, na jakie natykają się studenci w trakcie semestru, to problemy ze ścieżkami do plików, a nie ze statystyką.</p>
+<section id="przebieg-ćwiczenia" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="przebieg-ćwiczenia"><span class="header-section-number">2.1</span> Przebieg ćwiczenia</h2>
+<p>Niemal każde ćwiczenie ma ten sam przebieg. Warto mieć go przed oczami: porządkuje pracę i pomaga zorientować się, na jakim etapie analizy jesteśmy.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/2_workflow.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Przebieg typowego ćwiczenia</figcaption>
+</figure>
+</div>
+<p>Kolejne rozdziały skryptu rozwijają poszczególne kroki tego schematu: kroki 1-3 omawia rozdział <em>Przetwarzanie danych w R</em>, krok 4 - <em>Statystyki opisowe</em>, krok 5 - rozdziały o wizualizacji, a kroki 6-8 - rozdziały o testach statystycznych.</p>
+</section>
+<section id="projekt-rstudio" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="projekt-rstudio"><span class="header-section-number">2.2</span> Projekt RStudio</h2>
+<p>Pracę nad ćwiczeniami najwygodniej prowadzić w <strong>projekcie RStudio</strong>. Projekt to zwykły folder z dodatkowym plikiem o rozszerzeniu <code>.Rproj</code>, który mówi RStudio: <em>to jest katalog roboczy tej pracy</em>.</p>
+<p><strong>Dlaczego warto.</strong> Po otwarciu projektu katalog roboczy ustawia się automatycznie na folder projektu. Dzięki temu w kodzie można używać <strong>ścieżek względnych</strong> (<code>dane/pomiary_pol.csv</code>) zamiast bezwzględnych (<code>C:/Users/Anna/Documents/studia/.../pomiary_pol.csv</code>). Kod zadziała wtedy także na innym komputerze - na przykład na komputerze w sali ćwiczeniowej albo u osoby, z którą robisz projekt zespołowy.</p>
+<p><strong>Jak założyć projekt:</strong> <em>File → New Project → New Directory → New Project</em>, a następnie podaj nazwę folderu i miejsce na dysku.</p>
+<p>Proponowana struktura folderów:</p>
+<pre><code>cwiczenia_statystyka/
+├── cwiczenia_statystyka.Rproj   &lt;- plik projektu; otwieraj pracę przez niego
+├── dane/                        &lt;- pliki z danymi (csv, txt, rds)
+├── out/                         &lt;- wyniki: wykresy, tabele, zapisane obiekty
+└── analiza.qmd                  &lt;- dokument z kodem i opisem</code></pre>
+<p>Przy takiej strukturze wczytanie danych wygląda zawsze tak samo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sprawdzanie ścieżki do katalogu </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pomiary <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="otwieranie-i-zapisywanie-plików-tekstowych" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="otwieranie-i-zapisywanie-plików-tekstowych"><span class="header-section-number">2.2</span> Otwieranie i zapisywanie plików tekstowych</h2>
+<section id="dokument-quarto" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="dokument-quarto"><span class="header-section-number">2.3</span> Dokument Quarto</h2>
+<p><strong>Na ćwiczeniach pracujemy w dokumentach Quarto</strong>, a nie w zwykłych skryptach <code>.R</code>. Dokument Quarto łączy w jednym pliku trzy rzeczy: <strong>tekst</strong> (opis tego, co robisz i jakie wnioski wyciągasz), <strong>kod</strong> oraz <strong>wyniki</strong> - tabele i wykresy. Dzięki temu rozwiązane zadanie jest od razu gotowym sprawozdaniem, a nie zbiorem poleceń, do których trzeba dopisywać komentarz z pamięci.</p>
+<section id="jak-utworzyć-dokument" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="jak-utworzyć-dokument"><span class="header-section-number">2.3.1</span> Jak utworzyć dokument</h3>
+<p><em>File → New File → Quarto Document</em>, a następnie podaj tytuł i autora. Plik zapisz w folderze projektu z rozszerzeniem <code>.qmd</code>.</p>
+</section>
+<section id="z-czego-składa-się-dokument" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="z-czego-składa-się-dokument"><span class="header-section-number">2.3.2</span> Z czego składa się dokument</h3>
+<p>Dokument ma trzy rodzaje zawartości:</p>
+<p><strong>1. Nagłówek YAML</strong> - na samej górze, między liniami <code>---</code>. Określa tytuł, autora i format wynikowy:</p>
+<pre><code>---
+title: "Statystyki opisowe - ćwiczenie 3"
+author: "Jan Kowalski"
+format: html
+---</code></pre>
+<p><strong>2. Tekst</strong> - zwykły tekst z prostym formatowaniem:</p>
+<pre><code>## To jest nagłówek
+
+Tekst zwykły, **pogrubiony**, *kursywa*, `nazwa funkcji`.
+
+- element listy
+- kolejny element</code></pre>
+<p><strong>3. Bloki kodu</strong> - fragmenty R, które Quarto wykona przy generowaniu dokumentu. Blok zaczyna się i kończy trzema znakami akcentu, a na początku podajemy język w nawiasie klamrowym:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">pomiary &lt;- read.csv("dane/pomiary_pol.csv")</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">mean(pomiary$annual_tavg, na.rm = TRUE)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Nowy blok kodu wstawisz skrótem <strong>Ctrl+Alt+I</strong> (macOS: Cmd+Option+I) albo przyciskiem <em>+C</em> nad edytorem.</p>
+</section>
+<section id="jak-uruchamiać-kod" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="jak-uruchamiać-kod"><span class="header-section-number">2.3.3</span> Jak uruchamiać kod</h3>
+<p>W trakcie pracy nie trzeba generować całego dokumentu po każdej zmianie:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Czynność</th>
+<th>Skrót</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>uruchom bieżącą linię</td>
+<td>Ctrl+Enter</td>
+</tr>
+<tr class="even">
+<td>uruchom cały blok kodu</td>
+<td>Ctrl+Shift+Enter (albo zielona strzałka przy bloku)</td>
+</tr>
+<tr class="odd">
+<td>uruchom wszystkie bloki powyżej</td>
+<td>przycisk ze strzałką w dół przy bloku</td>
+</tr>
+</tbody>
+</table>
+<p>Wynik pojawia się pod blokiem - w dokumencie, a nie w osobnym oknie.</p>
+</section>
+<section id="jak-wygenerować-dokument" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="jak-wygenerować-dokument"><span class="header-section-number">2.3.4</span> Jak wygenerować dokument</h3>
+<p>Przycisk <strong>Render</strong> nad edytorem (albo Ctrl+Shift+K) tworzy plik HTML z całym dokumentem: tekstem, kodem i wynikami. To ten plik oddajesz jako rozwiązanie zadania.</p>
+<blockquote class="blockquote">
+<p><strong>Ważne.</strong> Przy generowaniu Quarto uruchamia dokument <strong>od początku, w czystej sesji R</strong>. Jeśli kod działa w konsoli, ale dokument nie chce się wygenerować, przyczyną prawie zawsze jest to, że korzystasz z obiektu utworzonego wcześniej „ręcznie” w konsoli, a nie w jednym z bloków. Dobry nawyk: od czasu do czasu wyczyść środowisko (miotełka w panelu <em>Environment</em>) i uruchom dokument od nowa.</p>
+</blockquote>
+</section>
+<section id="przydatne-opcje-bloków" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="przydatne-opcje-bloków"><span class="header-section-number">2.3.5</span> Przydatne opcje bloków</h3>
+<p>Opcje zapisujemy wewnątrz bloku, w linii zaczynającej się od <code>#|</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false     # pokaż wynik, ale ukryj kod</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false     # pokaż kod, ale go nie wykonuj</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false  # ukryj komunikaty (np. przy wczytywaniu pakietu)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false  # ukryj ostrzeżenia</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Opcja <code>message: false</code> przydaje się przy <code>library(dplyr)</code>, które wypisuje kilka linii informacji niepotrzebnych w sprawozdaniu.</p>
+</section>
+</section>
+<section id="katalog-roboczy" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="katalog-roboczy"><span class="header-section-number">2.4</span> Katalog roboczy</h2>
+<p><strong>Katalog roboczy</strong> to folder, względem którego R szuka plików. Sprawdzamy go funkcją <code>getwd()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Otwieranie danych z pliku csv</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dane/dane.csv'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#otwieranie danych z pliku txt - wymaga określenia separatora</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dane2 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'dane/dane.txt'</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Katalog można zmienić funkcją <code>setwd()</code>, ale w pracy z projektem nie jest to potrzebne:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/Anna/Documents/cwiczenia_statystyka"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Uwaga.</strong> <code>setwd()</code> z pełną ścieżką to najczęstsza przyczyna kodu, który „działa tylko u mnie”. Ścieżka zawiera nazwę użytkownika i układ folderów konkretnego komputera, więc u kogokolwiek innego kod się zatrzyma. Jeśli pracujesz w projekcie, <code>setwd()</code> nie jest potrzebne w ogóle.</p>
+</blockquote>
+</section>
+<section id="otwieranie-plików-z-danymi" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="otwieranie-plików-z-danymi"><span class="header-section-number">2.5</span> Otwieranie plików z danymi</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Otwieranie danych z pliku csv</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dane/dane.csv'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#otwieranie danych z pliku txt - wymaga określenia separatora</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dane2 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'dane/dane.txt'</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Dane w pliku dostępnym tylko w R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>austrialia <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"dane/dane.rds"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>australia <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"dane/dane.rds"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Otwieranie środowiska pracy (przydatne, gdy chcemy wczytać kilka obiektów do R)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"dane/cw1.rda"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"dane/cw1.rda"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="dane-zawarte-w-pakietach" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="dane-zawarte-w-pakietach"><span class="header-section-number">2.3</span> Dane zawarte w pakietach</h2>
+<p>Po wczytaniu danych <strong>zawsze warto sprawdzić, czy wczytały się poprawnie</strong> - czy liczba kolumn i wierszy się zgadza i czy zmienne mają właściwy typ:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"gapminder"</span>, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dane)      <span class="co"># struktura: typy zmiennych i liczba obserwacji</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dane)     <span class="co"># kilka pierwszych wierszy</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dane)  <span class="co"># podstawowe statystyki i liczba braków danych</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Jeśli liczby się nie zgadzają (np. cała tabela wczytała się jako jedna kolumna), najczęstszą przyczyną jest zły separator kolumn albo separator dziesiętny - zob. argumenty <code>sep</code> oraz <code>dec</code> w pomocy funkcji <code>read.csv()</code>.</p>
+</section>
+<section id="dane-zawarte-w-pakietach" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="dane-zawarte-w-pakietach"><span class="header-section-number">2.6</span> Dane zawarte w pakietach</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"gapminder"</span>, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="zapisywanie-wyników-pracy" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="zapisywanie-wyników-pracy"><span class="header-section-number">2.4</span> Zapisywanie wyników pracy</h2>
-<section id="zapisywanie-pojedyńczego-obiektu-np.-ramki-danych" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="zapisywanie-pojedyńczego-obiektu-np.-ramki-danych"><span class="header-section-number">2.4.1</span> Zapisywanie pojedyńczego obiektu (np. ramki danych)</h3>
+<section id="zapisywanie-wyników-pracy" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="zapisywanie-wyników-pracy"><span class="header-section-number">2.7</span> Zapisywanie wyników pracy</h2>
+<section id="zapisywanie-pojedynczego-obiektu-np.-ramki-danych" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="zapisywanie-pojedynczego-obiektu-np.-ramki-danych"><span class="header-section-number">2.7.1</span> Zapisywanie pojedynczego obiektu (np. ramki danych)</h3>
 <p>Plik tekstowy może być otworzony w dowolnym oprogramowaniu</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(australia, <span class="st">"out/australia.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(australia, <span class="st">"out/australia.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r"><span class="header-section-number">2.4.2</span> Zapisywanie wyników pracy w formacie dostępnym tylko w R</h3>
-<p>Pojedyńczy obiekt</p>
+<section id="zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="zapisywanie-wyników-pracy-w-formacie-dostępnym-tylko-w-r"><span class="header-section-number">2.7.2</span> Zapisywanie wyników pracy w formacie dostępnym tylko w R</h3>
+<p>Pojedynczy obiekt</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(dane, <span class="st">"out/dane.rds"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(dane, <span class="st">"out/dane.rds"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Zapisywanie wybranych obiektów ze środowiska pracy R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(dane, australia, <span class="at">file =</span> <span class="st">"out/cw1a.rda"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(dane, australia, <span class="at">file =</span> <span class="st">"out/cw1a.rda"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Zapisywanie wszystkich obiektów znajdujących się w środowisku pracy R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">"out/cw1b.RData"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="st">"out/cw1b.RData"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<blockquote class="blockquote">
+<p><strong>Uwaga.</strong> Zapisywanie całego środowiska pracy (<code>save.image()</code>) bywa wygodne, ale utrudnia powtórzenie analizy: po ponownym otwarciu nie wiadomo, skąd wzięły się obiekty. Lepszym nawykiem jest zapisanie <strong>kodu</strong>, który te obiekty tworzy - wtedy wynik zawsze da się odtworzyć od zera.</p>
+</blockquote>
 </section>
 </section>
-<section id="pomoc" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="pomoc"><span class="header-section-number">2.5</span> Pomoc</h2>
+<section id="pomoc" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="pomoc"><span class="header-section-number">2.8</span> Pomoc</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>?nazwaFunkcji</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(nazwaFunkcji)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(nazwaFunkcji)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(nazwaFunkcji)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>?nazwaFunkcji</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(nazwaFunkcji)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">example</span>(nazwaFunkcji)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(nazwaFunkcji)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Na stronie pomocy najbardziej przydatne są dwie sekcje: <strong>Usage</strong> (jakie argumenty przyjmuje funkcja i jakie mają wartości domyślne) oraz <strong>Examples</strong> na samym dole (gotowe wywołania, które można uruchomić).</p>
+</section>
+<section id="zadania" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="zadania"><span class="header-section-number">2.9</span> Zadania</h2>
+<blockquote class="blockquote">
+<p>Sprawdź, jaki jest aktualny katalog roboczy, a następnie wyświetl nazwy plików, które się w nim znajdują (funkcja <code>list.files()</code>).</p>
+</blockquote>
+<div class="cell" data-exercise="ex_1">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W edytorze w przeglądarce katalogiem roboczym jest katalog wirtualny, w którym udostępniono pliki z danymi. We własnym projekcie zobaczysz folder projektu.</p>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Wczytaj zbiór danych <code>gapminder</code> z pakietu o tej samej nazwie, a następnie sprawdź: ile ma wierszy i kolumn, jakiego typu są poszczególne zmienne i czy zawiera braki danych.</p>
+</blockquote>
+<div class="cell" data-exercise="ex_2">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"gapminder"</span>, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)       <span class="co"># typy zmiennych, liczba obserwacji</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(gapminder)      <span class="co"># liczba wierszy</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(gapminder)      <span class="co"># liczba kolumn</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)   <span class="co"># statystyki; braki danych pokazałyby się jako NA's</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Zbiór ma 1704 wiersze i 6 kolumn. <code>country</code> i <code>continent</code> są zmiennymi czynnikowymi (factor), pozostałe - liczbowymi. Braków danych nie ma.</p>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Korzystając ze strony pomocy funkcji <code>read.csv()</code> sprawdź, jak wczytać plik, w którym kolumny rozdzielone są średnikiem, a część dziesiętną oddziela przecinek (tak zapisuje pliki csv polska wersja Excela).</p>
+</blockquote>
+<div class="cell" data-exercise="ex_3">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMyJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>?read.csv</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># wczytanie pliku z separatorem ";" i przecinkiem dziesiętnym:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/plik.csv"</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># to samo robi gotowy wariant funkcji:</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"dane/plik.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Jeśli po wczytaniu liczby trafiły do R jako tekst (<code>chr</code> zamiast <code>num</code> w wyniku <code>str()</code>), prawie zawsze przyczyną jest właśnie separator dziesiętny.</p>
+</div>
+</div>
+</div>
 </div>
 
 
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImdhcG1pbmRlciJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC00IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV80O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzQgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItNC1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzQgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzQuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0zLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMywge30pO1xuX3dlYnJfZmVlZGJhY2tfMyA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMy5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXhlcmNpc2UgY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbihcbiAgICB7XG4gICAgICBpZDogXCJ3ZWJyLTItY29udGVudHNcIixcbiAgICAgIGVudmlyOiBgZXhlcmNpc2UtZW52LSR7YmxvY2suYXR0ci5leGVyY2lzZX1gLFxuICAgICAgZXJyb3I6IGZhbHNlLFxuICAgICAgY2FwdGlvbjogJ0V4ZXJjaXNlJyxcbiAgICB9LFxuICAgIGJsb2NrLmF0dHJcbiAgKTtcblxuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbnZpZXdvZiBfd2Vicl92YWx1ZV8yID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yLCB7fSk7XG5fd2Vicl9mZWVkYmFja18yID0ge1xuICBjb25zdCB7IFdlYlJHcmFkZXIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGVtcHR5RmVlZGJhY2sgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcblxuICBjb25zdCBncmFkZXIgPSBuZXcgV2ViUkdyYWRlcihfd2Vicl92YWx1ZV8yLmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIsIENoYW5uZWxUeXBlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gVXNlIFBvc3RNZXNzYWdlIGNoYW5uZWwgZm9yIGFzeW5jIGNvbW11bmljYXRpb25cbiAgLy8gV2UgZG8gbm90IGV4cGVjdCB0byB0YWtlIG5lc3RlZCBwcm9tcHQgaW5wdXQgaW4gUXVhcnRvIExpdmUgY2VsbHNcbiAgZGF0YS5vcHRpb25zLmNoYW5uZWxUeXBlID0gQ2hhbm5lbFR5cGUuUG9zdE1lc3NhZ2U7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICBjb25zdCBhbmFseXNpcyA9IGF3YWl0IHdlYlIuRlMuYW5hbHl6ZVBhdGgocGF0aCk7XG4gICAgICAgIGlmICghYW5hbHlzaXMuZXhpc3RzKSB7XG4gICAgICAgICAgdHJ5IHtcbiAgICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yOiBcIiR7ZS5tZXNzYWdlfVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -519,7 +796,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 

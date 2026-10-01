@@ -320,7 +320,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -353,7 +353,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +399,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,6 +421,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -433,7 +450,10 @@ window.Quarto = {
   <ul>
   <li><a href="#podstawowe-pojęcia" id="toc-podstawowe-pojęcia" class="nav-link active" data-scroll-target="#podstawowe-pojęcia"><span class="header-section-number">19.1</span> Podstawowe pojęcia</a></li>
   <li><a href="#regresja-liniowa" id="toc-regresja-liniowa" class="nav-link" data-scroll-target="#regresja-liniowa"><span class="header-section-number">19.2</span> Regresja liniowa</a></li>
-  <li><a href="#metoda-najmniejszych-kwadratów" id="toc-metoda-najmniejszych-kwadratów" class="nav-link" data-scroll-target="#metoda-najmniejszych-kwadratów"><span class="header-section-number">19.3</span> Metoda najmniejszych kwadratów</a></li>
+  <li><a href="#metoda-najmniejszych-kwadratów" id="toc-metoda-najmniejszych-kwadratów" class="nav-link" data-scroll-target="#metoda-najmniejszych-kwadratów"><span class="header-section-number">19.3</span> Metoda najmniejszych kwadratów</a>
+  <ul class="collapse">
+  <li><a href="#założenia-regresji-liniowej" id="toc-założenia-regresji-liniowej" class="nav-link" data-scroll-target="#założenia-regresji-liniowej"><span class="header-section-number">19.3.1</span> Założenia regresji liniowej</a></li>
+  </ul></li>
   <li><a href="#predykcja" id="toc-predykcja" class="nav-link" data-scroll-target="#predykcja"><span class="header-section-number">19.4</span> Predykcja</a></li>
   <li><a href="#analiza-regresji-liniowej-w-r" id="toc-analiza-regresji-liniowej-w-r" class="nav-link" data-scroll-target="#analiza-regresji-liniowej-w-r"><span class="header-section-number">19.5</span> Analiza regresji liniowej w R</a>
   <ul class="collapse">
@@ -451,8 +471,15 @@ window.Quarto = {
   <li><a href="#p-value" id="toc-p-value" class="nav-link" data-scroll-target="#p-value">p-value</a></li>
   <li><a href="#informacje-zawarte-w-obiekcie-klasy-lm" id="toc-informacje-zawarte-w-obiekcie-klasy-lm" class="nav-link" data-scroll-target="#informacje-zawarte-w-obiekcie-klasy-lm"><span class="header-section-number">19.7.3</span> Informacje zawarte w obiekcie klasy lm</a></li>
   </ul></li>
-  <li><a href="#wizualizacja-wyników-modelu" id="toc-wizualizacja-wyników-modelu" class="nav-link" data-scroll-target="#wizualizacja-wyników-modelu"><span class="header-section-number">19.8</span> Wizualizacja wyników modelu</a></li>
-  <li><a href="#predykcja-1" id="toc-predykcja-1" class="nav-link" data-scroll-target="#predykcja-1"><span class="header-section-number">19.9</span> Predykcja</a></li>
+  <li><a href="#wizualizacja-wyników-modelu" id="toc-wizualizacja-wyników-modelu" class="nav-link" data-scroll-target="#wizualizacja-wyników-modelu"><span class="header-section-number">19.8</span> Wizualizacja wyników modelu</a>
+  <ul class="collapse">
+  <li><a href="#diagnostyka-modelu" id="toc-diagnostyka-modelu" class="nav-link" data-scroll-target="#diagnostyka-modelu"><span class="header-section-number">19.8.1</span> Diagnostyka modelu</a></li>
+  </ul></li>
+  <li><a href="#predykcja-1" id="toc-predykcja-1" class="nav-link" data-scroll-target="#predykcja-1"><span class="header-section-number">19.9</span> Predykcja</a>
+  <ul class="collapse">
+  <li><a href="#jak-opisać-wynik-modelu-w-raporcie" id="toc-jak-opisać-wynik-modelu-w-raporcie" class="nav-link" data-scroll-target="#jak-opisać-wynik-modelu-w-raporcie"><span class="header-section-number">19.9.1</span> Jak opisać wynik modelu w raporcie</a></li>
+  <li><a href="#zadanie-znajdź-błąd" id="toc-zadanie-znajdź-błąd" class="nav-link" data-scroll-target="#zadanie-znajdź-błąd"><span class="header-section-number">19.9.2</span> Zadanie: znajdź błąd</a></li>
+  </ul></li>
   <li><a href="#regresja-wielokrotna" id="toc-regresja-wielokrotna" class="nav-link" data-scroll-target="#regresja-wielokrotna"><span class="header-section-number">19.10</span> Regresja wielokrotna</a></li>
   <li><a href="#porównanie-modeli" id="toc-porównanie-modeli" class="nav-link" data-scroll-target="#porównanie-modeli"><span class="header-section-number">19.11</span> Porównanie modeli</a></li>
   </ul>
@@ -504,7 +531,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <h2 data-number="19.1" class="anchored" data-anchor-id="podstawowe-pojęcia"><span class="header-section-number">19.1</span> Podstawowe pojęcia</h2>
 <ul>
 <li><p><strong>Analiza regresji</strong> tworzy funkcję matematyczną opisującą zależność pomiędzy badanymi zmiennymi: zmienną zależną, którą chcemy przewidywać na podstawie zmiennych niezależnych.</p></li>
-<li><p><strong>Zmienna zależna</strong> (inaczej <em>zmiena objaśniana, zmienna wyjaśniana, zmienna przewidywana</em>) - zmienna, której wartość chcemy przewidywać na podstawie modelu. W modelu może być tylko jedna zmienna zależna.</p></li>
+<li><p><strong>Zmienna zależna</strong> (inaczej <em>zmienna objaśniana, zmienna wyjaśniana, zmienna przewidywana</em>) - zmienna, której wartość chcemy przewidywać na podstawie modelu. W modelu może być tylko jedna zmienna zależna.</p></li>
 <li><p><strong>Zmienne niezależne</strong> (inaczej <em>predyktory, zmienne objaśniające, zmienne wyjaśniające</em>) - zmienne używane w modelu do oszacowania wartości zmiennej zależnej. W modelu może być wiele zmiennych niezależnych.</p></li>
 <li><p><strong>Model regresyjny</strong> - model, który będzie z założonym błędem statystycznym przewidywał wartość, poziom danej cechy.</p>
 <ul>
@@ -512,7 +539,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <li>Model regresyjny możemy zawsze zbudować, jednakże tylko te modele będą “wartościowe”, w których błąd oszacowania będzie relatywnie niski.</li>
 </ul></li>
 <li><p><strong>Model regresji liniowej</strong> to model, który zakłada liniową zależność między zmienną zależną a zmienną niezależną. Pozwala on na przewidywanie wartości zmiennej zależnej na podstawie wartości zmiennej niezależnej.</p></li>
-<li><p><strong>Metoda najmniejszych kwadratów błędów</strong> - metoda, która ma na celu dopasowanie do zebranych danych, takiej lini (dla regresji liniowej), która jest do nich najlepiej dopasowana - tzn. dla której suma kwadratów błędów będzie najniższa.</p></li>
+<li><p><strong>Metoda najmniejszych kwadratów błędów</strong> - metoda, która ma na celu dopasowanie do zebranych danych takiej linii (dla regresji liniowej), która jest do nich najlepiej dopasowana - tzn. dla której suma kwadratów błędów będzie najniższa.</p></li>
 </ul>
 </section>
 <section id="regresja-liniowa" class="level2" data-number="19.2">
@@ -545,10 +572,21 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <li><p>Metoda najmniejszych kwadratów nie jest odporna na wartości odstające w zbiorze danych. Powodem tego jest fakt, że wartość odstająca “pociąga” za sobą linię regresji. Gdyby nie było wartości odstającej linia byłaby inna, zdecydowanie lepiej dopasowana do wszystkich innych obserwacji, a tak wartość odstająca zmienia kierunek linii i powoduje, że model traci swoją “moc przewidywania” dla pozostałych obserwacji.</p></li>
 </ul>
 <p><img src="figures/12_metoda_kwadraty.png" class="img-fluid" width="550"></p>
+<section id="założenia-regresji-liniowej" class="level3" data-number="19.3.1">
+<h3 data-number="19.3.1" class="anchored" data-anchor-id="założenia-regresji-liniowej"><span class="header-section-number">19.3.1</span> Założenia regresji liniowej</h3>
+<p>Aby wyniki modelu (a zwłaszcza poziomy istotności współczynników i przedziały ufności) były wiarygodne, muszą być spełnione cztery założenia:</p>
+<ol type="1">
+<li><p><strong>Liniowość</strong> - zależność między zmienną zależną a każdą ze zmiennych niezależnych jest liniowa. Sprawdzamy ją na wykresie rozrzutu przed budową modelu oraz na wykresie reszt wobec wartości dopasowanych.</p></li>
+<li><p><strong>Stała wariancja reszt</strong> (homoskedastyczność) - rozrzut reszt jest podobny dla małych i dużych wartości przewidywanych. Na wykresie reszt wobec wartości dopasowanych punkty powinny tworzyć poziomą “chmurę” o stałej szerokości, bez kształtu lejka.</p></li>
+<li><p><strong>Niezależność reszt</strong> - reszty nie są ze sobą powiązane. Założenie to bywa naruszone dla danych uporządkowanych w czasie lub w przestrzeni (a dane o stacjach pomiarowych są danymi przestrzennymi!).</p></li>
+<li><p><strong>Normalność rozkładu reszt</strong> - potrzebna do wnioskowania o współczynnikach. Sprawdzamy ją histogramem reszt oraz wykresem kwantylowym.</p></li>
+</ol>
+<p>Uwaga: założenia dotyczą <strong>reszt modelu</strong>, a nie rozkładów samych zmiennych.</p>
 <p><strong>Interaktywna wizualizacja regresji liniowej</strong></p>
 <ul>
 <li><a href="https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression">https://observablehq.com/@yizhe-ang/interactive-visualization-of-linear-regression</a></li>
 </ul>
+</section>
 </section>
 <section id="predykcja" class="level2" data-number="19.4">
 <h2 data-number="19.4" class="anchored" data-anchor-id="predykcja"><span class="header-section-number">19.4</span> Predykcja</h2>
@@ -560,7 +598,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <h2 data-number="19.5" class="anchored" data-anchor-id="analiza-regresji-liniowej-w-r"><span class="header-section-number">19.5</span> Analiza regresji liniowej w R</h2>
 <section id="formuły-w-r" class="level3" data-number="19.5.1">
 <h3 data-number="19.5.1" class="anchored" data-anchor-id="formuły-w-r"><span class="header-section-number">19.5.1</span> Formuły w R</h3>
-<p>W R równanie modelu regresji opisywane jest za pomoca tzw. <strong>FORMUŁY</strong></p>
+<p>W R równanie modelu regresji opisywane jest za pomocą tzw. <strong>FORMUŁY</strong></p>
 <ul>
 <li><p>Formuła to symboliczny opis zależności między zmiennymi</p></li>
 <li><p>Wykorzystywana jest przez różne funkcje w R (np. <code>lm()</code>, <code>aggregate()</code>) oraz wykresy.</p></li>
@@ -589,18 +627,18 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(y) <span class="sc">~</span> x</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Jeśli w formule chcemy użyć znaku <span class="math inline">\(+\)</span> jako arytmetycznego działania musimy użyć funkcji <code>I()</code>. Argumenty tej funkcji traktowane są jako działania artymetyczne a nie elementy formuły.</li>
+<li>Jeśli w formule chcemy użyć znaku <span class="math inline">\(+\)</span> jako arytmetycznego działania musimy użyć funkcji <code>I()</code>. Argumenty tej funkcji traktowane są jako działania arytmetyczne a nie elementy formuły.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span> a <span class="sc">+</span> b <span class="co"># y zależy od a oraz od b </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span> <span class="fu">I</span>(a <span class="sc">+</span> b) <span class="co"># y zależy od wyniku dodawania wartości a do b </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>‘.’ (krokpa) oznacza że badamy zależnośc y od wszystkich innych zmiennych</li>
+<li>‘.’ (kropka) oznacza, że badamy zależność y od wszystkich innych zmiennych</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span>. <span class="co"># y od wszyatkich pozostałych zmiennych </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span>. <span class="sc">-</span><span class="dv">1</span>  <span class="co"># y od wszyatkich pozostałych zmiennych bez wyrazu wolnego </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span>. <span class="co"># y od wszystkich pozostałych zmiennych </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="sc">~</span>. <span class="sc">-</span><span class="dv">1</span>  <span class="co"># y od wszystkich pozostałych zmiennych bez wyrazu wolnego </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>zastosowanie formuł, gdy zmienne są kolumnami ramki danych</li>
@@ -627,7 +665,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <section id="przykład-zależność-między-sumą-opadów-a-maksymalną-temperaturą-powietrza-we-wrześniu." class="level2" data-number="19.6">
 <h2 data-number="19.6" class="anchored" data-anchor-id="przykład-zależność-między-sumą-opadów-a-maksymalną-temperaturą-powietrza-we-wrześniu."><span class="header-section-number">19.6</span> Przykład: Zależność między sumą opadów a maksymalną temperaturą powietrza we wrześniu.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"data/pomiary_pol.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pomiary_wlkp <span class="ot">=</span> <span class="fu">subset</span>(pomiary_pol, wojewodztwo <span class="sc">==</span> <span class="st">"wielkopolskie"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pomiary_wlkp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -699,7 +737,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <li><em>model</em> - ramka danych użyta do budowy modelu</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(model_lm) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lm1) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="współczynniki-modelu" class="level4">
 <h4 class="anchored" data-anchor-id="współczynniki-modelu">Współczynniki modelu</h4>
@@ -785,7 +823,7 @@ F-statistic: 381.4 on 1 and 132 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Średnia wartość błędu powinna być równa 0 - oznacza to, że błędy dodatnie i ujemne się równoważą</li>
 </ul></li>
 </ul>
-<p>Interpetacja wyników:</p>
+<p>Interpretacja wyników:</p>
 <ul>
 <li><p>50% odchyleń mieści się w zakresie -10.28 do 9.170 mm</p></li>
 <li><p>mediana ma wartość -2.32, jest to niewielkie odchylenie biorąc pod uwagę zakres zmiennej <em>annual_precip</em> (509.5-631.2mm)</p></li>
@@ -804,21 +842,35 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 <ul>
 <li><em>Estimate</em> - oceny wartości współczynników równania regresji<br>
 </li>
-<li><em>Std.Error</em> - błąd standardowy współczynnika (wartość 1 odchylenia standardowego; dla rozkładu normalnego w przedziale <span class="math inline">\(średnia \pm 1\)</span> odchylenie standardowe mieści się 66% wartości danych)</li>
+<li><em>Std.Error</em> - błąd standardowy oceny współczynnika, czyli odchylenie standardowe jego rozkładu z próby. Mówi, jak dokładnie udało się oszacować dany współczynnik - im mniejszy, tym ocena pewniejsza.</li>
 <li><em>t-value</em> – wartość statystyki t</li>
 <li><em>p-value</em> – poziom istotności dla współczynnika</li>
 </ul>
 <p>Interpretacja:</p>
 <ul>
-<li><p>Błąd standardowy współczynnika wskazuje, że z 66% prawdopodobieństwem możemy stwierdzić, że wartość współczynnika wyrazu wolnego wynosi <span class="math inline">\(1357.90 \pm 41.90\)</span> (tj. 1 błąd standardowy ) a współczynnika kierunkowego <span class="math inline">\(-43.75 \pm 2.24\)</span></p></li>
-<li><p>Oba współczynniki są bardzo wysoce istotne statystycznie. Innymi słowy prawdopodobieństwo, że wartość współczynnika jest przypadkowa wynosi 9.413732e-41 dla współczynnika kierunkowego oraz 1.038079e-64 dla współczynnika wyrazu wolnego, a zatem jest znikomo mała.</p></li>
+<li>Błąd standardowy pozwala wyznaczyć przedział ufności dla współczynnika. Przedział <span class="math inline">\(\pm 1\)</span> błąd standardowy odpowiada w przybliżeniu 68% poziomowi ufności; w praktyce podaje się przedział 95%, który dla tego modelu wynosi od 1275,03 do 1440,77 dla wyrazu wolnego oraz od -48,18 do -39,32 dla współczynnika kierunkowego:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(lm1)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 2.5 %     97.5 %
+(Intercept) 1275.03057 1440.76890
+tmax_9       -48.18024  -39.31743</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Oba współczynniki są bardzo wysoce istotne statystycznie. Wartość p przy współczynniku to prawdopodobieństwo uzyskania co najmniej tak dużej (co do wartości bezwzględnej) statystyki <span class="math inline">\(t\)</span> <strong>przy założeniu, że prawdziwy współczynnik wynosi 0</strong>. Wynosi ona 9.413732e-41 dla współczynnika kierunkowego oraz 1.038079e-64 dla wyrazu wolnego - w obu przypadkach jest znikomo mała, więc hipotezę o zerowym współczynniku odrzucamy. Dla współczynnika kierunkowego oznacza to, że zależność między <em>tmax_9</em> a <em>annual_precip</em> jest istotna statystycznie.</p></li>
 <li><p><strong>Residual standard error (błąd standardowy reszt; standardowy błąd oceny)</strong></p></li>
-<li><p>Wartość 1 odchylenia standardowego; dla rozkładu normalnego w przedziale <span class="math inline">\(średnia \pm 1\)</span> odchylenie standardowe mieści się 66% wartości danych.<br>
+<li><p>Odchylenie standardowe reszt modelu, wyrażone w jednostkach zmiennej zależnej (tu: mm). Przy założeniu normalności reszt około 68% obserwacji odchyla się od wartości przewidywanej o nie więcej niż 1 błąd standardowy reszt.<br>
 </p></li>
 <li><p>Pokazuje o ile przeciętnie wartości empiryczne odchylają się od wartości teoretycznych (wynikających ze zbudowanego modelu)</p></li>
 </ul>
 <pre><code>Residual standard error: 13.45 on 132 degrees of freedom</code></pre>
-<p>Z 66% prawdopodobieństwem możemy stwierdzić, że wartość rzeczywista nie będzie się różnić od prognozowanej o więcej niż <span class="math inline">\(\pm 13.45 mm\)</span></p>
+<p>Reszty modelu odchylają się od wartości przewidywanych przeciętnie o 13,45 mm - przy średniej rocznej sumie opadów rzędu 570 mm to około 2,4%, czyli model jest dobrze dopasowany.</p>
+<p>Uwaga: <em>Residual standard error</em> opisuje rozrzut reszt w danych uczących, a nie niepewność prognozy dla nowej obserwacji. Przedział, w którym z zadanym prawdopodobieństwem znajdzie się nowa obserwacja, nazywamy <strong>przedziałem predykcji</strong> i wyznaczamy go tak:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(lm1, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="dv">18</span>), <span class="at">interval =</span> <span class="st">"prediction"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
 <li><p><strong>Multiple R-Squared, Adjusted R-Squared</strong></p></li>
 <li><p>Przy ocenie dopasowania modelu należy zwrócić uwagę na wartość R2 przedstawiającą procent wariancji wyjaśnionej przez model, tzn. <strong><em>jaki procent zmienności zmiennej zależnej (objaśnianej) jest uwarunkowany zmiennością zmiennej niezależnej (objaśniającej)</em></strong>.</p></li>
@@ -837,19 +889,19 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 <h3 data-number="19.7.3" class="anchored" data-anchor-id="informacje-zawarte-w-obiekcie-klasy-lm"><span class="header-section-number">19.7.3</span> Informacje zawarte w obiekcie klasy lm</h3>
 <p>Stworzenie ramki danych zawierającej wyniki modelu</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ramka danych zawierająca dane użyte do budowy modelu</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>model_df <span class="ot">&lt;-</span> lm1<span class="sc">$</span>model</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#ramka danych zawierająca dane użyte do budowy modelu</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>model_df <span class="ot">&lt;-</span> lm1<span class="sc">$</span>model</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#reszty - różnica między warrtością obserwowaną Y a wartością oszacowaną z modelu Ŷ. </span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>model_df<span class="sc">$</span>reszty <span class="ot">&lt;-</span> lm1<span class="sc">$</span>residuals</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#reszty - różnica między wartością obserwowaną Y a wartością oszacowaną z modelu Ŷ. </span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>model_df<span class="sc">$</span>reszty <span class="ot">&lt;-</span> lm1<span class="sc">$</span>residuals</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#wartości oszacowane przez model</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>model_df<span class="sc">$</span>fitted <span class="ot">&lt;-</span>  lm1<span class="sc">$</span>fitted.values</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#wartości oszacowane przez model</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>model_df<span class="sc">$</span>fitted <span class="ot">&lt;-</span>  lm1<span class="sc">$</span>fitted.values</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(model_df)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   annual_precip   tmax_9      reszty   fitted
 11      523.2002 19.08217   0.1232246 523.0770
@@ -865,16 +917,16 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 <section id="wizualizacja-wyników-modelu" class="level2" data-number="19.8">
 <h2 data-number="19.8" class="anchored" data-anchor-id="wizualizacja-wyników-modelu"><span class="header-section-number">19.8</span> Wizualizacja wyników modelu</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom); <span class="fu">library</span>(ggplot2)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>lm1_df <span class="ot">=</span> <span class="fu">augment</span>(lm1, <span class="at">se_fit =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lm1_df, <span class="fu">aes</span>(tmax_9, annual_precip)) <span class="sc">+</span> </span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> .fitted <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> .se.fit, </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> .fitted <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> .se.fit), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(tmax_9, .fitted)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom); <span class="fu">library</span>(ggplot2)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>lm1_df <span class="ot">=</span> <span class="fu">augment</span>(lm1, <span class="at">se_fit =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lm1_df, <span class="fu">aes</span>(tmax_9, annual_precip)) <span class="sc">+</span> </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> .fitted <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> .se.fit, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> .fitted <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> .se.fit), <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(tmax_9, .fitted)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -884,17 +936,17 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 <li>Histogram reszt z modelu</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_df, <span class="fu">aes</span>(<span class="at">x =</span> reszty)) <span class="sc">+</span> </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_df, <span class="fu">aes</span>(<span class="at">x =</span> reszty)) <span class="sc">+</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -903,59 +955,96 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 <li>Wykres rozrzutu: wartości dopasowane vs.&nbsp;wartości obserwowane</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_df, <span class="fu">aes</span>(<span class="at">x =</span> fitted, <span class="at">y =</span> annual_precip)) <span class="sc">+</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"wartości dopasowane"</span>, <span class="at">y =</span> <span class="st">"wartości obserwowane"</span>) <span class="sc">+</span> </span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">500</span>, <span class="dv">650</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">500</span>, <span class="dv">650</span>) <span class="sc">+</span> </span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(model_df, <span class="fu">aes</span>(<span class="at">x =</span> fitted, <span class="at">y =</span> annual_precip)) <span class="sc">+</span> </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"wartości dopasowane"</span>, <span class="at">y =</span> <span class="st">"wartości obserwowane"</span>) <span class="sc">+</span> </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">500</span>, <span class="dv">650</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">500</span>, <span class="dv">650</span>) <span class="sc">+</span> </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio=</span><span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<section id="diagnostyka-modelu" class="level3" data-number="19.8.1">
+<h3 data-number="19.8.1" class="anchored" data-anchor-id="diagnostyka-modelu"><span class="header-section-number">19.8.1</span> Diagnostyka modelu</h3>
+<p>R udostępnia zestaw czterech standardowych wykresów diagnostycznych dla obiektu klasy <em>lm</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(lm1)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="13_analiza_regresji_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Jak je czytać:</p>
+<ul>
+<li><strong>Residuals vs Fitted</strong> - sprawdza liniowość i stałość wariancji. Czerwona linia powinna przebiegać poziomo wokół zera, a rozrzut punktów być równomierny.</li>
+<li><strong>Q-Q Residuals</strong> - sprawdza normalność reszt. Punkty powinny układać się blisko linii przerywanej; odstępstwa na końcach wskazują na wartości skrajne.</li>
+<li><strong>Scale-Location</strong> - druga kontrola stałości wariancji; linia powinna być pozioma.</li>
+<li><strong>Residuals vs Leverage</strong> - wskazuje obserwacje o dużym wpływie na model. Punkty wychodzące poza linie odległości Cooka warto sprawdzić, bo mogą samodzielnie zmieniać wynik modelu.</li>
+</ul>
+<p>Normalność reszt można też sprawdzić formalnie testem Shapiro-Wilka:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="fu">residuals</span>(lm1))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  residuals(lm1)
+W = 0.91155, p-value = 2.366e-07</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Pytanie: jaki wniosek wynika z wykresu Residuals vs Fitted dla modelu lm1? Czy założenie stałej wariancji reszt jest spełnione?</p>
+</blockquote>
+</section>
 </section>
 <section id="predykcja-1" class="level2" data-number="19.9">
 <h2 data-number="19.9" class="anchored" data-anchor-id="predykcja-1"><span class="header-section-number">19.9</span> Predykcja</h2>
 <p>Mając dopasowany model liniowy możemy zastosować go do predykcji wartości <span class="math inline">\(y\)</span> dla zadanych wartości <span class="math inline">\(x\)</span>. W poniższym przykładzie zastosujemy model liniowy do predykcji wartości sum opadów w województwie wielkopolskim na podstawie wartości maksymalnej temperatury powietrza.</p>
-<p>Obiekt <code>model_lm</code> zawiera liniowy model zależności pomiędzy sum opadów, a maksymalną temperaturą powietrza. Równanie regresji ma postać:</p>
+<p>Obiekt <code>lm1</code> zawiera liniowy model zależności pomiędzy sum opadów, a maksymalną temperaturą powietrza. Równanie regresji ma postać:</p>
 <p><span class="math display">\[y_i = 1357.90 + (-43.75)x_i + \varepsilon_i\]</span></p>
-<p>Jeśli np. wartość <span class="math inline">\(x_i\)</span> wynosi 10, to używając powyższego równania możemy obliczyć <span class="math inline">\(y_i\)</span>:</p>
-<p><span class="math display">\[y_i = 1357.90 - 43.75 \times 10 + \varepsilon_i = 920.4\]</span> Biorąc pod uwagę błąd losowy (<span class="math inline">\(\varepsilon_i\)</span>) wartość <span class="math inline">\(y\)</span> dla obiektu <span class="math inline">\(i\)</span> wynosi 920.4.</p>
-<p>Innymi słowy: Model regresji liniowej dla maksymalnej wartości temperatury powietrza (tmax_9) równej 9C, przewiduje wartość sumy opadów równą 920.4 mm.</p>
-<p>Powyżsżą wartość możemy także obliczyć jako</p>
+<p>Jeśli np. wartość <span class="math inline">\(x_i\)</span> wynosi 18, to używając powyższego równania możemy obliczyć <span class="math inline">\(\hat{y}_i\)</span>:</p>
+<p><span class="math display">\[\hat{y}_i = 1357.90 - 43.75 \times 18 = 570.4\]</span></p>
+<p>Pomijamy tu błąd losowy (<span class="math inline">\(\varepsilon_i\)</span>), ponieważ jego wartość oczekiwana wynosi 0 - równanie daje nam <strong>przewidywaną średnią</strong> wartość zmiennej zależnej, którą oznaczamy <span class="math inline">\(\hat{y}\)</span>.</p>
+<p>Innymi słowy: model regresji liniowej dla maksymalnej temperatury powietrza we wrześniu (tmax_9) równej 18 C przewiduje roczną sumę opadów równą 570,4 mm.</p>
+<p><strong>Uwaga! Model wolno stosować tylko w zakresie wartości, na których został zbudowany.</strong> W danych dla województwa wielkopolskiego zmienna <em>tmax_9</em> przyjmuje wartości od 17,2 do 19,6 C, a <em>annual_precip</em> od 509,5 do 631,3 mm. Podstawienie wartości spoza tego zakresu (tzw. <strong>ekstrapolacja</strong>) daje wyniki pozbawione sensu - model dla 30 C przewidziałby 45 mm opadu rocznie, a dla 10 C aż 920 mm, choć w żadnej z 134 stacji nie zanotowano wartości poza przedziałem 509-631 mm. Model opisuje zależność tylko tam, gdzie miał dane.</p>
+<p>Powyższą wartość możemy także obliczyć jako</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>lm1<span class="sc">$</span>coefficients[[<span class="dv">1</span>]] <span class="sc">+</span> lm1<span class="sc">$</span>coefficients[[<span class="dv">2</span>]] <span class="sc">*</span> <span class="dv">10</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>lm1<span class="sc">$</span>coefficients[[<span class="dv">1</span>]] <span class="sc">+</span> lm1<span class="sc">$</span>coefficients[[<span class="dv">2</span>]] <span class="sc">*</span> <span class="dv">18</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 920.4114</code></pre>
+<pre><code>[1] 570.4208</code></pre>
 </div>
 </div>
 <p>Do wykonania predykcji w R służy funkcja <code>predict()</code>. W funkcji tej musimy podać 2 argumenty: 1) obiekt modelu; 2) zbiór danych zawierający zmienne zależne (objaśniające). Nazwy kolumn muszą być zgodne z nazwami zmiennych zależnych użytych do budowy modelu.</p>
 <p>Predykcja może także zostać wykonana dla wybranych wartości.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#new to data.frame zawierajaca zmienne niezależne (objasniajace)</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">c</span>(<span class="dv">10</span>))</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm1, new)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#new to data.frame zawierajaca zmienne niezależne (objasniajace)</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>new <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">c</span>(<span class="dv">18</span>))</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">predict</span>(lm1, new)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1 
-920.4114 </code></pre>
+570.4208 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(lm1, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">seq</span>(<span class="dv">15</span>, <span class="dv">25</span>, <span class="dv">1</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(lm1, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">seq</span>(<span class="fl">17.5</span>, <span class="fl">19.5</span>, <span class="fl">0.5</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       1        2        3        4        5        6        7        8 
-701.6673 657.9184 614.1696 570.4208 526.6719 482.9231 439.1743 395.4254 
-       9       10       11 
-351.6766 307.9278 264.1789 </code></pre>
+<pre><code>       1        2        3        4        5 
+592.2952 570.4208 548.5463 526.6719 504.7975 </code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Używając modelu lm1 wykonaj predykcję dla wartości tmax_9 równej 12, 15, 25 i 30 C.</p>
+<p>Używając modelu lm1 wykonaj predykcję dla wartości tmax_9 równej 17,5; 18; 19 oraz 19,5 C.</p>
 </blockquote>
 <div class="cell" data-exercise="ex_1">
 <div>
@@ -963,17 +1052,67 @@ tmax_9       -43.74883   2.240235 -19.52868 9.413732e-41</code></pre>
 
 </div>
 <script type="webr-2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiXG4jIHdjenl0YW5pZSBkYW55Y2hcbnBvbWlhcnlfcG9sID0gcmVhZC5jc3YoXCJkYXRhL3BvbWlhcnlfcG9sLmNzdlwiKVxucG9taWFyeV93bGtwID0gc3Vic2V0KHBvbWlhcnlfcG9sLCB3b2pld29kenR3byA9PSBcIndpZWxrb3BvbHNraWVcIilcblxuI2J1ZG93YSBtb2RlbHVcbmxtMSA9IGxtKGFubnVhbF9wcmVjaXAgfiB0bWF4XzksIGRhdGEgPSBwb21pYXJ5X3dsa3ApXG5cbiNwcmVkeWtjamEifQ==
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiXG4jIHdjenl0YW5pZSBkYW55Y2hcbnBvbWlhcnlfcG9sID0gcmVhZC5jc3YoXCJkYW5lL3BvbWlhcnlfcG9sLmNzdlwiKVxucG9taWFyeV93bGtwID0gc3Vic2V0KHBvbWlhcnlfcG9sLCB3b2pld29kenR3byA9PSBcIndpZWxrb3BvbHNraWVcIilcblxuI2J1ZG93YSBtb2RlbHVcbmxtMSA9IGxtKGFubnVhbF9wcmVjaXAgfiB0bWF4XzksIGRhdGEgPSBwb21pYXJ5X3dsa3ApXG5cbiNwcmVkeWtjamEifQ==
 </script>
 </div>
 </div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(lm1, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">c</span>(<span class="fl">17.5</span>, <span class="dv">18</span>, <span class="dv">19</span>, <span class="fl">19.5</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wynik: 592,3; 570,4; 526,7 oraz 504,8 mm. Wraz ze wzrostem maksymalnej temperatury września model przewiduje <strong>mniejszą</strong> roczną sumę opadów - zgodnie z ujemnym znakiem współczynnika kierunkowego (-43,75). Każdy stopień wzrostu temperatury to przeciętnie o 43,75 mm opadu mniej.</p>
+</div>
+</div>
+</div>
+</div>
+<section id="jak-opisać-wynik-modelu-w-raporcie" class="level3" data-number="19.9.1">
+<h3 data-number="19.9.1" class="anchored" data-anchor-id="jak-opisać-wynik-modelu-w-raporcie"><span class="header-section-number">19.9.1</span> Jak opisać wynik modelu w raporcie</h3>
+<blockquote class="blockquote">
+<p>Zbudowano model regresji liniowej opisujący roczną sumę opadów w funkcji maksymalnej temperatury powietrza we wrześniu dla 134 stacji w województwie wielkopolskim. Model okazał się istotny statystycznie; F(1; 132) = 381,4; p &lt; 0,001 i wyjaśnia 74,3% zmienności sumy opadów (R² = 0,743). Wzrost temperatury maksymalnej o 1 °C wiąże się ze spadkiem rocznej sumy opadów średnio o 43,75 mm (95% CI [-48,18; -39,32]; p &lt; 0,001).</p>
+</blockquote>
+<p>Opis modelu powinien zawierać: czego dotyczy model i na jakich danych powstał, jego istotność i dopasowanie (R²) oraz <strong>interpretację współczynnika kierunkowego w jednostkach zmiennych</strong> - to ostatnie jest dla czytelnika najważniejsze, a najczęściej pomijane.</p>
+</section>
+<section id="zadanie-znajdź-błąd" class="level3" data-number="19.9.2">
+<h3 data-number="19.9.2" class="anchored" data-anchor-id="zadanie-znajdź-błąd"><span class="header-section-number">19.9.2</span> Zadanie: znajdź błąd</h3>
+<blockquote class="blockquote">
+<p>Student zbudował model przewidujący roczną sumę opadów na podstawie maksymalnej temperatury września dla województwa wielkopolskiego, gdzie temperatura ta mieści się w przedziale 17,2-19,6 °C. Następnie wykonał predykcję dla 30 °C i otrzymał 45 mm. W raporcie napisał: „model przewiduje, że przy temperaturze 30 °C roczna suma opadów wyniesie 45 mm”. Na czym polega błąd?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To <strong>ekstrapolacja</strong> - podstawienie wartości spoza zakresu, na którym model został zbudowany. Model opisuje zależność tylko tam, gdzie miał dane: między 17,2 a 19,6 °C. Poza tym zakresem nic nie wiemy o tym, czy zależność nadal jest liniowa - a model mimo to posłusznie poda jakąś liczbę.</p>
+<p>Że wynik jest bezsensowny, widać też po samej wartości: w żadnej ze 134 stacji roczna suma opadów nie spadła poniżej 509 mm, a model „przewiduje” 45 mm. Przed wykonaniem predykcji zawsze warto sprawdzić zakres danych: <code>range(pomiary_wlkp$tmax_9)</code>.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="regresja-wielokrotna" class="level2" data-number="19.10">
 <h2 data-number="19.10" class="anchored" data-anchor-id="regresja-wielokrotna"><span class="header-section-number">19.10</span> Regresja wielokrotna</h2>
 <p>W modelu regresji możemy mieć tylko jedną zmienną zależną i wiele zmiennych niezależnych.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>lm2 <span class="ot">=</span> <span class="fu">lm</span>(annual_precip <span class="sc">~</span> tmax_9 <span class="sc">+</span> tmin_9, <span class="at">data =</span> pomiary_wlkp)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>lm2 <span class="ot">=</span> <span class="fu">lm</span>(annual_precip <span class="sc">~</span> tmax_9 <span class="sc">+</span> tmin_9, <span class="at">data =</span> pomiary_wlkp)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -996,8 +1135,11 @@ Multiple R-squared:  0.8286,    Adjusted R-squared:  0.826
 F-statistic: 316.7 on 2 and 131 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<p><strong>Jak czytać współczynniki w modelu wielokrotnym.</strong> Współczynnik przy danej zmiennej mówi, o ile przeciętnie zmieni się zmienna zależna, gdy ta zmienna wzrośnie o jednostkę, <strong>przy pozostałych zmiennych utrzymanych na stałym poziomie</strong>. To zastrzeżenie jest istotne: w modelu <code>lm2</code> współczynnik przy <em>tmax_9</em> wynosi -50,75, podczas gdy w modelu <code>lm1</code> z jedną zmienną wynosił -43,75. Różnica wynika z tego, że obie temperatury są ze sobą powiązane - w modelu wielokrotnym każdy współczynnik opisuje “własny” wkład swojej zmiennej, po odjęciu tego, co wyjaśnia druga.</p>
+<p>Zwróć uwagę, że współczynniki mają <strong>przeciwne znaki</strong>: wyższa temperatura maksymalna września wiąże się z mniejszą sumą opadów, a wyższa temperatura minimalna - z większą.</p>
+<p><strong>Ocena dopasowania.</strong> Model <code>lm2</code> wyjaśnia 82,9% zmienności rocznej sumy opadów (<span class="math inline">\(R^2 = 0{,}8286\)</span>) wobec 74,3% dla modelu <code>lm1</code>. Przy porównywaniu modeli o różnej liczbie zmiennych patrzymy jednak na <strong>skorygowany</strong> <span class="math inline">\(R^2\)</span> (<em>Adjusted R-squared</em>), który uwzględnia liczbę predyktorów: 0,8260 wobec 0,7409. Model wielokrotny jest więc lepszy nie tylko dlatego, że ma więcej zmiennych.</p>
 <blockquote class="blockquote">
-<p>Używając wyników modelu lm2: 1) Sformułuj równanie regresji liniowej wielokrotnej; 2) W jakim stopniu model wyjaśnia zmienną zależną (annual_precip)? 3) Wykonaj predykcję dla wartości tmax_9 równych 10C i 20C oraz wartości tmin_9 równych 5C i 12C.</p>
+<p>Używając wyników modelu lm2: 1) Sformułuj równanie regresji liniowej wielokrotnej; 2) W jakim stopniu model wyjaśnia zmienną zależną (annual_precip)? 3) Wykonaj predykcję dla wartości tmax_9 równych 18C i 19C oraz wartości tmin_9 równych 9C i 10C.</p>
 </blockquote>
 <div class="cell" data-exercise="ex_2">
 <div>
@@ -1005,8 +1147,31 @@ F-statistic: 316.7 on 2 and 131 DF,  p-value: &lt; 2.2e-16</code></pre>
 
 </div>
 <script type="webr-3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoiIyB3Y3p5dGFuaWUgZGFueWNoXG5wb21pYXJ5X3BvbCA9IHJlYWQuY3N2KFwiZGF0YS9wb21pYXJ5X3BvbC5jc3ZcIilcbnBvbWlhcnlfd2xrcCA9IHN1YnNldChwb21pYXJ5X3BvbCwgd29qZXdvZHp0d28gPT0gXCJ3aWVsa29wb2xza2llXCIpXG5cbiNidWRvd2EgbW9kZWx1XG5sbTIgPSBsbShhbm51YWxfcHJlY2lwIH4gdG1heF85ICsgdG1pbl85LCBkYXRhID0gcG9taWFyeV93bGtwKVxuXG4jcHJlZHlrY2phIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoiIyB3Y3p5dGFuaWUgZGFueWNoXG5wb21pYXJ5X3BvbCA9IHJlYWQuY3N2KFwiZGFuZS9wb21pYXJ5X3BvbC5jc3ZcIilcbnBvbWlhcnlfd2xrcCA9IHN1YnNldChwb21pYXJ5X3BvbCwgd29qZXdvZHp0d28gPT0gXCJ3aWVsa29wb2xza2llXCIpXG5cbiNidWRvd2EgbW9kZWx1XG5sbTIgPSBsbShhbm51YWxfcHJlY2lwIH4gdG1heF85ICsgdG1pbl85LCBkYXRhID0gcG9taWFyeV93bGtwKVxuXG4jcHJlZHlrY2phIn0=
 </script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<p><strong>1) Równanie regresji wielokrotnej:</strong></p>
+<p><span class="math display">\[\hat{y} = 1270{,}33 - 50{,}75 \cdot tmax\_9 + 23{,}76 \cdot tmin\_9\]</span></p>
+<p><strong>2) Dopasowanie modelu:</strong> <span class="math inline">\(R^2 = 0{,}8286\)</span>, czyli model wyjaśnia 82,9% zmienności rocznej sumy opadów (skorygowany <span class="math inline">\(R^2 = 0{,}8260\)</span>). Oba predyktory są istotne statystycznie (p &lt; 0,001). Dla porównania model <code>lm1</code> z jedną zmienną wyjaśniał 74,3% - dodanie temperatury minimalnej istotnie poprawiło model.</p>
+<p><strong>3) Predykcja:</strong></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(lm2, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">tmax_9 =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">19</span>), <span class="at">tmin_9 =</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -1014,17 +1179,54 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoi
 <h2 data-number="19.11" class="anchored" data-anchor-id="porównanie-modeli"><span class="header-section-number">19.11</span> Porównanie modeli</h2>
 <p>Kryterium informacyjne AIC pozwala porównać modele liniowe (im niższa wartość, tym lepiej).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(lm1, lm2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(lm1, lm2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    df      AIC
 lm1  3 1080.862
 lm2  4 1028.490</code></pre>
 </div>
 </div>
+<p><strong>Interpretacja.</strong> Kryterium AIC łączy dopasowanie modelu z karą za liczbę parametrów - dlatego pozwala uczciwie porównać modele o różnej liczbie zmiennych. Interesuje nas tylko <strong>różnica</strong> wartości, nie sama wielkość liczby; im niższe AIC, tym lepszy model.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Zmienne</th>
+<th>df</th>
+<th>AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>lm1</td>
+<td>tmax_9</td>
+<td>3</td>
+<td>1080,86</td>
+</tr>
+<tr class="even">
+<td>lm2</td>
+<td>tmax_9 + tmin_9</td>
+<td>4</td>
+<td>1028,49</td>
+</tr>
+</tbody>
+</table>
+<p>Model <code>lm2</code> ma AIC niższe o 52,4, co jest różnicą bardzo dużą (przyjmuje się, że różnica powyżej 10 wyraźnie wskazuje na lepszy model). Dodanie temperatury minimalnej września poprawiło model na tyle, że opłaciło się to mimo dodatkowego parametru. Wniosek jest zgodny ze skorygowanym <span class="math inline">\(R^2\)</span>.</p>
+<p><strong>Ważne:</strong> AIC wolno porównywać tylko dla modeli zbudowanych na <strong>tym samym zbiorze obserwacji</strong> i z tą samą zmienną zależną. Jeśli jeden z modeli użyje zmiennej z brakami danych, funkcja <code>lm()</code> pominie część obserwacji i wartości AIC przestaną być porównywalne. Liczbę obserwacji sprawdzimy funkcją <code>nobs()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nobs</span>(lm1)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 134</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nobs</span>(lm2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 134</code></pre>
+</div>
+</div>
 
 
 <script type="webr-data">
-eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsInRpZHl2ZXJzZSIsImdncGxvdDIiXSwicmVwb3MiOltdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCJ9
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImRwbHlyIiwiZ2dwbG90MiJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItMy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzMuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuX3dlYnJfZmVlZGJhY2tfMiA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMi5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIFVzZSBQb3N0TWVzc2FnZSBjaGFubmVsIGZvciBhc3luYyBjb21tdW5pY2F0aW9uXG4gIC8vIFdlIGRvIG5vdCBleHBlY3QgdG8gdGFrZSBuZXN0ZWQgcHJvbXB0IGlucHV0IGluIFF1YXJ0byBMaXZlIGNlbGxzXG4gIGRhdGEub3B0aW9ucy5jaGFubmVsVHlwZSA9IENoYW5uZWxUeXBlLlBvc3RNZXNzYWdlO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
@@ -1038,7 +1240,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 

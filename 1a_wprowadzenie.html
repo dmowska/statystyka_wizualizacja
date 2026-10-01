@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -388,6 +388,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -418,6 +435,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#gapminder" id="toc-gapminder" class="nav-link" data-scroll-target="#gapminder"><span class="header-section-number">1.3.1</span> Gapminder</a></li>
   <li><a href="#dane-meteorologiczne" id="toc-dane-meteorologiczne" class="nav-link" data-scroll-target="#dane-meteorologiczne"><span class="header-section-number">1.3.2</span> Dane meteorologiczne</a></li>
+  <li><a href="#pozostałe-zbiory-danych" id="toc-pozostałe-zbiory-danych" class="nav-link" data-scroll-target="#pozostałe-zbiory-danych"><span class="header-section-number">1.3.3</span> Pozostałe zbiory danych</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -546,14 +564,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>gdpPercap</strong> - PKB na osobę</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>?gapminder</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>No documentation for 'gapminder' in specified packages and libraries:
-you could try '??gapminder'</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?gapminder</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Classes 'tbl_df', 'tbl' and 'data.frame':   1704 obs. of  6 variables:
  $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -576,16 +591,16 @@ you could try '??gapminder'</code></pre>
 <li><strong>tmax_9</strong> - maksymalna temperatura powietrza we wrześniu</li>
 <li><strong>annual_tavg</strong> - średnia roczna temperatura powietrza</li>
 <li><strong>annual_precip</strong> - roczna suma opadów (mm)</li>
-<li><strong>prow_id</strong> - id prowincji (od 1 do 7)</li>
+<li><strong>prow_id</strong> - id prowincji fizjograficznej (od 1 do 7)</li>
 <li><strong>woj_id</strong> - id województwa</li>
-<li><strong>prowincja</strong> - zmienna tekstowa - nazwa jednego z 7 regionów</li>
-<li><strong>województwo</strong> - zmienna tekstowa - nazwa województwa</li>
+<li><strong>prowincja</strong> - zmienna tekstowa - nazwa jednej z 7 prowincji fizjograficznych</li>
+<li><strong>wojewodztwo</strong> - zmienna tekstowa - nazwa województwa (nazwa kolumny bez polskich znaków)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"data/pomiary_pol.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pomiary_pol)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pomiary_pol)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   1500 obs. of  11 variables:
  $ pomiar_id    : int  1 2 3 4 5 6 7 8 9 10 ...
@@ -601,6 +616,93 @@ you could try '??gapminder'</code></pre>
  $ wojewodztwo  : chr  "małopolskie" "świętokrzyskie" "zachodniopomorskie" "zachodniopomorskie" ...</code></pre>
 </div>
 </div>
+<p><strong>Uwaga: zbiór zawiera braki danych (NA).</strong> W każdej z kolumn pomiarowych brakuje 5 wartości, w kolumnie <em>prow_id</em> oraz <em>prowincja</em> - 11, w <em>woj_id</em> - 10, a w <em>wojewodztwo</em> - 12. Funkcje statystyczne wymagają wtedy argumentu <code>na.rm = TRUE</code>, a testy i modele pomijają takie obserwacje (informują o tym w wyniku). Liczbę braków sprawdzimy poleceniem:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(pomiary_pol))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    pomiar_id        tmin_4        tmax_4        tmin_9        tmax_9 
+            0             5             5             5             5 
+  annual_tavg annual_precip       prow_id        woj_id     prowincja 
+            5             5            11            10            11 
+  wojewodztwo 
+           12 </code></pre>
+</div>
+</div>
+</section>
+<section id="pozostałe-zbiory-danych" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="pozostałe-zbiory-danych"><span class="header-section-number">1.3.3</span> Pozostałe zbiory danych</h3>
+<p>Wszystkie pliki znajdują się w folderze <code>dane</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plik</th>
+<th>Rozmiar</th>
+<th>Zawartość</th>
+<th>Wykorzystanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>pomiary_pol.csv</em></td>
+<td>1500 x 11</td>
+<td>dane meteorologiczne (opisane powyżej)</td>
+<td>rozdz. 1, 14, 16, 19, 22</td>
+</tr>
+<tr class="even">
+<td><em>dane.csv</em></td>
+<td>24 x 6</td>
+<td>podzbiór <code>gapminder</code> - Australia i Nowa Zelandia</td>
+<td>rozdz. 2, 3</td>
+</tr>
+<tr class="odd">
+<td><em>dane.txt</em></td>
+<td>24 x 6</td>
+<td>te same dane w pliku tekstowym (separator: spacja)</td>
+<td>rozdz. 2</td>
+</tr>
+<tr class="even">
+<td><em>dane.rds</em></td>
+<td>12 x 6</td>
+<td>dane dla Australii, w formacie wewnętrznym R</td>
+<td>rozdz. 2</td>
+</tr>
+<tr class="odd">
+<td><em>cw1.rda</em></td>
+<td>-</td>
+<td>zapisane środowisko pracy: obiekty <code>australia</code> oraz <code>dane</code></td>
+<td>rozdz. 2</td>
+</tr>
+<tr class="even">
+<td><em>plony.csv</em></td>
+<td>100 x 4</td>
+<td>id, jakosc_gleby, plon, opady - dane jakościowe</td>
+<td>rozdz. 17, 22</td>
+</tr>
+<tr class="odd">
+<td><em>tetno.csv</em></td>
+<td>20 x 4</td>
+<td>tętno przed i po wysiłku u 20 osób, z podziałem na płeć</td>
+<td>rozdz. 22</td>
+</tr>
+<tr class="even">
+<td><em>daneMieszkania.csv</em></td>
+<td>200 x 5</td>
+<td>cena, pokoi, powierzchnia, dzielnica, typ.budynku - mieszkania we Wrocławiu</td>
+<td>rozdz. 13, 20-22</td>
+</tr>
+</tbody>
+</table>
+<p>Zbiór <code>gapminder</code> pochodzi z pakietu o tej samej nazwie i jest wykorzystywany w rozdziałach 1, 3-12, 15, 16, 18 oraz 21-22.</p>
+<p>Zbiór <em>daneMieszkania.csv</em> to zapisany w formacie csv zbiór <code>mieszkania</code> z pakietu <code>Przewodnik</code>, towarzyszącego podręcznikowi:</p>
+<blockquote class="blockquote">
+<p>Biecek P., <em>Przewodnik po pakiecie R</em>, wyd. 4 rozszerzone, Oficyna Wydawnicza GiS, Wrocław 2017. Materiały do książki wraz z pakietem <code>Przewodnik</code>: <a href="http://biecek.pl/R" class="uri">http://biecek.pl/R</a>.</p>
+</blockquote>
 
 
 <script type="ojs-module-contents">
@@ -615,7 +717,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 </section>

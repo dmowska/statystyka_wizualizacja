@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -85,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYTYCZNE</a></li><li class="breadcrumb-item"><a href="./7_testy.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYSTYCZNE</a></li><li class="breadcrumb-item"><a href="./7_testy.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -257,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -336,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -358,6 +392,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -369,14 +420,18 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#testy-parametryczne-vs-nieparametryczne" id="toc-testy-parametryczne-vs-nieparametryczne" class="nav-link active" data-scroll-target="#testy-parametryczne-vs-nieparametryczne"><span class="header-section-number">13.1</span> Testy parametryczne vs nieparametryczne</a></li>
-  <li><a href="#testy-istotności-różnic-średniej" id="toc-testy-istotności-różnic-średniej" class="nav-link" data-scroll-target="#testy-istotności-różnic-średniej"><span class="header-section-number">13.2</span> Testy istotności różnic średniej</a></li>
+  <li><a href="#jak-wybrać-odpowiedni-test" id="toc-jak-wybrać-odpowiedni-test" class="nav-link" data-scroll-target="#jak-wybrać-odpowiedni-test"><span class="header-section-number">13.2</span> Jak wybrać odpowiedni test?</a></li>
+  <li><a href="#próby-niezależne-i-próby-zależne" id="toc-próby-niezależne-i-próby-zależne" class="nav-link" data-scroll-target="#próby-niezależne-i-próby-zależne"><span class="header-section-number">13.3</span> Próby niezależne i próby zależne</a></li>
+  <li><a href="#porównywanie-grup---schemat-szczegółowy" id="toc-porównywanie-grup---schemat-szczegółowy" class="nav-link" data-scroll-target="#porównywanie-grup---schemat-szczegółowy"><span class="header-section-number">13.4</span> Porównywanie grup - schemat szczegółowy</a></li>
+  <li><a href="#zestawienie-testów" id="toc-zestawienie-testów" class="nav-link" data-scroll-target="#zestawienie-testów"><span class="header-section-number">13.5</span> Zestawienie testów</a></li>
+  <li><a href="#zadanie-dobierz-test-do-sytuacji" id="toc-zadanie-dobierz-test-do-sytuacji" class="nav-link" data-scroll-target="#zadanie-dobierz-test-do-sytuacji"><span class="header-section-number">13.6</span> Zadanie: dobierz test do sytuacji</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYTYCZNE</a></li><li class="breadcrumb-item"><a href="./7_testy.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYSTYCZNE</a></li><li class="breadcrumb-item"><a href="./7_testy.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></h1>
 </div>
@@ -399,9 +454,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="13.1" class="anchored" data-anchor-id="testy-parametryczne-vs-nieparametryczne"><span class="header-section-number">13.1</span> Testy parametryczne vs nieparametryczne</h2>
 <p>Hipoteza jest to dowolna wypowiedź o rozkładzie zmiennej losowej:</p>
 <ul>
-<li><p>Parametryczna</p></li>
-<li><p>Nieparametryczna</p></li>
+<li><p><strong>Hipoteza parametryczna</strong> - dotyczy wartości parametru rozkładu (np. “średnia w populacji jest równa 8”, “wariancje w obu grupach są równe”). Zakłada, że znamy postać rozkładu.</p></li>
+<li><p><strong>Hipoteza nieparametryczna</strong> - dotyczy samego rozkładu lub jego ogólnych własności, bez zakładania konkretnej postaci (np. “obie próby pochodzą z tego samego rozkładu”, “rozkład jest symetryczny”).</p></li>
 </ul>
+<p>Do weryfikacji hipotez parametrycznych służą testy parametryczne, do nieparametrycznych - testy nieparametryczne.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 42%">
@@ -424,7 +480,7 @@ ul.task-list li input[type="checkbox"] {
 <td><p>mniejsza liczba założeń do spełnienia:</p>
 <ul>
 <li><p>mogą być stosowane do danych nieilościowych</p></li>
-<li><p>nie wymagają spełnienia założenia o normalności rozkłądu</p></li>
+<li><p>nie wymagają spełnienia założenia o normalności rozkładu</p></li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -436,8 +492,8 @@ ul.task-list li input[type="checkbox"] {
 <td>mniejsza moc testów</td>
 </tr>
 <tr class="even">
-<td>dokładniejszy pomiar</td>
-<td>mniej dokładny pomiar</td>
+<td>wykorzystują pełną informację liczbową z danych</td>
+<td>wykorzystują tylko kolejność (rangi), część informacji jest tracona</td>
 </tr>
 <tr class="odd">
 <td>łatwiejsza interpretowalność uzyskanych wyników</td>
@@ -445,14 +501,407 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>testy t-Studenta, analiza wariancji, korelacja r-Pearsona, analiza regresji</td>
-<td>test U Manna-Whitneya, test Kruskala-Wallisa, test niezależności chi-kwadrat, Korelacja tau-b Kendalla</td>
+<td>test U Manna-Whitneya, test Kruskala-Wallisa, test niezależności chi-kwadrat, korelacja rang Spearmana</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="testy-istotności-różnic-średniej" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="testy-istotności-różnic-średniej"><span class="header-section-number">13.2</span> Testy istotności różnic średniej</h2>
-<p><img src="figures/8_testy_srednich.png" class="img-fluid" width="466"></p>
+<section id="jak-wybrać-odpowiedni-test" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="jak-wybrać-odpowiedni-test"><span class="header-section-number">13.2</span> Jak wybrać odpowiedni test?</h2>
+<p>Wybór testu statystycznego wynika z trzech rzeczy: <strong>jakie pytanie zadajemy</strong>, <strong>jakiego typu są zmienne</strong> oraz <strong>czy spełnione są założenia testu parametrycznego</strong>. Poniższy schemat prowadzi od pytania badawczego do rodziny testów, a numery rozdziałów wskazują, gdzie każda metoda jest omówiona.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/13_schemat_ogolny.png" class="img-fluid figure-img"></p>
+<figcaption>Od pytania badawczego do rodziny testów</figcaption>
+</figure>
+</div>
+<p>Pytania są pogrupowane według typu zmiennej, której dotyczą: żółte pola w górnej grupie odnoszą się do zmiennych <strong>ilościowych</strong> (mierzalnych, np. temperatura, suma opadów), zielone w dolnej - do zmiennych <strong>jakościowych</strong> (kategorii, np. prowincja, typ budynku). Pola szare po prawej oznaczają testy pomocnicze: nie odpowiadają one na pytanie badawcze, lecz sprawdzają założenia, od których zależy wybór testu właściwego.</p>
+</section>
+<section id="próby-niezależne-i-próby-zależne" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="próby-niezależne-i-próby-zależne"><span class="header-section-number">13.3</span> Próby niezależne i próby zależne</h2>
+<p>Zanim wybierzemy test porównujący grupy, musimy rozstrzygnąć, czy porównywane próby są <strong>niezależne</strong>, czy <strong>zależne</strong>. To rozróżnienie decyduje o wyborze testu, a pomyłka na tym etapie należy do najczęstszych błędów w analizie danych.</p>
+<ul>
+<li><p><strong>Próby niezależne</strong> - każda obserwacja należy do dokładnie jednej grupy, a wynik pomiaru w jednej grupie nie ma związku z wynikiem w drugiej. Grupy mogą mieć różną liczebność.</p>
+<p>Przykład: porównujemy średnią roczną temperaturę na Wyżynach Polskich i w Masywie Czeskim. To <strong>inne stacje pomiarowe</strong> - każda z nich należy do jednej tylko prowincji.</p></li>
+<li><p><strong>Próby zależne</strong> (inaczej <em>sparowane</em>) - obserwacje tworzą pary, ponieważ pochodzą od tego samego obiektu albo są ze sobą powiązane w naturalny sposób. Liczebności obu prób są wtedy z konieczności równe.</p>
+<p>Przykład: porównujemy maksymalną temperaturę kwietnia i września. Obie wartości pochodzą z <strong>tej samej stacji pomiarowej</strong> - tworzą parę.</p></li>
+</ul>
+<p><strong>Jak to rozpoznać?</strong> Zadaj sobie pytanie: czy potrafię wskazać, która obserwacja z pierwszej grupy odpowiada której obserwacji z drugiej? Jeśli tak - próby są zależne. Jeśli przyporządkowanie byłoby dowolne - próby są niezależne.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sytuacja</th>
+<th>Rodzaj prób</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>temperatura na stacjach dwóch różnych prowincji</td>
+<td>niezależne</td>
+</tr>
+<tr class="even">
+<td>temperatura w kwietniu i we wrześniu na tych samych stacjach</td>
+<td>zależne</td>
+</tr>
+<tr class="odd">
+<td>oczekiwana długość życia w krajach Afryki i w krajach Azji</td>
+<td>niezależne</td>
+</tr>
+<tr class="even">
+<td>oczekiwana długość życia w tych samych krajach w 1987 i w 2007 roku</td>
+<td>zależne</td>
+</tr>
+<tr class="odd">
+<td>tętno u 20 osób przed wysiłkiem i po wysiłku</td>
+<td>zależne</td>
+</tr>
+<tr class="even">
+<td>ceny mieszkań w trzech dzielnicach Wrocławia</td>
+<td>niezależne</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dlaczego to ma znaczenie?</strong> Test dla prób zależnych analizuje <strong>różnice wewnątrz par</strong>, dzięki czemu usuwa z analizy zmienność między obiektami. Jeśli np. jedna stacja pomiarowa jest ogólnie cieplejsza od drugiej, to w teście sparowanym ta różnica nie zaburza wyniku - liczy się wyłącznie zmiana między kwietniem a wrześniem na każdej stacji z osobna. Dlatego test dla prób zależnych wykrywa różnice, których test dla prób niezależnych mógłby nie zauważyć. Zastosowanie testu dla prób niezależnych do danych sparowanych jest błędem - tracimy wtedy informację o powiązaniu obserwacji.</p>
+</section>
+<section id="porównywanie-grup---schemat-szczegółowy" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="porównywanie-grup---schemat-szczegółowy"><span class="header-section-number">13.4</span> Porównywanie grup - schemat szczegółowy</h2>
+<p>Najczęściej zadawane pytanie dotyczy tego, czy grupy różnią się przeciętnym poziomem pewnej zmiennej ilościowej. Odpowiadają na nie rozdziały <em>Testy parametryczne</em>, <em>Testy nieparametryczne</em> oraz <em>Testy dla wielu grup</em>, a wybór konkretnego testu zależy od trzech kolejnych pytań: ile grup porównujemy, czy próby są zależne, czy niezależne, oraz czy spełnione są założenia testu parametrycznego.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/13_schemat_porownanie.png" class="img-fluid figure-img"></p>
+<figcaption>Wybór testu do porównywania grup</figcaption>
+</figure>
+</div>
+<p>Kolory oznaczają: granatowy - punkt wyjścia, żółty - pytanie, ciemnoniebieski - test parametryczny, jasnoniebieski - test nieparametryczny. Pola obrysowane linią przerywaną to testy <strong>post-hoc</strong>, które wykonujemy dopiero wtedy, gdy test główny dał wynik istotny - wskazują one, <strong>między którymi</strong> grupami występują różnice.</p>
+</section>
+<section id="zestawienie-testów" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="zestawienie-testów"><span class="header-section-number">13.5</span> Zestawienie testów</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 16%">
+<col style="width: 29%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sytuacja</th>
+<th>Test</th>
+<th>Funkcja R</th>
+<th>Rozdział</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sprawdzanie założeń</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>czy rozkład jest zbliżony do normalnego</td>
+<td>test Shapiro-Wilka</td>
+<td><code>shapiro.test(x)</code></td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>czy wariancje w dwóch grupach są równe</td>
+<td>test F</td>
+<td><code>var.test(y ~ grupa)</code></td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>czy wariancje w dwóch i więcej grupach są równe</td>
+<td>test Levene’a</td>
+<td><code>leveneTest(y ~ grupa)</code></td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td><strong>Jedna próba wobec zadanej wartości</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rozkład zbliżony do normalnego</td>
+<td>test t-Studenta dla jednej próby</td>
+<td><code>t.test(x, mu = ...)</code></td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>rozkład odbiega od normalnego</td>
+<td>test kolejności par Wilcoxona</td>
+<td><code>wilcox.test(x, mu = ...)</code></td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td><strong>Dwie grupy niezależne</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>rozkład w obu grupach zbliżony do normalnego</td>
+<td>test t-Studenta dla prób niezależnych</td>
+<td><code>t.test(y ~ grupa)</code></td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>rozkład odbiega od normalnego</td>
+<td>test U Manna-Whitneya</td>
+<td><code>wilcox.test(y ~ grupa)</code></td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td><strong>Dwie grupy zależne (sparowane)</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>rozkład różnic zbliżony do normalnego</td>
+<td>test t-Studenta dla prób zależnych</td>
+<td><code>t.test(x, y, paired = TRUE)</code></td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>rozkład różnic odbiega od normalnego</td>
+<td>test kolejności par Wilcoxona</td>
+<td><code>wilcox.test(x, y, paired = TRUE)</code></td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td><strong>Trzy grupy i więcej</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>niezależne, rozkład normalny, wariancje podobne</td>
+<td>jednoczynnikowa ANOVA</td>
+<td><code>aov(y ~ grupa)</code></td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>test post-hoc do ANOVA</td>
+<td>test Tukeya</td>
+<td><code>TukeyHSD(model)</code></td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>niezależne, założenia niespełnione</td>
+<td>test Kruskala-Wallisa</td>
+<td><code>kruskal.test(y ~ grupa)</code></td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>test post-hoc do testu Kruskala-Wallisa</td>
+<td>test Dunna</td>
+<td><code>dunn.test(y, grupa)</code></td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>pomiary powtarzane (te same obiekty, 3 i więcej pomiarów)</td>
+<td>test Friedmana</td>
+<td><code>friedman.test()</code></td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td><strong>Zmienne jakościowe</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>rozkład jednej zmiennej wobec teoretycznego</td>
+<td>test zgodności chi-kwadrat</td>
+<td><code>chisq.test(x, p = ...)</code></td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>powiązanie dwóch zmiennych, próby niezależne</td>
+<td>test niezależności chi-kwadrat</td>
+<td><code>chisq.test(tabela)</code></td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>powiązanie dwóch zmiennych, próby zależne</td>
+<td>test McNemara</td>
+<td><code>mcnemar.test(tabela)</code></td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>liczebności oczekiwane mniejsze od 5</td>
+<td>dokładny test Fishera</td>
+<td><code>fisher.test(tabela)</code></td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td><strong>Dwie zmienne ilościowe</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>zależność liniowa, rozkłady normalne</td>
+<td>korelacja Pearsona</td>
+<td><code>cor.test(x, y)</code></td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>zależność monotoniczna, rozkłady skośne</td>
+<td>korelacja Spearmana</td>
+<td><code>cor.test(x, y, method = "spearman")</code></td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>przewidywanie zmiennej na podstawie innych</td>
+<td>regresja liniowa</td>
+<td><code>lm(y ~ x)</code></td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="zadanie-dobierz-test-do-sytuacji" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="zadanie-dobierz-test-do-sytuacji"><span class="header-section-number">13.6</span> Zadanie: dobierz test do sytuacji</h2>
+<p>Dla każdej z poniższych sytuacji wskaż: <strong>(1)</strong> jakiego typu są zmienne, <strong>(2)</strong> czy próby są zależne, czy niezależne, <strong>(3)</strong> jaki test należy zastosować i jaką funkcją R go wykonać. Korzystaj ze schematów i z tabeli powyżej.</p>
+<blockquote class="blockquote">
+<p><strong>1.</strong> Chcemy sprawdzić, czy średnia roczna temperatura powietrza (<em>annual_tavg</em>) różni się między Wyżynami Polskimi a Masywem Czeskim. Dane pochodzą ze 179 stacji na Wyżynach i 81 stacji w Masywie Czeskim.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zmienna <em>annual_tavg</em> jest <strong>ilościowa</strong>, porównujemy <strong>dwie grupy</strong>, a stacje w obu prowincjach to <strong>różne obiekty</strong> - próby są więc <strong>niezależne</strong>. Testem jest <strong>test t-Studenta dla prób niezależnych</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(annual_tavg <span class="sc">~</span> prowincja, <span class="at">data =</span> pomiary_pol2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Uwaga: przy tak dużych próbach (179 i 81 obserwacji) test Shapiro-Wilka odrzuca hipotezę o normalności nawet przy niewielkich odstępstwach od niej. Test t-Studenta jest jednak na takie odstępstwa odporny, gdy próby są liczne - dlatego stosujemy właśnie jego. Przy małej próbie ten sam wynik testu normalności byłby sygnałem, żeby sięgnąć po test nieparametryczny.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>2.</strong> U 20 osób zmierzono tętno przed krótkim wysiłkiem fizycznym i po nim (plik <code>tetno.csv</code>). Chcemy sprawdzić, czy wysiłek wpływa na tętno.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tętno jest zmienną <strong>ilościową</strong>, porównujemy <strong>dwa pomiary</strong>, ale pochodzą one od <strong>tych samych osób</strong> - próby są <strong>zależne (sparowane)</strong>. Próba jest mała (20 osób), a rozkład różnic wyraźnie odbiega od normalnego, więc stosujemy test nieparametryczny: <strong>test kolejności par Wilcoxona</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(tetno<span class="sc">$</span>Tętno_1, tetno<span class="sc">$</span>Tętno_2, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Porównaj z sytuacją 1: tam próby były niezależne i liczne, tu są sparowane i nieliczne - oba czynniki prowadzą do innego testu.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>3.</strong> Chcemy sprawdzić, czy ceny mieszkań różnią się między trzema dzielnicami Wrocławia (plik <code>daneMieszkania.csv</code>). Test Shapiro-Wilka wykonany osobno dla każdej dzielnicy nie daje podstaw do odrzucenia hipotezy o normalności.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Cena jest zmienną <strong>ilościową</strong>, porównujemy <strong>trzy grupy</strong>, a mieszkania w każdej dzielnicy to inne obiekty - próby są <strong>niezależne</strong>. Założenie normalności jest spełnione, więc stosujemy <strong>jednoczynnikową analizę wariancji</strong>, a po niej test post-hoc:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">aov</span>(cena <span class="sc">~</span> dzielnica, <span class="at">data =</span> mieszkania)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(model)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sama ANOVA powie tylko, że <em>któreś</em> dzielnice się różnią. Dopiero test Tukeya wskaże, <strong>które</strong> pary.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>4.</strong> Chcemy sprawdzić, czy PKB na osobę (<em>gdpPercap</em>) różni się między kontynentami w 2007 roku. Rozkład tej zmiennej jest silnie prawoskośny.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zmienna jest <strong>ilościowa</strong>, porównujemy <strong>pięć grup</strong>, kraje należą do jednego kontynentu - próby są <strong>niezależne</strong>. Rozkład jest jednak silnie skośny, więc założenia analizy wariancji nie są spełnione; stosujemy jej nieparametryczny odpowiednik - <strong>test Kruskala-Wallisa</strong> - a po nim <strong>test Dunna</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(gdpPercap <span class="sc">~</span> continent, <span class="at">data =</span> gapminder2007)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dunn.test</span>(gapminder2007<span class="sc">$</span>gdpPercap, gapminder2007<span class="sc">$</span>continent,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">kw =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"bonferroni"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Porównaj z sytuacją 3: układ danych jest taki sam (kilka niezależnych grup), a mimo to test jest inny - zdecydował o tym rozkład zmiennej.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>5.</strong> Dane w pliku <code>plony.csv</code> zawierają klasę jakości gleby oraz klasę wielkości plonu dla 100 pól. Chcemy sprawdzić, czy wielkość plonu wiąże się z jakością gleby.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Obie zmienne są <strong>jakościowe</strong> (to klasy, a nie wartości liczbowe), a każde pole jest opisane jedną parą kategorii. Pytamy o powiązanie dwóch zmiennych jakościowych, więc stosujemy <strong>test niezależności chi-kwadrat</strong>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">table</span>(plony<span class="sc">$</span>jakosc_gleby, plony<span class="sc">$</span>plon)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tbl)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pojęcie prób zależnych i niezależnych nie ma tu zastosowania w tej samej postaci, co przy porównywaniu średnich - istotne jest to, czy każda obserwacja trafia do tabeli tylko raz. Gdyby te same pola oceniano dwukrotnie (np. przed i po nawożeniu), właściwy byłby test McNemara.</p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>6.</strong> Chcemy sprawdzić, czy minimalna i maksymalna temperatura powietrza we wrześniu (<em>tmin_9</em>, <em>tmax_9</em>) są ze sobą powiązane.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Obie zmienne są <strong>ilościowe</strong>, ale nie porównujemy tu grup - pytamy o <strong>współwystępowanie dwóch zmiennych</strong> mierzonych na tych samych stacjach. Stosujemy analizę korelacji:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pomiary_pol<span class="sc">$</span>tmin_9, pomiary_pol<span class="sc">$</span>tmax_9)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(pomiary_pol<span class="sc">$</span>tmin_9, pomiary_pol<span class="sc">$</span>tmax_9)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>O wyborze współczynnika decyduje wykres rozrzutu i rozkład zmiennych: przy zależności liniowej i rozkładach zbliżonych do normalnego - współczynnik Pearsona, przy rozkładach skośnych lub wartościach odstających - współczynnik Spearmana (<code>method = "spearman"</code>). Zwróć uwagę, że korelacja mówi o <strong>współwystępowaniu</strong>, a nie o tym, że jedna zmienna powoduje drugą.</p>
+</div>
+</div>
+</div>
 
 
 <script type="ojs-module-contents">
@@ -467,7 +916,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 

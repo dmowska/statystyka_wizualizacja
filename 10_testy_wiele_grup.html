@@ -148,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYTYCZNE</a></li><li class="breadcrumb-item"><a href="./10_testy_wiele_grup.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYSTYCZNE</a></li><li class="breadcrumb-item"><a href="./10_testy_wiele_grup.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
@@ -320,7 +320,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -353,7 +353,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +399,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -421,6 +421,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -431,12 +448,19 @@ window.Quarto = {
     <h2 id="toc-title">Spis treści</h2>
    
   <ul>
-  <li><a href="#testowanie-istotność-różnic-średnich-wielu-prób" id="toc-testowanie-istotność-różnic-średnich-wielu-prób" class="nav-link active" data-scroll-target="#testowanie-istotność-różnic-średnich-wielu-prób"><span class="header-section-number">16.1</span> Testowanie istotność różnic średnich wielu prób</a></li>
+  <li><a href="#testowanie-istotności-różnic-średnich-wielu-prób" id="toc-testowanie-istotności-różnic-średnich-wielu-prób" class="nav-link active" data-scroll-target="#testowanie-istotności-różnic-średnich-wielu-prób"><span class="header-section-number">16.1</span> Testowanie istotności różnic średnich wielu prób</a></li>
   <li><a href="#analiza-wariancji" id="toc-analiza-wariancji" class="nav-link" data-scroll-target="#analiza-wariancji"><span class="header-section-number">16.2</span> Analiza wariancji</a>
   <ul class="collapse">
   <li><a href="#podstawowe-założenia" id="toc-podstawowe-założenia" class="nav-link" data-scroll-target="#podstawowe-założenia"><span class="header-section-number">16.2.1</span> Podstawowe założenia</a></li>
+  <li><a href="#sprawdzenie-założeń" id="toc-sprawdzenie-założeń" class="nav-link" data-scroll-target="#sprawdzenie-założeń"><span class="header-section-number">16.2.2</span> Sprawdzenie założeń</a></li>
+  <li><a href="#wykonanie-analizy-wariancji" id="toc-wykonanie-analizy-wariancji" class="nav-link" data-scroll-target="#wykonanie-analizy-wariancji"><span class="header-section-number">16.2.3</span> Wykonanie analizy wariancji</a></li>
+  <li><a href="#jak-czytać-wynik-analizy-wariancji" id="toc-jak-czytać-wynik-analizy-wariancji" class="nav-link" data-scroll-target="#jak-czytać-wynik-analizy-wariancji"><span class="header-section-number">16.2.4</span> Jak czytać wynik analizy wariancji</a></li>
   </ul></li>
-  <li><a href="#test-tukeya" id="toc-test-tukeya" class="nav-link" data-scroll-target="#test-tukeya"><span class="header-section-number">16.3</span> Test Tukey’a</a></li>
+  <li><a href="#test-tukeya" id="toc-test-tukeya" class="nav-link" data-scroll-target="#test-tukeya"><span class="header-section-number">16.3</span> Test Tukeya</a>
+  <ul class="collapse">
+  <li><a href="#jak-czytać-wynik-testu-tukeya" id="toc-jak-czytać-wynik-testu-tukeya" class="nav-link" data-scroll-target="#jak-czytać-wynik-testu-tukeya"><span class="header-section-number">16.3.1</span> Jak czytać wynik testu Tukeya</a></li>
+  <li><a href="#jak-opisać-wynik-w-raporcie" id="toc-jak-opisać-wynik-w-raporcie" class="nav-link" data-scroll-target="#jak-opisać-wynik-w-raporcie"><span class="header-section-number">16.3.2</span> Jak opisać wynik w raporcie</a></li>
+  </ul></li>
   <li><a href="#test-kruskala-wallisa" id="toc-test-kruskala-wallisa" class="nav-link" data-scroll-target="#test-kruskala-wallisa"><span class="header-section-number">16.4</span> Test Kruskala-Wallisa</a></li>
   <li><a href="#test-friedmana" id="toc-test-friedmana" class="nav-link" data-scroll-target="#test-friedmana"><span class="header-section-number">16.5</span> Test Friedmana</a></li>
   </ul>
@@ -445,7 +469,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYTYCZNE</a></li><li class="breadcrumb-item"><a href="./10_testy_wiele_grup.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_testy.html">TESTY STATYSTYCZNE</a></li><li class="breadcrumb-item"><a href="./10_testy_wiele_grup.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></h1>
 </div>
@@ -464,13 +488,21 @@ window.Quarto = {
 </header>
 
 
-<section id="testowanie-istotność-różnic-średnich-wielu-prób" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="testowanie-istotność-różnic-średnich-wielu-prób"><span class="header-section-number">16.1</span> Testowanie istotność różnic średnich wielu prób</h2>
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;]">
+<script type="exercise-setup-ex_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkdW5uLnRlc3QpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmdhcG1pbmRlcjIwMDcgPC0gZmlsdGVyKGdhcG1pbmRlciwgeWVhciA9PSAyMDA3KSJ9
+</script>
+<script type="exercise-setup-ex_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkdW5uLnRlc3QpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmdhcG1pbmRlcjIwMDcgPC0gZmlsdGVyKGdhcG1pbmRlciwgeWVhciA9PSAyMDA3KSJ9
+</script>
+</div>
+<section id="testowanie-istotności-różnic-średnich-wielu-prób" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="testowanie-istotności-różnic-średnich-wielu-prób"><span class="header-section-number">16.1</span> Testowanie istotności różnic średnich wielu prób</h2>
 <ul>
 <li><p>Parametryczne</p>
 <ul>
 <li>Jednoczynnikowa analiza wariancji (ANOVA)</li>
-<li>Test Tukey’a (HSD)</li>
+<li>Test Tukeya (HSD)</li>
 </ul></li>
 <li><p>Nieparametryczne</p>
 <ul>
@@ -485,7 +517,7 @@ window.Quarto = {
 <li>Celem analizy wariancji (ANOVA) jest zazwyczaj testowanie istotności różnic pomiędzy średnimi w wielu grupach.</li>
 <li>Służą do oceny czy średnie wartości cechy Y (cecha ilościowa) różnią się istotnie pomiędzy grupami wyznaczonymi przez zmienną X.</li>
 <li>W analizie jednoczynnikowej badamy zależność pomiędzy cechą Y a jedną zmienną jakościową.</li>
-<li>Hipoteza zerowa - średnie w grupach są jednakowe: <span class="math inline">\(H_0: \mu_1 = \mu_2 = ... \mu_k\)</span></li>
+<li>Hipoteza zerowa - średnie w grupach są jednakowe: <span class="math inline">\(H_0: \mu_1 = \mu_2 = ... = \mu_k\)</span></li>
 <li>Hipoteza alternatywna: <span class="math inline">\(H_A\)</span>: co najmniej dwie średnie różnią się między sobą.</li>
 <li>Analiza wariancji nie pozwala stwierdzić pomiędzy którymi grupami występują różnice.</li>
 <li>Aby określić między którymi grupami występują różnice trzeba wykonać porównania wielokrotne (“post-hoc”)</li>
@@ -502,7 +534,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"data/pomiary_pol.csv"</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pomiary_pol<span class="sc">$</span>prow_id <span class="ot">=</span> <span class="fu">as.factor</span>(pomiary_pol<span class="sc">$</span>prow_id)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pomiary_pol)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -532,9 +564,41 @@ window.Quarto = {
  NA's   :10                                            </code></pre>
 </div>
 </div>
+</section>
+<section id="sprawdzenie-założeń" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="sprawdzenie-założeń"><span class="header-section-number">16.2.2</span> Sprawdzenie założeń</h3>
+<p>Przed wykonaniem analizy wariancji sprawdzamy jej założenia. Zwróć uwagę, że zbiór zawiera braki danych - funkcja <code>aov()</code> pomija takie obserwacje i informuje o tym w wyniku (“15 observations deleted due to missingness”).</p>
+<p>Normalność rozkładu w każdej z grup (test Shapiro-Wilka):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pomiary_anova <span class="ot">=</span> <span class="fu">aov</span>(annual_tavg <span class="sc">~</span> prow_id, <span class="at">data =</span> pomiary_pol)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pomiary_anova</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(pomiary_pol<span class="sc">$</span>annual_tavg, pomiary_pol<span class="sc">$</span>prow_id,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">function</span>(x) <span class="fu">shapiro.test</span>(<span class="fu">na.omit</span>(x))<span class="sc">$</span>p.value)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           1            2            3            4            5            6 
+4.241147e-01 4.890834e-14 1.340612e-03 1.166090e-09 5.000770e-03 1.177977e-02 
+           7 
+7.572501e-01 </code></pre>
+</div>
+</div>
+<p>Równość wariancji w grupach (test Levene’a):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(annual_tavg <span class="sc">~</span> prow_id, <span class="at">data =</span> pomiary_pol)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = median)
+        Df F value    Pr(&gt;F)    
+group    6    27.5 &lt; 2.2e-16 ***
+      1478                      
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Jeśli założenia nie są spełnione, zamiast analizy wariancji stosujemy test Kruskala-Wallisa (patrz dalej w tym rozdziale).</p>
+</section>
+<section id="wykonanie-analizy-wariancji" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="wykonanie-analizy-wariancji"><span class="header-section-number">16.2.3</span> Wykonanie analizy wariancji</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pomiary_anova <span class="ot">=</span> <span class="fu">aov</span>(annual_tavg <span class="sc">~</span> prow_id, <span class="at">data =</span> pomiary_pol)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pomiary_anova</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Call:
    aov(formula = annual_tavg ~ prow_id, data = pomiary_pol)
@@ -550,7 +614,7 @@ Estimated effects may be unbalanced
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pomiary_anova)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pomiary_anova)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              Df Sum Sq Mean Sq F value Pr(&gt;F)    
 prow_id        6  144.5  24.079    44.8 &lt;2e-16 ***
@@ -561,9 +625,26 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </div>
 </section>
+<section id="jak-czytać-wynik-analizy-wariancji" class="level3" data-number="16.2.4">
+<h3 data-number="16.2.4" class="anchored" data-anchor-id="jak-czytać-wynik-analizy-wariancji"><span class="header-section-number">16.2.4</span> Jak czytać wynik analizy wariancji</h3>
+<pre><code>              Df Sum Sq Mean Sq F value Pr(&gt;F)    
+prow_id        6  144.5  24.079    44.8 &lt;2e-16 ***   &lt;- wiersz zmiennej grupującej
+Residuals   1478  794.4   0.537                      &lt;- wiersz reszt
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+15 observations deleted due to missingness           &lt;- pominięte braki danych</code></pre>
+<ul>
+<li><strong>Df</strong> - stopnie swobody. W wierszu zmiennej grupującej to liczba grup minus 1 (tu: 7 prowincji - 1 = 6).</li>
+<li><strong>Sum Sq / Mean Sq</strong> - sumy i średnie kwadratów; są podstawą obliczeń, ale same w sobie nie są interpretowane.</li>
+<li><strong>F value</strong> - statystyka testowa. Im większa, tym wyraźniejsze różnice między grupami w stosunku do zmienności wewnątrz grup.</li>
+<li><strong>Pr(&gt;F)</strong> - to jest <strong>p-value</strong>, liczba, na podstawie której podejmujesz decyzję. Gwiazdki obok są skrótem graficznym (<code>***</code> oznacza p &lt; 0,001).</li>
+<li><strong>Ostatni wiersz</strong> - informacja o pominiętych obserwacjach z brakami danych. Zawsze warto go przeczytać: mówi, na ilu obserwacjach faktycznie wykonano analizę.</li>
+</ul>
+<p>Istotny wynik oznacza tylko, że <strong>co najmniej dwie</strong> grupy się różnią - nie mówi, które. Odpowiada na to dopiero test post-hoc.</p>
+</section>
 </section>
 <section id="test-tukeya" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="test-tukeya"><span class="header-section-number">16.3</span> Test Tukey’a</h2>
+<h2 data-number="16.3" class="anchored" data-anchor-id="test-tukeya"><span class="header-section-number">16.3</span> Test Tukeya</h2>
 <ul>
 <li>Wynikiem testu Tukeya są różnice między średnimi oraz 95% przedział ufności dla tych różnic dla każdej pary porównań.</li>
 <li>Wynik jest pokazywany w postaci numerycznej i graficznej.</li>
@@ -571,9 +652,9 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </ul>
 <p>Graficzna reprezentacja wyniku – przedziały ufności dla różnic w średnich rocznych temperatur między prowincjami.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>posthoc <span class="ot">=</span> <span class="fu">TukeyHSD</span>(pomiary_anova, <span class="at">which =</span> <span class="st">"prow_id"</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>posthoc</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>posthoc <span class="ot">=</span> <span class="fu">TukeyHSD</span>(pomiary_anova, <span class="at">which =</span> <span class="st">"prow_id"</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>posthoc</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -606,32 +687,51 @@ $prow_id
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">0.1</span>)) <span class="co"># zmiana marginesów</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(posthoc, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">cex.axis=</span><span class="fl">0.7</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">0.1</span>)) <span class="co"># zmiana marginesów</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(posthoc, <span class="at">las =</span> <span class="dv">1</span>, <span class="at">cex.axis=</span><span class="fl">0.7</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<section id="jak-czytać-wynik-testu-tukeya" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="jak-czytać-wynik-testu-tukeya"><span class="header-section-number">16.3.1</span> Jak czytać wynik testu Tukeya</h3>
+<pre><code>      diff     lwr    upr  p adj
+2-1 0.7225  0.2513 1.1936 0.0001   &lt;- przedział nie zawiera 0 -&gt; różnica istotna
+5-1 0.4411 -0.0323 0.9145 0.0868   &lt;- przedział zawiera 0 -&gt; różnica nieistotna</code></pre>
+<ul>
+<li><strong>nazwa wiersza</strong> (<code>2-1</code>) - która para grup jest porównywana.</li>
+<li><strong>diff</strong> - różnica średnich między tymi grupami, w jednostkach zmiennej (tu: °C).</li>
+<li><strong>lwr, upr</strong> - granice przedziału ufności dla tej różnicy. <strong>Jeśli przedział zawiera zero, różnica nie jest istotna statystycznie.</strong></li>
+<li><strong>p adj</strong> - wartość p <strong>skorygowana</strong> na wielokrotne porównania. Przy 7 grupach wykonujemy 21 porównań; bez korekty prawdopodobieństwo przypadkowego „odkrycia” różnicy byłoby bardzo wysokie.</li>
+</ul>
+<p>Kolumna <code>p adj</code> i przedział <code>lwr</code>-<code>upr</code> mówią to samo: jeśli przedział obejmuje zero, to <code>p adj</code> przekroczy 0,05.</p>
+</section>
+<section id="jak-opisać-wynik-w-raporcie" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="jak-opisać-wynik-w-raporcie"><span class="header-section-number">16.3.2</span> Jak opisać wynik w raporcie</h3>
+<blockquote class="blockquote">
+<p>Jednoczynnikowa analiza wariancji wykazała istotne statystycznie różnice w średniej rocznej temperaturze powietrza między prowincjami fizjograficznymi; F(6; 1478) = 44,8; p &lt; 0,001. Test post-hoc Tukeya wskazał różnice między 12 z 21 par prowincji - największą między Karpatami Wschodnimi a Niżem Środkowoeuropejskim (różnica 1,26 °C; p &lt; 0,001).</p>
+</blockquote>
 <p><strong>Wnioski z analizy danych:</strong></p>
 <p>Wnioskiem z przeprowadzenia testu post-hoc jest stwierdzenie, że istnieją istotne statystycznie różnice w średniej rocznej temperaturze powietrza między prowincjami:</p>
 <ul>
 <li>Karpaty Wschodnie z Podkarpaciem Wschodnim (1) a pozostałymi (z wyjątkiem 5: Niż Wschodniobałtycko-Białoruski)</li>
 <li>Karpaty Zachodnie z Podkarpaciem Zachodnim i Północnym (2), a Niż Środkowoeuropejski (4), Niż Wschodniobałtycko-Białoruski (5), Wyżyny Polskie (6)</li>
 <li>Masyw Czeski (3), a Niż Środkowoeuropejski (4) oraz Niż Wschodniobałtycko-Białoruski (5)</li>
-<li>Niż Środkowoeuropejski (4), a Niż Wschodniobałtycko-Białoruski (5) oraz Wyżyny Polskie (6)</li>
+<li>Niż Środkowoeuropejski (4), a Niż Wschodniobałtycko-Białoruski (5)</li>
 <li>Niż Wschodniobałtycko-Białoruski (5), a Wyżyny Polskie (6)</li>
 </ul>
+<p>Parą graniczną jest Niż Środkowoeuropejski (4) i Wyżyny Polskie (6): skorygowane p wynosi 0,0525, czyli nieco powyżej przyjętego progu 0,05. Formalnie nie odrzucamy hipotezy o braku różnicy, ale wynik tak bliski granicy warto opisać jako niejednoznaczny, a nie jako “brak różnicy” - przy nieco większej próbie mógłby wyjść istotny. Pokazuje to, że próg 0,05 jest umowny i decyzja “istotne / nieistotne” nie powinna być jedynym wnioskiem z analizy.</p>
 <p>Zestawienie prowincji i ich id</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(prow_id, prowincja) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(prow_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="sc">|&gt;</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(prow_id, prowincja) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(prow_id) <span class="sc">|&gt;</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     prow_id                                              prowincja
 1          1             Karpaty Wschodnie z Podkarpaciem Wschodnim
@@ -643,6 +743,52 @@ $prow_id
 1481       7                                      Wyżyny Ukraińskie</code></pre>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>Używając danych <code>gapminder</code> dla roku 2007 sprawdź, czy oczekiwana długość trwania życia różni się istotnie statystycznie między kontynentami. Wykonaj wykres pudełkowy, sprawdź założenia, przeprowadź analizę wariancji oraz test post-hoc. Między którymi kontynentami występują różnice?</p>
+</blockquote>
+<div class="cell" data-exercise="ex_1">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># wizualizacja</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007, <span class="fu">aes</span>(continent, lifeExp)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># sprawdzenie normalnosci w grupach</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(gapminder2007<span class="sc">$</span>lifeExp, gapminder2007<span class="sc">$</span>continent,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">function</span>(x) <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="fu">shapiro.test</span>(x)<span class="sc">$</span>p.value <span class="cf">else</span> <span class="cn">NA</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># analiza wariancji</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>anova_le <span class="ot">=</span> <span class="fu">aov</span>(lifeExp <span class="sc">~</span> continent, <span class="at">data =</span> gapminder2007)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_le)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># test post-hoc</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova_le)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Analiza wariancji daje p &lt; 2e-16, więc odrzucamy hipotezę o równości średnich. Test Tukeya pokazuje istotne różnice między większością par kontynentów - najwyraźniejsze dla Afryki, która odstaje od wszystkich pozostałych. Zwróć uwagę, że dla Oceanii mamy tylko 2 obserwacje, co czyni wnioski dla tego kontynentu bardzo niepewnymi.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="test-kruskala-wallisa" class="level2" data-number="16.4">
 <h2 data-number="16.4" class="anchored" data-anchor-id="test-kruskala-wallisa"><span class="header-section-number">16.4</span> Test Kruskala-Wallisa</h2>
@@ -651,46 +797,27 @@ $prow_id
 <li>Za pomocą tego testu sprawdzamy, czy <em>n</em> niezależnych próbek pochodzi z tej samej populacji, bądź z populacji z taką samą medianą.</li>
 <li>Statystycznie istotny wynik tego testu informuje, że co najmniej jedna z par grup jest różna od siebie</li>
 <li>Poszczególne próbki nie muszą mieć takiej samej liczebności.</li>
-<li>Test ten jest rozszerzeniem testu Two sample Wilcoxon dla 3 i więcej grup.</li>
+<li>Test ten jest rozszerzeniem testu U Manna-Whitneya (testu Wilcoxona dla prób niezależnych) na 3 i więcej grup.</li>
 <li>Testem post-hoc dla testu Kruskala-Wallisa jest test Dunna (library(dunn.test); ?dunn.test)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">=</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder2007)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        country       continent       year         lifeExp     
- Afghanistan:  1   Africa  :52   Min.   :2007   Min.   :39.61  
- Albania    :  1   Americas:25   1st Qu.:2007   1st Qu.:57.16  
- Algeria    :  1   Asia    :33   Median :2007   Median :71.94  
- Angola     :  1   Europe  :30   Mean   :2007   Mean   :67.01  
- Argentina  :  1   Oceania : 2   3rd Qu.:2007   3rd Qu.:76.41  
- Australia  :  1                 Max.   :2007   Max.   :82.60  
- (Other)    :136                                               
-      pop              gdpPercap      
- Min.   :1.996e+05   Min.   :  277.6  
- 1st Qu.:4.508e+06   1st Qu.: 1624.8  
- Median :1.052e+07   Median : 6124.4  
- Mean   :4.402e+07   Mean   :11680.1  
- 3rd Qu.:3.121e+07   3rd Qu.:18008.8  
- Max.   :1.319e+09   Max.   :49357.2  
-                                      </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">=</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy kontynentami?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007, <span class="fu">aes</span>(continent, lifeExp)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007, <span class="fu">aes</span>(continent, lifeExp)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(lifeExp <span class="sc">~</span> continent, <span class="at">data =</span> gapminder2007)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(lifeExp <span class="sc">~</span> continent, <span class="at">data =</span> gapminder2007)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
@@ -700,8 +827,8 @@ Kruskal-Wallis chi-squared = 88.095, df = 4, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dunn.test)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dunn.test</span>(gapminder2007<span class="sc">$</span>lifeExp, gapminder2007<span class="sc">$</span>continent, <span class="at">kw=</span><span class="cn">FALSE</span>, <span class="at">method=</span><span class="st">"bonferroni"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dunn.test)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dunn.test</span>(gapminder2007<span class="sc">$</span>lifeExp, gapminder2007<span class="sc">$</span>continent, <span class="at">kw=</span><span class="cn">FALSE</span>, <span class="at">method=</span><span class="st">"bonferroni"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
                            Comparison of x by group                            
@@ -727,48 +854,66 @@ Reject Ho if p &lt;= alpha/2</code></pre>
 </div>
 <p>Jeśli wartość P.adj jest mniejsza od założonego progu (zazwyczaj 0,05) to hipotezę zerową o braku różnic między grupami można odrzucić na rzecz hipotezy alternatywnej (grupy różnią się).</p>
 <blockquote class="blockquote">
-<p>Pytanie: Pomiędzy, którymi grupami istnieją statystycznie istotne różnice?</p>
+<p>Pytanie: Pomiędzy którymi grupami istnieją statystycznie istotne różnice?</p>
 </blockquote>
+<p><strong>Odpowiedź:</strong> istotne różnice (P.adj &lt; 0,05) występują między wszystkimi parami kontynentów z wyjątkiem pary Europa - Oceania. Przy odczytywaniu wyniku trzeba pamiętać, że Oceania jest w tych danych reprezentowana tylko przez 2 kraje, więc brak istotnej różnicy może wynikać z bardzo małej liczebności grupy, a nie z faktycznego podobieństwa.</p>
+<blockquote class="blockquote">
+<p>Rozkład PKB na osobę (gdpPercap) jest silnie prawoskośny, więc analiza wariancji nie jest tu odpowiednia. Sprawdź testem nieparametrycznym, czy PKB na osobę różni się istotnie między kontynentami w 2007 roku, i wykonaj odpowiedni test post-hoc.</p>
+</blockquote>
+<div class="cell" data-exercise="ex_2">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007, <span class="fu">aes</span>(continent, gdpPercap)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(gdpPercap <span class="sc">~</span> continent, <span class="at">data =</span> gapminder2007)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dunn.test</span>(gapminder2007<span class="sc">$</span>gdpPercap, gapminder2007<span class="sc">$</span>continent,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">kw =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"bonferroni"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Test Kruskala-Wallisa daje wynik istotny statystycznie, więc co najmniej jedna para kontynentów różni się pod względem PKB na osobę. Test Dunna wskazuje, które pary - przy odczytywaniu wyniku zwróć uwagę na kolumnę <em>P.adj</em>, czyli wartość p po poprawce Bonferroniego na wielokrotne porównania.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="test-friedmana" class="level2" data-number="16.5">
 <h2 data-number="16.5" class="anchored" data-anchor-id="test-friedmana"><span class="header-section-number">16.5</span> Test Friedmana</h2>
 <p>Test wykonywany dla pomiarów powtarzanych (liczba powtórzeń większa od dwóch)</p>
+<p><strong>Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy kolejnymi pomiarami (kolejnymi latami)?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gapminder)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>        country        continent        year         lifeExp     
- Afghanistan:  12   Africa  :624   Min.   :1952   Min.   :23.60  
- Albania    :  12   Americas:300   1st Qu.:1966   1st Qu.:48.20  
- Algeria    :  12   Asia    :396   Median :1980   Median :60.71  
- Angola     :  12   Europe  :360   Mean   :1980   Mean   :59.47  
- Argentina  :  12   Oceania : 24   3rd Qu.:1993   3rd Qu.:70.85  
- Australia  :  12                  Max.   :2007   Max.   :82.60  
- (Other)    :1632                                                
-      pop              gdpPercap       
- Min.   :6.001e+04   Min.   :   241.2  
- 1st Qu.:2.794e+06   1st Qu.:  1202.1  
- Median :7.024e+06   Median :  3531.8  
- Mean   :2.960e+07   Mean   :  7215.3  
- 3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
- Max.   :1.319e+09   Max.   :113523.1  
-                                       </code></pre>
-</div>
-</div>
-<p><strong>Przykład: Czy oczekiwana dalsza długość życia różni się pomiędzy pomiędzy kolejnymi pomiarami (kolejnymi latami)?</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(year, lifeExp, <span class="at">group =</span> country)) <span class="sc">+</span> </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(year, lifeExp, <span class="at">group =</span> country)) <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="10_testy_wiele_grup_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(lifeExp <span class="sc">~</span> year <span class="sc">|</span> country, <span class="at">data =</span> gapminder)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(lifeExp <span class="sc">~</span> year <span class="sc">|</span> country, <span class="at">data =</span> gapminder)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Friedman rank sum test
@@ -777,10 +922,18 @@ data:  lifeExp and year and country
 Friedman chi-squared = 1326.5, df = 11, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<p>Test Friedmana jest nieparametrycznym odpowiednikiem <strong>analizy wariancji dla pomiarów powtarzanych</strong> - stosujemy go, gdy te same obiekty mierzymy więcej niż dwa razy. W przykładzie powyżej “obiektem” jest kraj, a kolejnymi pomiarami - lata 1952-2007. Formuła <code>lifeExp ~ year | country</code> czyta się: zmienna <em>lifeExp</em> w zależności od <em>year</em>, w blokach wyznaczonych przez <em>country</em>.</p>
+<p><strong>Interpretacja:</strong> p-value jest mniejsze od 2,2e-16, więc odrzucamy hipotezę zerową. Oczekiwana dalsza długość życia różni się istotnie statystycznie pomiędzy kolejnymi latami pomiaru. Test nie mówi jednak, <strong>które</strong> lata różnią się między sobą - aby to ustalić, potrzebny jest test post-hoc dla pomiarów powtarzanych (np. testy kolejności par Wilcoxona dla wybranych par lat z poprawką na wielokrotne porównania).</p>
+<blockquote class="blockquote">
+<p>Pytanie: dlaczego do porównania lat nie można tu użyć testu Kruskala-Wallisa?</p>
+</blockquote>
 
 
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImdhcG1pbmRlciIsImRwbHlyIiwiZ2dwbG90MiIsImR1bm4udGVzdCJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItMy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzMuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuX3dlYnJfZmVlZGJhY2tfMiA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMi5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIFVzZSBQb3N0TWVzc2FnZSBjaGFubmVsIGZvciBhc3luYyBjb21tdW5pY2F0aW9uXG4gIC8vIFdlIGRvIG5vdCBleHBlY3QgdG8gdGFrZSBuZXN0ZWQgcHJvbXB0IGlucHV0IGluIFF1YXJ0byBMaXZlIGNlbGxzXG4gIGRhdGEub3B0aW9ucy5jaGFubmVsVHlwZSA9IENoYW5uZWxUeXBlLlBvc3RNZXNzYWdlO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -791,7 +944,7 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 
@@ -1231,8 +1384,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./11_testowanie_istotnosci_proporcji.html" class="pagination-link" aria-label="Testowanie istoności proporcji">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11_testowanie_istotnosci_proporcji.html" class="pagination-link" aria-label="Testowanie istotności proporcji">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

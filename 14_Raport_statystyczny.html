@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -257,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -290,7 +324,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -336,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -358,6 +392,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -369,11 +420,21 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#analiza-statystyczna" id="toc-analiza-statystyczna" class="nav-link active" data-scroll-target="#analiza-statystyczna"><span class="header-section-number">20.1</span> Analiza statystyczna</a></li>
-  <li><a href="#raport-statystyczny" id="toc-raport-statystyczny" class="nav-link" data-scroll-target="#raport-statystyczny"><span class="header-section-number">20.2</span> Raport statystyczny</a></li>
-  <li><a href="#kompozycja-raportu" id="toc-kompozycja-raportu" class="nav-link" data-scroll-target="#kompozycja-raportu"><span class="header-section-number">20.3</span> Kompozycja raportu</a></li>
-  <li><a href="#ryciny" id="toc-ryciny" class="nav-link" data-scroll-target="#ryciny"><span class="header-section-number">20.4</span> Ryciny</a></li>
-  <li><a href="#kod" id="toc-kod" class="nav-link" data-scroll-target="#kod"><span class="header-section-number">20.5</span> Kod</a></li>
-  <li><a href="#kilka-technicznych-uwag" id="toc-kilka-technicznych-uwag" class="nav-link" data-scroll-target="#kilka-technicznych-uwag"><span class="header-section-number">20.6</span> Kilka technicznych uwag</a></li>
+  <li><a href="#kompozycja-raportu" id="toc-kompozycja-raportu" class="nav-link" data-scroll-target="#kompozycja-raportu"><span class="header-section-number">20.2</span> Kompozycja raportu</a></li>
+  <li><a href="#ryciny-i-tabele" id="toc-ryciny-i-tabele" class="nav-link" data-scroll-target="#ryciny-i-tabele"><span class="header-section-number">20.3</span> Ryciny i tabele</a></li>
+  <li><a href="#kod" id="toc-kod" class="nav-link" data-scroll-target="#kod"><span class="header-section-number">20.4</span> Kod</a></li>
+  <li><a href="#nagłówek-dokumentu" id="toc-nagłówek-dokumentu" class="nav-link" data-scroll-target="#nagłówek-dokumentu"><span class="header-section-number">20.5</span> Nagłówek dokumentu</a></li>
+  <li><a href="#jak-czytać-przykładowy-raport" id="toc-jak-czytać-przykładowy-raport" class="nav-link" data-scroll-target="#jak-czytać-przykładowy-raport"><span class="header-section-number">20.6</span> Jak czytać przykładowy raport</a></li>
+  <li><a href="#na-co-zwrócić-uwagę-we-własnym-raporcie" id="toc-na-co-zwrócić-uwagę-we-własnym-raporcie" class="nav-link" data-scroll-target="#na-co-zwrócić-uwagę-we-własnym-raporcie"><span class="header-section-number">20.7</span> Na co zwrócić uwagę we własnym raporcie</a></li>
+  <li><a href="#jakie-jeszcze-wykresy-można-wykorzystać" id="toc-jakie-jeszcze-wykresy-można-wykorzystać" class="nav-link" data-scroll-target="#jakie-jeszcze-wykresy-można-wykorzystać"><span class="header-section-number">20.8</span> Jakie jeszcze wykresy można wykorzystać</a>
+  <ul class="collapse">
+  <li><a href="#wykres-skrzypcowy-z-pudełkiem" id="toc-wykres-skrzypcowy-z-pudełkiem" class="nav-link" data-scroll-target="#wykres-skrzypcowy-z-pudełkiem"><span class="header-section-number">20.8.1</span> Wykres skrzypcowy z pudełkiem</a></li>
+  <li><a href="#dystrybuanta-empiryczna" id="toc-dystrybuanta-empiryczna" class="nav-link" data-scroll-target="#dystrybuanta-empiryczna"><span class="header-section-number">20.8.2</span> Dystrybuanta empiryczna</a></li>
+  <li><a href="#wykres-kropkowy-zamiast-tabeli" id="toc-wykres-kropkowy-zamiast-tabeli" class="nav-link" data-scroll-target="#wykres-kropkowy-zamiast-tabeli"><span class="header-section-number">20.8.3</span> Wykres kropkowy zamiast tabeli</a></li>
+  <li><a href="#heatmapa" id="toc-heatmapa" class="nav-link" data-scroll-target="#heatmapa"><span class="header-section-number">20.8.4</span> Heatmapa</a></li>
+  <li><a href="#multiwykres-z-histogramami" id="toc-multiwykres-z-histogramami" class="nav-link" data-scroll-target="#multiwykres-z-histogramami"><span class="header-section-number">20.8.5</span> Multiwykres z histogramami</a></li>
+  <li><a href="#inne-możliwości" id="toc-inne-możliwości" class="nav-link" data-scroll-target="#inne-możliwości"><span class="header-section-number">20.8.6</span> Inne możliwości</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -399,95 +460,300 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Raport statystyczny to dokument, w którym przedstawia się wyniki analizy danych. Nie jest to zapis przebiegu pracy ani lista wykonanych poleceń - jest to <strong>uporządkowana odpowiedź na postawione pytanie</strong>, poparta liczbami i rycinami.</p>
+<p>Rozdział omawia zasady budowy raportu. Napisany według nich przykład znajduje się w rozdziale 21.</p>
 <section id="analiza-statystyczna" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="analiza-statystyczna"><span class="header-section-number">20.1</span> Analiza statystyczna</h2>
-<p>Podstawowym elementem każdej analizy statystycznej jest wykonanie <strong>charakterystyki statystycznej danych</strong>. Charakterystyka statystyczna danych powinna obejmować zarówno <strong><em>obliczenie statystyk opisowych</em></strong> jak i <strong><em>wizualizację wyników</em></strong>.</p>
-<p>Wyniki powinne być przedstawione w postaci tabel, wykresów oraz map.</p>
+<p>Podstawowym elementem każdej analizy statystycznej jest wykonanie <strong>charakterystyki statystycznej danych</strong>. Powinna ona obejmować zarówno <strong><em>obliczenie statystyk opisowych</em></strong>, jak i <strong><em>wizualizację wyników</em></strong>. Wyniki przedstawia się w postaci tabel, wykresów oraz map.</p>
 </section>
-<section id="raport-statystyczny" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="raport-statystyczny"><span class="header-section-number">20.2</span> Raport statystyczny</h2>
-<p>Każdy raport statystyczny zawiera:</p>
-<ul>
-<li>tekst</li>
-<li>ryciny</li>
-<li>kod</li>
-<li>inne elementy</li>
-</ul>
-</section>
-<section id="kompozycja-raportu" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="kompozycja-raportu"><span class="header-section-number">20.3</span> Kompozycja raportu</h2>
-<p>Każdy raport przedstawiający opracowanie statystyczne wyników powinien składać się z kilku części:</p>
+<section id="kompozycja-raportu" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="kompozycja-raportu"><span class="header-section-number">20.2</span> Kompozycja raportu</h2>
+<p>Każdy raport przedstawiający opracowanie statystyczne powinien składać się z kilku części:</p>
 <ol type="1">
-<li><p>Wprowadzenie</p>
+<li><p><strong>Wprowadzenie</strong></p>
 <ul>
-<li>stanowi wprowadzenie do problematyki</li>
-<li>powinien być zakończony postawieniem celu badań</li>
+<li>stanowi wprowadzenie do problematyki,</li>
+<li>kończy się <strong>wyraźnym sformułowaniem celu</strong> analizy; warto rozbić go na kilka pytań szczegółowych.</li>
 </ul></li>
-<li><p>Dane</p>
+<li><p><strong>Dane</strong></p>
 <ul>
-<li>informacje o wykorzystanym zbiorze danych (co mierzono? kiedy? gdzie? po co? jak?)</li>
-<li>źródło danych</li>
+<li>informacje o wykorzystanym zbiorze danych (co mierzono? kiedy? gdzie? po co? jak?),</li>
+<li>źródło danych,</li>
+<li>liczebność zbioru i braki danych.</li>
 </ul></li>
-<li><p>Metody</p>
+<li><p><strong>Metody</strong></p>
 <ul>
-<li>opis wykorzystanych metod do eksploracji danych</li>
-<li>opis wykorzystanych metod do analizy danych</li>
-<li>określenie wykorzystanego oprogramowania</li>
+<li>jakie dane wykorzystano i jakich kroków przygotowania wymagały,</li>
+<li>opis metod użytych do eksploracji i analizy danych,</li>
+<li>wykorzystane oprogramowanie i pakiety.</li>
 </ul></li>
-<li><p>Wyniki</p>
+<li><p><strong>Wyniki</strong></p>
 <ul>
-<li>Co odkryliśmy w wyniku analizy danych?</li>
-<li>Wyniki eksploracji danych</li>
-<li>Wyniki zastosowanych testów</li>
-<li>Ta część zawiera zestawienia tabelaryczne, wykresy.</li>
-<li>Ta część <strong>nie zawiera</strong> analizy i interpretacji wyników.</li>
+<li>co odkryliśmy w wyniku analizy danych,</li>
+<li>wyniki eksploracji danych oraz zastosowanych testów,</li>
+<li>ta część zawiera zestawienia tabelaryczne i wykresy.</li>
 </ul></li>
-<li><p>Wnioski i podsumowanie</p>
+<li><p><strong>Wnioski i podsumowanie</strong></p>
 <ul>
-<li>Określenie wyników analiz</li>
-<li>Podsumowanie analizy</li>
-<li>Odniesienie się do postawionego celu</li>
-<li>Stwierdzenie braków czy problemów w analizie</li>
+<li>odniesienie się do postawionego celu,</li>
+<li>podsumowanie wyników analizy,</li>
+<li>stwierdzenie braków czy problemów w analizie.</li>
 </ul></li>
-<li><p>Literatura</p></li>
+<li><p><strong>Literatura</strong></p></li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wyniki a wnioski
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To dwie różne części i nie należy ich mieszać. Sekcja <strong>Wyniki</strong> mówi, <strong>co wyszło</strong>: jakie są wartości statystyk, co widać na rycinie. Sekcja <strong>Wnioski</strong> mówi, <strong>co z tego wynika</strong>: czy cel został osiągnięty, jak odpowiadamy na postawione pytania, czego na podstawie tych danych stwierdzić nie można.</p>
+</div>
+</div>
 </section>
-<section id="ryciny" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="ryciny"><span class="header-section-number">20.4</span> Ryciny</h2>
+<section id="ryciny-i-tabele" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="ryciny-i-tabele"><span class="header-section-number">20.3</span> Ryciny i tabele</h2>
 <p>Ryciny zawarte w raportach muszą być wykonane z pełną dbałością o czytelność.</p>
 <ul>
-<li>wykresy muszą być czytelne oraz informacyjne</li>
-<li>osie na wykresach muszą być podpisane</li>
-<li>ryciny muszą być podpisane.</li>
-<li>każda rycina zamieszczona w raporcie musi być opisana w tekście.</li>
+<li>wykresy muszą być czytelne oraz informacyjne,</li>
+<li>osie na wykresach muszą być podpisane, wraz z jednostkami,</li>
+<li>każda rycina i tabela musi mieć <strong>numer i podpis</strong>,</li>
+<li>każda rycina i tabela zamieszczona w raporcie musi być <strong>opisana w tekście</strong>.</li>
 </ul>
+<p>Ostatnia zasada działa w obie strony: rycina, do której tekst się nie odwołuje, nie jest w raporcie potrzebna. Podpis ma mówić, <strong>co na rycinie widać</strong>, a nie tylko jak się ona nazywa.</p>
 </section>
-<section id="kod" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="kod"><span class="header-section-number">20.5</span> Kod</h2>
+<section id="kod" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="kod"><span class="header-section-number">20.4</span> Kod</h2>
 <ul>
 <li>Kod załączony do raportu powinien być przejrzysty i dobrze skomentowany.</li>
-<li>W tekście umieszczamy tabele, wykresy ale nie pokazujemy kodu, który je wykonał.</li>
-<li>Kod może zostać zamieszczony w formie skryptu jako Załącznik do raportu.</li>
+<li>W tekście umieszczamy tabele i wykresy, ale <strong>nie pokazujemy kodu</strong>, który je wykonał - stosujemy opcję ukrycia kodu (<code>code-fold</code>).</li>
+<li>Kod może też zostać zamieszczony w formie skryptu jako załącznik do raportu.</li>
 </ul>
 </section>
-<section id="kilka-technicznych-uwag" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="kilka-technicznych-uwag"><span class="header-section-number">20.6</span> Kilka technicznych uwag</h2>
+<section id="nagłówek-dokumentu" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="nagłówek-dokumentu"><span class="header-section-number">20.5</span> Nagłówek dokumentu</h2>
 <ul>
-<li><p>W bloku kodu należy dodać <em>label: fig-nazwaryciny</em> oraz <em>fig-cap: “Podpis ryciny”</em>, a następnie w tekście należy odwołać się do ryciny <code>@fig-nazwaryciny</code>. Zapewni to automatyczne numerowanie rycin.</p></li>
-<li><p>W bloku kodu należy dodać <em>label: tbl-nazwatabelo</em> oraz <em>tbl-cap: “Podpis tabeli”</em>, a następnie w tekście należy odwołać się do tabeli <code>@tbl-nazwatabeli</code>. Zapewni to automatyczne numerowanie tabel.</p></li>
+<li><p>W bloku kodu należy dodać <em>label: fig-nazwaryciny</em> oraz <em>fig-cap: “Podpis ryciny”</em>, a następnie w tekście odwołać się do ryciny przez <code>@fig-nazwaryciny</code>. Zapewni to automatyczne numerowanie rycin.</p></li>
+<li><p>W bloku kodu należy dodać <em>label: tbl-nazwatabeli</em> oraz <em>tbl-cap: “Podpis tabeli”</em>, a następnie w tekście odwołać się do tabeli przez <code>@tbl-nazwatabeli</code>. Zapewni to automatyczne numerowanie tabel.</p></li>
 <li><p>Nagłówek dokumentu:</p></li>
 </ul>
-<pre><code>title: "Tytuł raportu"
-author: "Autor"
-format:
-  html:
-    code-fold: true # ta opcja spowoduje, że kod będzie domyślnie ukryty z możliwością odkrycia bloku kodu. 
-crossref: #parametry pozwalające na odwoływanie się do rycin w języku polskim 
-  fig-title: Rycina     # (domyślnie jest "Figure")
-  tbl-title: Tabela     # (domyślnie jest  "Figure")
-  fig-prefix: Ryc.   # (domyślnie jest "Figure")
-  tbl-prefix: Tabela   # (domyślnie jest "Table")
-  ref-hyperlink: false # (domyślnie jest  true)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tytuł raportu"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Imię Nazwisko"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> today</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co">          # kod domyślnie ukryty, z możliwością rozwinięcia</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">code-summary</span><span class="kw">:</span><span class="at"> </span><span class="st">"Pokaż kod"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">crossref</span><span class="kw">:</span><span class="co">                    # polskie podpisy i odwołania</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-title</span><span class="kw">:</span><span class="at"> Rycina</span><span class="co">          # (domyślnie "Figure")</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tbl-title</span><span class="kw">:</span><span class="at"> Tabela</span><span class="co">          # (domyślnie "Table")</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fig-prefix</span><span class="kw">:</span><span class="at"> ryc.</span><span class="co">           # (domyślnie "Figure")</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">tbl-prefix</span><span class="kw">:</span><span class="at"> tab.</span><span class="co">           # (domyślnie "Table")</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ref-hyperlink</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">       # (domyślnie true)</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="jak-czytać-przykładowy-raport" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="jak-czytać-przykładowy-raport"><span class="header-section-number">20.6</span> Jak czytać przykładowy raport</h2>
+<p>Rozdział 21 zawiera przykładowy raport, napisany według powyższych zasad. Dotyczy on cen mieszkań w trzech dzielnicach Wrocławia. Czytając go, zwróć uwagę na cztery rzeczy, które decydują o ocenie raportu:</p>
+<ol type="1">
+<li><strong>Cel jest sformułowany wprost i rozbity na pytania szczegółowe.</strong> Dzięki temu wiadomo, po co wykonano każdą kolejną analizę.</li>
+<li><strong>Każda rycina i tabela ma numer, podpis i jest omówiona w tekście.</strong></li>
+<li><strong>Analiza ma tok rozumowania</strong>, a nie jest listą wykonanych poleceń. Pierwsze spostrzeżenie prowadzi do pytania, pytanie do kolejnej ryciny, a ta do wniosku.</li>
+<li><strong>Ograniczenia są nazwane wprost.</strong> Raport, który o niczym nie wątpi, jest mniej wiarygodny, a nie bardziej.</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Przykład nie jest szablonem do podmiany danych
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Raport z rozdziału 21 dotyczy innych danych i innego pytania badawczego niż projekt zaliczeniowy. Jednostką analizy jest tam mieszkanie, a nie państwo; porównywane są dzielnice, a nie regiony świata.</p>
+<p>Zrobiono tak celowo. Raport, który powstaje przez podstawienie własnych danych pod cudzy tekst, zawsze to po sobie widać - a ocenie podlega między innymi <strong>dobór metod i wykresów do postawionego pytania</strong>. Z przykładu przenieś <strong>zasady</strong>: strukturę dokumentu, sposób opisywania rycin, formułowanie wniosków, uczciwe nazwanie ograniczeń. Treść, dobór wykresów i tok rozumowania wymyśl samodzielnie.</p>
+</div>
+</div>
+</section>
+<section id="na-co-zwrócić-uwagę-we-własnym-raporcie" class="level2" data-number="20.7">
+<h2 data-number="20.7" class="anchored" data-anchor-id="na-co-zwrócić-uwagę-we-własnym-raporcie"><span class="header-section-number">20.7</span> Na co zwrócić uwagę we własnym raporcie</h2>
+<p><strong>Zasady ogólne, które warto powtórzyć</strong></p>
+<ul>
+<li>Rodzaje wykresów dobieraj do treści, zamiast powielać jeden typ: histogram do rozkładu jednej zmiennej, wykres rozrzutu do relacji dwóch zmiennych ilościowych, wykres pudełkowy lub grzbietowy do porównania rozkładów w grupach, wykres udziałów do struktury zmiennej jakościowej.</li>
+<li>Liczby w tekście podawaj z jednostką i sensownie zaokrąglone - nie przepisuj wszystkich miejsc po przecinku z konsoli R.</li>
+<li>Ograniczenia wymieniaj konkretnie (liczebność grup, rodzaj danych, brakujące zmienne), a nie zdaniem „analiza ma pewne ograniczenia”.</li>
+<li>Odwołanie do ryciny nie powinno zaczynać zdania małą literą. Zamiast „ryc. 3 pokazuje…” napisz „Jak pokazuje <code>@fig-nazwa</code>, …“.</li>
+</ul>
+<p><strong>Jeden nawyk wart przeniesienia</strong></p>
+<p>Gdy w danych pojawi się różnica między grupami, zapytaj, czy nie tłumaczy jej jakaś inna, oczywista cecha - i sprawdź to. W przykładzie z rozdziału 21 sprawdzono trzy takie cechy: powierzchnię mieszkania, typ zabudowy i liczbę pokoi. Dopiero gdy różnica przetrwa taką kontrolę, można mówić o niej jako o czymś, co wiąże się z samą lokalizacją. To rozumowanie da się przenieść na dowolne dane - zmieni się tylko to, jakie cechy trzeba sprawdzić.</p>
+<p><strong>Czego nie przenosić</strong></p>
+<p>Tok rozumowania przykładowego raportu - od ceny całkowitej, przez cenę za metr kwadratowy, po strukturę zabudowy - wynika z pytania o ceny mieszkań i do innego pytania nie pasuje. We własnym raporcie trzeba zbudować własny tok: zdecydować, co jest głównym pytaniem, w jakiej kolejności je rozwijać i jakimi rycinami to pokazać. To właśnie podlega ocenie.</p>
+</section>
+<section id="jakie-jeszcze-wykresy-można-wykorzystać" class="level2" data-number="20.8">
+<h2 data-number="20.8" class="anchored" data-anchor-id="jakie-jeszcze-wykresy-można-wykorzystać"><span class="header-section-number">20.8</span> Jakie jeszcze wykresy można wykorzystać</h2>
+<p>Przykładowy raport mieści się w 1800 słowach i sześciu rycinach, więc pokazuje tylko część możliwości. Poniżej zebrano wykresy, po które warto sięgnąć przy większej objętości raportu - wraz z informacją, <strong>kiedy</strong> każdy z nich jest lepszy od standardowego rozwiązania. Wszystkie wykonano na tych samych danych o cenach mieszkań, żeby łatwo było je porównać z rozdziałem 21. Zbiór pochodzi z pakietu <code>Przewodnik</code> towarzyszącego podręcznikowi: Biecek P. (2017), <em>Przewodnik po pakiecie R</em>, wyd. 4 rozszerzone, Oficyna Wydawnicza GiS, Wrocław.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>mieszkania <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/daneMieszkania.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cena_m2   =</span> cena <span class="sc">/</span> powierzchnia,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">dzielnica =</span> <span class="fu">recode</span>(dzielnica, <span class="st">"Srodmiescie"</span> <span class="ot">=</span> <span class="st">"Śródmieście"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="wykres-skrzypcowy-z-pudełkiem" class="level3" data-number="20.8.1">
+<h3 data-number="20.8.1" class="anchored" data-anchor-id="wykres-skrzypcowy-z-pudełkiem"><span class="header-section-number">20.8.1</span> Wykres skrzypcowy z pudełkiem</h3>
+<p>Wykres pudełkowy pokazuje pięć statystyk, ale ukrywa kształt rozkładu - dwa zupełnie różne rozkłady mogą dać identyczne pudełko. Połączenie wykresu skrzypcowego z pudełkowym daje jedno i drugie naraz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mieszkania, <span class="fu">aes</span>(<span class="at">x =</span> dzielnica, <span class="at">y =</span> cena_m2, <span class="at">fill =</span> dzielnica)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">outlier.size =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Cena [zł/m²]"</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-skrzypce" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-skrzypce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14_Raport_statystyczny_files/figure-html/fig-skrzypce-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-skrzypce-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Rysunek&nbsp;20.1: Wykres skrzypcowy z nałożonym wykresem pudełkowym - pokazuje jednocześnie kształt rozkładu i statystyki pozycyjne.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dystrybuanta-empiryczna" class="level3" data-number="20.8.2">
+<h3 data-number="20.8.2" class="anchored" data-anchor-id="dystrybuanta-empiryczna"><span class="header-section-number">20.8.2</span> Dystrybuanta empiryczna</h3>
+<p>Dystrybuanta odpowiada na pytanie „jaki odsetek obserwacji nie przekracza danej wartości”. Jest szczególnie wygodna do porównywania grup, bo nie wygładza danych i nie wymaga dobierania liczby koszyków - krzywa położona bardziej na prawo oznacza grupę o wyższych wartościach.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mieszkania, <span class="fu">aes</span>(<span class="at">x =</span> cena_m2, <span class="at">colour =</span> dzielnica)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_ecdf</span>(<span class="at">linewidth =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Cena [zł/m²]"</span>, <span class="at">y =</span> <span class="st">"Odsetek ofert tańszych"</span>, <span class="at">colour =</span> <span class="st">"Dzielnica"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ecdf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ecdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14_Raport_statystyczny_files/figure-html/fig-ecdf-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ecdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Rysunek&nbsp;20.2: Dystrybuanta empiryczna ceny metra kwadratowego w trzech dzielnicach.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="wykres-kropkowy-zamiast-tabeli" class="level3" data-number="20.8.3">
+<h3 data-number="20.8.3" class="anchored" data-anchor-id="wykres-kropkowy-zamiast-tabeli"><span class="header-section-number">20.8.3</span> Wykres kropkowy zamiast tabeli</h3>
+<p>Jeśli porównywanych grup jest więcej niż kilka, tabela ze średnimi staje się nieczytelna. Wykres kropkowy pokazuje te same liczby w sposób, który od razu porządkuje grupy od najmniejszej do największej wartości.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mieszkania <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pokoi) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mediana =</span> <span class="fu">median</span>(cena_m2)) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mediana, <span class="at">y =</span> <span class="fu">factor</span>(pokoi))) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> mediana, <span class="at">yend =</span> <span class="fu">factor</span>(pokoi)), <span class="at">colour =</span> <span class="st">"grey70"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">colour =</span> <span class="st">"#1F3864"</span>) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Mediana ceny [zł/m²]"</span>, <span class="at">y =</span> <span class="st">"Liczba pokoi"</span>) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-kropkowy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kropkowy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14_Raport_statystyczny_files/figure-html/fig-kropkowy-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kropkowy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Rysunek&nbsp;20.3: Mediana ceny metra kwadratowego według liczby pokoi. Wykres kropkowy zastępuje tabelę ze statystykami.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="heatmapa" class="level3" data-number="20.8.4">
+<h3 data-number="20.8.4" class="anchored" data-anchor-id="heatmapa"><span class="header-section-number">20.8.4</span> Heatmapa</h3>
+<p>Heatmapa pozwala pokazać wartość liczbową w podziale na <strong>dwie</strong> zmienne jakościowe naraz. Jest dobrym rozwiązaniem, gdy interesuje nas, czy wpływ jednej cechy jest taki sam we wszystkich kategoriach drugiej.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mieszkania <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dzielnica, pokoi) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mediana =</span> <span class="fu">median</span>(cena_m2), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(pokoi), <span class="at">y =</span> dzielnica, <span class="at">fill =</span> mediana)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># kolor etykiety zależny od tła - inaczej jasne pola są nieczytelne</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(mediana), <span class="at">colour =</span> mediana <span class="sc">&gt;</span> <span class="dv">5000</span>), <span class="at">size =</span> <span class="fl">3.2</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"mako"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey15"</span>, <span class="st">"white"</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Liczba pokoi"</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Mediana</span><span class="sc">\n</span><span class="st">[zł/m²]"</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-heatmapa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-heatmapa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14_Raport_statystyczny_files/figure-html/fig-heatmapa-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-heatmapa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Rysunek&nbsp;20.4: Mediana ceny metra kwadratowego według dzielnicy i liczby pokoi.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="multiwykres-z-histogramami" class="level3" data-number="20.8.5">
+<h3 data-number="20.8.5" class="anchored" data-anchor-id="multiwykres-z-histogramami"><span class="header-section-number">20.8.5</span> Multiwykres z histogramami</h3>
+<p>Gdy porównywanych grup jest kilka, a chcemy pokazać pełne rozkłady, multiwykres bywa czytelniejszy niż wykres grzbietowy - zwłaszcza gdy rozkłady mają różną liczebność.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mieszkania, <span class="fu">aes</span>(<span class="at">x =</span> cena_m2)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">18</span>, <span class="at">fill =</span> <span class="st">"#8EAADB"</span>, <span class="at">colour =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dzielnica) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Cena [zł/m²]"</span>, <span class="at">y =</span> <span class="st">"Liczba ofert"</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-multiwykres" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-multiwykres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="14_Raport_statystyczny_files/figure-html/fig-multiwykres-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-multiwykres-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Rysunek&nbsp;20.5: Rozkład ceny metra kwadratowego w podziale na dzielnice - multiwykres.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="inne-możliwości" class="level3" data-number="20.8.6">
+<h3 data-number="20.8.6" class="anchored" data-anchor-id="inne-możliwości"><span class="header-section-number">20.8.6</span> Inne możliwości</h3>
+<ul>
+<li><strong>Wykres udziałów skumulowanych</strong> (<code>position = "fill"</code>) - struktura zmiennej jakościowej w grupach; użyty w rozdziale 21.</li>
+<li><strong>Treemap</strong> (pakiet <code>treemapify</code>) - struktura udziałów, gdy kategorii jest dużo i słupki stają się nieczytelne.</li>
+<li><strong>Wykres kwantylowy (QQ-plot)</strong> - ocena zgodności rozkładu z normalnym; czytelniejszy niż sam histogram, gdy chodzi o ogony rozkładu.</li>
+<li><strong>Mapa</strong> - jeżeli jednostką analizy jest obszar (państwo, województwo), mapa pokazuje układ przestrzenny, którego nie odda żaden wykres.</li>
+<li><strong>Wykres rozrzutu z trzecią zmienną</strong> zakodowaną kolorem, kształtem albo wielkością punktu - pozwala pokazać trzy zmienne na jednej rycinie.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Więcej rycin nie znaczy lepiej
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Każda rycina musi mieć w raporcie zadanie: odpowiadać na jedno z postawionych pytań albo uzasadniać kolejny krok analizy. Trzy ryciny, z których każda coś wnosi, są warte więcej niż osiem pokazujących to samo w różnych konwencjach. Jeżeli nie potrafisz napisać zdania, które mówi, co z danej ryciny wynika - jest to rycina zbędna.</p>
+</div>
+</div>
 
 
 <script type="ojs-module-contents">
@@ -502,8 +768,9 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -942,8 +1209,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./15_Raport_przyklad.html" class="pagination-link" aria-label="Analiza statystyczna długości trwania życia na świecie w 2007 roku.">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./15_Raport_przyklad.html" class="pagination-link" aria-label="Przykładowy raport statystyczny">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

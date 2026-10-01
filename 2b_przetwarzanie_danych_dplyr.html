@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -388,6 +388,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -417,8 +434,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#funkcja-summarize" id="toc-funkcja-summarize" class="nav-link" data-scroll-target="#funkcja-summarize"><span class="header-section-number">4.2.6</span> Funkcja <code>summarize()</code></a></li>
   <li><a href="#grupowanie-.by" id="toc-grupowanie-.by" class="nav-link" data-scroll-target="#grupowanie-.by"><span class="header-section-number">4.2.7</span> Grupowanie .by</a></li>
   <li><a href="#funkcja-pull" id="toc-funkcja-pull" class="nav-link" data-scroll-target="#funkcja-pull"><span class="header-section-number">4.2.8</span> Funkcja <code>pull()</code></a></li>
-  <li><a href="#operator-łączący-." id="toc-operator-łączący-." class="nav-link" data-scroll-target="#operator-łączący-."><span class="header-section-number">4.2.9</span> Operator łączący (<code>%&gt;%</code>).</a></li>
-  <li><a href="#funkcja-join" id="toc-funkcja-join" class="nav-link" data-scroll-target="#funkcja-join"><span class="header-section-number">4.2.10</span> Funkcja <code>join()</code></a></li>
+  <li><a href="#operatory-potokowe-oraz" id="toc-operatory-potokowe-oraz" class="nav-link" data-scroll-target="#operatory-potokowe-oraz"><span class="header-section-number">4.2.9</span> Operatory potokowe: <code>|&gt;</code> oraz <code>%&gt;%</code></a></li>
+  <li><a href="#łączenie-tabel---funkcje-_join" id="toc-łączenie-tabel---funkcje-_join" class="nav-link" data-scroll-target="#łączenie-tabel---funkcje-_join"><span class="header-section-number">4.2.10</span> Łączenie tabel - funkcje <code>*_join()</code></a></li>
   </ul></li>
   <li><a href="#sec-uklad-danych" id="toc-sec-uklad-danych" class="nav-link" data-scroll-target="#sec-uklad-danych"><span class="header-section-number">4.3</span> Układ danych</a></li>
   </ul>
@@ -446,55 +463,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="cell" data-setup="true" data-exercise="[&quot;ex_2&quot;,&quot;ex_3&quot;,&quot;ex_4&quot;,&quot;ex_5&quot;,&quot;ex_6&quot;,&quot;ex_7&quot;,&quot;ex_8&quot;,&quot;ex_9&quot;,&quot;ex_10&quot;,&quot;ex_11&quot;,&quot;ex_12&quot;,&quot;ex_13&quot;,&quot;ex_14&quot;,&quot;ex_15&quot;]">
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;,&quot;ex_3&quot;,&quot;ex_4&quot;,&quot;ex_5&quot;,&quot;ex_6&quot;,&quot;ex_7&quot;,&quot;ex_8&quot;,&quot;ex_9&quot;,&quot;ex_10&quot;,&quot;ex_11&quot;,&quot;ex_12&quot;,&quot;ex_13&quot;,&quot;ex_14&quot;,&quot;ex_15&quot;]">
+<script type="exercise-setup-ex_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
+</script>
 <script type="exercise-setup-ex_2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_14-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 <script type="exercise-setup-ex_15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwiZXhfNCIsImV4XzUiLCJleF82IiwiZXhfNyIsImV4XzgiLCJleF85IiwiZXhfMTAiLCJleF8xMSIsImV4XzEyIiwiZXhfMTMiLCJleF8xNCIsImV4XzE1Il0sInNldHVwIjp0cnVlfSwiY29kZSI6IlxubGlicmFyeShnYXBtaW5kZXIpXG5saWJyYXJ5KGRwbHlyKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcblxuZGF0YSgnZ2FwbWluZGVyJywgcGFja2FnZSA9ICdnYXBtaW5kZXInKSJ9
 </script>
 </div>
+<p>W poprzednim rozdziale te same operacje - wybór wierszy i kolumn, sortowanie, tworzenie nowych zmiennych - wykonywaliśmy za pomocą <strong>indeksowania</strong> dostępnego w podstawowym R (<code>gapminder[gapminder$year == 1952, ]</code>). Teraz poznamy pakiet <code>dplyr</code>, który robi to samo w zapisie czytelniejszym i łatwiejszym do łączenia w dłuższe ciągi operacji (<code>filter(gapminder, year == 1952)</code>).</p>
+<p><strong>Czego używać?</strong> Obu zapisów warto się nauczyć: indeksowanie bazowe działa zawsze, bez instalowania czegokolwiek, i spotkasz je w cudzym kodzie oraz w dokumentacji R. W tym skrypcie i w zadaniach używamy jednak <code>dplyr</code>, ponieważ przy bardziej złożonych operacjach jest wyraźnie czytelniejszy.</p>
 <section id="pakiety" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="pakiety"><span class="header-section-number">4.1</span> Pakiety</h2>
 <section id="pakiet-dplyr" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="pakiet-dplyr"><span class="header-section-number">4.1.1</span> Pakiet dplyr</h3>
-<p>Pakiet <code>dplyr</code> wykorzystuje się do podstawowych operacji przetwarzania danych z wykrzystaniem obiektów typu data.frame. Podstawowe funkcje pakietu to:</p>
+<p>Pakiet <code>dplyr</code> wykorzystuje się do podstawowych operacji przetwarzania danych z wykorzystaniem obiektów typu data.frame. Podstawowe funkcje pakietu to:</p>
 <ul>
 <li><code>select()</code> - tworzenie podzbioru danych poprzez wybór zmiennych na podstawie ich nazw,</li>
 <li><code>filter()</code> - tworzenie podzbioru danych poprzez wybór wierszy na podstawie określonego warunku,</li>
@@ -505,9 +527,9 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwi
 <p>Pakiet <code>dplyr</code> dostarcza także funkcji:</p>
 <ul>
 <li>do grupowania danych: <code>group_by()</code> - pozwala na wykonanie operacji w podziale na grupy.</li>
-<li>do łączenia dwóch lub więcej obiektów (data.frame): <code>join()</code>, <code>left_join()</code>, <code>right_join()</code></li>
+<li>do łączenia dwóch lub więcej obiektów (data.frame): <code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, <code>full_join()</code> - w pakiecie <code>dplyr</code> nie ma pojedynczej funkcji <code>join()</code>, każdy rodzaj łączenia ma własną nazwę</li>
 </ul>
-<p>Pakiet <code>dplyr</code> pozwala także na wykorzystanie operatora łączącego funkcje %&gt;%</p>
+<p>Funkcje pakietu <code>dplyr</code> można ze sobą łączyć za pomocą operatora potokowego <code>|&gt;</code> (patrz podrozdział <em>Operatory potokowe</em>)</p>
 <p>Więcej informacji:</p>
 <ul>
 <li>dokumentacja pakietu: <a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></li>
@@ -516,13 +538,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzIiLCJleF8zIiwi
 </section>
 <section id="pakiet-tidyr" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="pakiet-tidyr"><span class="header-section-number">4.1.2</span> Pakiet tidyr</h3>
-<p>Dane wykorzysywane w analizach muszą być przechowywane w tzw. uporządkowany sposób (ang. <em>tidy data</em>). Uporządkowane dane to dane, w których:</p>
+<p>Dane wykorzystywane w analizach muszą być przechowywane w tzw. uporządkowany sposób (ang. <em>tidy data</em>). Uporządkowane dane to dane, w których:</p>
 <ul>
 <li>każda zmienna przechowywana jest w osobnej kolumnie.</li>
 <li>każda obserwacja jest zapisana w osobnym wierszu w tabeli danych</li>
 <li>każda wartość przechowywana jest w osobnej komórce (tzn. każda komórka przechowuje tylko jedną wartość).</li>
 </ul>
-<p>Pakiet <code>tidyr()</code> zawiera zestaw funkcji, które ułatwiają tworzenie uporządkowanych danych. Uporządkowane dane mogą być przechowywane w dwóch układach: układzie długim i układzie szerokim (więcej informacji w podrozdziale <a href="#sec-uklad-danych" class="quarto-xref"><span>Sekcja 4.3</span></a>)</p>
+<p>Pakiet <code>tidyr</code> zawiera zestaw funkcji, które ułatwiają tworzenie uporządkowanych danych. Uporządkowane dane mogą być przechowywane w dwóch układach: układzie długim i układzie szerokim (więcej informacji w podrozdziale <a href="#sec-uklad-danych" class="quarto-xref"><span>Sekcja 4.3</span></a>)</p>
 <p>Więcej informacji:</p>
 <ul>
 <li>dokumentacja: <a href="https://tidyr.tidyverse.org/" class="uri">https://tidyr.tidyverse.org/</a><br>
@@ -989,7 +1011,7 @@ Solution
 <div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<p>Wykorzystaj funkcję <code>rename</code>()` z pakietu dplyr</p>
+<p>Wykorzystaj funkcję <code>rename_with()</code> z pakietu dplyr</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rename_with</span>(gapminder, toupper)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -1058,10 +1080,11 @@ Solution
 <p>Rozwiązanie:</p>
 <p>Wykorzystaj funkcję <code>summarize</code> z pakietu dplyr</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ex10 <span class="ot">&lt;-</span> <span class="fu">summarize</span>(gapminder, </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="fu">sd</span>(gdpPercap),</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">min =</span> <span class="fu">min</span>(gdpPercap),</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">max =</span> <span class="fu">max</span>(gdpPercap))</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>ex10</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">srednia =</span> <span class="fu">mean</span>(gdpPercap),</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="fu">sd</span>(gdpPercap),</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">min =</span> <span class="fu">min</span>(gdpPercap),</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">max =</span> <span class="fu">max</span>(gdpPercap))</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>ex10</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1180,13 +1203,19 @@ Solution
 </div>
 </div>
 </section>
-<section id="operator-łączący-." class="level3" data-number="4.2.9">
-<h3 data-number="4.2.9" class="anchored" data-anchor-id="operator-łączący-."><span class="header-section-number">4.2.9</span> Operator łączący (<code>%&gt;%</code>).</h3>
-<p>Używając pakietu <code>dplyr</code> można łączyć ze sobą funkcje używając operatora <code>%&gt;%</code></p>
+<section id="operatory-potokowe-oraz" class="level3" data-number="4.2.9">
+<h3 data-number="4.2.9" class="anchored" data-anchor-id="operatory-potokowe-oraz"><span class="header-section-number">4.2.9</span> Operatory potokowe: <code>|&gt;</code> oraz <code>%&gt;%</code></h3>
+<p><strong>Operator potokowy</strong> (ang. <em>pipe</em>) przekazuje wynik działania jednej funkcji jako <strong>pierwszy argument</strong> funkcji następnej. Pozwala to zapisać kilka kolejnych operacji jako jeden czytelny ciąg, bez tworzenia obiektów pośrednich.</p>
+<p>W R dostępne są dwa takie operatory:</p>
+<ul>
+<li><code>|&gt;</code> - <strong>operator natywny</strong>, wbudowany w język R (od wersji 4.1). Nie wymaga żadnego pakietu.</li>
+<li><code>%&gt;%</code> - operator z pakietu <code>magrittr</code>, udostępniany przez <code>dplyr</code> oraz cały <code>tidyverse</code>. Starszy i bardzo rozpowszechniony - spotkasz go w większości materiałów i przykładów dostępnych w internecie.</li>
+</ul>
+<p>W tym skrypcie używamy operatora natywnego <code>|&gt;</code>, ale warto znać oba, bo w typowych zastosowaniach działają identycznie.</p>
 <section id="przykład" class="level4">
 <h4 class="anchored" data-anchor-id="przykład">Przykład</h4>
 <p>Które kraje w roku 1952 miały liczbę ludności powyżej 100 milionów?</p>
-<p>Aby odpowiedzieć na to pytanie możemy wykonać każdą operację osobno, i jej wynik zapisać w osobnym obiekcie. Operator łączący <code>%&gt;%</code> pozwala natomiast na przekazanie wyniku działania jednej funkcji do drugiej, bez tworzenia osobnych obiektów.</p>
+<p>Bez operatora potokowego każdą operację wykonujemy osobno, zapisując wynik w nowym obiekcie:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>s1 <span class="ot">&lt;-</span> <span class="fu">select</span>(f1, country, pop)</span>
@@ -1201,14 +1230,12 @@ Solution
 3 China         556263527</code></pre>
 </div>
 </div>
-<ul>
-<li><strong>Wykorzystanie operatora łączącego <code>%&gt;%</code></strong></li>
-</ul>
+<p>Ten sam zapis z operatorem natywnym <code>|&gt;</code>. Wynik każdej funkcji jest automatycznie przekazywany do następnej, więc nie powtarzamy nazwy zbioru danych:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span>  <span class="co">#wejsciowy zbior danych</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">%&gt;%</span> <span class="co"># wybor krajow z pop &gt; 100mln w roku 1952</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, pop) <span class="sc">%&gt;%</span> <span class="co"># wybor kolumn country, pop </span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pop) <span class="co"># sortowanie danych wzgledem pop</span></span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span>                           <span class="co">#wejsciowy zbior danych</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">|&gt;</span>  <span class="co"># wybor krajow z pop &gt; 100mln w roku 1952</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, pop) <span class="sc">|&gt;</span>                    <span class="co"># wybor kolumn country, pop </span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pop)                               <span class="co"># sortowanie danych wzgledem pop</span></span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1220,6 +1247,38 @@ Solution
 3 China         556263527</code></pre>
 </div>
 </div>
+<p>Operator <code>%&gt;%</code> daje w tym przypadku dokładnie ten sam wynik - wystarczy podmienić symbol:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, pop) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pop)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(df, df2)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="czym-różni-się-od" class="level4">
+<h4 class="anchored" data-anchor-id="czym-różni-się-od">Czym różni się <code>|&gt;</code> od <code>%&gt;%</code>?</h4>
+<p>Dla typowych potoków, takich jak powyższy, <strong>oba operatory są wymienne</strong>. Różnice ujawniają się w czterech sytuacjach:</p>
+<p><strong>1. Skąd pochodzą.</strong> Operator <code>|&gt;</code> jest częścią języka R (od wersji 4.1) i działa bez wczytywania jakiegokolwiek pakietu. Operator <code>%&gt;%</code> pochodzi z pakietu <code>magrittr</code> i jest dostępny tylko wtedy, gdy wczytamy <code>dplyr</code>, <code>magrittr</code> albo cały <code>tidyverse</code>. Kod z <code>|&gt;</code> zadziała więc w każdej instalacji R - także w takiej, w której nie ma zainstalowanego pakietu <code>dplyr</code>.</p>
+<p><strong>2. Nawiasy po prawej stronie.</strong> Operator natywny wymaga wywołania funkcji, czyli nawiasów. <code>magrittr</code> dopuszcza zapis skrócony:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">9</span>) <span class="sc">|&gt;</span> <span class="fu">sort</span>()     <span class="co"># poprawnie</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">9</span>) <span class="sc">|&gt;</span> sort       <span class="co"># BŁĄD: the pipe operator requires a function call as RHS</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">9</span>) <span class="sc">%&gt;%</span> sort      <span class="co"># w magrittr taki skrót jest dopuszczalny</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>3. Przekazanie wartości w inne miejsce niż pierwszy argument.</strong> Domyślnie oba operatory wstawiają wynik jako <strong>pierwszy</strong> argument następnej funkcji. Gdy potrzebujemy go w innym miejscu, używamy tzw. zastępnika (ang. <em>placeholder</em>) - i tu operatory różnią się najbardziej:</p>
+<ul>
+<li>w <code>%&gt;%</code> zastępnikiem jest kropka <code>.</code>; można jej użyć w dowolnym miejscu i dowolną liczbę razy,</li>
+<li>w <code>|&gt;</code> zastępnikiem jest podkreślnik <code>_</code>; można go użyć <strong>tylko raz</strong> i <strong>tylko jako argument nazwany</strong>.</li>
+</ul>
+<p>Przykład: funkcja <code>lm()</code> (budowa modelu regresji, patrz rozdział <em>Analiza regresji</em>) przyjmuje zbiór danych jako argument <code>data</code>, a nie jako pierwszy argument:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="sc">|&gt;</span> <span class="fu">lm</span>(annual_precip <span class="sc">~</span> tmax_9, <span class="at">data =</span> _)    <span class="co"># poprawnie</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="sc">|&gt;</span> <span class="fu">lm</span>(annual_precip <span class="sc">~</span> tmax_9, _)           <span class="co"># BŁĄD: zastępnik musi być argumentem nazwanym</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="sc">%&gt;%</span> <span class="fu">lm</span>(annual_precip <span class="sc">~</span> tmax_9, <span class="at">data =</span> .)   <span class="co"># odpowiednik w magrittr</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>4. Szybkość.</strong> <code>|&gt;</code> jest przekształcany już na etapie czytania kodu, więc nie wiąże się z wywołaniem dodatkowej funkcji. <code>%&gt;%</code> jest zwykłą funkcją, więc działa nieco wolniej. W praktyce ma to znaczenie tylko w potokach powtarzanych bardzo wiele razy.</p>
+<p><strong>Którego używać?</strong> Jeśli nie ma powodu, by postąpić inaczej - <code>|&gt;</code>. Operator <code>%&gt;%</code> warto znać, bo jest obecny w ogromnej liczbie materiałów i starszych skryptów, a także wtedy, gdy potrzebujemy zastępnika w kilku miejscach jednocześnie.</p>
 <blockquote class="blockquote">
 <p>Które kraje w 2007 roku miały populację powyżej 100 milionów? Posortuj wynik od krajów z największą liczbą ludności do krajów z najmniejszą liczbą ludności.</p>
 </blockquote>
@@ -1247,27 +1306,27 @@ Solution
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>ex13 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span>  <span class="co">#wejsciowy zbior danych</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> <span class="co"># wybor krajow z pop &gt; 100mln w roku 2007</span></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, pop) <span class="sc">%&gt;%</span> <span class="co"># wybor kolumn country, pop </span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pop)) <span class="co"># sortowanie danych wzgledem pop</span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>ex13</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>ex13 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span>  <span class="co">#wejsciowy zbior danych</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(pop <span class="sc">&gt;</span> <span class="dv">100000000</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> <span class="co"># wybor krajow z pop &gt; 100mln w roku 2007</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, pop) <span class="sc">|&gt;</span> <span class="co"># wybor kolumn country, pop </span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pop)) <span class="co"># sortowanie danych wzgledem pop</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>ex13</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="funkcja-join" class="level3" data-number="4.2.10">
-<h3 data-number="4.2.10" class="anchored" data-anchor-id="funkcja-join"><span class="header-section-number">4.2.10</span> Funkcja <code>join()</code></h3>
+<section id="łączenie-tabel---funkcje-_join" class="level3" data-number="4.2.10">
+<h3 data-number="4.2.10" class="anchored" data-anchor-id="łączenie-tabel---funkcje-_join"><span class="header-section-number">4.2.10</span> Łączenie tabel - funkcje <code>*_join()</code></h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Poland"</span>, <span class="st">"USA"</span>, <span class="st">"Germany"</span>), <span class="at">pop =</span> <span class="fu">c</span>(<span class="fl">36.82</span>, <span class="fl">333.3</span>, <span class="fl">83.8</span>))</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Poland"</span>, <span class="st">"USA"</span>, <span class="st">"Italy"</span>), <span class="at">pop =</span> <span class="fu">c</span>(<span class="fl">36.82</span>, <span class="fl">333.3</span>, <span class="fl">58.94</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Poland"</span>, <span class="st">"USA"</span>, <span class="st">"Germany"</span>), <span class="at">pop =</span> <span class="fu">c</span>(<span class="fl">36.82</span>, <span class="fl">333.3</span>, <span class="fl">83.8</span>))</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="fu">c</span>(<span class="st">"Poland"</span>, <span class="st">"USA"</span>, <span class="st">"Italy"</span>), <span class="at">pop =</span> <span class="fu">c</span>(<span class="fl">36.82</span>, <span class="fl">333.3</span>, <span class="fl">58.94</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country    pop
 1  Poland  36.82
@@ -1276,7 +1335,7 @@ Solution
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country    pop
 1  Poland  36.82
@@ -1288,8 +1347,8 @@ Solution
 <li>Funkcja <code>inner_join(x, y)</code> zwraca tylko obiekty występujące w obu tabelach</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>inner_df <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>inner_df </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>inner_df <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>inner_df </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country  pop.x  pop.y
 1  Poland  36.82  36.82
@@ -1300,8 +1359,8 @@ Solution
 <li>Funkcja <code>left_join(x, y)</code> zachowuje wszystkie obserwacje w x, niezależnie od tego, czy mają swój odpowiednik w tabeli y. Jest to najczęściej używane łączenie, ponieważ gwarantuje, że nie utracimy obserwacji z tabeli podstawowej (x).</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>left_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>left_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country  pop.x  pop.y
 1  Poland  36.82  36.82
@@ -1313,8 +1372,8 @@ Solution
 <li>Funkcja <code>right_join(x, y)</code> zachowuje wszystkie obserwacje w y.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>right_df <span class="ot">&lt;-</span> <span class="fu">right_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>right_df <span class="ot">&lt;-</span> <span class="fu">right_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>right_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country  pop.x  pop.y
 1  Poland  36.82  36.82
@@ -1326,8 +1385,8 @@ Solution
 <li>Funkcja <code>full_join(x, y)</code> zwraca wszystkie obiekty z tabeli x oraz z tabeli y.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> <span class="fu">full_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>full_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>full_df <span class="ot">&lt;-</span> <span class="fu">full_join</span>(x, y, <span class="at">by =</span> <span class="st">'country'</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>full_df</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  country  pop.x  pop.y
 1  Poland  36.82  36.82
@@ -1349,14 +1408,14 @@ Solution
 </div>
 <p>Zmiana układu danych jest możliwa z użyciem funkcji z pakietu <code>tidyr</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><strong>Układ długi</strong></li>
 </ul>
 <p>Dane gapminder są zapisane w układzie długim:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="dv">10</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="dv">10</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 6
    country     continent  year lifeExp      pop gdpPercap
@@ -1378,13 +1437,13 @@ Solution
 </ul>
 <p>Funkcja <code>pivot_wider()</code> przekształca dane z formatu długiego w szeroki. Obiekt gapminder_wide w każdej kolumnie przechowuje dane dla jednego roku, a w każdym wierszu dla kraju.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>gapminder2 <span class="ot">&lt;-</span> <span class="fu">select</span>(gapminder, <span class="sc">-</span>continent, </span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>                    <span class="sc">-</span>lifeExp, <span class="sc">-</span>gdpPercap)</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(gapminder2, </span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">names_from =</span> year, </span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">values_from =</span> pop)</span>
-<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder_wide)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>gapminder2 <span class="ot">&lt;-</span> <span class="fu">select</span>(gapminder, <span class="sc">-</span>continent, </span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>                    <span class="sc">-</span>lifeExp, <span class="sc">-</span>gdpPercap)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(gapminder2, </span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">names_from =</span> year, </span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">values_from =</span> pop)</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder_wide)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 13
   country  `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987` `1992` `1997`
@@ -1425,11 +1484,11 @@ Solution
 <div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>ex14 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, lifeExp) <span class="sc">%&gt;%</span></span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> lifeExp)</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>ex14</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>ex14 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, lifeExp) <span class="sc">|&gt;</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> lifeExp)</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>ex14</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1438,9 +1497,9 @@ Solution
 <li><strong>Układ szeroki -&gt; Układ długi</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>gapminder_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(gapminder_wide,</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">cols =</span> <span class="fu">colnames</span>(gapminder_wide)[<span class="sc">-</span><span class="dv">1</span>])</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>gapminder_long </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>gapminder_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(gapminder_wide,</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">cols =</span> <span class="fu">colnames</span>(gapminder_wide)[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>gapminder_long </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 3
    country     name     value
@@ -1485,11 +1544,11 @@ Solution
 <div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>ex15_wide <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, gdpPercap) <span class="sc">%&gt;%</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> gdpPercap)</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>ex15_long <span class="ot">&lt;-</span>  <span class="fu">pivot_longer</span>(ex15_wide, <span class="at">cols =</span> <span class="fu">colnames</span>(ex15_wide)[<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>ex15_wide <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, gdpPercap) <span class="sc">|&gt;</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> gdpPercap)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>ex15_long <span class="ot">&lt;-</span>  <span class="fu">pivot_longer</span>(ex15_wide, <span class="at">cols =</span> <span class="fu">colnames</span>(ex15_wide)[<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1511,7 +1570,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNiIsImlubGluZSI6ZmFsc2UsIm1l
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 

@@ -107,6 +107,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -291,7 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +399,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -388,6 +417,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -417,6 +463,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#zbadanie-normalności-rozkładu" id="toc-zbadanie-normalności-rozkładu" class="nav-link" data-scroll-target="#zbadanie-normalności-rozkładu"><span class="header-section-number">18.4.1</span> Zbadanie normalności rozkładu</a></li>
   <li><a href="#współczynnik-korelacji" id="toc-współczynnik-korelacji" class="nav-link" data-scroll-target="#współczynnik-korelacji"><span class="header-section-number">18.4.2</span> Współczynnik korelacji</a></li>
   <li><a href="#testy-korelacji-1" id="toc-testy-korelacji-1" class="nav-link" data-scroll-target="#testy-korelacji-1"><span class="header-section-number">18.4.3</span> Testy korelacji</a></li>
+  <li><a href="#jak-czytać-wynik-testu-korelacji" id="toc-jak-czytać-wynik-testu-korelacji" class="nav-link" data-scroll-target="#jak-czytać-wynik-testu-korelacji"><span class="header-section-number">18.4.4</span> Jak czytać wynik testu korelacji</a></li>
+  <li><a href="#jak-opisać-wynik-w-raporcie" id="toc-jak-opisać-wynik-w-raporcie" class="nav-link" data-scroll-target="#jak-opisać-wynik-w-raporcie"><span class="header-section-number">18.4.5</span> Jak opisać wynik w raporcie</a></li>
   </ul></li>
   <li><a href="#analiza-korelacji---przykład" id="toc-analiza-korelacji---przykład" class="nav-link" data-scroll-target="#analiza-korelacji---przykład"><span class="header-section-number">18.5</span> Analiza korelacji - przykład</a>
   <ul class="collapse">
@@ -456,10 +504,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;]">
 <script type="exercise-setup-ex_1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sIm1lc3NhZ2UiOmZhbHNlLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KFBlcmZvcm1hbmNlQW5hbHl0aWNzKVxubGlicmFyeShHR2FsbHkpXG5saWJyYXJ5KHBzeWNoKVxubGlicmFyeShjYXIpXG5saWJyYXJ5KFJDb2xvckJyZXdlcilcbmxpYnJhcnkoY29ycnBsb3QpXG5saWJyYXJ5KEhtaXNjKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sIm1lc3NhZ2UiOmZhbHNlLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoZ2dwbG90MilcbmxpYnJhcnkoR0dhbGx5KVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
 </script>
 <script type="exercise-setup-ex_2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sIm1lc3NhZ2UiOmZhbHNlLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdncGxvdDIpXG5saWJyYXJ5KFBlcmZvcm1hbmNlQW5hbHl0aWNzKVxubGlicmFyeShHR2FsbHkpXG5saWJyYXJ5KHBzeWNoKVxubGlicmFyeShjYXIpXG5saWJyYXJ5KFJDb2xvckJyZXdlcilcbmxpYnJhcnkoY29ycnBsb3QpXG5saWJyYXJ5KEhtaXNjKVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0sIm1lc3NhZ2UiOmZhbHNlLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkoZ2dwbG90MilcbmxpYnJhcnkoR0dhbGx5KVxuXG5kYXRhKCdnYXBtaW5kZXInLCBwYWNrYWdlID0gJ2dhcG1pbmRlcicpIn0=
 </script>
 </div>
 <section id="wprowadzenie" class="level2" data-number="18.1">
@@ -472,8 +520,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <li><p>Współczynnik korelacji dostarcza informacji o tym jaka jest <strong>siła związku</strong> (<em>wartość współczynnika</em>) oraz jaki jest <strong>kierunek związku</strong> (<em>znak</em>).</p></li>
 <li><p>Dla każdego współczynnika korelacji należy także obliczyć jego <em>istotność statystyczną</em>, stosujac jeden z testów istotności przeznaczonych dla współczynników korelacji.</p>
 <ul>
-<li>Hipoteza zerowa: ρ x,y=0</li>
-<li>Hipoteza alternatywna: ρ x,y≠0 lub ρ x,y&lt;0 lub ρ x,y&gt;0</li>
+<li>Hipoteza zerowa: <span class="math inline">\(H_0: \rho_{x,y} = 0\)</span> (brak korelacji)</li>
+<li>Hipoteza alternatywna: <span class="math inline">\(H_A: \rho_{x,y} \neq 0\)</span> (test dwustronny), <span class="math inline">\(H_A: \rho_{x,y} &lt; 0\)</span> lub <span class="math inline">\(H_A: \rho_{x,y} &gt; 0\)</span> (testy jednostronne)</li>
 </ul></li>
 <li><p>Zależność między zmiennymi może mieć charakter <strong>liniowy</strong> lub <strong>krzywoliniowy</strong>.</p></li>
 </ul>
@@ -495,7 +543,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <section id="kilka-ważnych-informacji" class="level3" data-number="18.1.3">
 <h3 data-number="18.1.3" class="anchored" data-anchor-id="kilka-ważnych-informacji"><span class="header-section-number">18.1.3</span> Kilka ważnych informacji</h3>
 <ul>
-<li><strong>Najważniejsza jest isotność korelacji</strong>. Niepotrzebna nam korelacja nawet bardzo wysoka, jeśli nie jest istotna statystycznie.</li>
+<li><strong>Najważniejsza jest istotność korelacji</strong>. Niepotrzebna nam korelacja nawet bardzo wysoka, jeśli nie jest istotna statystycznie.</li>
 <li>Wartość współczynnika nawet bliska 0 nie zawsze oznacza brak zależności. Może oznaczać jedynie brak zależności liniowej.</li>
 <li>Wielkość współczynnika podlega wpływom wartości skrajnych i odstających.</li>
 </ul>
@@ -516,19 +564,20 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <section id="jak-silna-jest-korelacja" class="level3" data-number="18.1.5">
 <h3 data-number="18.1.5" class="anchored" data-anchor-id="jak-silna-jest-korelacja"><span class="header-section-number">18.1.5</span> Jak silna jest korelacja?</h3>
 <p>Do opisu i interpretacji istotnej korelacji pomocne może być przyjęcie pewnej skali określającą siłę związku. Nie ma jednej przyjętej skali. Poniżej przedstawiam jedną z nich:</p>
+<p>Skala odnosi się do <strong>wartości bezwzględnej</strong> współczynnika - znak mówi tylko o kierunku związku.</p>
 <ul>
-<li>0 - brak korelacji</li>
-<li>0,1 do 0,3 - słaba korelacja</li>
-<li>0,3 do 0,5 - przeciętna korelacja</li>
+<li>poniżej 0,1 - brak korelacji lub korelacja nieistotna</li>
+<li>0,1 do 0,3 - korelacja słaba</li>
+<li>0,3 do 0,5 - korelacja przeciętna</li>
 <li>0,5 do 0,7 - korelacja wysoka</li>
 <li>0,7 do 0,9 - korelacja bardzo wysoka</li>
-<li>0,9 do 1 - korelacja prawie pełna</li>
+<li>powyżej 0,9 - korelacja prawie pełna</li>
 </ul>
 </section>
 </section>
 <section id="demonstracja-dla-współczynnika-korelacji-liniowej" class="level2" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="demonstracja-dla-współczynnika-korelacji-liniowej"><span class="header-section-number">18.2</span> Demonstracja dla współczynnika korelacji liniowej</h2>
-<div class="cell" data-warnings="false">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"TeachingDemos"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"TeachingDemos"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">put.points.demo</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">lsline =</span> <span class="cn">TRUE</span>)</span>
@@ -543,10 +592,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <ul>
 <li><p>test korelacji liniowej Pearsona</p>
 <ul>
-<li>stosowany gdy zmienne mają zależnośc liniową</li>
+<li>stosowany gdy zmienne mają zależność liniową</li>
 <li>zmienne mają rozkład normalny</li>
 </ul></li>
-<li><p>test korelacji rang Spearman</p>
+<li><p>test korelacji rang Spearmana</p>
 <ul>
 <li>stosowany gdy naruszone jest założenie o normalności rozkładu (np. gdy istnieją wartości odstające)</li>
 </ul></li>
@@ -560,7 +609,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(x, y)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-warnings="false">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(x, y)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">stat_smooth</span>(<span class="at">method =</span> lm)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -579,8 +628,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIl0s
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> y), <span class="at">col =</span> <span class="st">"lightblue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.
+`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -610,7 +659,7 @@ data:  y
 W = 0.99854, p-value = 0.5832</code></pre>
 </div>
 </div>
-<p>Zmienna x oraz y mają rozkład normalny.</p>
+<p>Dla obu zmiennych test Shapiro-Wilka nie daje podstaw do odrzucenia hipotezy o normalności rozkładu (p = 0,330 dla x oraz p = 0,583 dla y). Możemy zatem zastosować współczynnik korelacji liniowej Pearsona.</p>
 </section>
 <section id="współczynnik-korelacji" class="level3" data-number="18.4.2">
 <h3 data-number="18.4.2" class="anchored" data-anchor-id="współczynnik-korelacji"><span class="header-section-number">18.4.2</span> Współczynnik korelacji</h3>
@@ -633,13 +682,29 @@ W = 0.99854, p-value = 0.5832</code></pre>
 <blockquote class="blockquote">
 <p>Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?</p>
 </blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dane wygenerowano z rozkładu normalnego, test Shapiro-Wilka nie daje podstaw do odrzucenia hipotezy o normalności, a na wykresie rozrzutu zależność jest liniowa i nie ma wartości odstających. Wszystkie założenia współczynnika <strong>Pearsona</strong> są spełnione, więc jego używamy.</p>
+<p>Oba współczynniki są tu niemal identyczne (0,680 i 0,664) - przy zależności liniowej i rozkładzie normalnym dają zbliżony wynik, więc wybór nie ma dużego znaczenia. Inaczej będzie w kolejnym przykładzie.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="testy-korelacji-1" class="level3" data-number="18.4.3">
 <h3 data-number="18.4.3" class="anchored" data-anchor-id="testy-korelacji-1"><span class="header-section-number">18.4.3</span> Testy korelacji</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(df<span class="sc">$</span>x, df<span class="sc">$</span>y,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -654,20 +719,49 @@ sample estimates:
 0.679556 </code></pre>
 </div>
 </div>
-<p>Wynik testu korelacji wskazuje na istnieie istotnej korelacji między zmienną x oraz y.</p>
+</section>
+<section id="jak-czytać-wynik-testu-korelacji" class="level3" data-number="18.4.4">
+<h3 data-number="18.4.4" class="anchored" data-anchor-id="jak-czytać-wynik-testu-korelacji"><span class="header-section-number">18.4.4</span> Jak czytać wynik testu korelacji</h3>
+<pre><code>    Pearson's product-moment correlation          &lt;- (1) metoda
+data:  x and y                                   &lt;- (2) porównywane zmienne
+t = 29.263, df = 998, p-value &lt; 2.2e-16          &lt;- (3) statystyka i p-value
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:                  &lt;- (4) przedział ufności dla współczynnika
+ 0.6447237 0.7115721
+sample estimates:                                &lt;- (5) wartość współczynnika
+     cor 
+0.679556 </code></pre>
+<ol type="1">
+<li><strong>Metoda</strong> - <em>product-moment</em> to współczynnik Pearsona; dla Spearmana zobaczysz <em>Spearman’s rank correlation rho</em>.</li>
+<li><strong>Dane</strong> - które dwie zmienne zostały porównane.</li>
+<li><strong>p-value</strong> - odpowiada na pytanie, czy korelacja jest <strong>istotna statystycznie</strong>, czyli czy różni się od zera.</li>
+<li><strong>Przedział ufności</strong> - zakres, w jakim mieści się współczynnik korelacji w populacji. Jeśli obejmuje zero, korelacja nie jest istotna.</li>
+<li><strong>sample estimates</strong> - <strong>wartość współczynnika korelacji</strong>. To właśnie ta liczba mówi o <strong>sile</strong> związku; p-value mówi tylko, czy związek w ogóle istnieje.</li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Uwaga na duże próby.</strong> Przy dużej liczbie obserwacji istotna statystycznie okazuje się nawet bardzo słaba korelacja. Przy tysiącu obserwacji nawet współczynnik rzędu 0,07 miałby p &lt; 0,05, choć praktycznie oznaczałby brak związku. Dlatego <strong>zawsze</strong> podaje się wartość współczynnika, a nie samo p-value.</p>
+</blockquote>
+</section>
+<section id="jak-opisać-wynik-w-raporcie" class="level3" data-number="18.4.5">
+<h3 data-number="18.4.5" class="anchored" data-anchor-id="jak-opisać-wynik-w-raporcie"><span class="header-section-number">18.4.5</span> Jak opisać wynik w raporcie</h3>
+<blockquote class="blockquote">
+<p>Stwierdzono istotną statystycznie, dodatnią korelację między zmiennymi x oraz y; r = 0,68; 95% CI [0,64; 0,71]; p &lt; 0,001.</p>
+</blockquote>
+<p>Przy współczynniku Spearmana zamiast <code>r</code> podajemy <code>rho</code>, a zamiast przedziału ufności - liczebność próby.</p>
+<p>Wynik testu korelacji wskazuje na istnienie istotnej korelacji między zmienną x oraz y.</p>
 </section>
 </section>
 <section id="analiza-korelacji---przykład" class="level2" data-number="18.5">
 <h2 data-number="18.5" class="anchored" data-anchor-id="analiza-korelacji---przykład"><span class="header-section-number">18.5</span> Analiza korelacji - przykład</h2>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">=</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>gapminder2007_s <span class="ot">=</span> gapminder2007[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">=</span> <span class="fu">subset</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>gapminder2007_s <span class="ot">=</span> gapminder2007[<span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Czy pomiędzy zmiennymi w zbiorze gapminder2007_s można dostrzec zależności liniowe?</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007_s, <span class="fu">aes</span>(lifeExp, gdpPercap)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder2007_s, <span class="fu">aes</span>(lifeExp, gdpPercap)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -679,17 +773,17 @@ sample estimates:
 <section id="współczynnik-korelacji-1" class="level3" data-number="18.5.1">
 <h3 data-number="18.5.1" class="anchored" data-anchor-id="współczynnik-korelacji-1"><span class="header-section-number">18.5.1</span> Współczynnik korelacji</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6786624</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap, </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8565899</code></pre>
 </div>
@@ -697,13 +791,48 @@ sample estimates:
 <blockquote class="blockquote">
 <p>Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?</p>
 </blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Odpowiedź">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Odpowiedź
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Należy użyć korelacji rang <strong>Spearmana</strong>. Rozkład zmiennej <em>gdpPercap</em> jest silnie prawoskośny (patrz rozdział <em>Rozkłady danych</em>), występują w nim wartości skrajne, a na wykresie rozrzutu zależność nie jest liniowa, lecz wygięta - przy niskim PKB długość życia rośnie szybko, a przy wysokim prawie się nie zmienia.</p>
+<p>Widać tu, dlaczego ten wybór ma znaczenie:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metoda</th>
+<th>Współczynnik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pearsona</td>
+<td>0,679</td>
+</tr>
+<tr class="even">
+<td>Spearmana</td>
+<td>0,857</td>
+</tr>
+</tbody>
+</table>
+<p>Współczynnik Pearsona mierzy wyłącznie <strong>liniową</strong> część związku, więc przy zależności wygiętej zaniża jego siłę. Spearman, oparty na rangach, wykrywa każdą zależność <strong>monotoniczną</strong> - i pokazuje, że związek jest w istocie bardzo silny.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="testy-korelacji-2" class="level3" data-number="18.5.2">
 <h3 data-number="18.5.2" class="anchored" data-anchor-id="testy-korelacji-2"><span class="header-section-number">18.5.2</span> Testy korelacji</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap, </span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap, </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -719,9 +848,8 @@ sample estimates:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap,</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder2007_s<span class="sc">$</span>lifeExp, gapminder2007_s<span class="sc">$</span>gdpPercap,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Spearman's rank correlation rho
@@ -734,9 +862,7 @@ sample estimates:
 0.8565899 </code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>Która metoda korelacji powinna zostać użyta - korelacja liniowa Pearsona, czy korelacja rang Spearmana? Dlaczego?</p>
-</blockquote>
+<p>Oba testy wskazują na istotną statystycznie korelację, ale wartości współczynników wyraźnie się różnią (0,679 wobec 0,857) - z przyczyn omówionych w odpowiedzi powyżej właściwy jest tu współczynnik Spearmana.</p>
 <blockquote class="blockquote">
 <p>Używając danych z pakietu gapminder dla roku 1987 zwizualizuj relację pomiędzy populacją a oczekiwaną długością życia. Wylicz korelację i wykonaj odpowiedni test. Co oznacza jego wynik?</p>
 </blockquote>
@@ -752,7 +878,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoi
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -761,15 +887,14 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<p>W przykładzie należy obliczyć współczynnik korelacji Spearmana. Wynik wskazuje na brak kolelacji między zmiennymi. Współczynnik korelacji nie jest istotny statystycznie.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gapminder87 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">1987</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder87, <span class="fu">aes</span>(pop, lifeExp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder87<span class="sc">$</span>lifeExp, gapminder87<span class="sc">$</span>pop,</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W przykładzie należy obliczyć współczynnik korelacji Spearmana. Wynik wskazuje na brak korelacji między zmiennymi. Współczynnik korelacji nie jest istotny statystycznie.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gapminder87 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">1987</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gapminder87, <span class="fu">aes</span>(pop, lifeExp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(gapminder87<span class="sc">$</span>lifeExp, gapminder87<span class="sc">$</span>pop,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -781,7 +906,7 @@ Solution
 <section id="macierz-wykresów-korelacji" class="level3" data-number="18.6.1">
 <h3 data-number="18.6.1" class="anchored" data-anchor-id="macierz-wykresów-korelacji"><span class="header-section-number">18.6.1</span> Macierz wykresów korelacji</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(<span class="sc">~</span>lifeExp<span class="sc">+</span>gdpPercap<span class="sc">+</span>pop, <span class="at">data=</span>gapminder2007_s, <span class="at">main=</span><span class="st">"Simple Scatterplot Matrix"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(<span class="sc">~</span>lifeExp<span class="sc">+</span>gdpPercap<span class="sc">+</span>pop, <span class="at">data=</span>gapminder2007_s, <span class="at">main=</span><span class="st">"Macierz wykresów rozrzutu"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -796,10 +921,10 @@ Solution
 <p>Funkcja <code>cor()</code> pozwala na obliczenie macierzy współczynników korelacji. Podaje ona wartość współczynnika, ale nie wskazuje, czy wynik jest istotny statystycznie.</p>
 <p>Funkcja <code>rcorr()</code> z pakietu <code>Hmisc</code> wyświetla zarówno macierz współczynników korelacji, jak i wartość p wskazującą czy wynik jest istotny statystycznie.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>cor_spearman <span class="ot">=</span> <span class="fu">cor</span>(gapminder2007_s, </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor_spearman , <span class="dv">4</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>cor_spearman <span class="ot">=</span> <span class="fu">cor</span>(gapminder2007_s, </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">use =</span> <span class="st">"complete.obs"</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cor_spearman , <span class="dv">4</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          lifeExp     pop gdpPercap
 lifeExp    1.0000  0.0034    0.8566
@@ -807,11 +932,11 @@ pop        0.0034  1.0000   -0.0646
 gdpPercap  0.8566 -0.0646    1.0000</code></pre>
 </div>
 </div>
-<p>W poniższym przykładzie pierwsza macierz zawiera współczynnik korelacji, druga liczbę obiektów a trzecia wartość poziomu istotności p.&nbsp;Wartość jest istotna statystycznie jeśli p jest mniejsze od założonego poziomu isotntości (np. 0,05)</p>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>kor <span class="ot">&lt;-</span> <span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(gapminder2007_s), <span class="at">type =</span> <span class="st">"spearman"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>kor</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>W poniższym przykładzie pierwsza macierz zawiera współczynnik korelacji, druga liczbę obiektów a trzecia wartość poziomu istotności p.&nbsp;Wartość jest istotna statystycznie jeśli p jest mniejsze od założonego poziomu istotności (np. 0,05)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>kor <span class="ot">&lt;-</span> <span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(gapminder2007_s), <span class="at">type =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>kor</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          lifeExp   pop gdpPercap
 lifeExp      1.00  0.00      0.86
@@ -835,10 +960,10 @@ gdpPercap 0.0000  0.4451          </code></pre>
 <ul>
 <li>Funkcja <code>corrplot()</code> z pakietu <code>corrplot</code></li>
 </ul>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"corrplot"</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>kor <span class="ot">&lt;-</span> <span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(gapminder2007_s), <span class="at">type =</span> <span class="st">"spearman"</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"corrplot"</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>kor <span class="ot">&lt;-</span> <span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(gapminder2007_s), <span class="at">type =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -848,8 +973,8 @@ gdpPercap 0.0000  0.4451          </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r, <span class="at">type =</span> <span class="st">"upper"</span>, <span class="at">order =</span> <span class="st">"hclust"</span>, </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">"black"</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r, <span class="at">type =</span> <span class="st">"upper"</span>, <span class="at">order =</span> <span class="st">"hclust"</span>, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">"black"</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -859,7 +984,7 @@ gdpPercap 0.0000  0.4451          </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(kor<span class="sc">$</span>r, <span class="at">order=</span><span class="st">"hclust"</span>, <span class="at">tl.col=</span><span class="st">"black"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(kor<span class="sc">$</span>r, <span class="at">order=</span><span class="st">"hclust"</span>, <span class="at">tl.col=</span><span class="st">"black"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -868,9 +993,9 @@ gdpPercap 0.0000  0.4451          </code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r, <span class="at">type=</span><span class="st">"upper"</span>, <span class="at">order=</span><span class="st">"hclust"</span>, <span class="at">col=</span><span class="fu">brewer.pal</span>(<span class="at">n=</span><span class="dv">8</span>, <span class="at">name=</span><span class="st">"RdYlBu"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor<span class="sc">$</span>r, <span class="at">type=</span><span class="st">"upper"</span>, <span class="at">order=</span><span class="st">"hclust"</span>, <span class="at">col=</span><span class="fu">brewer.pal</span>(<span class="at">n=</span><span class="dv">8</span>, <span class="at">name=</span><span class="st">"RdYlBu"</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -882,9 +1007,9 @@ gdpPercap 0.0000  0.4451          </code></pre>
 <ul>
 <li>Funckja <code>scatterplotMatrix()</code> z pakietu <code>car</code></li>
 </ul>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplotMatrix</span>(<span class="sc">~</span>lifeExp<span class="sc">+</span>gdpPercap<span class="sc">+</span>pop, <span class="at">data=</span>gapminder2007_s)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplotMatrix</span>(<span class="sc">~</span>lifeExp<span class="sc">+</span>gdpPercap<span class="sc">+</span>pop, <span class="at">data=</span>gapminder2007_s)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -896,9 +1021,9 @@ gdpPercap 0.0000  0.4451          </code></pre>
 <ul>
 <li>Funkcja <code>chart.Correlation()</code> z pakietu <code>PerformanceAnalytics</code></li>
 </ul>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PerformanceAnalytics)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chart.Correlation</span>(gapminder2007_s, <span class="at">histogram=</span><span class="cn">TRUE</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PerformanceAnalytics)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chart.Correlation</span>(gapminder2007_s, <span class="at">histogram=</span><span class="cn">TRUE</span>, <span class="at">pch=</span><span class="dv">19</span>, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -911,9 +1036,9 @@ gdpPercap 0.0000  0.4451          </code></pre>
 <li>Funkcja <code>pairs.panels()</code> z pakietu <code>psych</code></li>
 </ul>
 <p>Współczynnik korelacji (“pearson”, “spearman”) definiowany jest poprzez argument method.</p>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(gapminder2007_s, <span class="at">scale=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs.panels</span>(gapminder2007_s, <span class="at">scale=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"spearman"</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -925,10 +1050,10 @@ gdpPercap 0.0000  0.4451          </code></pre>
 <ul>
 <li>Funkcja <code>ggcorr()</code> i <code>ggpairs()</code> z pakietu <code>GGally</code></li>
 </ul>
-<p>Argument <em>method</em> składa się z dwóch elementów: pierwszy określa sposób działania przy braku danych (“everything”, “all.obs”, “complete.obs”, “na.or.complete” or “pairwise.complete.obs”), drugi - współczynnik korelacji (“pearson”, “kendall” or “spearman”). Domyślan opcja to <code>c("pairwise", "pearson")</code>.</p>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(gapminder2007_s, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">"pairwise"</span>, <span class="st">"spearman"</span>), <span class="at">nbreaks=</span><span class="dv">8</span>, <span class="at">palette=</span><span class="st">'RdGy'</span>, <span class="at">label=</span><span class="cn">TRUE</span>, <span class="at">label_size=</span><span class="dv">5</span>, <span class="at">label_color=</span><span class="st">'white'</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Argument <em>method</em> składa się z dwóch elementów: pierwszy określa sposób działania przy braku danych (“everything”, “all.obs”, “complete.obs”, “na.or.complete” or “pairwise.complete.obs”), drugi - współczynnik korelacji (“pearson”, “kendall” or “spearman”). Domyślna opcja to <code>c("pairwise", "pearson")</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggcorr</span>(gapminder2007_s, <span class="at">method =</span> <span class="fu">c</span>(<span class="st">"pairwise"</span>, <span class="st">"spearman"</span>), <span class="at">nbreaks=</span><span class="dv">8</span>, <span class="at">palette=</span><span class="st">'RdGy'</span>, <span class="at">label=</span><span class="cn">TRUE</span>, <span class="at">label_size=</span><span class="dv">5</span>, <span class="at">label_color=</span><span class="st">'white'</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -938,9 +1063,9 @@ gdpPercap 0.0000  0.4451          </code></pre>
 </div>
 </div>
 <p>Współczynnik korelacji liniowej Pearsona</p>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder2007_s) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder2007_s) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -950,10 +1075,10 @@ gdpPercap 0.0000  0.4451          </code></pre>
 </div>
 </div>
 <p>Współczynnik korelacji rang Spearmana</p>
-<div class="cell" data-warnings="false">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder2007_s, </span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(ggally_cor, <span class="at">method =</span> <span class="st">"spearman"</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder2007_s, </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(ggally_cor, <span class="at">method =</span> <span class="st">"spearman"</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -977,7 +1102,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoi
 </div>
 <div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -986,17 +1111,17 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
 <p>Uwaga! W rozwiązaniu wykorzystano funkcję ggpairs z biblioteki GGally. Biblioteka <code>PerformanceAnalytics</code> nie może zostać wykorzystana w interaktywnym edytorze.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>gapminder87 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1987</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(lifeExp, gdpPercap, pop)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder87, </span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(ggally_cor, <span class="at">method =</span> <span class="st">"spearman"</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>gapminder87 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1987</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(lifeExp, gdpPercap, pop)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(gapminder87, </span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(ggally_cor, <span class="at">method =</span> <span class="st">"spearman"</span>)))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1004,7 +1129,7 @@ Solution
 
 
 <script type="webr-data">
-eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsInRpZHl2ZXJzZSIsImdncGxvdDIiXSwicmVwb3MiOltdfSwicmVuZGVyX2RmIjoiZGVmYXVsdCJ9
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyIsImdhcG1pbmRlciIsImRwbHlyIiwiZ2dwbG90MiIsIkdHYWxseSJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
 </script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItMyIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItMy1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzMgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzMsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzMuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0yIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMiA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0yLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuX3dlYnJfZmVlZGJhY2tfMiA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMi5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici1wcmVsdWRlIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoid2ViUk9qcyA9IHtcbiAgY29uc3QgeyBXZWJSLCBDaGFubmVsVHlwZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZS5XZWJSO1xuICBjb25zdCB7XG4gICAgV2ViUkV2YWx1YXRvcixcbiAgICBXZWJSRW52aXJvbm1lbnRNYW5hZ2VyLFxuICAgIHNldHVwUixcbiAgICBiNjREZWNvZGUsXG4gICAgY29sbGFwc2VQYXRoXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyB3ZWJSIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIC8vIFVzZSBQb3N0TWVzc2FnZSBjaGFubmVsIGZvciBhc3luYyBjb21tdW5pY2F0aW9uXG4gIC8vIFdlIGRvIG5vdCBleHBlY3QgdG8gdGFrZSBuZXN0ZWQgcHJvbXB0IGlucHV0IGluIFF1YXJ0byBMaXZlIGNlbGxzXG4gIGRhdGEub3B0aW9ucy5jaGFubmVsVHlwZSA9IENoYW5uZWxUeXBlLlBvc3RNZXNzYWdlO1xuXG4gIC8vIEluaXRpYWxpc2Ugd2ViUiBhbmQgc2V0dXAgZm9yIFIgY29kZSBldmFsdWF0aW9uXG4gIGxldCB3ZWJSUHJvbWlzZSA9IChhc3luYyAod2ViUikgPT4ge1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgd2ViUmA7XG4gICAgYXdhaXQgd2ViUi5pbml0KCk7XG5cbiAgICAvLyBJbnN0YWxsIHByb3ZpZGVkIGxpc3Qgb2YgcGFja2FnZXNcbiAgICAvLyBFbnN1cmUgd2ViUiBkZWZhdWx0IHJlcG8gaXMgaW5jbHVkZWRcbiAgICBkYXRhLnBhY2thZ2VzLnJlcG9zLnB1c2goXCJodHRwczovL3JlcG8uci13YXNtLm9yZ1wiKVxuICAgIGF3YWl0IGRhdGEucGFja2FnZXMucGtncy5tYXAoKHBrZykgPT4gKCkgPT4ge1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBwYWNrYWdlOiAke3BrZ31gO1xuICAgICAgcmV0dXJuIHdlYlIuZXZhbFJWb2lkKGBcbiAgICAgICAgd2Vicjo6aW5zdGFsbChwa2csIHJlcG9zID0gcmVwb3MpXG4gICAgICAgIGxpYnJhcnkocGtnLCBjaGFyYWN0ZXIub25seSA9IFRSVUUpXG4gICAgICBgLCB7IGVudjoge1xuICAgICAgICBwa2c6IHBrZyxcbiAgICAgICAgcmVwb3M6IGRhdGEucGFja2FnZXMucmVwb3MsXG4gICAgICB9fSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICAvLyBEb3dubG9hZCBhbmQgaW5zdGFsbCByZXNvdXJjZXNcbiAgICBhd2FpdCBmaWxlcy5tYXAoKGZpbGUpID0+IGFzeW5jICgpID0+IHtcbiAgICAgIGNvbnN0IG5hbWUgPSBmaWxlLnN1YnN0cmluZyhmaWxlLmxhc3RJbmRleE9mKCcvJykgKyAxKTtcbiAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgRG93bmxvYWRpbmcgcmVzb3VyY2U6ICR7bmFtZX1gO1xuICAgICAgY29uc3QgcmVzcG9uc2UgPSBhd2FpdCBmZXRjaChmaWxlKTtcbiAgICAgIGlmICghcmVzcG9uc2Uub2spIHtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBDYW4ndCBkb3dubG9hZCBcXGAke2ZpbGV9XFxgLiBFcnJvciAke3Jlc3BvbnNlLnN0YXR1c306IFwiJHtyZXNwb25zZS5zdGF0dXNUZXh0fVwiLmApO1xuICAgICAgfVxuICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlc3BvbnNlLmFycmF5QnVmZmVyKCk7XG5cbiAgICAgIC8vIFN0b3JlIFVSTHMgaW4gdGhlIGN3ZCB3aXRob3V0IGFueSBzdWJkaXJlY3Rvcnkgc3RydWN0dXJlXG4gICAgICBpZiAoZmlsZS5pbmNsdWRlcyhcIjovL1wiKSkge1xuICAgICAgICBmaWxlID0gbmFtZTtcbiAgICAgIH1cblxuICAgICAgLy8gQ29sbGFwc2UgaGlnaGVyIGRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGZpbGUgPSBjb2xsYXBzZVBhdGgoZmlsZSk7XG5cbiAgICAgIC8vIENyZWF0ZSBkaXJlY3RvcnkgdHJlZSwgaWdub3JpbmcgXCJkaXJlY3RvcnkgZXhpc3RzXCIgVkZTIGVycm9yc1xuICAgICAgY29uc3QgcGFydHMgPSBmaWxlLnNwbGl0KCcvJykuc2xpY2UoMCwgLTEpO1xuICAgICAgbGV0IHBhdGggPSAnJztcbiAgICAgIHdoaWxlIChwYXJ0cy5sZW5ndGggPiAwKSB7XG4gICAgICAgIHBhdGggKz0gcGFydHMuc2hpZnQoKSArICcvJztcbiAgICAgICAgY29uc3QgYW5hbHlzaXMgPSBhd2FpdCB3ZWJSLkZTLmFuYWx5emVQYXRoKHBhdGgpO1xuICAgICAgICBpZiAoIWFuYWx5c2lzLmV4aXN0cykge1xuICAgICAgICAgIHRyeSB7XG4gICAgICAgICAgICBhd2FpdCB3ZWJSLkZTLm1rZGlyKHBhdGgpO1xuICAgICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcihgRmlsZXN5c3RlbSBFcnJvcjogXCIke2UubWVzc2FnZX1cIi5gKTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgLy8gV3JpdGUgdGhpcyBmaWxlIHRvIHRoZSBWRlNcbiAgICAgIHJldHVybiBhd2FpdCB3ZWJSLkZTLndyaXRlRmlsZShmaWxlLCBuZXcgVWludDhBcnJheShkYXRhKSk7XG4gICAgfSkucmVkdWNlKChjdXIsIG5leHQpID0+IGN1ci50aGVuKG5leHQpLCBQcm9taXNlLnJlc29sdmUoKSk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYEluc3RhbGxpbmcgd2ViUiBzaGltc2A7XG4gICAgYXdhaXQgd2ViUi5ldmFsUlZvaWQoYHdlYnI6OnNoaW1faW5zdGFsbCgpYCk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYFdlYlIgZW52aXJvbm1lbnQgc2V0dXBgO1xuICAgIGF3YWl0IHNldHVwUih3ZWJSLCBkYXRhKTtcblxuICAgIHN0YXR1c1RleHQucmVtb3ZlKCk7XG4gICAgaWYgKHN0YXR1c0NvbnRhaW5lci5jaGlsZHJlbi5sZW5ndGggPT0gMCkge1xuICAgICAgc3RhdHVzQ29udGFpbmVyLnBhcmVudE5vZGUucmVtb3ZlKCk7XG4gICAgfVxuICAgIHJldHVybiB3ZWJSO1xuICB9KShuZXcgV2ViUihkYXRhLm9wdGlvbnMpKTtcblxuICAvLyBLZWVwIHRyYWNrIG9mIGluaXRpYWwgT0pTIGJsb2NrIHJlbmRlclxuICBjb25zdCByZW5kZXJlZE9qcyA9IHt9O1xuXG4gIGNvbnN0IHByb2Nlc3MgPSBhc3luYyAoY29udGV4dCwgaW5wdXRzKSA9PiB7XG4gICAgY29uc3Qgd2ViUiA9IGF3YWl0IHdlYlJQcm9taXNlO1xuICAgIGNvbnN0IGV2YWx1YXRvciA9IG5ldyBXZWJSRXZhbHVhdG9yKHdlYlIsIGNvbnRleHQpXG4gICAgYXdhaXQgZXZhbHVhdG9yLnByb2Nlc3MoaW5wdXRzKTtcbiAgICByZXR1cm4gZXZhbHVhdG9yLmNvbnRhaW5lcjtcbiAgfVxuXG4gIHJldHVybiB7XG4gICAgcHJvY2VzcyxcbiAgICB3ZWJSUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgfTtcbn1cbiJ9XX0=
@@ -1018,7 +1143,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwiaW5saW5lIjpmYWxzZSwibWV0
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 
@@ -1453,8 +1578,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./11_testowanie_istotnosci_proporcji.html" class="pagination-link" aria-label="Testowanie istoności proporcji">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span>
+      <a href="./11_testowanie_istotnosci_proporcji.html" class="pagination-link" aria-label="Testowanie istotności proporcji">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

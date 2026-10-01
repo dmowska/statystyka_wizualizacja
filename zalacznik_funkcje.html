@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Załącznik: zestawienie funkcji – Statystyka i wizualizacja danych</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./16_zadania_samodzielne.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3708d7fbbef66c9ac9ec4ecfd1afb0ee.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Brak wyników",
+    "search-matching-documents-text": "dopasowane dokumenty",
+    "search-copy-link-title": "Kopiuj link do wyszukiwania",
+    "search-hide-matches-text": "Ukryj dodatkowe dopasowania",
+    "search-more-match-text": "więcej dopasowań w tym dokumencie",
+    "search-more-matches-text": "więcej dopasowań w tym dokumencie",
+    "search-clear-button-title": "Wyczyść",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Anuluj",
+    "search-submit-button-title": "Zatwierdź",
+    "search-label": "Szukaj"
+  }
+}</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./zalacznik_funkcje.html">ZAŁĄCZNIK</a></li><li class="breadcrumb-item"><a href="./zalacznik_funkcje.html">Załącznik: zestawienie funkcji</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Przełącz pasek boczny" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Szukaj" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Statystyka i wizualizacja danych</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Szukaj"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">O skrypcie</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">WPROWADZENIE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1a_wprowadzenie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Wprowadzenie</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1b_wprowadzenie_do_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wprowadzenie do pracy w R</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">PRZETWARZANIE DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2a_przetwarzanie_danych.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Przetwarzanie danych w R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2b_przetwarzanie_danych_dplyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Przetwarzanie danych - dplyr</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">STATYSTYKI OPISOWE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_statystyki_opisowe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Statystyki opisowe</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">WIZUALIZACJA DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wykresy w R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4a_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Typy wykresów</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4b_wizualizacja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Formatowanie wykresów</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">ROZKŁADY DANYCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5_rozklady.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rozkłady danych</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">WNIOSKOWANIE STATYSTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Wnioskowanie statystyczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6a_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Estymacja punktowa i przedziałowa</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6b_wnioskowanie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Testowanie hipotez statystycznych</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_testy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Testy statystyczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_testy_parametryczne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Testy parametryczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_testy_nieparametryczne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Testy nieparametryczne</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10_testy_wiele_grup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Testy dla wielu grup</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">ANALIZA KORELACJI I REGRESJI</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_analiza_korelacji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Analiza korelacji</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_analiza_regresji.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Analiza regresji</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">RAPORTY STATYSTYCZNE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14_Raport_statystyczny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Tworzenie raportów</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZADANIA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Spis treści</h2>
+   
+  <ul>
+  <li><a href="#rozdział-1-wprowadzenie" id="toc-rozdział-1-wprowadzenie" class="nav-link active" data-scroll-target="#rozdział-1-wprowadzenie">Rozdział 1 — Wprowadzenie</a></li>
+  <li><a href="#rozdział-2-wprowadzenie-do-pracy-w-r" id="toc-rozdział-2-wprowadzenie-do-pracy-w-r" class="nav-link" data-scroll-target="#rozdział-2-wprowadzenie-do-pracy-w-r">Rozdział 2 — Wprowadzenie do pracy w R</a></li>
+  <li><a href="#rozdział-3-przetwarzanie-danych-w-r" id="toc-rozdział-3-przetwarzanie-danych-w-r" class="nav-link" data-scroll-target="#rozdział-3-przetwarzanie-danych-w-r">Rozdział 3 — Przetwarzanie danych w R</a></li>
+  <li><a href="#rozdział-4-przetwarzanie-danych-dplyr" id="toc-rozdział-4-przetwarzanie-danych-dplyr" class="nav-link" data-scroll-target="#rozdział-4-przetwarzanie-danych-dplyr">Rozdział 4 — Przetwarzanie danych: dplyr</a></li>
+  <li><a href="#rozdział-5-statystyki-opisowe" id="toc-rozdział-5-statystyki-opisowe" class="nav-link" data-scroll-target="#rozdział-5-statystyki-opisowe">Rozdział 5 — Statystyki opisowe</a></li>
+  <li><a href="#rozdział-6-wykresy-w-r" id="toc-rozdział-6-wykresy-w-r" class="nav-link" data-scroll-target="#rozdział-6-wykresy-w-r">Rozdział 6 — Wykresy w R</a></li>
+  <li><a href="#rozdział-7-typy-wykresów" id="toc-rozdział-7-typy-wykresów" class="nav-link" data-scroll-target="#rozdział-7-typy-wykresów">Rozdział 7 — Typy wykresów</a></li>
+  <li><a href="#rozdział-8-formatowanie-wykresów" id="toc-rozdział-8-formatowanie-wykresów" class="nav-link" data-scroll-target="#rozdział-8-formatowanie-wykresów">Rozdział 8 — Formatowanie wykresów</a></li>
+  <li><a href="#rozdział-9-rozkłady-danych" id="toc-rozdział-9-rozkłady-danych" class="nav-link" data-scroll-target="#rozdział-9-rozkłady-danych">Rozdział 9 — Rozkłady danych</a></li>
+  <li><a href="#rozdział-10-wnioskowanie-statystyczne" id="toc-rozdział-10-wnioskowanie-statystyczne" class="nav-link" data-scroll-target="#rozdział-10-wnioskowanie-statystyczne">Rozdział 10 — Wnioskowanie statystyczne</a></li>
+  <li><a href="#rozdział-11-estymacja-punktowa-i-przedziałowa" id="toc-rozdział-11-estymacja-punktowa-i-przedziałowa" class="nav-link" data-scroll-target="#rozdział-11-estymacja-punktowa-i-przedziałowa">Rozdział 11 — Estymacja punktowa i przedziałowa</a></li>
+  <li><a href="#rozdział-12-testowanie-hipotez-statystycznych" id="toc-rozdział-12-testowanie-hipotez-statystycznych" class="nav-link" data-scroll-target="#rozdział-12-testowanie-hipotez-statystycznych">Rozdział 12 — Testowanie hipotez statystycznych</a></li>
+  <li><a href="#rozdział-13-testy-statystyczne" id="toc-rozdział-13-testy-statystyczne" class="nav-link" data-scroll-target="#rozdział-13-testy-statystyczne">Rozdział 13 — Testy statystyczne</a></li>
+  <li><a href="#rozdział-14-testy-parametryczne" id="toc-rozdział-14-testy-parametryczne" class="nav-link" data-scroll-target="#rozdział-14-testy-parametryczne">Rozdział 14 — Testy parametryczne</a></li>
+  <li><a href="#rozdział-15-testy-nieparametryczne" id="toc-rozdział-15-testy-nieparametryczne" class="nav-link" data-scroll-target="#rozdział-15-testy-nieparametryczne">Rozdział 15 — Testy nieparametryczne</a></li>
+  <li><a href="#rozdział-16-testy-dla-wielu-grup" id="toc-rozdział-16-testy-dla-wielu-grup" class="nav-link" data-scroll-target="#rozdział-16-testy-dla-wielu-grup">Rozdział 16 — Testy dla wielu grup</a></li>
+  <li><a href="#rozdział-17-testowanie-istotności-proporcji" id="toc-rozdział-17-testowanie-istotności-proporcji" class="nav-link" data-scroll-target="#rozdział-17-testowanie-istotności-proporcji">Rozdział 17 — Testowanie istotności proporcji</a></li>
+  <li><a href="#rozdział-18-analiza-korelacji" id="toc-rozdział-18-analiza-korelacji" class="nav-link" data-scroll-target="#rozdział-18-analiza-korelacji">Rozdział 18 — Analiza korelacji</a></li>
+  <li><a href="#rozdział-19-analiza-regresji" id="toc-rozdział-19-analiza-regresji" class="nav-link" data-scroll-target="#rozdział-19-analiza-regresji">Rozdział 19 — Analiza regresji</a></li>
+  <li><a href="#najczęściej-używane-jedną-stroną" id="toc-najczęściej-używane-jedną-stroną" class="nav-link" data-scroll-target="#najczęściej-używane-jedną-stroną">Najczęściej używane — jedną stroną</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./zalacznik_funkcje.html">ZAŁĄCZNIK</a></li><li class="breadcrumb-item"><a href="./zalacznik_funkcje.html">Załącznik: zestawienie funkcji</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Załącznik: zestawienie funkcji</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Zestawienie wszystkich funkcji R używanych w rozdziałach 1–19, uporządkowane według rozdziałów. Służy do szybkiego odnalezienia właściwego polecenia — gdy wiesz, <strong>co</strong> chcesz zrobić, ale nie pamiętasz, <strong>jak</strong> się ta funkcja nazywa.</p>
+<p>Opisy są celowo krótkie. Szczegóły (wszystkie argumenty, wartości domyślne, przykłady) znajdziesz zawsze na stronie pomocy: <code>?nazwaFunkcji</code>.</p>
+<p>Funkcje wymagające wczytania pakietu oznaczono w nawiasie, np. <em>(dplyr)</em>. Pozostałe są dostępne od razu po uruchomieniu R.</p>
+<hr>
+<section id="rozdział-1-wprowadzenie" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-1-wprowadzenie">Rozdział 1 — Wprowadzenie</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>install.packages("nazwa")</code></td>
+<td>instalacja pakietu (jednorazowo)</td>
+</tr>
+<tr class="even">
+<td><code>library(nazwa)</code></td>
+<td>wczytanie pakietu (w każdej sesji)</td>
+</tr>
+<tr class="odd">
+<td><code>data("zbior", package = "pakiet")</code></td>
+<td>wczytanie zbioru danych dołączonego do pakietu</td>
+</tr>
+<tr class="even">
+<td><code>read.csv("sciezka")</code></td>
+<td>wczytanie danych z pliku csv</td>
+</tr>
+<tr class="odd">
+<td><code>str(obiekt)</code></td>
+<td>struktura obiektu: typy zmiennych i liczba obserwacji</td>
+</tr>
+<tr class="even">
+<td><code>colSums(is.na(df))</code></td>
+<td>liczba braków danych w każdej kolumnie</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-2-wprowadzenie-do-pracy-w-r" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-2-wprowadzenie-do-pracy-w-r">Rozdział 2 — Wprowadzenie do pracy w R</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>getwd()</code></td>
+<td>sprawdzenie katalogu roboczego</td>
+</tr>
+<tr class="even">
+<td><code>setwd("sciezka")</code></td>
+<td>zmiana katalogu roboczego (w projekcie niepotrzebna)</td>
+</tr>
+<tr class="odd">
+<td><code>list.files()</code></td>
+<td>lista plików w katalogu roboczym</td>
+</tr>
+<tr class="even">
+<td><code>read.csv("plik.csv")</code></td>
+<td>wczytanie pliku csv (separator przecinek)</td>
+</tr>
+<tr class="odd">
+<td><code>read.csv2("plik.csv")</code></td>
+<td>wczytanie pliku csv w formacie polskim (średnik, przecinek dziesiętny)</td>
+</tr>
+<tr class="even">
+<td><code>read.table("plik.txt", sep = " ")</code></td>
+<td>wczytanie pliku tekstowego z dowolnym separatorem</td>
+</tr>
+<tr class="odd">
+<td><code>readRDS("plik.rds")</code></td>
+<td>wczytanie pojedynczego obiektu zapisanego w formacie R</td>
+</tr>
+<tr class="even">
+<td><code>load("plik.rda")</code></td>
+<td>wczytanie zapisanego środowiska pracy</td>
+</tr>
+<tr class="odd">
+<td><code>write.csv(obiekt, "plik.csv")</code></td>
+<td>zapis ramki danych do pliku tekstowego</td>
+</tr>
+<tr class="even">
+<td><code>saveRDS(obiekt, "plik.rds")</code></td>
+<td>zapis pojedynczego obiektu w formacie R</td>
+</tr>
+<tr class="odd">
+<td><code>save(a, b, file = "plik.rda")</code></td>
+<td>zapis wybranych obiektów</td>
+</tr>
+<tr class="even">
+<td><code>save.image("plik.RData")</code></td>
+<td>zapis całego środowiska pracy</td>
+</tr>
+<tr class="odd">
+<td><code>?nazwa</code>, <code>help(nazwa)</code></td>
+<td>strona pomocy funkcji</td>
+</tr>
+<tr class="even">
+<td><code>example(nazwa)</code></td>
+<td>uruchomienie przykładów z pomocy</td>
+</tr>
+<tr class="odd">
+<td><code>args(nazwa)</code></td>
+<td>lista argumentów funkcji</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-3-przetwarzanie-danych-w-r" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-3-przetwarzanie-danych-w-r">Rozdział 3 — Przetwarzanie danych w R</h2>
+<p><strong>Poznawanie zbioru danych</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>str(df)</code></td>
+<td>struktura: typy zmiennych, liczba obserwacji</td>
+</tr>
+<tr class="even">
+<td><code>head(df, n)</code> / <code>tail(df, n)</code></td>
+<td>pierwsze / ostatnie wiersze (domyślnie 6)</td>
+</tr>
+<tr class="odd">
+<td><code>nrow(df)</code> / <code>ncol(df)</code></td>
+<td>liczba wierszy / kolumn</td>
+</tr>
+<tr class="even">
+<td><code>names(df)</code>, <code>colnames(df)</code>, <code>rownames(df)</code></td>
+<td>nazwy zmiennych, kolumn, wierszy</td>
+</tr>
+<tr class="odd">
+<td><code>summary(df)</code></td>
+<td>podstawowe statystyki wszystkich zmiennych</td>
+</tr>
+<tr class="even">
+<td><code>unique(x)</code></td>
+<td>unikalne wartości zmiennej</td>
+</tr>
+<tr class="odd">
+<td><code>class(x)</code></td>
+<td>typ (klasa) zmiennej</td>
+</tr>
+<tr class="even">
+<td><code>table(x)</code></td>
+<td>liczebność poszczególnych kategorii</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wybór danych i porządkowanie</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>df[wiersz, kolumna]</code></td>
+<td>indeksowanie ramki danych</td>
+</tr>
+<tr class="even">
+<td><code>df$zmienna</code></td>
+<td>wybór jednej zmiennej</td>
+</tr>
+<tr class="odd">
+<td><code>subset(df, warunek, select = c(...))</code></td>
+<td>wybór wierszy i kolumn w jednym wywołaniu</td>
+</tr>
+<tr class="even">
+<td><code>order(x)</code></td>
+<td>kolejność sortowania (używana w indeksowaniu)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-4-przetwarzanie-danych-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-4-przetwarzanie-danych-dplyr">Rozdział 4 — Przetwarzanie danych: dplyr</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>select(df, kol1, kol2)</code> <em>(dplyr)</em></td>
+<td>wybór kolumn; <code>-kol</code> usuwa kolumnę</td>
+</tr>
+<tr class="even">
+<td><code>filter(df, warunek)</code> <em>(dplyr)</em></td>
+<td>wybór wierszy spełniających warunek</td>
+</tr>
+<tr class="odd">
+<td><code>arrange(df, kol)</code> <em>(dplyr)</em></td>
+<td>sortowanie rosnąco; <code>desc(kol)</code> — malejąco</td>
+</tr>
+<tr class="even">
+<td><code>mutate(df, nowa = wyrazenie)</code> <em>(dplyr)</em></td>
+<td>utworzenie nowej zmiennej</td>
+</tr>
+<tr class="odd">
+<td><code>rename(df, nowa = stara)</code> <em>(dplyr)</em></td>
+<td>zmiana nazwy kolumny</td>
+</tr>
+<tr class="even">
+<td><code>rename_with(df, toupper)</code> <em>(dplyr)</em></td>
+<td>zmiana nazw wszystkich kolumn funkcją</td>
+</tr>
+<tr class="odd">
+<td><code>summarize(df, nazwa = funkcja(x))</code> <em>(dplyr)</em></td>
+<td>obliczenie statystyk podsumowujących</td>
+</tr>
+<tr class="even">
+<td><code>group_by(df, kol)</code> <em>(dplyr)</em></td>
+<td>podział danych na grupy przed obliczeniami</td>
+</tr>
+<tr class="odd">
+<td><code>summarize(df, ..., .by = kol)</code> <em>(dplyr)</em></td>
+<td>grupowanie tylko na potrzeby tego wywołania</td>
+</tr>
+<tr class="even">
+<td><code>pull(df, kol)</code> <em>(dplyr)</em></td>
+<td>wyciągnięcie jednej kolumny jako wektora</td>
+</tr>
+<tr class="odd">
+<td><code>inner_join()</code>, <code>left_join()</code>, <code>right_join()</code>, <code>full_join()</code> <em>(dplyr)</em></td>
+<td>łączenie dwóch tabel po wspólnej kolumnie</td>
+</tr>
+<tr class="even">
+<td><code>pivot_wider(df, names_from =, values_from =)</code> <em>(tidyr)</em></td>
+<td>zamiana układu długiego na szeroki</td>
+</tr>
+<tr class="odd">
+<td><code>pivot_longer(df, cols =)</code> <em>(tidyr)</em></td>
+<td>zamiana układu szerokiego na długi</td>
+</tr>
+<tr class="even">
+<td><code>x \|&gt; f()</code></td>
+<td>operator potokowy (natywny); przekazuje wynik do kolejnej funkcji</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-5-statystyki-opisowe" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-5-statystyki-opisowe">Rozdział 5 — Statystyki opisowe</h2>
+<p><strong>Miary położenia i rozrzutu</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mean(x)</code></td>
+<td>średnia arytmetyczna</td>
+</tr>
+<tr class="even">
+<td><code>weighted.mean(x, w)</code></td>
+<td>średnia ważona</td>
+</tr>
+<tr class="odd">
+<td><code>median(x)</code></td>
+<td>mediana</td>
+</tr>
+<tr class="even">
+<td><code>quantile(x, probs = ...)</code></td>
+<td>kwantyle (kwartyle, decyle, percentyle)</td>
+</tr>
+<tr class="odd">
+<td><code>IQR(x)</code></td>
+<td>rozstęp kwartylowy</td>
+</tr>
+<tr class="even">
+<td><code>min(x)</code>, <code>max(x)</code>, <code>range(x)</code></td>
+<td>wartość najmniejsza, największa, obie naraz</td>
+</tr>
+<tr class="odd">
+<td><code>sd(x)</code></td>
+<td>odchylenie standardowe</td>
+</tr>
+<tr class="even">
+<td><code>var(x)</code></td>
+<td>wariancja</td>
+</tr>
+<tr class="odd">
+<td><code>sum(x)</code>, <code>length(x)</code></td>
+<td>suma, liczba elementów</td>
+</tr>
+<tr class="even">
+<td><code>table(x)</code></td>
+<td>liczebność kategorii</td>
+</tr>
+<tr class="odd">
+<td><code>which.max(x)</code></td>
+<td>położenie wartości największej (np. do wyznaczenia dominanty)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Braki danych</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mean(x, na.rm = TRUE)</code></td>
+<td>obliczenie statystyki z pominięciem braków</td>
+</tr>
+<tr class="even">
+<td><code>is.na(x)</code></td>
+<td>sprawdzenie, które wartości są brakami</td>
+</tr>
+<tr class="odd">
+<td><code>sum(is.na(x))</code></td>
+<td>liczba braków w zmiennej</td>
+</tr>
+<tr class="even">
+<td><code>colSums(is.na(df))</code></td>
+<td>liczba braków w każdej kolumnie</td>
+</tr>
+<tr class="odd">
+<td><code>na.omit(df)</code></td>
+<td>usunięcie wierszy zawierających braki</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-6-wykresy-w-r" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-6-wykresy-w-r">Rozdział 6 — Wykresy w R</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ggplot(data = df, aes(...))</code> <em>(ggplot2)</em></td>
+<td>utworzenie wykresu: dane i mapowanie zmiennych</td>
+</tr>
+<tr class="even">
+<td><code>aes(x =, y =, color =, fill =, shape =, size =)</code> <em>(ggplot2)</em></td>
+<td>przypisanie zmiennych do elementów wykresu</td>
+</tr>
+<tr class="odd">
+<td><code>+ geom_*()</code> <em>(ggplot2)</em></td>
+<td>dodanie obiektu geometrycznego (co rysujemy)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-7-typy-wykresów" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-7-typy-wykresów">Rozdział 7 — Typy wykresów</h2>
+<p><strong>Podstawowe typy</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>geom_histogram(bins =, binwidth =)</code></td>
+<td>histogram — rozkład zmiennej ilościowej</td>
+</tr>
+<tr class="even">
+<td><code>geom_density()</code></td>
+<td>wykres gęstości — wygładzony rozkład</td>
+</tr>
+<tr class="odd">
+<td><code>geom_bar()</code></td>
+<td>wykres słupkowy — liczebność kategorii</td>
+</tr>
+<tr class="even">
+<td><code>geom_col()</code></td>
+<td>wykres słupkowy — wysokość słupka z danych</td>
+</tr>
+<tr class="odd">
+<td><code>geom_line()</code></td>
+<td>wykres liniowy — zmiana w czasie</td>
+</tr>
+<tr class="even">
+<td><code>geom_point()</code></td>
+<td>wykres rozrzutu — zależność dwóch zmiennych</td>
+</tr>
+<tr class="odd">
+<td><code>geom_boxplot()</code></td>
+<td>wykres pudełkowy — rozkład w grupach</td>
+</tr>
+<tr class="even">
+<td><code>geom_violin()</code></td>
+<td>wykres skrzypcowy — kształt rozkładu w grupach</td>
+</tr>
+<tr class="odd">
+<td><code>geom_jitter()</code></td>
+<td>punkty z losowym rozrzutem (nakładane na pudełka)</td>
+</tr>
+<tr class="even">
+<td><code>facet_wrap(~ zmienna)</code></td>
+<td>multiwykres — ten sam wykres osobno dla każdej grupy</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Statystyki na wykresie</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>stat_summary(fun =, geom =)</code></td>
+<td>wyliczenie i narysowanie statystyki (np. średniej)</td>
+</tr>
+<tr class="even">
+<td><code>stat_summary(fun.min =, fun.max =)</code></td>
+<td>zakres (wąsy, wstęga) wokół wartości środkowej</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pozostałe typy (przydatne w raportach i projektach)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>geom_tile()</code></td>
+<td>heatmapa</td>
+</tr>
+<tr class="even">
+<td><code>geom_area()</code></td>
+<td>wykres liniowy z wypełnionym obszarem</td>
+</tr>
+<tr class="odd">
+<td><code>geom_bar(position = "fill")</code></td>
+<td>wykres udziałów (struktura w grupach)</td>
+</tr>
+<tr class="even">
+<td><code>geom_bar(position = "stack")</code></td>
+<td>wykres słupkowy skumulowany</td>
+</tr>
+<tr class="odd">
+<td><code>coord_polar()</code></td>
+<td>wykres kołowy (z wykresu słupkowego)</td>
+</tr>
+<tr class="even">
+<td><code>stat_ecdf()</code></td>
+<td>dystrybuanta empiryczna</td>
+</tr>
+<tr class="odd">
+<td><code>geom_density_ridges()</code> <em>(ggridges)</em></td>
+<td>wykres grzbietowy</td>
+</tr>
+<tr class="even">
+<td><code>geom_treemap()</code> <em>(treemapify)</em></td>
+<td>tree map</td>
+</tr>
+<tr class="odd">
+<td><code>cut_number(x, n)</code></td>
+<td>podział zmiennej ilościowej na n równolicznych grup</td>
+</tr>
+<tr class="even">
+<td><code>fct_reorder()</code>, <code>fct_rev()</code>, <code>fct_infreq()</code> <em>(forcats)</em></td>
+<td>zmiana kolejności kategorii na wykresie</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zapis wykresu</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ggsave("out/wykres.png", plot = p, dpi = 300)</code></td>
+<td>zapis wykresu do pliku</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-8-formatowanie-wykresów" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-8-formatowanie-wykresów">Rozdział 8 — Formatowanie wykresów</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>labs(x =, y =, title =, color =, fill =)</code></td>
+<td>podpisy osi, tytuł, tytuł legendy</td>
+</tr>
+<tr class="even">
+<td><code>ggtitle("tytuł")</code></td>
+<td>sam tytuł wykresu</td>
+</tr>
+<tr class="odd">
+<td><code>lims(x = c(a, b))</code></td>
+<td>ograniczenie zakresu osi</td>
+</tr>
+<tr class="even">
+<td><code>scale_x_continuous(name =, breaks =)</code></td>
+<td>nazwa osi i rozmieszczenie podziałek</td>
+</tr>
+<tr class="odd">
+<td><code>scale_x_discrete(labels = c(...))</code></td>
+<td>zmiana etykiet kategorii na osi</td>
+</tr>
+<tr class="even">
+<td><code>scale_x_log10()</code></td>
+<td>skala logarytmiczna</td>
+</tr>
+<tr class="odd">
+<td><code>coord_flip()</code></td>
+<td>zamiana osi miejscami</td>
+</tr>
+<tr class="even">
+<td><code>scale_color_manual(values = c(...))</code></td>
+<td>samodzielne przypisanie kolorów</td>
+</tr>
+<tr class="odd">
+<td><code>scale_fill_manual(values = c(...))</code></td>
+<td>to samo dla wypełnienia</td>
+</tr>
+<tr class="even">
+<td><code>scale_color_brewer(palette =)</code> <em>(RColorBrewer)</em></td>
+<td>gotowa paleta kolorów</td>
+</tr>
+<tr class="odd">
+<td><code>scale_colour_gradient(low =, high =)</code></td>
+<td>skala ciągła między dwoma kolorami</td>
+</tr>
+<tr class="even">
+<td><code>scale_color_continuous_sequential(palette =)</code> <em>(colorspace)</em></td>
+<td>gotowa skala ciągła</td>
+</tr>
+<tr class="odd">
+<td><code>scale_color_discrete_qualitative(palette =)</code> <em>(colorspace)</em></td>
+<td>gotowa skala dla kategorii</td>
+</tr>
+<tr class="even">
+<td><code>display.brewer.all()</code> <em>(RColorBrewer)</em></td>
+<td>podgląd wszystkich dostępnych palet</td>
+</tr>
+<tr class="odd">
+<td><code>geom_text(aes(label =))</code></td>
+<td>podpisy przy punktach</td>
+</tr>
+<tr class="even">
+<td><code>geom_text_repel()</code> <em>(ggrepel)</em></td>
+<td>podpisy nienachodzące na siebie</td>
+</tr>
+<tr class="odd">
+<td><code>theme_bw()</code>, <code>theme_minimal()</code>, <code>theme_classic()</code></td>
+<td>gotowe motywy wyglądu</td>
+</tr>
+<tr class="even">
+<td><code>theme(legend.position =, text = element_text(size =))</code></td>
+<td>ręczna zmiana elementów wyglądu</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-9-rozkłady-danych" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-9-rozkłady-danych">Rozdział 9 — Rozkłady danych</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dnorm(x, mean, sd)</code></td>
+<td>gęstość rozkładu normalnego</td>
+</tr>
+<tr class="even">
+<td><code>pnorm(q, mean, sd)</code></td>
+<td>dystrybuanta: prawdopodobieństwo wartości mniejszej od q</td>
+</tr>
+<tr class="odd">
+<td><code>qnorm(p, mean, sd)</code></td>
+<td>kwantyl: wartość, poniżej której leży p obserwacji</td>
+</tr>
+<tr class="even">
+<td><code>rnorm(n, mean, sd)</code></td>
+<td>losowanie n wartości z rozkładu normalnego</td>
+</tr>
+<tr class="odd">
+<td><code>rt(n, df)</code>, <code>dt(x, df)</code></td>
+<td>analogiczne funkcje dla rozkładu t-Studenta</td>
+</tr>
+<tr class="even">
+<td><code>set.seed(liczba)</code></td>
+<td>ustalenie ziarna losowania (powtarzalność wyników)</td>
+</tr>
+<tr class="odd">
+<td><code>shapiro.test(x)</code></td>
+<td>test Shapiro-Wilka — sprawdzenie normalności rozkładu</td>
+</tr>
+<tr class="even">
+<td><code>skewness(x)</code> <em>(e1071)</em></td>
+<td>skośność</td>
+</tr>
+<tr class="odd">
+<td><code>kurtosis(x)</code> <em>(e1071)</em></td>
+<td>kurtoza (nadmiarowa)</td>
+</tr>
+<tr class="even">
+<td><code>stat_qq()</code> + <code>stat_qq_line()</code></td>
+<td>wykres kwantylowy z linią odniesienia</td>
+</tr>
+<tr class="odd">
+<td><code>curve(wyrazenie, xlim =)</code></td>
+<td>wykres funkcji matematycznej (grafika podstawowa)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-10-wnioskowanie-statystyczne" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-10-wnioskowanie-statystyczne">Rozdział 10 — Wnioskowanie statystyczne</h2>
+<p>Rozdział wprowadzający, bez poleceń R.</p>
+</section>
+<section id="rozdział-11-estymacja-punktowa-i-przedziałowa" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-11-estymacja-punktowa-i-przedziałowa">Rozdział 11 — Estymacja punktowa i przedziałowa</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>t.test(x)</code></td>
+<td>przedział ufności dla średniej (sekcja <em>confidence interval</em>)</td>
+</tr>
+<tr class="even">
+<td><code>t.test(x, conf.level = 0.99)</code></td>
+<td>przedział ufności na innym poziomie</td>
+</tr>
+<tr class="odd">
+<td><code>t.test(x)$conf.int</code></td>
+<td>sam przedział, bez reszty wydruku</td>
+</tr>
+<tr class="even">
+<td><code>qnorm(p, lower.tail = FALSE)</code></td>
+<td>wartość krytyczna rozkładu normalnego</td>
+</tr>
+<tr class="odd">
+<td><code>qt(p, df, lower.tail = FALSE)</code></td>
+<td>wartość krytyczna rozkładu t-Studenta</td>
+</tr>
+<tr class="even">
+<td><code>sd(x)/sqrt(length(x))</code></td>
+<td>błąd standardowy średniej</td>
+</tr>
+<tr class="odd">
+<td><code>ci.examp()</code> <em>(TeachingDemos)</em></td>
+<td>symulacja pokazująca sens przedziału ufności</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-12-testowanie-hipotez-statystycznych" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-12-testowanie-hipotez-statystycznych">Rozdział 12 — Testowanie hipotez statystycznych</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>rbinom(n, size, prob)</code></td>
+<td>losowanie z rozkładu dwumianowego</td>
+</tr>
+<tr class="even">
+<td><code>pbinom(q, size, prob, lower.tail = FALSE)</code></td>
+<td>prawdopodobieństwo wyniku co najmniej tak skrajnego</td>
+</tr>
+<tr class="odd">
+<td><code>geom_vline(xintercept =)</code></td>
+<td>pionowa linia na wykresie (np. zaznaczenie wyniku)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-13-testy-statystyczne" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-13-testy-statystyczne">Rozdział 13 — Testy statystyczne</h2>
+<p>Rozdział porządkujący wybór testu, bez poleceń R. Zestawienie wszystkich testów znajduje się w tym rozdziale w tabeli <em>Zestawienie testów</em>.</p>
+</section>
+<section id="rozdział-14-testy-parametryczne" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-14-testy-parametryczne">Rozdział 14 — Testy parametryczne</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>t.test(y ~ grupa, data = df)</code></td>
+<td>test t-Studenta dla prób niezależnych</td>
+</tr>
+<tr class="even">
+<td><code>t.test(x, y, paired = TRUE)</code></td>
+<td>test t-Studenta dla prób zależnych</td>
+</tr>
+<tr class="odd">
+<td><code>t.test(x, mu = wartosc)</code></td>
+<td>test t-Studenta dla jednej próby</td>
+</tr>
+<tr class="even">
+<td><code>t.test(..., alternative = "greater" / "less")</code></td>
+<td>test jednostronny</td>
+</tr>
+<tr class="odd">
+<td><code>t.test(..., var.equal = TRUE)</code></td>
+<td>klasyczny test t zamiast domyślnego testu Welcha</td>
+</tr>
+<tr class="even">
+<td><code>var.test(y ~ grupa)</code></td>
+<td>test F — porównanie wariancji w dwóch grupach</td>
+</tr>
+<tr class="odd">
+<td><code>leveneTest(y ~ factor(grupa))</code> <em>(car)</em></td>
+<td>test Levene’a — porównanie wariancji w wielu grupach</td>
+</tr>
+<tr class="even">
+<td><code>wynik$p.value</code>, <code>wynik$conf.int</code>, <code>wynik$estimate</code></td>
+<td>wyciągnięcie pojedynczych wartości z wyniku testu</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-15-testy-nieparametryczne" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-15-testy-nieparametryczne">Rozdział 15 — Testy nieparametryczne</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>wilcox.test(y ~ grupa, data = df)</code></td>
+<td>test U Manna-Whitneya (próby niezależne)</td>
+</tr>
+<tr class="even">
+<td><code>wilcox.test(x, y, paired = TRUE)</code></td>
+<td>test kolejności par Wilcoxona (próby zależne)</td>
+</tr>
+<tr class="odd">
+<td><code>median(x)</code></td>
+<td>mediana — miara położenia podawana przy testach nieparametrycznych</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-16-testy-dla-wielu-grup" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-16-testy-dla-wielu-grup">Rozdział 16 — Testy dla wielu grup</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>aov(y ~ grupa, data = df)</code></td>
+<td>jednoczynnikowa analiza wariancji</td>
+</tr>
+<tr class="even">
+<td><code>summary(model)</code></td>
+<td>wynik analizy wariancji (statystyka F i p-value)</td>
+</tr>
+<tr class="odd">
+<td><code>TukeyHSD(model)</code></td>
+<td>test post-hoc Tukeya — które pary grup się różnią</td>
+</tr>
+<tr class="even">
+<td><code>kruskal.test(y ~ grupa)</code></td>
+<td>test Kruskala-Wallisa (nieparametryczny odpowiednik ANOVA)</td>
+</tr>
+<tr class="odd">
+<td><code>dunn.test(y, grupa, method = "bonferroni")</code> <em>(dunn.test)</em></td>
+<td>test post-hoc Dunna</td>
+</tr>
+<tr class="even">
+<td><code>friedman.test()</code></td>
+<td>test Friedmana dla pomiarów powtarzanych; składnia formuły — zob. rozdz. 16</td>
+</tr>
+<tr class="odd">
+<td><code>tapply(x, grupa, funkcja)</code></td>
+<td>zastosowanie funkcji osobno w każdej grupie</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-17-testowanie-istotności-proporcji" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-17-testowanie-istotności-proporcji">Rozdział 17 — Testowanie istotności proporcji</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>chisq.test(x, p = c(...))</code></td>
+<td>test zgodności chi-kwadrat z rozkładem teoretycznym</td>
+</tr>
+<tr class="even">
+<td><code>chisq.test(tabela)</code></td>
+<td>test niezależności chi-kwadrat dla dwóch zmiennych</td>
+</tr>
+<tr class="odd">
+<td><code>chisq.test(tabela)$expected</code></td>
+<td>liczebności oczekiwane (sprawdzenie założeń testu)</td>
+</tr>
+<tr class="even">
+<td><code>chisq.test(tabela, correct = FALSE)</code></td>
+<td>wyłączenie poprawki Yatesa</td>
+</tr>
+<tr class="odd">
+<td><code>mcnemar.test(tabela)</code></td>
+<td>test McNemara dla prób zależnych</td>
+</tr>
+<tr class="even">
+<td><code>fisher.test(tabela)</code></td>
+<td>dokładny test Fishera przy małych liczebnościach</td>
+</tr>
+<tr class="odd">
+<td><code>table(zm1, zm2)</code></td>
+<td>utworzenie tabeli kontyngencji z danych</td>
+</tr>
+<tr class="even">
+<td><code>matrix(c(...), nrow =, dimnames =)</code></td>
+<td>ręczne utworzenie tabeli kontyngencji</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-18-analiza-korelacji" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-18-analiza-korelacji">Rozdział 18 — Analiza korelacji</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>cor(x, y, method = "pearson")</code></td>
+<td>współczynnik korelacji (bez testu istotności)</td>
+</tr>
+<tr class="even">
+<td><code>cor(df, use = "complete.obs")</code></td>
+<td>macierz współczynników korelacji</td>
+</tr>
+<tr class="odd">
+<td><code>cor.test(x, y)</code></td>
+<td>test istotności korelacji wraz z przedziałem ufności</td>
+</tr>
+<tr class="even">
+<td><code>cor.test(x, y, method = "spearman")</code></td>
+<td>korelacja rang Spearmana</td>
+</tr>
+<tr class="odd">
+<td><code>rcorr(as.matrix(df))</code> <em>(Hmisc)</em></td>
+<td>macierz korelacji wraz z wartościami p</td>
+</tr>
+<tr class="even">
+<td><code>corrplot(macierz)</code> <em>(corrplot)</em></td>
+<td>wizualizacja macierzy korelacji</td>
+</tr>
+<tr class="odd">
+<td><code>pairs(~ x + y + z, data = df)</code></td>
+<td>macierz wykresów rozrzutu</td>
+</tr>
+<tr class="even">
+<td><code>ggpairs(df)</code> <em>(GGally)</em></td>
+<td>macierz wykresów z współczynnikami korelacji</td>
+</tr>
+<tr class="odd">
+<td><code>chart.Correlation(df)</code> <em>(PerformanceAnalytics)</em></td>
+<td>macierz z histogramami i korelacjami</td>
+</tr>
+<tr class="even">
+<td><code>pairs.panels(df)</code> <em>(psych)</em></td>
+<td>podobna macierz z pakietu psych</td>
+</tr>
+<tr class="odd">
+<td><code>stat_smooth(method = lm)</code> <em>(ggplot2)</em></td>
+<td>linia trendu na wykresie rozrzutu</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rozdział-19-analiza-regresji" class="level2">
+<h2 class="anchored" data-anchor-id="rozdział-19-analiza-regresji">Rozdział 19 — Analiza regresji</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>lm(y ~ x, data = df)</code></td>
+<td>budowa modelu regresji liniowej</td>
+</tr>
+<tr class="even">
+<td><code>lm(y ~ x1 + x2, data = df)</code></td>
+<td>regresja wielokrotna</td>
+</tr>
+<tr class="odd">
+<td><code>summary(model)</code></td>
+<td>pełne podsumowanie modelu (współczynniki, R², istotność)</td>
+</tr>
+<tr class="even">
+<td><code>model$coefficients</code></td>
+<td>same współczynniki modelu</td>
+</tr>
+<tr class="odd">
+<td><code>model$residuals</code></td>
+<td>reszty modelu</td>
+</tr>
+<tr class="even">
+<td><code>model$fitted.values</code></td>
+<td>wartości przewidywane przez model</td>
+</tr>
+<tr class="odd">
+<td><code>confint(model)</code></td>
+<td>przedziały ufności dla współczynników</td>
+</tr>
+<tr class="even">
+<td><code>predict(model, newdata = df)</code></td>
+<td>predykcja dla nowych wartości</td>
+</tr>
+<tr class="odd">
+<td><code>predict(model, newdata, interval = "prediction")</code></td>
+<td>predykcja z przedziałem predykcji</td>
+</tr>
+<tr class="even">
+<td><code>plot(model)</code></td>
+<td>cztery standardowe wykresy diagnostyczne</td>
+</tr>
+<tr class="odd">
+<td><code>residuals(model)</code></td>
+<td>reszty (do testu normalności)</td>
+</tr>
+<tr class="even">
+<td><code>nobs(model)</code></td>
+<td>liczba obserwacji użytych do budowy modelu</td>
+</tr>
+<tr class="odd">
+<td><code>AIC(model1, model2)</code></td>
+<td>porównanie modeli kryterium informacyjnym</td>
+</tr>
+<tr class="even">
+<td><code>augment(model)</code> <em>(broom)</em></td>
+<td>ramka danych z resztami i wartościami dopasowanymi</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="najczęściej-używane-jedną-stroną" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="najczęściej-używane-jedną-stroną">Najczęściej używane — jedną stroną</h2>
+<p>Jeśli nie pamiętasz, od czego zacząć:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. wczytanie i obejrzenie danych</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dane); <span class="fu">summary</span>(dane); <span class="fu">colSums</span>(<span class="fu">is.na</span>(dane))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. wybór i przekształcenie</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>wybrane <span class="ot">&lt;-</span> dane <span class="sc">|&gt;</span> <span class="fu">filter</span>(wojewodztwo <span class="sc">==</span> <span class="st">"wielkopolskie"</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(tmax_9, annual_precip)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. statystyki opisowe w grupach</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>dane <span class="sc">|&gt;</span> <span class="fu">group_by</span>(prowincja) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">srednia =</span> <span class="fu">mean</span>(annual_tavg, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">n =</span> <span class="fu">n</span>())</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. wykres</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> prowincja, <span class="at">y =</span> annual_tavg)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. sprawdzenie założeń</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(dane<span class="sc">$</span>annual_tavg)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">leveneTest</span>(annual_tavg <span class="sc">~</span> <span class="fu">factor</span>(prowincja), <span class="at">data =</span> dane)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. test i odczytanie wyniku</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>wynik <span class="ot">&lt;-</span> <span class="fu">t.test</span>(annual_tavg <span class="sc">~</span> prowincja, <span class="at">data =</span> dwie_prowincje)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>wynik                 <span class="co"># pełny wydruk</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>wynik<span class="sc">$</span>p.value         <span class="co"># sama wartość p</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>wynik<span class="sc">$</span>conf.int        <span class="co"># przedział ufności</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
+</script>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Skopiowano!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Skopiowano!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./16_zadania_samodzielne.html" class="pagination-link" aria-label="Zadania">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

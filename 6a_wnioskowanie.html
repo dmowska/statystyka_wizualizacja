@@ -320,7 +320,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -353,7 +353,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -399,7 +399,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -417,6 +417,23 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -444,6 +461,14 @@ window.Quarto = {
   <li><a href="#wyznaczenie-przedziałów-ufności-dla-średniej-znając-odchylenie-standardowe-sd" id="toc-wyznaczenie-przedziałów-ufności-dla-średniej-znając-odchylenie-standardowe-sd" class="nav-link" data-scroll-target="#wyznaczenie-przedziałów-ufności-dla-średniej-znając-odchylenie-standardowe-sd"><span class="header-section-number">11.4.2</span> Wyznaczenie przedziałów ufności dla średniej znając odchylenie standardowe (SD)</a></li>
   <li><a href="#wyznaczanie-przedziałów-ufności-dla-średniej-populacji-nieznając-odchylenia-standardowego-sd" id="toc-wyznaczanie-przedziałów-ufności-dla-średniej-populacji-nieznając-odchylenia-standardowego-sd" class="nav-link" data-scroll-target="#wyznaczanie-przedziałów-ufności-dla-średniej-populacji-nieznając-odchylenia-standardowego-sd"><span class="header-section-number">11.4.3</span> Wyznaczanie przedziałów ufności dla średniej populacji nieznając odchylenia standardowego (SD)</a></li>
   </ul></li>
+  <li><a href="#przedział-ufności-w-praktyce-funkcja-t.test" id="toc-przedział-ufności-w-praktyce-funkcja-t.test" class="nav-link" data-scroll-target="#przedział-ufności-w-praktyce-funkcja-t.test"><span class="header-section-number">11.5</span> Przedział ufności w praktyce: funkcja <code>t.test()</code></a>
+  <ul class="collapse">
+  <li><a href="#sam-przedział-bez-reszty-wydruku" id="toc-sam-przedział-bez-reszty-wydruku" class="nav-link" data-scroll-target="#sam-przedział-bez-reszty-wydruku"><span class="header-section-number">11.5.1</span> Sam przedział, bez reszty wydruku</a></li>
+  <li><a href="#inny-poziom-ufności" id="toc-inny-poziom-ufności" class="nav-link" data-scroll-target="#inny-poziom-ufności"><span class="header-section-number">11.5.2</span> Inny poziom ufności</a></li>
+  <li><a href="#co-wpływa-na-szerokość-przedziału" id="toc-co-wpływa-na-szerokość-przedziału" class="nav-link" data-scroll-target="#co-wpływa-na-szerokość-przedziału"><span class="header-section-number">11.5.3</span> Co wpływa na szerokość przedziału</a></li>
+  <li><a href="#jak-opisać-przedział-ufności-w-raporcie" id="toc-jak-opisać-przedział-ufności-w-raporcie" class="nav-link" data-scroll-target="#jak-opisać-przedział-ufności-w-raporcie"><span class="header-section-number">11.5.4</span> Jak opisać przedział ufności w raporcie</a></li>
+  </ul></li>
+  <li><a href="#zadania" id="toc-zadania" class="nav-link" data-scroll-target="#zadania"><span class="header-section-number">11.6</span> Zadania</a></li>
   </ul>
 </nav>
     </div>
@@ -469,6 +494,17 @@ window.Quarto = {
 </header>
 
 
+<div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;,&quot;ex_3&quot;]">
+<script type="exercise-setup-ex_1-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiIifQ==
+</script>
+<script type="exercise-setup-ex_2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiIifQ==
+</script>
+<script type="exercise-setup-ex_3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiIifQ==
+</script>
+</div>
 <p><strong>Estymacja</strong> to oszacowanie (z pewną dokładnością) na podstawie próby wartości badanej cechy statystycznej (np. średniej) oraz rozciągnięcie otrzymanych wyników na całą populację.</p>
 <p><img src="figures/7_est.png" class="img-fluid"></p>
 <section id="podstawowe-pojęcia" class="level2" data-number="11.1">
@@ -498,7 +534,7 @@ window.Quarto = {
 <li><p>Numeryczne podsumowanie niepewności estymacji</p></li>
 <li><p>Wyznaczamy pewien przedział liczbowy, który z pewnym prawdopodobieństwem zawiera wartość nieznanego parametru. Przedział taki nazywany jest <strong><em>przedziałem ufności</em></strong>.</p>
 <ul>
-<li>Np. 95% przedział ufności mówi, że dla 95% z próby, ten przedział zawiera poprawną wartość</li>
+<li>Np. 95% przedział ufności mówi, że dla 95% losowo pobranych prób wyznaczony w ten sposób przedział zawiera prawdziwą wartość parametru</li>
 </ul></li>
 </ul>
 <section id="przedział-ufności" class="level3" data-number="11.3.1">
@@ -506,13 +542,13 @@ window.Quarto = {
 <ul>
 <li>zakres możliwych wartości dla nieznanej średniej populacji oparty na danych próby</li>
 <li>wyliczany jest dla oszacowania wartości pewnej charakterystyki populacji (np. średniej arytmetycznej) na podstawie próby.</li>
-<li>wartość charakterystki (np.średniej) wyliczona z próby, będzie się nieco róźnić od tej dla całej populacji.</li>
+<li>wartość charakterystyki (np. średniej) wyliczona z próby będzie się nieco różnić od tej dla całej populacji.</li>
 <li>gdy próba jest reprezentatywna możemy oczekiwać niezbyt dużych różnic między rzeczywistą wartością charakterystyki dla populacji, a wyznaczoną z próby. <strong>PODSUMOWUJĄC: Przedział ufności określa nam prawdopodobny zakres odchylenia naszych wyliczeń od wartości rzeczywistej.</strong></li>
 </ul>
 <p><strong>Interpretacja</strong></p>
 <ul>
-<li><p>Jeśli wielokrotnie z wielu niezależnych prób losowych będziemy wyznaczali przedziały, to <span class="math inline">\(100(1-\alpha)%\)</span> (np. 95%) takich przedziałów będzie zawierało prawdziwą wartość parametru.</p></li>
-<li><p>Zatem przy dużej liczbie powtórzeń zdanie “Prawdziwa wartość parametru mieści się w przedziale ufności” będzie prawdziwe w <span class="math inline">\(100(1-\alpha)%\)</span> powtórzeń.</p></li>
+<li><p>Jeśli wielokrotnie z wielu niezależnych prób losowych będziemy wyznaczali przedziały, to <span class="math inline">\(100(1-\alpha)\%\)</span> (np. 95%) takich przedziałów będzie zawierało prawdziwą wartość parametru.</p></li>
+<li><p>Zatem przy dużej liczbie powtórzeń zdanie “Prawdziwa wartość parametru mieści się w przedziale ufności” będzie prawdziwe w <span class="math inline">\(100(1-\alpha)\%\)</span> powtórzeń.</p></li>
 <li><p>Często (choć mniej precyzyjnie) przedział ufności określany jest zdaniem: “z 95% prawdpopodobieństwem przedział zawiera wartość parametru”</p></li>
 </ul>
 <p><strong>Przykład:</strong></p>
@@ -523,7 +559,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="6a_wnioskowanie_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="6a_wnioskowanie_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -555,12 +591,12 @@ window.Quarto = {
 <li>podanie wartości przedziału, np. w postaci (dolna granica, gorna granica)</li>
 </ul></li>
 </ol>
-<p>Przedział ufności dla średniej ma postać <span class="math inline">\(Średnia \pm Zakres błędu\)</span> ( <span class="math inline">\(Mean \pm Margin of error\)</span> )</p>
+<p>Przedział ufności dla średniej ma postać <span class="math inline">\(\text{średnia} \pm \text{zakres błędu}\)</span> (ang. <span class="math inline">\(\text{mean} \pm \text{margin of error}\)</span>).</p>
 </section>
 </section>
 <section id="estymacja-parametrów-w-r" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="estymacja-parametrów-w-r"><span class="header-section-number">11.4</span> Estymacja parametrów w R</h2>
-<p>Estymacja parametrów w R zostanie omówiona na przykładzie danych <code>survey</code> z pakietu MASS. Zbiór ten zawiera wyniki badania studentów z Australijskiego uniwersytetu, którzy udzielali odpowiedzi na różne pytania.</p>
+<p>Estymacja parametrów w R zostanie omówiona na przykładzie danych <code>survey</code> z pakietu MASS. Zbiór ten zawiera wyniki badania studentów jednego z australijskich uniwersytetów, którzy udzielali odpowiedzi na różne pytania.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(survey) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -587,7 +623,7 @@ window.Quarto = {
 </div>
 <section id="estymacja-punktowa-średniej-z-populacji." class="level3" data-number="11.4.1">
 <h3 data-number="11.4.1" class="anchored" data-anchor-id="estymacja-punktowa-średniej-z-populacji."><span class="header-section-number">11.4.1</span> Estymacja punktowa średniej z populacji.</h3>
-<p>Badanie zostało przeprowadzone na próbie 237 studenów. Możemy obliczyć średnią z próby, którą będziemy traktować jako oszacowanie średniej populacji.</p>
+<p>Badanie zostało przeprowadzone na próbie 237 studentów. Możemy obliczyć średnią z próby, którą będziemy traktować jako oszacowanie średniej populacji.</p>
 <p><strong>Problem: Oszacować średni wzrost studentów uniwersytetu na podstawie danych z próby</strong></p>
 <p><strong>Rozwiązanie:</strong></p>
 <div class="cell">
@@ -602,14 +638,14 @@ window.Quarto = {
 </div>
 </div>
 <p><strong>Odpowiedź:</strong></p>
-<p>Średni wzrostu studentów wynosi 172,38 cm.</p>
+<p>Średni wzrost studentów wynosi 172,38 cm.</p>
 </section>
 <section id="wyznaczenie-przedziałów-ufności-dla-średniej-znając-odchylenie-standardowe-sd" class="level3" data-number="11.4.2">
 <h3 data-number="11.4.2" class="anchored" data-anchor-id="wyznaczenie-przedziałów-ufności-dla-średniej-znając-odchylenie-standardowe-sd"><span class="header-section-number">11.4.2</span> Wyznaczenie przedziałów ufności dla średniej znając odchylenie standardowe (SD)</h3>
 <p>W poprzednim przykładzie określona została wartość średniej na podstawie próby. W tym przykładzie wyznaczymy <em>przedział ufności</em> - który określi nam z jaką “dokładnością” oszacowaliśmy wartość średniej.</p>
 <p>Przy założeniu, że odchylenie standardowe jest znane do wyznaczenia przedziału, w jakim znajduje się wartość średnia, możemy posłużyć się wzorem:</p>
 <p><span class="math display">\[\overline{x} \pm z_{\alpha/2} \frac{\sigma} {\sqrt{n}}\]</span></p>
-<p>gdzie, <span class="math inline">\(z_{\alpha/2}\)</span> oznacza 100(1-<span class="math inline">\(\alpha\)</span>) percentyl standaryzowanego rozkładu normalnego.</p>
+<p>gdzie, <span class="math inline">\(z_{\alpha/2}\)</span> oznacza percentyl 100(1-<span class="math inline">\(\alpha\)</span>/2) standaryzowanego rozkładu normalnego. Dla 95% poziomu ufności (<span class="math inline">\(\alpha = 0{,}05\)</span>) jest to percentyl 97,5, w R: <code>qnorm(0.975)</code>, co jest równoważne zapisowi <code>qnorm(0.025, lower.tail = FALSE)</code> używanemu niżej.</p>
 <p><strong>Problem</strong></p>
 <p>Załóżmy, że odchylenie standardowe populacji <span class="math inline">\(\sigma\)</span> dla wzrostu studentów wynosi 9.48. Znajdź zakres błędu (ang. <em>margin of error</em>) oraz przedział, w którym znajduje się średnia przy założeniu 95% poziomu ufności.</p>
 <p><strong>Rozwiązanie:</strong></p>
@@ -647,66 +683,285 @@ window.Quarto = {
 <p>Znajdź przedział, w którym znajduje się średnia przy założeniu 99% poziomu ufności.</p>
 </blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wartosc sem nie zmieni się, sem = sigma/sqrt(n)</span></span>
+<details class="code-fold">
+<summary>Kod R</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wartosc sem nie zmieni się, sem = sigma/sqrt(n)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>sem <span class="ot">=</span> <span class="fl">9.48</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(wzrost))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="fl">0.005</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">*</span> sem </span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>srednia<span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)  <span class="co"># przedzial ufności</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>E                          <span class="co"># zakres błędu</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.689088</code></pre>
+</div>
+<details class="code-fold">
+<summary>Kod R</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ci                         <span class="co"># przedział ufności</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 170.6918 174.0699</code></pre>
+</div>
 </div>
 </section>
 <section id="wyznaczanie-przedziałów-ufności-dla-średniej-populacji-nieznając-odchylenia-standardowego-sd" class="level3" data-number="11.4.3">
 <h3 data-number="11.4.3" class="anchored" data-anchor-id="wyznaczanie-przedziałów-ufności-dla-średniej-populacji-nieznając-odchylenia-standardowego-sd"><span class="header-section-number">11.4.3</span> Wyznaczanie przedziałów ufności dla średniej populacji nieznając odchylenia standardowego (SD)</h3>
 <p>Przy założeniu, że odchylenie standardowe jest nieznane do wyznaczenia przedziału, w jakim znajduje się wartość średnia, możemy posłużyć się wzorem:</p>
 <p><span class="math display">\[\overline{x} \pm t_{\alpha/2} \frac{s} {\sqrt{n}}\]</span></p>
-<p>gdzie, <span class="math inline">\(t_{\alpha/2}\)</span> oznacza 100(1-<span class="math inline">\(\alpha\)</span>) percentyl rozkładu t-Studenta z n-1 stopni swobody.</p>
+<p>gdzie, <span class="math inline">\(t_{\alpha/2}\)</span> oznacza percentyl 100(1-<span class="math inline">\(\alpha\)</span>/2) rozkładu t-Studenta z n-1 stopniami swobody. Dla 95% poziomu ufności jest to percentyl 97,5, w R: <code>qt(0.025, df = n-1, lower.tail = FALSE)</code>.</p>
 <p><strong>Problem</strong></p>
 <p>Znajdź zakres błędu (ang. <em>margin of error</em>) oraz przedział ,w którym znajduje się średnia przy założeniu 95% poziomu ufności oraz zakładając, że odchylenie standardowe populacji jest nieznane.</p>
 <p><strong>Rozwiązanie</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)                  <span class="co"># load the MASS package </span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(wzrost) </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sd</span>(wzrost)        <span class="co"># odchylenie standardowe próby</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n) </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>SE             <span class="co">#szacowany błąd standardowy średniej (standard error estimate)</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)                  <span class="co"># load the MASS package </span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(wzrost) </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sd</span>(wzrost)        <span class="co"># odchylenie standardowe próby</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n) </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>SE             <span class="co">#szacowany błąd standardowy średniej (standard error estimate)</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6811677</code></pre>
 </div>
 </div>
 <p>Obliczenie zakresu błędu</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="at">df=</span>n<span class="dv">-1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">*</span> sem </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>E     <span class="co"># zakres błędu margin of error </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="at">df=</span>n<span class="dv">-1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">*</span> SE</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>E     <span class="co"># zakres błędu margin of error</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.292759</code></pre>
+<pre><code>[1] 1.342878</code></pre>
 </div>
 </div>
 <p>Następnie wartość błędu dodajemy do średniej i otrzymujemy przedział ufności:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sr_wzrost <span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)   <span class="co"># średnia próby</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>sr_wzrost <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)  <span class="co"># CI</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sr_wzrost <span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)   <span class="co"># średnia próby</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>sr_wzrost <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)  <span class="co"># CI</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 171.0881 173.6736</code></pre>
+<pre><code>[1] 171.0380 173.7237</code></pre>
 </div>
 </div>
 <p><strong>Odpowiedź</strong></p>
-<p>Przy założeniu, że odchylenie standardowe z populacji jest nienznane to zakres błędu w ocenie wzrostu studentów przy 95% poziom ufności wynosi 1.3429 cm. Przedział ufności jest pomiędzy 171.04 a 173.72 cm.</p>
+<p>Przy założeniu, że odchylenie standardowe w populacji jest nieznane to zakres błędu w ocenie wzrostu studentów przy 95% poziom ufności wynosi 1.3429 cm. Przedział ufności jest pomiędzy 171.04 a 173.72 cm.</p>
 <blockquote class="blockquote">
 <p>Znajdź przedział, w którym znajduje się średnia przy założeniu 99% poziomu ufności (i nieznanym odchyleniu standardowym populacji)</p>
 </blockquote>
 <div class="cell">
 <details class="code-fold">
 <summary>Kod R</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wartosc sem nie zmieni się, sem = sigma/sqrt(n)</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> <span class="fu">sd</span>(wzrost)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(wzrost))</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, prcentyl=0.99+0.005=0.995</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qt</span>(<span class="fl">0.005</span>, <span class="at">df=</span><span class="fu">length</span>(wzrost)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">*</span>SE <span class="co"># zakres błędu</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>srednia<span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)  <span class="co"># przedzial ufności</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wartosc SE nie zmieni się, SE = s/sqrt(n)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> <span class="fu">sd</span>(wzrost)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(wzrost))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Zakladamy 99% poziom ufnosci, zatem 1-alfa=0.99, alfa=0.01, alfa/2=0.005, percentyl=1-0.005=0.995</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qt</span>(<span class="fl">0.005</span>, <span class="at">df=</span><span class="fu">length</span>(wzrost)<span class="sc">-</span><span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)<span class="sc">*</span>SE <span class="co"># zakres błędu</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>E                          <span class="co"># zakres błędu</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.770813</code></pre>
+</div>
+<details class="code-fold">
+<summary>Kod R</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">&lt;-</span> <span class="fu">mean</span>(wzrost)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>ci                         <span class="co"># przedział ufności</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 170.6100 174.1517</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="przedział-ufności-w-praktyce-funkcja-t.test" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="przedział-ufności-w-praktyce-funkcja-t.test"><span class="header-section-number">11.5</span> Przedział ufności w praktyce: funkcja <code>t.test()</code></h2>
+<p>Obliczenia powyżej pokazują, <strong>skąd bierze się</strong> przedział ufności: z błędu standardowego i wartości krytycznej odpowiedniego rozkładu. Warto raz przejść tę drogę krok po kroku, żeby rozumieć, co oznacza szerokość przedziału.</p>
+<p>W codziennej pracy nie liczymy go jednak ręcznie. Funkcja <code>t.test()</code> - ta sama, której używamy do testowania hipotez - zwraca przedział ufności dla średniej od razu:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(survey<span class="sc">$</span>Height)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wzrost)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  wzrost
+t = 253.07, df = 208, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ 171.0380 173.7237
+sample estimates:
+mean of x 
+ 172.3809 </code></pre>
+</div>
+</div>
+<p>W wyniku interesuje nas sekcja <strong>95 percent confidence interval</strong>. To dokładnie ten sam przedział, który wyliczyliśmy wyżej ręcznie (171,04 - 173,72 cm).</p>
+<section id="sam-przedział-bez-reszty-wydruku" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="sam-przedział-bez-reszty-wydruku"><span class="header-section-number">11.5.1</span> Sam przedział, bez reszty wydruku</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wzrost)<span class="sc">$</span>conf.int</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 171.0380 173.7237
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+</section>
+<section id="inny-poziom-ufności" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="inny-poziom-ufności"><span class="header-section-number">11.5.2</span> Inny poziom ufności</h3>
+<p>Poziom ufności zmieniamy jednym argumentem - nie trzeba szukać nowej wartości krytycznej:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(wzrost, <span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 170.6100 174.1517
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+</div>
+<p>Zwróć uwagę, że przedział 99% jest <strong>szerszy</strong> od 95%. Im większej pewności wymagamy, tym mniej precyzyjne musi być oszacowanie - to ta sama zależność, którą widać na rycinie z symulacją na początku rozdziału.</p>
+</section>
+<section id="co-wpływa-na-szerokość-przedziału" class="level3" data-number="11.5.3">
+<h3 data-number="11.5.3" class="anchored" data-anchor-id="co-wpływa-na-szerokość-przedziału"><span class="header-section-number">11.5.3</span> Co wpływa na szerokość przedziału</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Czynnik</th>
+<th>Wpływ na przedział</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>większa liczebność próby (n)</td>
+<td><strong>węższy</strong> - pierwiastek z n jest w mianowniku błędu standardowego</td>
+</tr>
+<tr class="even">
+<td>większe zróżnicowanie danych (s)</td>
+<td><strong>szerszy</strong> - w liczniku błędu standardowego</td>
+</tr>
+<tr class="odd">
+<td>wyższy poziom ufności (99% zamiast 95%)</td>
+<td><strong>szerszy</strong> - większa wartość krytyczna</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="jak-opisać-przedział-ufności-w-raporcie" class="level3" data-number="11.5.4">
+<h3 data-number="11.5.4" class="anchored" data-anchor-id="jak-opisać-przedział-ufności-w-raporcie"><span class="header-section-number">11.5.4</span> Jak opisać przedział ufności w raporcie</h3>
+<p>Przedział ufności podajemy razem z oszacowaniem punktowym, a nie zamiast niego:</p>
+<blockquote class="blockquote">
+<p>Średni wzrost studentów wyniósł 172,38 cm (95% przedział ufności: 171,04 - 173,72 cm).</p>
+</blockquote>
+<p><strong>Czego nie należy pisać:</strong> „z prawdopodobieństwem 95% prawdziwa średnia leży w tym przedziale”. Prawdziwa średnia jest ustaloną liczbą - to przedział jest losowy. Poprawna interpretacja jest taka: gdybyśmy wielokrotnie pobierali próby i za każdym razem wyznaczali przedział w ten sam sposób, 95% z tych przedziałów zawierałoby prawdziwą średnią.</p>
+</section>
+</section>
+<section id="zadania" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="zadania"><span class="header-section-number">11.6</span> Zadania</h2>
+<blockquote class="blockquote">
+<p>Wczytaj dane z pliku <code>dane/pomiary_pol.csv</code> i wyznacz 95% przedział ufności dla średniej maksymalnej temperatury powietrza we wrześniu (<em>tmax_9</em>).</p>
+</blockquote>
+<div class="cell" data-exercise="ex_1">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMSJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_1">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pomiary_pol<span class="sc">$</span>tmax_9)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Interesuje nas sekcja <em>95 percent confidence interval</em>. Zwróć uwagę, że test pominął obserwacje z brakami danych - liczba stopni swobody jest o kilka mniejsza niż liczba wierszy w zbiorze.</p>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Wyznacz ten sam przedział na poziomie ufności 90% oraz 99%. O ile zmienia się jego szerokość?</p>
+</blockquote>
+<div class="cell" data-exercise="ex_2">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMiJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_2">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pomiary_pol<span class="sc">$</span>tmax_9, <span class="at">conf.level =</span> <span class="fl">0.90</span>)<span class="sc">$</span>conf.int</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pomiary_pol<span class="sc">$</span>tmax_9, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf.int</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pomiary_pol<span class="sc">$</span>tmax_9, <span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Im wyższy poziom ufności, tym szerszy przedział. Przy tak dużej próbie (ok. 1500 stacji) wszystkie trzy przedziały są jednak bardzo wąskie - duża liczebność próby daje precyzyjne oszacowanie.</p>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Zapisz wynik testu do obiektu, a następnie wyciągnij z niego <strong>samą dolną granicę</strong> przedziału ufności i zaokrąglij ją do dwóch miejsc po przecinku.</p>
+</blockquote>
+<div class="cell" data-exercise="ex_3">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjoiZXhfMyJ9LCJjb2RlIjoiIn0=
+</script>
+</div>
+</div>
+<div class="webr-ojs-exercise exercise-solution d-none" data-exercise="ex_3">
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Rozwiązanie:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>wynik <span class="ot">&lt;-</span> <span class="fu">t.test</span>(pomiary_pol<span class="sc">$</span>tmax_9)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>wynik<span class="sc">$</span>conf.int        <span class="co"># obie granice</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>wynik<span class="sc">$</span>conf.int[<span class="dv">1</span>]     <span class="co"># dolna granica</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(wynik<span class="sc">$</span>conf.int[<span class="dv">1</span>], <span class="dv">2</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Taki zapis przydaje się przy pisaniu raportów: pozwala wstawić liczbę do tekstu, zamiast przepisywać ją ręcznie z wydruku.</p>
+</div>
+</div>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>Zadanie: Zebraliśmy losową próbę, pytając 10 studentów z wybranego kierunku, którzy skończyli studia w 2019 roku, jakie są ich roczne zarobki. Otrzymaliśmy odpowiedź: x = c(44617, 7066, 17594, 2726, 1178, 18898, 5033, 37151, 4514, 4000). Oszacuj średnie zarobki wszystkich studentów studiujących na tym kierunku, którzy ukończyli studia w 2019 roku. Określ także 90 oraz 95% przedział ufności dla średniej. 1) Wykonaj obliczenia, zakładając, że zarobki mają rozkład normalny, z odchyleniem standardowym 15000. 2) Wykonaj obliczenia przy nieznanym odchyleniu standardowym.</p>
@@ -714,44 +969,62 @@ window.Quarto = {
 <div class="cell">
 <details class="code-fold">
 <summary>Kod R</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dane </span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44617</span>, <span class="dv">7066</span>, <span class="dv">17594</span>, <span class="dv">2726</span>, <span class="dv">1178</span>, <span class="dv">18898</span>, <span class="dv">5033</span>, <span class="dv">37151</span>, <span class="dv">4514</span>, <span class="dv">4000</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OBLICZENIA PRZY ZNANYM SD</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">#blad standardowy sigma/sqrt(n), sigma to znane odchylenie standardowe a n to liczba elementów w probie</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="dv">15000</span><span class="sc">/</span><span class="dv">10</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co">#z(alfa/2) 1-alfa = 0.95, alfa=0.05, alfa/2=0.025, </span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)<span class="sc">*</span>se </span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">=</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 11338 a 17218 przy zalozeniu 95% poziomu ufnosci. </span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 10414 a 18141 przy zalozeniu 99% poziomu ufnosci. </span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="co"># OBLICZENIA PRZY NIEZNANYM SD </span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co">#jesli nieznamy sd to musimy oszacowac jego wartosc na podstawie proby </span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sd</span>(x)</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">=</span> <span class="fu">mean</span>(x)</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">10</span></span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> s<span class="sc">/</span>n</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="co">#zakres bledu przy nieznanym odchyleniu standardowym obliczamy korzystajac z rozkladu t-studenta </span></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co">#wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005</span></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)<span class="sc">*</span>SE</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">=</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 11270 a 17285 przy zalozeniu 95% poziomu ufnosci. </span></span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 10325 a 18231 przy zalozeniu 99% poziomu ufnosci. </span></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Zauwaz, ze Zwiększanie poziomu ufności powoduje zwiększanie szerokości przedziału ufności - czyli zmniejszenie precyzji estymacji. </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dane </span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">44617</span>, <span class="dv">7066</span>, <span class="dv">17594</span>, <span class="dv">2726</span>, <span class="dv">1178</span>, <span class="dv">18898</span>, <span class="dv">5033</span>, <span class="dv">37151</span>, <span class="dv">4514</span>, <span class="dv">4000</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OBLICZENIA PRZY ZNANYM SD</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co">#blad standardowy sigma/sqrt(n), sigma to znane odchylenie standardowe a n to liczba elementów w probie</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="dv">15000</span><span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a><span class="co">#z(alfa/2) 1-alfa = 0.95, alfa=0.05, alfa/2=0.025,</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co">#wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)<span class="sc">*</span>se</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">=</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>ci</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  4980.775 23574.625</code></pre>
+</div>
+<details class="code-fold">
+<summary>Kod R</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 4981 a 23575 przy zalozeniu 95% poziomu ufnosci.</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 2059 a 26496 przy zalozeniu 99% poziomu ufnosci.</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># OBLICZENIA PRZY NIEZNANYM SD</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">#jesli nieznamy sd to musimy oszacowac jego wartosc na podstawie proby</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>s <span class="ot">=</span> <span class="fu">sd</span>(x)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>srednia <span class="ot">=</span> <span class="fu">mean</span>(x)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>SE <span class="ot">=</span> s<span class="sc">/</span><span class="fu">sqrt</span>(n)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co">#zakres bledu przy nieznanym odchyleniu standardowym obliczamy korzystajac z rozkladu t-studenta</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co">#wykonujac obliczenia dla 99% poziomu ufnosci zamiast 0.025 nalezy wpisac 0.005</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>E <span class="ot">=</span> <span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="at">df =</span> n <span class="sc">-</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)<span class="sc">*</span>SE</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">=</span> srednia <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>E, E)</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>ci</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3299.868 25255.532</code></pre>
+</div>
+<details class="code-fold">
+<summary>Kod R</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale 3300 a 25256 przy zalozeniu 95% poziomu ufnosci.</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># odpowiedz: Srednie zarobki beda w przedziale -1493 a 30049 przy zalozeniu 99% poziomu ufnosci.</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (przy n = 10 i tak duzej zmiennosci zarobkow przedzial 99% jest bardzo szeroki i obejmuje</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  wartosci ujemne - to sygnal, ze proba jest zbyt mala do precyzyjnego oszacowania)</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Zauwaz, ze Zwiększanie poziomu ufności powoduje zwiększanie szerokości przedziału ufności - czyli zmniejszenie precyzji estymacji. </span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
 
+<script type="webr-data">
+eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=
+</script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W119
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC00IiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV80O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJjZWxsTmFtZSI6IndlYnItNCIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzQgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBleGVyY2lzZSBjb25maWd1cmF0aW9uXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKFxuICAgIHtcbiAgICAgIGlkOiBcIndlYnItNC1jb250ZW50c1wiLFxuICAgICAgZW52aXI6IGBleGVyY2lzZS1lbnYtJHtibG9jay5hdHRyLmV4ZXJjaXNlfWAsXG4gICAgICBlcnJvcjogZmFsc2UsXG4gICAgICBjYXB0aW9uOiAnRXhlcmNpc2UnLFxuICAgIH0sXG4gICAgYmxvY2suYXR0clxuICApO1xuXG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxudmlld29mIF93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbl93ZWJyX2ZlZWRiYWNrXzQgPSB7XG4gIGNvbnN0IHsgV2ViUkdyYWRlciB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3QgZW1wdHlGZWVkYmFjayA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xuXG4gIGNvbnN0IGdyYWRlciA9IG5ldyBXZWJSR3JhZGVyKF93ZWJyX3ZhbHVlXzQuZXZhbHVhdG9yKTtcbiAgY29uc3QgZmVlZGJhY2sgPSBhd2FpdCBncmFkZXIuZ3JhZGVFeGVyY2lzZSgpO1xuICBpZiAoIWZlZWRiYWNrKSByZXR1cm4gZW1wdHlGZWVkYmFjaztcbiAgcmV0dXJuIGZlZWRiYWNrO1xufVxuIn0seyJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici0zIiwiaW5saW5lIjpmYWxzZSwibWV0aG9kTmFtZSI6ImludGVycHJldCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICAvLyBEZWZhdWx0IGV4ZXJjaXNlIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oXG4gICAge1xuICAgICAgaWQ6IFwid2Vici0zLWNvbnRlbnRzXCIsXG4gICAgICBlbnZpcjogYGV4ZXJjaXNlLWVudi0ke2Jsb2NrLmF0dHIuZXhlcmNpc2V9YCxcbiAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgIGNhcHRpb246ICdFeGVyY2lzZScsXG4gICAgfSxcbiAgICBibG9jay5hdHRyXG4gICk7XG5cbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG52aWV3b2YgX3dlYnJfdmFsdWVfMyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMywge30pO1xuX3dlYnJfZmVlZGJhY2tfMyA9IHtcbiAgY29uc3QgeyBXZWJSR3JhZGVyIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBlbXB0eUZlZWRiYWNrID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XG5cbiAgY29uc3QgZ3JhZGVyID0gbmV3IFdlYlJHcmFkZXIoX3dlYnJfdmFsdWVfMy5ldmFsdWF0b3IpO1xuICBjb25zdCBmZWVkYmFjayA9IGF3YWl0IGdyYWRlci5ncmFkZUV4ZXJjaXNlKCk7XG4gIGlmICghZmVlZGJhY2spIHJldHVybiBlbXB0eUZlZWRiYWNrO1xuICByZXR1cm4gZmVlZGJhY2s7XG59XG4ifSx7ImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIC8vIERlZmF1bHQgZXhlcmNpc2UgY29uZmlndXJhdGlvblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbihcbiAgICB7XG4gICAgICBpZDogXCJ3ZWJyLTItY29udGVudHNcIixcbiAgICAgIGVudmlyOiBgZXhlcmNpc2UtZW52LSR7YmxvY2suYXR0ci5leGVyY2lzZX1gLFxuICAgICAgZXJyb3I6IGZhbHNlLFxuICAgICAgY2FwdGlvbjogJ0V4ZXJjaXNlJyxcbiAgICB9LFxuICAgIGJsb2NrLmF0dHJcbiAgKTtcblxuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbnZpZXdvZiBfd2Vicl92YWx1ZV8yID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8yLCB7fSk7XG5fd2Vicl9mZWVkYmFja18yID0ge1xuICBjb25zdCB7IFdlYlJHcmFkZXIgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IGVtcHR5RmVlZGJhY2sgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTtcblxuICBjb25zdCBncmFkZXIgPSBuZXcgV2ViUkdyYWRlcihfd2Vicl92YWx1ZV8yLmV2YWx1YXRvcik7XG4gIGNvbnN0IGZlZWRiYWNrID0gYXdhaXQgZ3JhZGVyLmdyYWRlRXhlcmNpc2UoKTtcbiAgaWYgKCFmZWVkYmFjaykgcmV0dXJuIGVtcHR5RmVlZGJhY2s7XG4gIHJldHVybiBmZWVkYmFjaztcbn1cbiJ9LHsiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIsIENoYW5uZWxUeXBlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gVXNlIFBvc3RNZXNzYWdlIGNoYW5uZWwgZm9yIGFzeW5jIGNvbW11bmljYXRpb25cbiAgLy8gV2UgZG8gbm90IGV4cGVjdCB0byB0YWtlIG5lc3RlZCBwcm9tcHQgaW5wdXQgaW4gUXVhcnRvIExpdmUgY2VsbHNcbiAgZGF0YS5vcHRpb25zLmNoYW5uZWxUeXBlID0gQ2hhbm5lbFR5cGUuUG9zdE1lc3NhZ2U7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICBjb25zdCBhbmFseXNpcyA9IGF3YWl0IHdlYlIuRlMuYW5hbHl6ZVBhdGgocGF0aCk7XG4gICAgICAgIGlmICghYW5hbHlzaXMuZXhpc3RzKSB7XG4gICAgICAgICAgdHJ5IHtcbiAgICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgICAgfSBjYXRjaCAoZSkge1xuICAgICAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yOiBcIiR7ZS5tZXNzYWdlfVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -762,9 +1035,8 @@ eyJjb250ZW50cyI6W119
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
-</section>
 </section>
 
 </main> <!-- /main -->

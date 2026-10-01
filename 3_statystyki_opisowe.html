@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">TESTY STATYTYCZNE</span></a>
+ <span class="menu-text">TESTY STATYSTYCZNE</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./11_testowanie_istotnosci_proporcji.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istoności proporcji</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testowanie istotności proporcji</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./15_Raport_przyklad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Analiza statystyczna długości trwania życia na świecie w 2007 roku.</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Przykładowy raport statystyczny</span></span></a>
   </div>
 </li>
       </ul>
@@ -388,6 +388,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./16_zadania_samodzielne.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Zadania</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">ZAŁĄCZNIK</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Przełącz sekcję">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zalacznik_funkcje.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Załącznik: zestawienie funkcji</span></a>
   </div>
 </li>
       </ul>
@@ -424,8 +441,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#częstość" id="toc-częstość" class="nav-link" data-scroll-target="#częstość"><span class="header-section-number">5.4.1</span> Częstość</a></li>
   </ul></li>
-  <li><a href="#statystykiw-grupach" id="toc-statystykiw-grupach" class="nav-link" data-scroll-target="#statystykiw-grupach"><span class="header-section-number">5.5</span> Statystykiw grupach</a></li>
-  <li><a href="#braki-danych" id="toc-braki-danych" class="nav-link" data-scroll-target="#braki-danych"><span class="header-section-number">5.6</span> Braki danych</a></li>
+  <li><a href="#statystyki-w-grupach" id="toc-statystyki-w-grupach" class="nav-link" data-scroll-target="#statystyki-w-grupach"><span class="header-section-number">5.5</span> Statystyki w grupach</a></li>
+  <li><a href="#braki-danych" id="toc-braki-danych" class="nav-link" data-scroll-target="#braki-danych"><span class="header-section-number">5.6</span> Braki danych</a>
+  <ul class="collapse">
+  <li><a href="#braki-zarażają-wyniki" id="toc-braki-zarażają-wyniki" class="nav-link" data-scroll-target="#braki-zarażają-wyniki"><span class="header-section-number">5.6.1</span> Braki „zarażają” wyniki</a></li>
+  <li><a href="#ile-braków-jest-i-gdzie" id="toc-ile-braków-jest-i-gdzie" class="nav-link" data-scroll-target="#ile-braków-jest-i-gdzie"><span class="header-section-number">5.6.2</span> Ile braków jest i gdzie?</a></li>
+  <li><a href="#jak-braki-traktują-testy-i-modele" id="toc-jak-braki-traktują-testy-i-modele" class="nav-link" data-scroll-target="#jak-braki-traktują-testy-i-modele"><span class="header-section-number">5.6.3</span> Jak braki traktują testy i modele</a></li>
+  <li><a href="#usuwanie-braków" id="toc-usuwanie-braków" class="nav-link" data-scroll-target="#usuwanie-braków"><span class="header-section-number">5.6.4</span> Usuwanie braków</a></li>
+  </ul></li>
   <li><a href="#ćwiczenie" id="toc-ćwiczenie" class="nav-link" data-scroll-target="#ćwiczenie"><span class="header-section-number">5.7</span> Ćwiczenie</a></li>
   </ul>
 </nav>
@@ -454,58 +477,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cell" data-setup="true" data-exercise="[&quot;ex_1&quot;,&quot;ex_2&quot;,&quot;ex_3&quot;,&quot;ex_4&quot;,&quot;ex_5&quot;,&quot;ex_6&quot;,&quot;ex_7&quot;,&quot;ex_8&quot;,&quot;ex_9&quot;,&quot;ex_10&quot;,&quot;ex_11&quot;,&quot;ex_12&quot;,&quot;ex_13&quot;,&quot;ex_14&quot;,&quot;ex_15&quot;,&quot;ex_16&quot;,&quot;ex_17&quot;,&quot;ex_18&quot;]">
 <script type="exercise-setup-ex_1-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_2-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_3-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_4-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_5-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_6-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_7-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_8-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_9-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_10-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_11-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_12-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_13-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_14-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_15-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_16-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_17-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 <script type="exercise-setup-ex_18-contents">
-eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
+eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwiZXhfMyIsImV4XzQiLCJleF81IiwiZXhfNiIsImV4XzciLCJleF84IiwiZXhfOSIsImV4XzEwIiwiZXhfMTEiLCJleF8xMiIsImV4XzEzIiwiZXhfMTQiLCJleF8xNSIsImV4XzE2IiwiZXhfMTciLCJleF8xOCJdLCJzZXR1cCI6dHJ1ZX0sImNvZGUiOiJcbmxpYnJhcnkoZ2FwbWluZGVyKVxubGlicmFyeShkcGx5cilcbmxpYnJhcnkodGlkeXIpXG5cbmRhdGEoJ2dhcG1pbmRlcicsIHBhY2thZ2UgPSAnZ2FwbWluZGVyJylcbmRhbmUyMDA3IDwtIGZpbHRlcihnYXBtaW5kZXIsIHllYXI9PTIwMDcpIn0=
 </script>
 </div>
 <p>Statystyki opisowe wykorzystuje się do przedstawienia ogólnej charakterystyki danych.</p>
@@ -513,7 +536,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWUsImV4ZXJjaXNlIjpbImV4XzEiLCJleF8yIiwi
 <ol type="1">
 <li><p><strong>Miary położenia</strong> - określają przeciętny poziom oraz rozmieszczenie wartości zmiennej:</p>
 <ul>
-<li><em>Miary przeciętne</em> - np. <em>średnia arytemtyczna</em> - charakteryzują średni lub typowy poziom wartości zmiennej; mówią zatem o <em>przeciętnym</em> poziomie rozważanej zmiennej;</li>
+<li><em>Miary przeciętne</em> - np. <em>średnia arytmetyczna</em> - charakteryzują średni lub typowy poziom wartości zmiennej; mówią zatem o <em>przeciętnym</em> poziomie rozważanej zmiennej;</li>
 <li><em>Wartość modalna</em> - wartość najczęściej występująca w zbiorze danych;</li>
 <li><em>Kwantyle</em> - dzielą zbiorowość na określone części, np. 4, 10, 100 części.</li>
 </ul></li>
@@ -647,40 +670,58 @@ Solution
 </section>
 <section id="średnia-ważona" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="średnia-ważona"><span class="header-section-number">5.2.2</span> Średnia ważona</h3>
+<p>Stosowana, gdy poszczególne obserwacje mają różną “wagę”. W przykładzie poniżej obliczamy średnią oczekiwaną długość trwania życia dla świata, ważąc każdy kraj liczbą jego ludności - w średniej nieważonej Chiny liczyłyby się tyle samo, co Islandia.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>srednia_w_lifeExp <span class="ot">&lt;-</span> <span class="fu">weighted.mean</span>(dane2007<span class="sc">$</span>lifeExp, dane2007<span class="sc">$</span>pop)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>srednia_w_lifeExp <span class="ot">&lt;-</span> <span class="fu">weighted.mean</span>(dane2007<span class="sc">$</span>lifeExp, dane2007<span class="sc">$</span>pop)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>srednia_w_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 68.91909</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane2007<span class="sc">$</span>lifeExp)   <span class="co"># dla porównania: średnia nieważona</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 67.00742</code></pre>
+</div>
 </div>
 </section>
 <section id="średnia-harmoniczna" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="średnia-harmoniczna"><span class="header-section-number">5.2.3</span> Średnia harmoniczna</h3>
+<p>Stosowana dla wielkości wyrażonych jako iloraz (np. prędkość, czyli droga na jednostkę czasu), gdy uśredniamy je przy stałym liczniku.</p>
+<p>Przykład: łódź płynie 1 km z prądem z prędkością 6 km/h i wraca ten sam 1 km przeciw prądowi z prędkością 3,2 km/h. Jaka jest średnia prędkość na całej trasie? Średnia arytmetyczna daje tu zły wynik, ponieważ na odcinku wolniejszym łódź spędziła więcej czasu.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>harmonic_mean <span class="ot">=</span> <span class="cf">function</span>(x){</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">/</span> <span class="fu">mean</span>(<span class="dv">1</span> <span class="sc">/</span> x)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>harmonic_mean <span class="ot">=</span> <span class="cf">function</span>(x){</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">/</span> <span class="fu">mean</span>(<span class="dv">1</span> <span class="sc">/</span> x)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>rzeka <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="fl">3.2</span>) <span class="co">#km/h</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">harmonic_mean</span>(rzeka)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rzeka <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="fl">3.2</span>) <span class="co">#km/h</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">harmonic_mean</span>(rzeka)   <span class="co"># średnia prędkość na trasie</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4.173913</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(rzeka)            <span class="co"># dla porównania: średnia arytmetyczna</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.6</code></pre>
 </div>
 </div>
 </section>
 <section id="średnia-geometryczna" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="średnia-geometryczna"><span class="header-section-number">5.2.4</span> Średnia geometryczna</h3>
+<p>Stosowana dla wielkości zmieniających się multiplikatywnie - stóp wzrostu, indeksów, wskaźników zmiany. Uśrednia się tu nie przyrosty, lecz mnożniki.</p>
+<p>Przykład: w pierwszym roku pewna wielkość wzrosła o 2,6392% (mnożnik 1,026392), a w drugim o 1,1959% (mnożnik 1,011959). Jaki był przeciętny roczny wzrost?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>geometric_mean <span class="ot">=</span> <span class="cf">function</span>(x){</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">=</span> <span class="fu">length</span>(x)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prod</span>(x) <span class="sc">^</span> (<span class="dv">1</span> <span class="sc">/</span> n)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>geometric_mean <span class="ot">=</span> <span class="cf">function</span>(x){</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">=</span> <span class="fu">length</span>(x)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prod</span>(x) <span class="sc">^</span> (<span class="dv">1</span> <span class="sc">/</span> n)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>zmiana <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.026392</span>, <span class="fl">1.011959</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geometric_mean</span>(zmiana)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>zmiana <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.026392</span>, <span class="fl">1.011959</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geometric_mean</span>(zmiana)   <span class="co"># przeciętny mnożnik roczny</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.01915</code></pre>
 </div>
 </div>
+<p>Wynik 1,0192 oznacza przeciętny wzrost o 1,92% rocznie.</p>
 </section>
 <section id="kwantyle" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="kwantyle"><span class="header-section-number">5.2.5</span> Kwantyle</h3>
@@ -692,17 +733,17 @@ Solution
 <li>Mediana - kwartyl drugi</li>
 <li>Kwartyl trzeci (Q3)</li>
 </ul></li>
-<li>Decyle - podzial na 10 części</li>
-<li>Percentyle - podział na 100 częsci</li>
+<li>Decyle - podział na 10 części</li>
+<li>Percentyle - podział na 100 części</li>
 </ul>
-<p>Funkcja <code>quantile()</code> oblicza dowolną wartość kwantyli. Argument <em>probs</em> pozwala na zdefyniowanie dowolnych wartości, które mają zostać wyliczone. Argument ten przyjmuje wartości z przedziału od 0 do 1.</p>
+<p>Funkcja <code>quantile()</code> oblicza dowolną wartość kwantyli. Argument <em>probs</em> pozwala na zdefiniowanie dowolnych wartości, które mają zostać wyliczone. Argument ten przyjmuje wartości z przedziału od 0 do 1.</p>
 <p><img src="figures/3_stat_kwartyle.png" class="img-fluid" width="500"></p>
 <section id="kwartyle" class="level4">
 <h4 class="anchored" data-anchor-id="kwartyle">Kwartyle</h4>
-<p>Funkcja <code>quantile()</code> domyślnie zwraca wartośći kwartyli.</p>
+<p>Funkcja <code>quantile()</code> domyślnie zwraca wartości kwartyli.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>kwartyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>kwartyle</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>kwartyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>kwartyle</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      0%      25%      50%      75%     100% 
 39.61300 57.16025 71.93550 76.41325 82.60300 </code></pre>
@@ -714,8 +755,8 @@ Solution
 <h4 class="anchored" data-anchor-id="decyle">Decyle</h4>
 <p>W poniższym przykładzie <em>seq(0,1,0.1)</em> zwraca sekwencję wartości od 0 do 1 z krokiem co 0.1. Odpowiada to podziałowi danych na 10 równych części.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>decyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>decyle</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>decyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>decyle</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     0%     10%     20%     30%     40%     50%     60%     70%     80%     90% 
 39.6130 48.1734 54.1814 59.8127 67.0006 71.9355 73.2048 75.4719 78.2668 79.8223 
@@ -728,8 +769,8 @@ Solution
 <h4 class="anchored" data-anchor-id="percentyle">Percentyle</h4>
 <p>W poniższym przykładzie zbiór zostanie podzielony na 100 równych części.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>percentyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.01</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(percentyle, <span class="dv">10</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>percentyle <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.01</span>))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(percentyle, <span class="dv">10</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      0%       1%       2%       3%       4%       5%       6%       7% 
 39.61300 42.20582 42.53488 42.62397 43.21484 43.87365 45.17202 46.16868 
@@ -742,8 +783,8 @@ Solution
 <h4 class="anchored" data-anchor-id="dowolne-wartości-kwantyli">Dowolne wartości kwantyli</h4>
 <p>W poniższym przykładzie zostanie wyliczony 5 oraz 95 percentyl.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>q</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">quantile</span>(dane2007<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>))</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>q</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      5%      95% 
 43.87365 80.74060 </code></pre>
@@ -776,7 +817,7 @@ Solution
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dane2007<span class="sc">$</span>gdpPercap, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dane2007<span class="sc">$</span>gdpPercap, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.1</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -808,8 +849,8 @@ Solution
 <div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>africa2002 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2002</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(africa2002<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>africa2002 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2002</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(africa2002<span class="sc">$</span>lifeExp, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -819,14 +860,14 @@ Solution
 <h4 class="anchored" data-anchor-id="mediana">Mediana</h4>
 <p>Mediana to wartość, która dzieli zbiór danych na 2 równe części. Mediana obliczana jest przez funkcję <code>median()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>median_lifeExp <span class="ot">&lt;-</span> <span class="fu">median</span>(dane2007<span class="sc">$</span>lifeExp)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>median_lifeExp </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>median_lifeExp <span class="ot">&lt;-</span> <span class="fu">median</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>median_lifeExp </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 71.9355</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Obliczyć medianę dla gdpPercap dla danych z 2007 roku.</p>
+<p>Obliczyć medianę dla gdpPercap dla danych z 2007 roku. Porównaj ją ze średnią obliczoną wcześniej. Dlaczego te dwie wartości tak bardzo się różnią i która z nich lepiej opisuje typowy kraj?</p>
 </blockquote>
 <div class="cell" data-exercise="ex_5">
 <div>
@@ -852,7 +893,7 @@ Solution
 <div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane2007<span class="sc">$</span>gdpPercap)    </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane2007<span class="sc">$</span>gdpPercap)    </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -884,8 +925,8 @@ Solution
 <div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>africa1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(africa1952<span class="sc">$</span>lifeExp) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>africa1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(africa1952<span class="sc">$</span>lifeExp) </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -895,7 +936,6 @@ Solution
 <li>dla rozkładu symetrycznego mediana oraz średnia będą równe.</li>
 <li>mediana jest lepszą miarą w przypadku rozkładów skośnych.</li>
 <li>średnia jest bardziej czuła na wartości odstające.</li>
-<li>średnia jest bardziej przydatna dla małych zbiorów danych.</li>
 </ul>
 <p>Podsumowanie: Warto podawać obie wartości.</p>
 </section>
@@ -903,7 +943,17 @@ Solution
 <section id="wartość-modalna" class="level3" data-number="5.2.6">
 <h3 data-number="5.2.6" class="anchored" data-anchor-id="wartość-modalna"><span class="header-section-number">5.2.6</span> Wartość modalna</h3>
 <ul>
-<li>wartość cechy, która w zbiorze danych występuje najczęściej. W R nie ma wbudowanej funkcji do obliczania tej statystyki.</li>
+<li>wartość cechy, która w zbiorze danych występuje najczęściej. W R nie ma wbudowanej funkcji do obliczania tej statystyki, ale można ją wyznaczyć z tabeli liczebności:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>liczebnosci <span class="ot">&lt;-</span> <span class="fu">table</span>(dane2007<span class="sc">$</span>continent)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(liczebnosci)[<span class="fu">which.max</span>(liczebnosci)]</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Africa"</code></pre>
+</div>
+</div>
+<ul>
+<li>dla zmiennych ciągłych (np. <em>lifeExp</em>) wartość modalna zwykle nie ma sensu, bo prawie każda obserwacja jest inna - mówimy wtedy raczej o <em>modzie rozkładu</em>, czyli położeniu szczytu histogramu (patrz rozdział <em>Rozkłady danych</em>).</li>
 </ul>
 </section>
 </section>
@@ -912,19 +962,19 @@ Solution
 <section id="minimum-i-maksimum" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="minimum-i-maksimum"><span class="header-section-number">5.3.1</span> Minimum i maksimum</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>min_lifeExp <span class="ot">&lt;-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>lifeExp)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>min_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>min_lifeExp <span class="ot">&lt;-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>min_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39.613</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>max_lifeExp <span class="ot">&lt;-</span> <span class="fu">max</span>(dane2007<span class="sc">$</span>lifeExp)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>max_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>max_lifeExp <span class="ot">&lt;-</span> <span class="fu">max</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>max_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 82.603</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(dane2007<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(dane2007<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 39.613 82.603</code></pre>
 </div>
@@ -956,8 +1006,8 @@ Solution
 <div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>africa1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(africa1952<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>africa1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">1952</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(africa1952<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -989,19 +1039,19 @@ Solution
 <div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiazanie 1</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>pl <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, country <span class="sc">==</span> <span class="st">'Poland'</span>)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(pl<span class="sc">$</span>lifeExp)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiazanie 2 </span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(pl<span class="sc">$</span>lifeExp)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(pl<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiazanie 1</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>pl <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, country <span class="sc">==</span> <span class="st">'Poland'</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(pl<span class="sc">$</span>lifeExp)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozwiazanie 2 </span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(pl<span class="sc">$</span>lifeExp)</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(pl<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>W jakim zakresie zmieniała się oczekiwana długość trwania życia w 2002 roku w krajach azjatyckich z PKB (gpdPercap) przekraczającym 25000?</p>
+<p>W jakim zakresie zmieniała się oczekiwana długość trwania życia w 2002 roku w krajach azjatyckich z PKB (gdpPercap) przekraczającym 25000?</p>
 </blockquote>
 <div class="cell" data-exercise="ex_9">
 <div>
@@ -1027,8 +1077,8 @@ Solution
 <div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>asia2002 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">&amp;</span> continent <span class="sc">==</span> <span class="st">'Asia'</span> <span class="sc">&amp;</span> gdpPercap <span class="sc">&gt;</span> <span class="dv">25000</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(asia2002<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>asia2002 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">2002</span> <span class="sc">&amp;</span> continent <span class="sc">==</span> <span class="st">'Asia'</span> <span class="sc">&amp;</span> gdpPercap <span class="sc">&gt;</span> <span class="dv">25000</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(asia2002<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1042,9 +1092,13 @@ Solution
 <li>wrażliwy na wartości odstające</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>range_lifeExp <span class="ot">&lt;-</span> <span class="fu">max</span>(dane2007<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>range_lifeExp <span class="ot">&lt;-</span> <span class="fu">max</span>(dane2007<span class="sc">$</span>lifeExp) <span class="sc">-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>range_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42.99</code></pre>
 </div>
-<p>Uwaga! W R funkcja <code>range()</code> zwraca wektor składający się z dwóch wartości - minimalnej oraz maksymalnej, a nie rostęp (różnicę między tymi wartościami).</p>
+</div>
+<p>Uwaga! W R funkcja <code>range()</code> zwraca wektor składający się z dwóch wartości - minimalnej oraz maksymalnej, a nie rozstęp (różnicę między tymi wartościami).</p>
 <blockquote class="blockquote">
 <p>Obliczyć rozstęp dla gdpPercap dla danych z 2007 roku.</p>
 </blockquote>
@@ -1072,7 +1126,7 @@ Solution
 <div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">max</span>(dane2007<span class="sc">$</span>gdpPercap) <span class="sc">-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>gdpPercap)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">max</span>(dane2007<span class="sc">$</span>gdpPercap) <span class="sc">-</span> <span class="fu">min</span>(dane2007<span class="sc">$</span>gdpPercap)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1084,7 +1138,11 @@ Solution
 <li>różnica między kwartylem trzecim i kwartylem pierwszym</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>IQR_lifeExp <span class="ot">&lt;-</span> <span class="fu">IQR</span>(dane2007<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>IQR_lifeExp <span class="ot">&lt;-</span> <span class="fu">IQR</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>IQR_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19.253</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>Obliczyć rozstęp kwartylowy dla gdpPercap dla danych z 2007 roku.</p>
@@ -1113,7 +1171,7 @@ Solution
 <div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(dane2007<span class="sc">$</span>gdpPercap)   </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(dane2007<span class="sc">$</span>gdpPercap)   </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1145,8 +1203,8 @@ Solution
 <div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>africa <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span>)  </span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(africa<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>africa <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, continent <span class="sc">==</span> <span class="st">'Africa'</span>)  </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(africa<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1158,7 +1216,11 @@ Solution
 <li>wariancja oraz odchylenie standardowe mierzą jak daleko dane rozchodzą się od średniej.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>var_lifeExp <span class="ot">&lt;-</span> <span class="fu">var</span>(dane2007<span class="sc">$</span>lifeExp)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>var_lifeExp <span class="ot">&lt;-</span> <span class="fu">var</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>var_lifeExp</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 145.7578</code></pre>
+</div>
 </div>
 </section>
 <section id="odchylenie-standardowe" class="level3" data-number="5.3.5">
@@ -1174,14 +1236,14 @@ Solution
 <li><p>duże odchylenie standardowe - wartości są daleko od średniej.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sd_lifeExp <span class="ot">&lt;-</span> <span class="fu">sd</span>(dane2007<span class="sc">$</span>lifeExp)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>sd_lifeExp </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>sd_lifeExp <span class="ot">&lt;-</span> <span class="fu">sd</span>(dane2007<span class="sc">$</span>lifeExp)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>sd_lifeExp </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12.07302</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Jakie była wartość odchylenia standardowego dla gdpPercap w 2007 roku?</p>
+<p>Jakie była wartość odchylenia standardowego dla gdpPercap w 2007 roku? Porównaj je z odchyleniem standardowym zmiennej lifeExp. Dlaczego porównywanie tych dwóch liczb wprost nie ma sensu?</p>
 </blockquote>
 <div class="cell" data-exercise="ex_13">
 <div>
@@ -1207,7 +1269,7 @@ Solution
 <div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dane2007<span class="sc">$</span>gdpPercap)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dane2007<span class="sc">$</span>gdpPercap)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1219,7 +1281,7 @@ Solution
 <section id="częstość" class="level3" data-number="5.4.1">
 <h3 data-number="5.4.1" class="anchored" data-anchor-id="częstość"><span class="header-section-number">5.4.1</span> Częstość</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane2007<span class="sc">$</span>continent)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane2007<span class="sc">$</span>continent)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   Africa Americas     Asia   Europe  Oceania 
@@ -1227,7 +1289,7 @@ Solution
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane2007<span class="sc">$</span>continent) <span class="sc">/</span> <span class="fu">length</span>(dane2007<span class="sc">$</span>continent) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane2007<span class="sc">$</span>continent) <span class="sc">/</span> <span class="fu">length</span>(dane2007<span class="sc">$</span>continent) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    Africa  Americas      Asia    Europe   Oceania 
@@ -1261,28 +1323,28 @@ Solution
 <div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>dane1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">1952</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane1952<span class="sc">$</span>continent)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>dane1952 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">1952</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dane1952<span class="sc">$</span>continent)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="statystykiw-grupach" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="statystykiw-grupach"><span class="header-section-number">5.5</span> Statystykiw grupach</h2>
+<section id="statystyki-w-grupach" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="statystyki-w-grupach"><span class="header-section-number">5.5</span> Statystyki w grupach</h2>
 <p>Pakiet <code>dplyr</code> pozwala także na obliczenie statystyk według grup, np. średnia długość trwania życia na poszczególnych kontynentach.</p>
 <ul>
 <li>Średnia oczekiwana długość życia w 2007 roku według kontynentów.</li>
 </ul>
 <p>Obliczenie statystyk w grupach wymaga najpierw pogrupowania danych (funkcja <code>group_by()</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>by_continent <span class="ot">&lt;-</span> <span class="fu">group_by</span>(gapminder2007, continent)</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>smr_by_continent <span class="ot">&lt;-</span> <span class="fu">summarize</span>(by_continent,</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>smr_by_continent</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>gapminder2007 <span class="ot">&lt;-</span> <span class="fu">filter</span>(gapminder, year <span class="sc">==</span> <span class="dv">2007</span>)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>by_continent <span class="ot">&lt;-</span> <span class="fu">group_by</span>(gapminder2007, continent)</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>smr_by_continent <span class="ot">&lt;-</span> <span class="fu">summarize</span>(by_continent,</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>smr_by_continent</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   continent mean_le
@@ -1294,14 +1356,14 @@ Solution
 5 Oceania      80.7</code></pre>
 </div>
 </div>
-<p>Powyższy kod można zapisać także z wykorzystaniem operatora łączącego %&gt;%</p>
+<p>Powyższy kod można zapisać zwięźlej z wykorzystaniem operatora potokowego <code>|&gt;</code> (patrz podrozdział <em>Operatory potokowe</em> w rozdziale <em>Przetwarzanie danych - dplyr</em>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>mean_by_continent <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>mean_by_continent</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>mean_by_continent <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span> </span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>mean_by_continent</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   continent mean_le
@@ -1314,7 +1376,7 @@ Solution
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Oblicz średnią oczekiwaną długość trwania życia w poszczególnych latach. Posortuj wyniki od największej do najmniejszej wartości.</p>
+<p>Oblicz średnią oczekiwaną długość trwania życia w poszczególnych latach. Posortuj wyniki od największej do najmniejszej wartości. Co wynik mówi o zmianie długości życia na świecie w latach 1952-2007?</p>
 </blockquote>
 <div class="cell" data-exercise="ex_15">
 <div>
@@ -1340,11 +1402,11 @@ Solution
 <div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>ex15 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">%&gt;%</span> </span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_le))</span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>ex15</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>ex15 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span> </span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp)) <span class="sc">|&gt;</span> </span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mean_le))</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>ex15</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1376,11 +1438,11 @@ Solution
 <div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>ex16  <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">'Africa'</span>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_gpd =</span> <span class="fu">mean</span>(gdpPercap))  </span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>ex16</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>ex16  <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">'Africa'</span>)  <span class="sc">|&gt;</span> </span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span> </span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_gpd =</span> <span class="fu">mean</span>(gdpPercap))  </span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>ex16</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1389,14 +1451,14 @@ Solution
 <li><strong>Średnia oczekiwana długość życia w podziale na kontynenty oraz lata.</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>by_continent_year <span class="ot">&lt;-</span> <span class="fu">group_by</span>(gapminder, continent, year)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>smr_by_continent_year <span class="ot">&lt;-</span> <span class="fu">summarize</span>(by_continent_year,</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>by_continent_year <span class="ot">&lt;-</span> <span class="fu">group_by</span>(gapminder, continent, year)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>smr_by_continent_year <span class="ot">&lt;-</span> <span class="fu">summarize</span>(by_continent_year,</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mean_le =</span> <span class="fu">mean</span>(lifeExp))</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'continent'. You can override using the
 `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>smr_by_continent_year</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>smr_by_continent_year</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 60 × 3
 # Groups:   continent [5]
@@ -1442,12 +1504,12 @@ Solution
 <div id="callout-17" class="callout-17-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>ex17 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span> </span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_gpd =</span> <span class="fu">mean</span>(gdpPercap))  </span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>ex17</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>ex17 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span> </span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_gpd =</span> <span class="fu">mean</span>(gdpPercap))  </span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>ex17</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1479,11 +1541,11 @@ Solution
 <div id="callout-18" class="callout-18-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Rozwiązanie:</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>ex18 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">group_by</span>(continent, year) <span class="sc">%&gt;%</span> </span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">summarize</span>(<span class="at">mean_gdp =</span> <span class="fu">mean</span>(gdpPercap)) <span class="sc">%&gt;%</span> </span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> mean_gdp)</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>ex18</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>ex18 <span class="ot">&lt;-</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">group_by</span>(continent, year) <span class="sc">|&gt;</span> </span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">summarize</span>(<span class="at">mean_gdp =</span> <span class="fu">mean</span>(gdpPercap)) <span class="sc">|&gt;</span> </span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> mean_gdp)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>ex18</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1491,26 +1553,82 @@ Solution
 </section>
 <section id="braki-danych" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="braki-danych"><span class="header-section-number">5.6</span> Braki danych</h2>
-<p>W R braki danych zazwyczaj kodowane są jako NA - Not Available.</p>
+<p>W R braki danych kodowane są jako <code>NA</code> (ang. <em>Not Available</em>). Są one częste w rzeczywistych danych - zbiór <code>pomiary_pol.csv</code>, z którego korzystamy na ćwiczeniach, ma braki <strong>w każdej kolumnie</strong>. Warto więc wiedzieć, jak się zachowują.</p>
+<section id="braki-zarażają-wyniki" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="braki-zarażają-wyniki"><span class="header-section-number">5.6.1</span> Braki „zarażają” wyniki</h3>
+<p>Każde działanie, w którym bierze udział <code>NA</code>, daje w wyniku <code>NA</code>. Dotyczy to także funkcji statystycznych:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="cn">NA</span> <span class="sc">+</span> <span class="dv">1</span> </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="cn">NA</span> <span class="sc">+</span> <span class="dv">1</span> </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="cn">NA</span> </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="cn">NA</span> </span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="cn">NA</span>)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="cn">NA</span>)</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Dlatego funkcje statystyczne mają argument <code>na.rm</code> (ang. <em>NA remove</em>), który każe im pominąć braki:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.5</code></pre>
 </div>
 </div>
+<p>Gdy <code>mean()</code>, <code>sd()</code> czy <code>median()</code> zwracają <code>NA</code>, przyczyną prawie zawsze jest brak danych w kolumnie - a nie błąd w kodzie.</p>
+</section>
+<section id="ile-braków-jest-i-gdzie" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="ile-braków-jest-i-gdzie"><span class="header-section-number">5.6.2</span> Ile braków jest i gdzie?</h3>
+<p>Zanim zaczniemy analizę, warto sprawdzić skalę problemu:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>pomiary_pol <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"dane/pomiary_pol.csv"</span>)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(pomiary_pol<span class="sc">$</span>annual_tavg))   <span class="co"># liczba braków w jednej kolumnie</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(pomiary_pol))           <span class="co"># liczba braków w każdej kolumnie</span></span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    pomiar_id        tmin_4        tmax_4        tmin_9        tmax_9 
+            0             5             5             5             5 
+  annual_tavg annual_precip       prow_id        woj_id     prowincja 
+            5             5            11            10            11 
+  wojewodztwo 
+           12 </code></pre>
+</div>
+</div>
+<p>Braki pokazuje też <code>summary()</code> - w wierszu <code>NA's</code> pod statystykami kolumny.</p>
+</section>
+<section id="jak-braki-traktują-testy-i-modele" class="level3" data-number="5.6.3">
+<h3 data-number="5.6.3" class="anchored" data-anchor-id="jak-braki-traktują-testy-i-modele"><span class="header-section-number">5.6.3</span> Jak braki traktują testy i modele</h3>
+<ul>
+<li><strong>Funkcje statystyczne</strong> (<code>mean()</code>, <code>sd()</code>, <code>quantile()</code>) wymagają <code>na.rm = TRUE</code> - inaczej zwrócą <code>NA</code>.</li>
+<li><strong>Testy statystyczne</strong> i <strong>modele</strong> (<code>t.test()</code>, <code>aov()</code>, <code>lm()</code>, <code>cor.test()</code>) pomijają obserwacje z brakami automatycznie i zwykle informują o tym w wyniku - np. <em>„15 observations deleted due to missingness”</em>. Zawsze warto ten komunikat przeczytać: mówi on, na ilu obserwacjach faktycznie wykonano analizę.</li>
+<li><strong>Funkcja <code>cor()</code></strong> wymaga wskazania sposobu postępowania argumentem <code>use = "complete.obs"</code>.</li>
+</ul>
+</section>
+<section id="usuwanie-braków" class="level3" data-number="5.6.4">
+<h3 data-number="5.6.4" class="anchored" data-anchor-id="usuwanie-braków"><span class="header-section-number">5.6.4</span> Usuwanie braków</h3>
+<p>Wiersze z brakami można usunąć, ale warto robić to świadomie - usuwamy wtedy całą obserwację, także wartości z pozostałych kolumn:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>pomiary_pelne <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(pomiary_pol)   <span class="co"># tylko wiersze bez żadnego braku</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(pomiary_pol)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1500</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(pomiary_pelne)</span></code><button title="Kopiuj do schowka" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1483</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Sprawdź, w których kolumnach zbioru <code>pomiary_pol</code> jest najwięcej braków. Następnie oblicz średnią rocznej sumy opadów (<em>annual_precip</em>) raz bez argumentu <code>na.rm</code>, a raz z nim. Dlaczego pierwszy wynik jest bezużyteczny?</p>
+</blockquote>
+</section>
 </section>
 <section id="ćwiczenie" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="ćwiczenie"><span class="header-section-number">5.7</span> Ćwiczenie</h2>
@@ -1532,7 +1650,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xOSIsImlubGluZSI6ZmFsc2UsIm1l
 </div>
 </div>
 <script type="vfs-file">
-WyJkYXRhL2RhbmUucmRzIiwiZGF0YS9kYW5lLnR4dCIsImRhdGEvcG9taWFyeV9wb2wuY3N2IiwiZGF0YS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYXRhL2RhbmUuY3N2IiwiZGF0YS9jdzEucmRhIiwiZGF0YS9jYXJkYXRhMi5jc3YiLCJkYXRhL3Bsb255LmNzdiIsImRhdGEvdGV0bm8uY3N2Il0=
+WyJkYW5lL2RhbmUucmRzIiwiZGFuZS9kYW5lLnR4dCIsImRhbmUvcG9taWFyeV9wb2wuY3N2IiwiZGFuZS9kYW5lTWllc3prYW5pYS5jc3YiLCJkYW5lL2RhbmUuY3N2IiwiZGFuZS9jdzEucmRhIiwiZGFuZS9wbG9ueS5jc3YiLCJkYW5lL3RldG5vLmNzdiJd
 </script>
 </section>
 
